@@ -25,6 +25,8 @@ DEFAULT_CONFIG: dict[str, Any] = {
     "report": {
         "title": "每日资讯日报",
         "output_dir": "reports",
+        "html_output_dir": "docs",
+        "site_base_url": "https://wangzianna.github.io/daily-news-push/",
     },
     "weekly_report": {
         "title": "周末深度报告",
@@ -36,7 +38,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "max_items_per_direction_group": 40,
         "max_source_items": 24,
         "output_dir": "weekly_reports",
-        "html_output_dir": "weekly_reports",
+        "html_output_dir": "docs",
         "site_base_url": "https://wangzianna.github.io/daily-news-push/",
     },
     "feishu": {

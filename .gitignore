@@ -3,4 +3,5 @@ __pycache__/
 .pycache/
 *.pyc
 reports/
+weekly_reports/
 .env

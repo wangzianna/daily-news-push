@@ -19,6 +19,7 @@ def render_book_html(
     topic: str,
     source_items: list[NewsItem],
     timezone_name: str,
+    eyebrow: str = "DEEP REPORT",
 ) -> str:
     date_label = datetime.now(ZoneInfo(timezone_name)).strftime("%Y.%m.%d")
     body = markdown_to_book_html(markdown)
@@ -31,12 +32,12 @@ def render_book_html(
   <title>{escape(title)}｜{escape(topic)}</title>
   <style>
     :root {{
-      --paper: #fbfaf7;
-      --ink: #1f2328;
-      --muted: #71757d;
-      --rule: #ded8cc;
-      --accent: #7c4d3a;
-      --soft: #f2eee7;
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
     }}
 
     * {{ box-sizing: border-box; }}
@@ -53,70 +54,70 @@ def render_book_html(
     }}
 
     .page {{
-      width: min(100%, 820px);
+      width: min(100%, 900px);
       margin: 0 auto;
-      padding: 88px 34px 112px;
+      padding: 72px 28px 96px;
     }}
 
     header {{
-      margin-bottom: 64px;
+      margin-bottom: 52px;
       border-bottom: 1px solid var(--rule);
-      padding-bottom: 34px;
+      padding-bottom: 30px;
     }}
 
     .eyebrow {{
       color: var(--accent);
-      font-size: 15px;
+      font-size: 13px;
       letter-spacing: 0.16em;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }}
 
     h1 {{
       margin: 0;
-      font-size: clamp(42px, 8vw, 72px);
-      line-height: 1.16;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
       font-weight: 700;
       letter-spacing: 0;
     }}
 
     .subtitle {{
-      margin-top: 22px;
+      margin-top: 18px;
       color: var(--muted);
-      font-size: clamp(22px, 4vw, 34px);
-      line-height: 1.55;
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
     }}
 
     .meta {{
-      margin-top: 28px;
+      margin-top: 24px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }}
 
     main {{
-      font-size: clamp(23px, 4.6vw, 36px);
-      line-height: 2.05;
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
       letter-spacing: 0;
     }}
 
     h2 {{
-      margin: 78px 0 26px;
-      font-size: clamp(30px, 5.6vw, 46px);
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
       line-height: 1.35;
       font-weight: 700;
     }}
 
     p {{
-      margin: 0 0 1.15em;
+      margin: 0 0 1em;
       text-align: justify;
     }}
 
     ol, ul {{
-      margin: 0 0 1.25em;
+      margin: 0 0 1.1em;
       padding-left: 1.25em;
     }}
 
     li {{
-      margin: 0.5em 0;
+      margin: 0.38em 0;
       padding-left: 0.1em;
     }}
 
@@ -132,8 +133,8 @@ def render_book_html(
     }}
 
     .sources {{
-      margin-top: 88px;
-      padding: 34px 28px;
+      margin-top: 70px;
+      padding: 28px 24px;
       background: var(--soft);
       border: 1px solid var(--rule);
     }}
@@ -143,8 +144,8 @@ def render_book_html(
     }}
 
     .source-list {{
-      font-size: clamp(17px, 3vw, 22px);
-      line-height: 1.75;
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
       padding-left: 1.2em;
     }}
 
@@ -160,10 +161,8 @@ def render_book_html(
     }}
 
     @media (min-width: 860px) {{
-      .page {{
-        padding-left: 0;
-        padding-right: 0;
-      }}
+      .page {{ padding-left: 0; padding-right: 0; }}
+      main {{ columns: 1; }}
     }}
 
     @media print {{
@@ -176,10 +175,10 @@ def render_book_html(
 <body>
   <article class="page">
     <header>
-      <div class="eyebrow">DEEP REPORT</div>
+      <div class="eyebrow">{escape(eyebrow)}</div>
       <h1>{escape(title)}</h1>
       <div class="subtitle">{escape(topic)}</div>
-      <div class="meta">{date_label} · 传统书籍阅读版</div>
+      <div class="meta">{date_label} · 衬线阅读版</div>
     </header>
     <main>
 {body}
@@ -198,14 +197,27 @@ def save_book_html(
     source_items: list[NewsItem],
     output_dir: str | Path,
     timezone_name: str,
+    filename_prefix: str | None = None,
+    eyebrow: str = "DEEP REPORT",
 ) -> Path:
     report_dir = Path(output_dir)
     report_dir.mkdir(parents=True, exist_ok=True)
-    filename = datetime.now(ZoneInfo(timezone_name)).strftime("%Y-W%U") + ".html"
+    if filename_prefix:
+        filename = filename_prefix + ".html"
+    else:
+        filename = datetime.now(ZoneInfo(timezone_name)).strftime("%Y-W%U") + ".html"
     path = report_dir / filename
-    html = render_book_html(markdown, title, topic, source_items, timezone_name)
+    html = render_book_html(markdown, title, topic, source_items, timezone_name, eyebrow=eyebrow)
     path.write_text(html, encoding="utf-8")
     return path
+
+
+def daily_html_filename(timezone_name: str) -> str:
+    return "daily-" + datetime.now(ZoneInfo(timezone_name)).strftime("%Y-%m-%d")
+
+
+def weekly_html_filename(timezone_name: str) -> str:
+    return "weekly-" + datetime.now(ZoneInfo(timezone_name)).strftime("%Y-W%U")
 
 
 def markdown_to_book_html(markdown: str) -> str:

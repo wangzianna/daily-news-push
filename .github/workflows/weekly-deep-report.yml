@@ -7,13 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
+  contents: write
 
 jobs:
   weekly-deep-report:
@@ -45,19 +39,13 @@ jobs:
           name: weekly-deep-report
           path: |
             weekly_reports/*.md
-            weekly_reports/*.html
+            docs/weekly-*.html
 
-      - name: Setup Pages
+      - name: Commit HTML report
         if: success()
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        if: success()
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: weekly_reports
-
-      - name: Deploy to GitHub Pages
-        if: success()
-        id: deployment
-        uses: actions/deploy-pages@v4
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/*.html
+          git commit -m "Publish weekly HTML report" || echo "No HTML report changes"
+          git push

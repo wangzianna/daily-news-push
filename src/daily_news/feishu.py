@@ -13,6 +13,7 @@ def push_to_feishu(
     summary: str,
     items: list[NewsItem],
     timezone_name: str,
+    report_url: str | None = None,
     errors: dict[str, str] | None = None,
     timeout: int = 20,
 ) -> None:
@@ -29,7 +30,7 @@ def push_to_feishu(
                 "title": {"tag": "plain_text", "content": card_title},
                 "template": "blue",
             },
-            "elements": build_card_elements(summary, items, timezone_name, errors),
+            "elements": build_card_elements(summary, items, timezone_name, report_url, errors),
         },
     }
     response = requests.post(webhook, json=payload, timeout=timeout)
@@ -81,12 +82,28 @@ def build_card_elements(
     summary: str,
     items: list[NewsItem],
     timezone_name: str,
+    report_url: str | None = None,
     errors: dict[str, str] | None = None,
 ) -> list[dict]:
     elements: list[dict] = [
-        markdown_div("**今日简报**\n" + trim(summary.strip(), 5000)),
-        {"tag": "hr"},
+        markdown_div("**今日简报**\n" + trim(summary.strip(), 1600)),
     ]
+    if report_url:
+        elements.append(
+            {
+                "tag": "action",
+                "actions": [
+                    {
+                        "tag": "button",
+                        "text": {"tag": "plain_text", "content": "阅读全文"},
+                        "url": report_url,
+                        "type": "primary",
+                        "value": {"url": report_url},
+                    }
+                ],
+            }
+        )
+    elements.append({"tag": "hr"})
 
     if not items:
         elements.append(markdown_div("暂无可推送资讯。"))

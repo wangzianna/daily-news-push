@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 from .config import load_config
 from .dedupe import dedupe_items, sort_items
 from .feishu import push_to_feishu
-from .html_report import save_book_html
+from .html_report import daily_html_filename, save_book_html, weekly_html_filename
 from .quality import apply_quality_rules
 from .report import render_markdown, save_report
 from .rss import fetch_all_sources
@@ -54,6 +54,17 @@ def run_daily(config_path: str, sources_path: str, push: bool = True) -> str:
         errors=errors,
     )
     report_path = save_report(markdown, config["report"]["output_dir"], timezone_name)
+    html_path = save_book_html(
+        markdown,
+        title=str(config["report"]["title"]),
+        topic="每日精选",
+        source_items=selected_items,
+        output_dir=config["report"].get("html_output_dir", "docs"),
+        timezone_name=timezone_name,
+        filename_prefix=daily_html_filename(timezone_name),
+        eyebrow="DAILY REPORT",
+    )
+    report_url = build_report_url(str(config["report"].get("site_base_url", "")), html_path)
 
     if push and bool(config["feishu"].get("enabled", True)):
         push_to_feishu(
@@ -61,6 +72,7 @@ def run_daily(config_path: str, sources_path: str, push: bool = True) -> str:
             summary=summary,
             items=selected_items,
             timezone_name=timezone_name,
+            report_url=report_url,
             errors=errors,
             timeout=int(config["app"]["fetch_timeout_seconds"]),
         )
@@ -118,6 +130,8 @@ def run_weekly(config_path: str, sources_path: str, push: bool = True) -> str:
         source_items=selected_items,
         output_dir=weekly_config.get("html_output_dir", weekly_config.get("output_dir", "weekly_reports")),
         timezone_name=timezone_name,
+        filename_prefix=weekly_html_filename(timezone_name),
+        eyebrow="WEEKLY DEEP REPORT",
     )
     report_url = build_report_url(str(weekly_config.get("site_base_url", "")), html_path)
 
