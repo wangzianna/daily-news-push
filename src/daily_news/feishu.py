@@ -13,7 +13,7 @@ def push_to_feishu(markdown: str, title: str, timeout: int = 20) -> None:
     payload = {
         "msg_type": "interactive",
         "card": {
-            "config": {"wide_screen_mode": True},
+            "config": {"wide_screen_mode": True, "enable_forward": True},
             "header": {
                 "title": {"tag": "plain_text", "content": title},
                 "template": "blue",

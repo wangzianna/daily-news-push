@@ -26,4 +26,8 @@ class NewsItem:
     link: str
     summary: str
     weight: int = 0
-
+    quality_score: int = 0
+    quality_labels: list[str] | None = None
+    penalty_labels: list[str] | None = None
+    evidence_type: str | None = None
+    ai_type: str | None = None

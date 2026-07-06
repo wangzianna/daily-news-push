@@ -10,7 +10,8 @@ DEFAULT_CONFIG: dict[str, Any] = {
     "app": {
         "timezone": "Asia/Shanghai",
         "max_items_per_source": 15,
-        "max_items_total": 80,
+        "max_items_per_direction_group": 3,
+        "max_items_total": 12,
         "fetch_timeout_seconds": 20,
         "user_agent": "DailyNewsPush/1.0",
     },

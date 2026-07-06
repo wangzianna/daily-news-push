@@ -26,6 +26,7 @@ def sort_items(items: list[NewsItem]) -> list[NewsItem]:
         items,
         key=lambda item: (
             item.category,
+            -item.quality_score,
             -item.weight,
             -(item.published_at.timestamp() if item.published_at else 0),
         ),

@@ -8,7 +8,10 @@
 - `sources.yaml` 可维护订阅源管理
 - 命令行添加、删除、编辑、启用、停用、列出、测试订阅源
 - 每条资讯包含标题、来源、发布时间、链接、摘要
-- 按链接去重，按分类、权重、发布时间排序
+- 按链接去重，按质量分、分类、权重、发布时间排序
+- 高质量过滤：优先一手来源、机构来源、研究来源、深度报道，降低营销软文、融资通稿、标题党、重复转载权重
+- 每个方向最多保留 3 条，日报总量最多 12 条
+- 健康类内容标注证据类型，AI 类内容标注内容类型
 - DeepSeek API 生成日报总结
 - 飞书 Webhook 推送
 - GitHub Actions 每天北京时间 09:00 自动运行
@@ -37,6 +40,7 @@ daily-news-push/
     ├── dedupe.py
     ├── feishu.py
     ├── models.py
+    ├── quality.py
     ├── report.py
     ├── rss.py
     ├── runner.py
@@ -73,7 +77,8 @@ python -m daily_news run --no-push
 app:
   timezone: Asia/Shanghai
   max_items_per_source: 15
-  max_items_total: 80
+  max_items_per_direction_group: 3
+  max_items_total: 12
   fetch_timeout_seconds: 20
 
 llm:
@@ -153,6 +158,32 @@ python -m daily_news sources test zhihu-daily --limit 5
 ```
 
 每日抓取任务只读取 `enabled: true` 的订阅源。
+
+## 高质量过滤规则
+
+抓取结果会先去重，再进行质量评分和限额筛选：
+
+- 优先选择一手来源、机构来源、研究来源、深度报道。
+- 降低营销软文、融资通稿、标题党、重复转载/编译内容的权重。
+- 每个方向最多保留 3 条。
+- 最终日报最多保留 12 条。
+- 每条精选资讯都会保留原始链接。
+
+健康类内容会标注证据类型：
+
+- 医学机构
+- 研究论文
+- 政策报告
+- 媒体报道
+- 个人经验
+
+AI 类内容会标注内容类型：
+
+- 官方发布
+- 模型能力更新
+- 产品应用
+- 投融资/商业化
+- 风险与监管
 
 ## GitHub Actions
 

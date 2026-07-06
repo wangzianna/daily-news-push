@@ -46,10 +46,12 @@ def build_prompt(items: list[NewsItem], timezone_name: str) -> str:
 要求：
 1. 必须包含以下五个二级标题：
 {sections}
-2. 每个部分使用 3-6 条要点，优先写判断和影响，不要只复述标题。
+2. 每个部分最多 3 条要点，优先写判断和影响，不要只复述标题。
 3. 重要结论后可以用括号标注来源名称。
-4. 不要编造未出现在资讯中的事实。
-5. 保持精炼，适合通过飞书机器人推送。
+4. 健康类内容必须注明证据类型；AI 类内容必须注明内容类型。
+5. 不要编造未出现在资讯中的事实。
+6. 保持精炼，适合通过飞书机器人推送。
+7. 不要输出原始资讯清单，原始链接会由系统在下方单独展示。
 
 资讯列表：
 {items_as_context(items, timezone_name)}
@@ -60,16 +62,20 @@ def fallback_summary(items: list[NewsItem], api_key_env: str = "DEEPSEEK_API_KEY
     top_items = items[:8]
     lines = [
         "## 今日重点",
-        *[f"- {item.title}（{item.source}）" for item in top_items[:5]],
+        *[f"- {item.title}（{item.source}）" for item in top_items[:3]],
         "",
         "## 行业动态",
-        *[f"- {item.title}：{item.summary[:120]}" for item in items if item.category in {"商业", "行业"}][:5],
+        *[f"- {item.title}：{item.summary[:120]}" for item in items if item.category in {"商业", "行业"}][:3],
         "",
         "## AI / 科技",
-        *[f"- {item.title}：{item.summary[:120]}" for item in items if item.category in {"AI", "技术", "科技"}][:5],
+        *[
+            f"- {item.title}（{item.ai_type or '未分类'}）：{item.summary[:120]}"
+            for item in items
+            if item.category in {"AI", "技术", "科技"}
+        ][:3],
         "",
         "## 产品设计相关",
-        *[f"- {item.title}：{item.summary[:120]}" for item in items if item.category in {"产品", "设计"}][:5],
+        *[f"- {item.title}：{item.summary[:120]}" for item in items if item.category in {"产品", "设计"}][:3],
         "",
         "## 值得关注的信号",
         f"- 未配置 {api_key_env}，已生成基础版摘要。建议配置大模型 API 以获得趋势判断。",
