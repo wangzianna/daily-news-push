@@ -6,6 +6,15 @@ on:
     - cron: "0 12 * * 0"
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   weekly-deep-report:
     runs-on: ubuntu-latest
@@ -34,4 +43,21 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: weekly-deep-report
-          path: weekly_reports/*.md
+          path: |
+            weekly_reports/*.md
+            weekly_reports/*.html
+
+      - name: Setup Pages
+        if: success()
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: success()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: weekly_reports
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        id: deployment
+        uses: actions/deploy-pages@v4

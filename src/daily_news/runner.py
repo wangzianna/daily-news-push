@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 from .config import load_config
 from .dedupe import dedupe_items, sort_items
 from .feishu import push_to_feishu
+from .html_report import save_book_html
 from .quality import apply_quality_rules
 from .report import render_markdown, save_report
 from .rss import fetch_all_sources
@@ -110,6 +111,15 @@ def run_weekly(config_path: str, sources_path: str, push: bool = True) -> str:
         weekly_config.get("output_dir", "weekly_reports"),
         timezone_name,
     )
+    html_path = save_book_html(
+        report,
+        title=str(weekly_config["title"]),
+        topic=str(weekly_config["topic"]),
+        source_items=selected_items,
+        output_dir=weekly_config.get("html_output_dir", weekly_config.get("output_dir", "weekly_reports")),
+        timezone_name=timezone_name,
+    )
+    report_url = build_report_url(str(weekly_config.get("site_base_url", "")), html_path)
 
     if push and bool(config["feishu"].get("enabled", True)):
         from .feishu import push_deep_report_to_feishu
@@ -120,8 +130,16 @@ def run_weekly(config_path: str, sources_path: str, push: bool = True) -> str:
             report_markdown=report,
             source_items=selected_items,
             timezone_name=timezone_name,
+            report_url=report_url,
             errors=errors,
             timeout=int(config["app"]["fetch_timeout_seconds"]),
         )
 
     return str(report_path)
+
+
+def build_report_url(site_base_url: str, html_path) -> str | None:
+    if not site_base_url:
+        return None
+    base = site_base_url.rstrip("/") + "/"
+    return base + html_path.name

@@ -116,6 +116,8 @@ weekly_report:
   max_items_per_direction_group: 40
   max_source_items: 24
   output_dir: weekly_reports
+  html_output_dir: weekly_reports
+  site_base_url: https://wangzianna.github.io/daily-news-push/
 
 feishu:
   enabled: true
@@ -256,7 +258,15 @@ python -m daily_news weekly --config config.yaml --sources sources.yaml
 python -m daily_news weekly --no-push
 ```
 
-生成的 Markdown 深度报告会保存在 `weekly_reports/YYYY-W周数.md`，飞书会收到结构化卡片。
+生成结果：
+
+- `weekly_reports/YYYY-W周数.md`：Markdown 原稿
+- `weekly_reports/YYYY-W周数.html`：传统书籍阅读版网页
+
+飞书会收到摘要卡片，并提供“阅读全文”按钮打开 HTML 阅读版。
+
+HTML 阅读版使用偏传统书籍的排版：宋体/衬线字体、窄正文栏、较大字号、宽行距和大量留白，适合手机上慢读。
+GitHub Actions 首次运行时，飞书卡片可能会比 Pages 部署更早到达；如果“阅读全文”暂时打不开，等待几十秒后刷新即可。
 
 ## GitHub Actions
 
@@ -273,6 +283,12 @@ schedule:
 schedule:
   - cron: "0 12 * * 0"
 ```
+
+周报工作流还会把 `weekly_reports/*.html` 发布到 GitHub Pages。首次使用时，在 GitHub 仓库中进入：
+
+`Settings -> Pages -> Build and deployment -> Source`
+
+选择 `GitHub Actions`。
 
 在 GitHub 仓库中添加 Secrets：
 

@@ -45,6 +45,7 @@ def push_deep_report_to_feishu(
     report_markdown: str,
     source_items: list[NewsItem],
     timezone_name: str,
+    report_url: str | None = None,
     errors: dict[str, str] | None = None,
     timeout: int = 20,
 ) -> None:
@@ -64,6 +65,7 @@ def push_deep_report_to_feishu(
                 report_markdown,
                 source_items,
                 timezone_name,
+                report_url,
                 errors,
             ),
         },
@@ -107,16 +109,33 @@ def build_deep_report_elements(
     report_markdown: str,
     source_items: list[NewsItem],
     timezone_name: str,
+    report_url: str | None = None,
     errors: dict[str, str] | None = None,
 ) -> list[dict]:
     elements: list[dict] = []
     sections = split_markdown_sections(report_markdown)
     if not sections:
-        elements.append(markdown_div(trim(report_markdown, 6000)))
+        elements.append(markdown_div(trim(report_markdown, 1600)))
     else:
-        for heading, content in sections:
-            elements.append(markdown_div(f"**{escape_markdown(heading)}**\n{trim(content.strip(), 4500)}"))
-            elements.append({"tag": "hr"})
+        for heading, content in sections[:3]:
+            elements.append(markdown_div(f"**{escape_markdown(heading)}**\n{trim(content.strip(), 900)}"))
+
+    if report_url:
+        elements.append(
+            {
+                "tag": "action",
+                "actions": [
+                    {
+                        "tag": "button",
+                        "text": {"tag": "plain_text", "content": "阅读全文"},
+                        "url": report_url,
+                        "type": "primary",
+                        "value": {"url": report_url},
+                    }
+                ],
+            }
+        )
+    elements.append({"tag": "hr"})
 
     if source_items:
         elements.append(markdown_div("**关键原文**"))

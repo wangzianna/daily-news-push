@@ -36,6 +36,8 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "max_items_per_direction_group": 40,
         "max_source_items": 24,
         "output_dir": "weekly_reports",
+        "html_output_dir": "weekly_reports",
+        "site_base_url": "https://wangzianna.github.io/daily-news-push/",
     },
     "feishu": {
         "enabled": True,
