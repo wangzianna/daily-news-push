@@ -13,7 +13,7 @@
 - 每个方向最多保留 3 条，日报总量最多 12 条
 - 健康类内容标注证据类型，AI 类内容标注内容类型
 - DeepSeek API 生成日报总结
-- 飞书 Webhook 推送
+- 飞书 Webhook 结构化卡片推送
 - GitHub Actions 每天北京时间 09:00 自动运行
 
 日报结构：
@@ -203,7 +203,7 @@ schedule:
 
 ## 飞书机器人
 
-创建飞书群机器人后复制 Webhook 地址，写入 GitHub Secret `FEISHU_WEBHOOK_URL`。项目会以交互式卡片方式推送 Markdown 日报。
+创建飞书群机器人后复制 Webhook 地址，写入 GitHub Secret `FEISHU_WEBHOOK_URL`。项目会以交互式卡片推送日报：今日简报、分组资讯、质量标签、类型标注和“查看原文”按钮会分别渲染为独立卡片元素。
 
 ## 注意事项
 

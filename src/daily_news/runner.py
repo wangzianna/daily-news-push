@@ -54,6 +54,13 @@ def run_daily(config_path: str, sources_path: str, push: bool = True) -> str:
     report_path = save_report(markdown, config["report"]["output_dir"], timezone_name)
 
     if push and bool(config["feishu"].get("enabled", True)):
-        push_to_feishu(markdown, str(config["report"]["title"]), int(config["app"]["fetch_timeout_seconds"]))
+        push_to_feishu(
+            title=str(config["report"]["title"]),
+            summary=summary,
+            items=selected_items,
+            timezone_name=timezone_name,
+            errors=errors,
+            timeout=int(config["app"]["fetch_timeout_seconds"]),
+        )
 
     return str(report_path)
