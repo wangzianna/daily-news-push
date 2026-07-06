@@ -1,0 +1,17 @@
+sources:
+  - id: openai-blog
+    name: OpenAI Blog
+    url: https://openai.com/blog/rss.xml
+    category: AI
+    language: en
+    enabled: true
+    weight: 100
+    last_fetch_at: null
+  - id: product-hunt
+    name: Product Hunt
+    url: https://www.producthunt.com/feed
+    category: 产品
+    language: en
+    enabled: true
+    weight: 70
+    last_fetch_at: null

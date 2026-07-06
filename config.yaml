@@ -1,0 +1,20 @@
+app:
+  timezone: Asia/Shanghai
+  max_items_per_source: 15
+  max_items_total: 80
+  fetch_timeout_seconds: 20
+  user_agent: DailyNewsPush/1.0 (+https://github.com/your-org/daily-news-push)
+
+llm:
+  provider: deepseek
+  base_url: https://api.deepseek.com
+  api_key_env: DEEPSEEK_API_KEY
+  model: deepseek-v4-flash
+  temperature: 0.2
+
+report:
+  title: 每日资讯日报
+  output_dir: reports
+
+feishu:
+  enabled: true

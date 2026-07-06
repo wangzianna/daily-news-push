@@ -1,0 +1,37 @@
+name: Daily News Push
+
+on:
+  schedule:
+    # 09:00 Beijing time, 01:00 UTC.
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+jobs:
+  daily-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate and push daily report
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          PYTHONPATH: src
+        run: python -m daily_news run --config config.yaml --sources sources.yaml
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-news-report
+          path: reports/*.md
