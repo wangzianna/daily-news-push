@@ -78,6 +78,49 @@ def push_deep_report_to_feishu(
         raise RuntimeError(f"飞书推送失败: {data}")
 
 
+def push_html_report_notice(
+    title: str,
+    subtitle: str,
+    markdown: str,
+    report_url: str,
+    timeout: int = 20,
+) -> None:
+    webhook = os.environ.get("FEISHU_WEBHOOK_URL")
+    if not webhook:
+        raise RuntimeError("缺少 FEISHU_WEBHOOK_URL 环境变量")
+
+    payload = {
+        "msg_type": "interactive",
+        "card": {
+            "config": {"wide_screen_mode": True, "enable_forward": True},
+            "header": {
+                "title": {"tag": "plain_text", "content": title},
+                "template": "blue",
+            },
+            "elements": [
+                markdown_div(f"**{escape_markdown(subtitle)}**\n{trim(markdown.strip(), 1800)}"),
+                {
+                    "tag": "action",
+                    "actions": [
+                        {
+                            "tag": "button",
+                            "text": {"tag": "plain_text", "content": "阅读全文"},
+                            "url": report_url,
+                            "type": "primary",
+                            "value": {"url": report_url},
+                        }
+                    ],
+                },
+            ],
+        },
+    }
+    response = requests.post(webhook, json=payload, timeout=timeout)
+    response.raise_for_status()
+    data = response.json()
+    if data.get("code", 0) != 0:
+        raise RuntimeError(f"飞书推送失败: {data}")
+
+
 def build_card_elements(
     summary: str,
     items: list[NewsItem],

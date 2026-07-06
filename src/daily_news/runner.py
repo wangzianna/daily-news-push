@@ -175,3 +175,64 @@ def build_report_url(site_base_url: str, html_path) -> str | None:
         return None
     base = site_base_url.rstrip("/") + "/"
     return base + "/".join(html_path.parts[-2:])
+
+
+def notify_latest_daily(config_path: str) -> str:
+    config = load_config(config_path)
+    from .feishu import push_html_report_notice
+
+    report_dir = config["report"].get("output_dir", "reports")
+    html_dir = config["report"].get("html_output_dir", "docs")
+    markdown_path = latest_file(report_dir, "*.md")
+    html_path = latest_file(f"{html_dir}/daily", "*.html")
+    if markdown_path is None or html_path is None:
+        raise RuntimeError("未找到已生成的日报 Markdown 或 HTML")
+
+    report_url = build_report_url(str(config["report"].get("site_base_url", "")), html_path)
+    if not report_url:
+        raise RuntimeError("未配置 report.site_base_url")
+
+    push_html_report_notice(
+        title=str(config["report"]["title"]),
+        subtitle="今日简报",
+        markdown=markdown_path.read_text(encoding="utf-8"),
+        report_url=report_url,
+        timeout=int(config["app"]["fetch_timeout_seconds"]),
+    )
+    return report_url
+
+
+def notify_latest_weekly(config_path: str) -> str:
+    config = load_config(config_path)
+    weekly_config = config["weekly_report"]
+    from .feishu import push_html_report_notice
+
+    report_dir = weekly_config.get("output_dir", "weekly_reports")
+    html_dir = weekly_config.get("html_output_dir", "docs")
+    markdown_path = latest_file(report_dir, "*.md")
+    html_path = latest_file(f"{html_dir}/weekly", "*.html")
+    if markdown_path is None or html_path is None:
+        raise RuntimeError("未找到已生成的周报 Markdown 或 HTML")
+
+    report_url = build_report_url(str(weekly_config.get("site_base_url", "")), html_path)
+    if not report_url:
+        raise RuntimeError("未配置 weekly_report.site_base_url")
+
+    push_html_report_notice(
+        title=str(weekly_config["title"]),
+        subtitle=str(weekly_config["topic"]),
+        markdown=markdown_path.read_text(encoding="utf-8"),
+        report_url=report_url,
+        timeout=int(config["app"]["fetch_timeout_seconds"]),
+    )
+    return report_url
+
+
+def latest_file(directory: str, pattern: str):
+    from pathlib import Path
+
+    path = Path(directory)
+    if not path.exists():
+        return None
+    files = sorted(path.glob(pattern), key=lambda item: item.name, reverse=True)
+    return files[0] if files else None

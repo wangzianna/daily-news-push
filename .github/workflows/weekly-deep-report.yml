@@ -25,12 +25,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate and push weekly deep report
+      - name: Generate weekly deep report
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
           PYTHONPATH: src
-        run: python -m daily_news weekly --config config.yaml --sources sources.yaml
+        run: python -m daily_news weekly --config config.yaml --sources sources.yaml --no-push
 
       - name: Upload report artifact
         if: always()
@@ -50,3 +49,12 @@ jobs:
           git add docs
           git commit -m "Publish weekly HTML report" || echo "No HTML report changes"
           git push
+
+      - name: Notify Feishu
+        if: success()
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          PYTHONPATH: src
+        run: |
+          sleep 60
+          python -m daily_news notify-weekly --config config.yaml

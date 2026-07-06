@@ -276,7 +276,7 @@ python -m daily_news weekly --no-push
 飞书会收到摘要卡片，并提供“阅读全文”按钮打开 HTML 阅读版。
 
 HTML 阅读版使用偏传统书籍的排版：宋体/衬线字体、适中的正文宽度、克制字号、舒适行距和留白，兼顾阅读感与信息密度。
-GitHub Actions 会把 `docs/` 自动提交回仓库，并自动更新 `docs/index.html`。默认日报保留最近 14 份，周报保留最近 8 份；如果“阅读全文”暂时打不开，等待 Pages 刷新后再打开即可。
+GitHub Actions 会先生成 HTML、提交 `docs/`、等待 Pages 刷新，再推送飞书通知。`docs/index.html` 会自动更新。默认日报保留最近 14 份，周报保留最近 8 份；如果“阅读全文”暂时打不开，等待 Pages 刷新后再打开即可。
 
 ## GitHub Actions
 

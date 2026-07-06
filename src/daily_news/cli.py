@@ -24,6 +24,18 @@ def main(argv: list[str] | None = None) -> int:
             report_path = run_weekly(args.config, args.sources, push=not args.no_push)
             print(f"周末深度报告已生成: {report_path}")
             return 0
+        if args.command == "notify-daily":
+            from .runner import notify_latest_daily
+
+            report_url = notify_latest_daily(args.config)
+            print(f"日报通知已推送: {report_url}")
+            return 0
+        if args.command == "notify-weekly":
+            from .runner import notify_latest_weekly
+
+            report_url = notify_latest_weekly(args.config)
+            print(f"周报通知已推送: {report_url}")
+            return 0
         if args.command == "sources":
             return handle_sources(args)
         parser.print_help()
@@ -47,6 +59,12 @@ def build_parser() -> argparse.ArgumentParser:
     weekly_parser.add_argument("--config", default="config.yaml", help="运行配置文件路径")
     weekly_parser.add_argument("--sources", default="sources.yaml", help="订阅源配置文件路径")
     weekly_parser.add_argument("--no-push", action="store_true", help="只生成报告，不推送飞书")
+
+    notify_daily_parser = subparsers.add_parser("notify-daily", help="推送最近一次日报 HTML 链接")
+    notify_daily_parser.add_argument("--config", default="config.yaml", help="运行配置文件路径")
+
+    notify_weekly_parser = subparsers.add_parser("notify-weekly", help="推送最近一次周报 HTML 链接")
+    notify_weekly_parser.add_argument("--config", default="config.yaml", help="运行配置文件路径")
 
     sources_parser = subparsers.add_parser("sources", help="管理订阅源")
     sources_subparsers = sources_parser.add_subparsers(dest="sources_command", required=True)
