@@ -15,6 +15,7 @@
 - DeepSeek API 生成日报总结
 - 飞书 Webhook 结构化卡片推送
 - GitHub Actions 每天北京时间 09:00 自动运行
+- GitHub Actions 每周日北京时间 20:00 自动生成主题深度报告
 
 日报结构：
 
@@ -28,7 +29,9 @@
 
 ```text
 daily-news-push/
-├── .github/workflows/daily-news.yml
+├── .github/workflows/
+│   ├── daily-news.yml
+│   └── weekly-deep-report.yml
 ├── config.yaml
 ├── sources.yaml
 ├── requirements.txt
@@ -45,7 +48,8 @@ daily-news-push/
     ├── rss.py
     ├── runner.py
     ├── sources.py
-    └── summarizer.py
+    ├── summarizer.py
+    └── weekly.py
 ```
 
 ## 本地运行
@@ -91,6 +95,27 @@ llm:
 report:
   title: 每日资讯日报
   output_dir: reports
+
+weekly_report:
+  title: 周末深度报告
+  topic: 女性与个人成长
+  keywords:
+    - 女性
+    - 个人成长
+    - 职场
+    - 健康
+    - 心理
+    - 教育
+    - 家庭
+    - 消费
+  source_sections:
+    - weekly_report_sources
+    - sources
+  candidate_items: 40
+  max_items_per_source: 25
+  max_items_per_direction_group: 40
+  max_source_items: 24
+  output_dir: weekly_reports
 
 feishu:
   enabled: true
@@ -185,13 +210,68 @@ AI 类内容会标注内容类型：
 - 投融资/商业化
 - 风险与监管
 
+## 周末深度报告
+
+周末深度报告不是碎片化新闻推送，而是围绕一个可配置主题，把本周材料综合成一篇结构化报告。
+
+默认主题是：
+
+```yaml
+weekly_report:
+  topic: 女性与个人成长
+```
+
+可以在 `config.yaml` 里修改主题和筛选关键词，例如：
+
+```yaml
+weekly_report:
+  topic: 女性健康与职场成长
+  keywords:
+    - 女性
+    - 健康
+    - 职场
+    - 心理
+    - 生育
+    - 教育
+```
+
+报告结构：
+
+- 本周关键变化
+- 重要数据/事件/报告
+- 判断趋势
+- 对个体、职场、健康、经济的影响概览
+- 值得继续关注的问题
+- 原文链接
+
+本地手动生成周末深度报告：
+
+```bash
+python -m daily_news weekly --config config.yaml --sources sources.yaml
+```
+
+只生成报告、不推送飞书：
+
+```bash
+python -m daily_news weekly --no-push
+```
+
+生成的 Markdown 深度报告会保存在 `weekly_reports/YYYY-W周数.md`，飞书会收到结构化卡片。
+
 ## GitHub Actions
 
-工作流位于 `.github/workflows/daily-news.yml`，默认每天北京时间 09:00 运行。GitHub Actions 的 cron 使用 UTC，所以配置为：
+日报工作流位于 `.github/workflows/daily-news.yml`，默认每天北京时间 09:00 运行。GitHub Actions 的 cron 使用 UTC，所以配置为：
 
 ```yaml
 schedule:
   - cron: "0 1 * * *"
+```
+
+周末深度报告工作流位于 `.github/workflows/weekly-deep-report.yml`，默认每周日北京时间 20:00 运行：
+
+```yaml
+schedule:
+  - cron: "0 12 * * 0"
 ```
 
 在 GitHub 仓库中添加 Secrets：

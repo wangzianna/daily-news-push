@@ -18,6 +18,12 @@ def main(argv: list[str] | None = None) -> int:
             report_path = run_daily(args.config, args.sources, push=not args.no_push)
             print(f"日报已生成: {report_path}")
             return 0
+        if args.command == "weekly":
+            from .runner import run_weekly
+
+            report_path = run_weekly(args.config, args.sources, push=not args.no_push)
+            print(f"周末深度报告已生成: {report_path}")
+            return 0
         if args.command == "sources":
             return handle_sources(args)
         parser.print_help()
@@ -36,6 +42,11 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument("--config", default="config.yaml", help="运行配置文件路径")
     run_parser.add_argument("--sources", default="sources.yaml", help="订阅源配置文件路径")
     run_parser.add_argument("--no-push", action="store_true", help="只生成日报，不推送飞书")
+
+    weekly_parser = subparsers.add_parser("weekly", help="生成周末主题深度报告并推送")
+    weekly_parser.add_argument("--config", default="config.yaml", help="运行配置文件路径")
+    weekly_parser.add_argument("--sources", default="sources.yaml", help="订阅源配置文件路径")
+    weekly_parser.add_argument("--no-push", action="store_true", help="只生成报告，不推送飞书")
 
     sources_parser = subparsers.add_parser("sources", help="管理订阅源")
     sources_subparsers = sources_parser.add_subparsers(dest="sources_command", required=True)

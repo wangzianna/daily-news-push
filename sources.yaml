@@ -1,17 +1,223 @@
 sources:
-  - id: openai-blog
-    name: OpenAI Blog
-    url: https://openai.com/blog/rss.xml
-    category: AI
+  # =========================
+  # Daily News Sources
+  # 每日资讯：AI / 经济 / 健康 / 产品科技
+  # =========================
+
+  # ---------- AI ----------
+  - id: openai_news
+    name: OpenAI News
+    url: https://openai.com/news/rss.xml
+    category: ai
     language: en
     enabled: true
-    weight: 100
+    weight: 10
     last_fetch_at: null
-  - id: product-hunt
-    name: Product Hunt
-    url: https://www.producthunt.com/feed
-    category: 产品
+
+  - id: anthropic_news
+    name: Anthropic News
+    url: https://www.anthropic.com/news/rss.xml
+    category: ai
     language: en
     enabled: true
-    weight: 70
+    weight: 10
+    last_fetch_at: null
+
+  - id: google_ai
+    name: Google AI Blog
+    url: https://blog.google/technology/ai/rss/
+    category: ai
+    language: en
+    enabled: true
+    weight: 9
+    last_fetch_at: null
+
+  - id: google_deepmind
+    name: Google DeepMind
+    url: https://deepmind.google/blog/rss.xml
+    category: ai
+    language: en
+    enabled: true
+    weight: 9
+    last_fetch_at: null
+
+  - id: mit_ai
+    name: MIT News - Artificial Intelligence
+    url: https://news.mit.edu/rss/topic/artificial-intelligence2
+    category: ai
+    language: en
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+  - id: deeplearning_ai_batch
+    name: The Batch - DeepLearning.AI
+    url: https://www.deeplearning.ai/the-batch/feed/
+    category: ai
+    language: en
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+  # ---------- Economy ----------
+  - id: financial_times
+    name: Financial Times
+    url: https://www.ft.com/news-feed?format=rss
+    category: economy
+    language: en
+    enabled: true
+    weight: 10
+    last_fetch_at: null
+
+  - id: federal_reserve_monetary
+    name: Federal Reserve - Monetary Policy
+    url: https://www.federalreserve.gov/feeds/press_monetary.xml
+    category: economy
+    language: en
+    enabled: true
+    weight: 9
+    last_fetch_at: null
+
+  - id: imf_blog
+    name: IMF Blog
+    url: https://www.imf.org/en/blogs
+    category: economy
+    language: en
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+  - id: our_world_in_data
+    name: Our World in Data
+    url: https://ourworldindata.org/atom.xml
+    category: economy
+    language: en
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+  - id: world_bank_blogs
+    name: World Bank Blogs
+    url: https://blogs.worldbank.org/en/home
+    category: economy
+    language: en
+    enabled: true
+    weight: 7
+    last_fetch_at: null
+
+  # ---------- Health ----------
+  - id: medlineplus_whats_new
+    name: MedlinePlus - What's New
+    url: https://medlineplus.gov/feeds/whatsnew.xml
+    category: health
+    language: en
+    enabled: true
+    weight: 10
+    last_fetch_at: null
+
+  - id: medlineplus_new_links
+    name: MedlinePlus - New Links
+    url: https://medlineplus.gov/groupfeeds/new.xml
+    category: health
+    language: en
+    enabled: true
+    weight: 9
+    last_fetch_at: null
+
+  - id: kff_health_news
+    name: KFF Health News
+    url: https://kffhealthnews.org/feed/
+    category: health
+    language: en
+    enabled: true
+    weight: 9
+    last_fetch_at: null
+
+  - id: harvard_health
+    name: Harvard Gazette - Health
+    url: https://news.harvard.edu/gazette/section/health-medicine/feed/
+    category: health
+    language: en
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+  # ---------- Product / Tech / Design ----------
+  - id: the_verge
+    name: The Verge
+    url: https://www.theverge.com/rss/index.xml
+    category: product_tech
+    language: en
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+  - id: nngroup
+    name: Nielsen Norman Group
+    url: https://www.nngroup.com/feed/rss/
+    category: product_tech
+    language: en
+    enabled: true
+    weight: 9
+    last_fetch_at: null
+
+  - id: ux_collective
+    name: UX Collective
+    url: https://uxdesign.cc/feed
+    category: product_tech
+    language: en
+    enabled: true
+    weight: 7
+    last_fetch_at: null
+
+
+weekly_report_sources:
+  # =========================
+  # Weekly Deep Report Sources
+  # 周末深度报告：女性议题
+  # =========================
+
+  - id: un_women
+    name: UN Women
+    url: https://www.unwomen.org/en/rss-feeds/news
+    category: women_weekly
+    language: en
+    enabled: true
+    weight: 10
+    last_fetch_at: null
+
+  - id: kff_womens_health_policy
+    name: KFF - Women's Health Policy
+    url: https://www.kff.org/topic/womens-health-policy/feed/
+    category: women_weekly
+    language: en
+    enabled: true
+    weight: 9
+    last_fetch_at: null
+
+  - id: cgd_gender
+    name: CGD - Gender Equality and Inclusion
+    url: https://www.cgdev.org/topics/gender-equality
+    category: women_weekly
+    language: en
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+  - id: the_19th
+    name: The 19th
+    url: https://19thnews.org/feed/
+    category: women_weekly
+    language: en
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+  - id: women_in_data
+    name: Women in Data
+    url: https://www.womenindata.org/
+    category: women_weekly
+    language: en
+    enabled: true
+    weight: 6
     last_fetch_at: null

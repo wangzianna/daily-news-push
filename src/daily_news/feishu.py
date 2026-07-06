@@ -39,6 +39,42 @@ def push_to_feishu(
         raise RuntimeError(f"飞书推送失败: {data}")
 
 
+def push_deep_report_to_feishu(
+    title: str,
+    topic: str,
+    report_markdown: str,
+    source_items: list[NewsItem],
+    timezone_name: str,
+    errors: dict[str, str] | None = None,
+    timeout: int = 20,
+) -> None:
+    webhook = os.environ.get("FEISHU_WEBHOOK_URL")
+    if not webhook:
+        raise RuntimeError("缺少 FEISHU_WEBHOOK_URL 环境变量")
+
+    payload = {
+        "msg_type": "interactive",
+        "card": {
+            "config": {"wide_screen_mode": True, "enable_forward": True},
+            "header": {
+                "title": {"tag": "plain_text", "content": f"{title} · {topic}"},
+                "template": "purple",
+            },
+            "elements": build_deep_report_elements(
+                report_markdown,
+                source_items,
+                timezone_name,
+                errors,
+            ),
+        },
+    }
+    response = requests.post(webhook, json=payload, timeout=timeout)
+    response.raise_for_status()
+    data = response.json()
+    if data.get("code", 0) != 0:
+        raise RuntimeError(f"飞书推送失败: {data}")
+
+
 def build_card_elements(
     summary: str,
     items: list[NewsItem],
@@ -59,6 +95,52 @@ def build_card_elements(
         for item in category_items:
             elements.extend(build_item_elements(item, timezone_name))
         elements.append({"tag": "hr"})
+
+    if errors:
+        error_lines = [f"- `{source_id}`：{trim(error, 120)}" for source_id, error in errors.items()]
+        elements.append(markdown_div("**抓取异常**\n" + "\n".join(error_lines)))
+
+    return elements[:80]
+
+
+def build_deep_report_elements(
+    report_markdown: str,
+    source_items: list[NewsItem],
+    timezone_name: str,
+    errors: dict[str, str] | None = None,
+) -> list[dict]:
+    elements: list[dict] = []
+    sections = split_markdown_sections(report_markdown)
+    if not sections:
+        elements.append(markdown_div(trim(report_markdown, 6000)))
+    else:
+        for heading, content in sections:
+            elements.append(markdown_div(f"**{escape_markdown(heading)}**\n{trim(content.strip(), 4500)}"))
+            elements.append({"tag": "hr"})
+
+    if source_items:
+        elements.append(markdown_div("**关键原文**"))
+        for item in source_items[:8]:
+            elements.append(
+                {
+                    "tag": "action",
+                    "actions": [
+                        {
+                            "tag": "button",
+                            "text": {
+                                "tag": "plain_text",
+                                "content": trim(item.title, 30),
+                            },
+                            "url": item.link,
+                            "type": "default",
+                            "value": {
+                                "source": item.source,
+                                "published_at": format_datetime(item.published_at, timezone_name),
+                            },
+                        }
+                    ],
+                }
+            )
 
     if errors:
         error_lines = [f"- `{source_id}`：{trim(error, 120)}" for source_id, error in errors.items()]
@@ -114,6 +196,23 @@ def markdown_div(content: str) -> dict:
             "content": content,
         },
     }
+
+
+def split_markdown_sections(markdown: str) -> list[tuple[str, str]]:
+    sections: list[tuple[str, list[str]]] = []
+    current_heading: str | None = None
+    current_lines: list[str] = []
+    for line in markdown.splitlines():
+        if line.startswith("## "):
+            if current_heading is not None:
+                sections.append((current_heading, current_lines))
+            current_heading = line[3:].strip()
+            current_lines = []
+        else:
+            current_lines.append(line)
+    if current_heading is not None:
+        sections.append((current_heading, current_lines))
+    return [(heading, "\n".join(lines)) for heading, lines in sections]
 
 
 def trim(value: str, max_length: int) -> str:

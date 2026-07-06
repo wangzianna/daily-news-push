@@ -26,6 +26,17 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "title": "每日资讯日报",
         "output_dir": "reports",
     },
+    "weekly_report": {
+        "title": "周末深度报告",
+        "topic": "女性与个人成长",
+        "keywords": ["女性", "个人成长", "职场", "健康", "心理", "教育", "家庭", "消费"],
+        "source_sections": ["weekly_report_sources", "sources"],
+        "candidate_items": 40,
+        "max_items_per_source": 25,
+        "max_items_per_direction_group": 40,
+        "max_source_items": 24,
+        "output_dir": "weekly_reports",
+    },
     "feishu": {
         "enabled": True,
     },

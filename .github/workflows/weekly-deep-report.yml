@@ -1,0 +1,37 @@
+name: Weekly Deep Report
+
+on:
+  schedule:
+    # Sunday 20:00 Beijing time, 12:00 UTC.
+    - cron: "0 12 * * 0"
+  workflow_dispatch:
+
+jobs:
+  weekly-deep-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate and push weekly deep report
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          PYTHONPATH: src
+        run: python -m daily_news weekly --config config.yaml --sources sources.yaml
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-deep-report
+          path: weekly_reports/*.md
