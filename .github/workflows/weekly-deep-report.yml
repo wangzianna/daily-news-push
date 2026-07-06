@@ -39,13 +39,14 @@ jobs:
           name: weekly-deep-report
           path: |
             weekly_reports/*.md
-            docs/weekly-*.html
+            docs/index.html
+            docs/weekly/*.html
 
       - name: Commit HTML report
         if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/*.html
+          git add docs
           git commit -m "Publish weekly HTML report" || echo "No HTML report changes"
           git push

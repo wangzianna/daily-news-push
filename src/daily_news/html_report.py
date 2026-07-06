@@ -207,17 +207,111 @@ def save_book_html(
     else:
         filename = datetime.now(ZoneInfo(timezone_name)).strftime("%Y-W%U") + ".html"
     path = report_dir / filename
+    path.parent.mkdir(parents=True, exist_ok=True)
     html = render_book_html(markdown, title, topic, source_items, timezone_name, eyebrow=eyebrow)
     path.write_text(html, encoding="utf-8")
     return path
 
 
 def daily_html_filename(timezone_name: str) -> str:
-    return "daily-" + datetime.now(ZoneInfo(timezone_name)).strftime("%Y-%m-%d")
+    return "daily/" + datetime.now(ZoneInfo(timezone_name)).strftime("%Y-%m-%d")
 
 
 def weekly_html_filename(timezone_name: str) -> str:
-    return "weekly-" + datetime.now(ZoneInfo(timezone_name)).strftime("%Y-W%U")
+    return "weekly/" + datetime.now(ZoneInfo(timezone_name)).strftime("%Y-W%U")
+
+
+def prune_html_reports(output_dir: str | Path, subdir: str, keep: int) -> None:
+    if keep <= 0:
+        return
+    directory = Path(output_dir) / subdir
+    if not directory.exists():
+        return
+    files = sorted(directory.glob("*.html"), key=lambda path: path.name, reverse=True)
+    for path in files[keep:]:
+        path.unlink()
+
+
+def render_index(output_dir: str | Path, title: str = "资讯报告阅读页") -> Path:
+    root = Path(output_dir)
+    root.mkdir(parents=True, exist_ok=True)
+    daily = sorted((root / "daily").glob("*.html"), key=lambda path: path.name, reverse=True) if (root / "daily").exists() else []
+    weekly = sorted((root / "weekly").glob("*.html"), key=lambda path: path.name, reverse=True) if (root / "weekly").exists() else []
+    html = f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{escape(title)}</title>
+  <style>
+    body {{
+      margin: 0;
+      background: #fbfaf6;
+      color: #20242a;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
+    }}
+    main {{
+      width: min(100%, 880px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }}
+    h1 {{
+      font-size: clamp(34px, 6vw, 52px);
+      margin: 0 0 42px;
+    }}
+    h2 {{
+      font-size: clamp(24px, 4vw, 34px);
+      margin: 44px 0 18px;
+      border-bottom: 1px solid #ddd6c8;
+      padding-bottom: 12px;
+    }}
+    ol {{
+      padding-left: 1.3em;
+      font-size: clamp(18px, 3.2vw, 23px);
+      line-height: 1.75;
+    }}
+    li {{ margin: 0.42em 0; }}
+    a {{
+      color: #75503c;
+      text-underline-offset: 0.16em;
+    }}
+    .muted {{
+      color: #74777d;
+      font-size: 15px;
+      margin-bottom: 36px;
+    }}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>{escape(title)}</h1>
+    <p class="muted">自动保留最近的日报和周末深度报告。</p>
+{render_index_section("每日报告", daily, "daily")}
+{render_index_section("周末深度报告", weekly, "weekly")}
+  </main>
+</body>
+</html>
+"""
+    path = root / "index.html"
+    path.write_text(html, encoding="utf-8")
+    return path
+
+
+def render_index_section(title: str, files: list[Path], subdir: str) -> str:
+    if not files:
+        return f"    <h2>{escape(title)}</h2>\n    <p class=\"muted\">暂无报告。</p>"
+    links = []
+    for path in files:
+        label = path.stem
+        links.append(f"      <li><a href=\"{subdir}/{escape(path.name)}\">{escape(label)}</a></li>")
+    return "\n".join(
+        [
+            f"    <h2>{escape(title)}</h2>",
+            "    <ol>",
+            *links,
+            "    </ol>",
+        ]
+    )
 
 
 def markdown_to_book_html(markdown: str) -> str:

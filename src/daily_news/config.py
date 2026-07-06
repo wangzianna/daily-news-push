@@ -27,6 +27,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "output_dir": "reports",
         "html_output_dir": "docs",
         "site_base_url": "https://wangzianna.github.io/daily-news-push/",
+        "keep_html": 14,
     },
     "weekly_report": {
         "title": "周末深度报告",
@@ -40,6 +41,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "output_dir": "weekly_reports",
         "html_output_dir": "docs",
         "site_base_url": "https://wangzianna.github.io/daily-news-push/",
+        "keep_html": 8,
     },
     "feishu": {
         "enabled": True,

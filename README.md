@@ -74,9 +74,10 @@ python -m daily_news run --no-push
 生成结果：
 
 - `reports/YYYY-MM-DD.md`：Markdown 原稿
-- `docs/daily-YYYY-MM-DD.html`：衬线阅读版网页
+- `docs/daily/YYYY-MM-DD.html`：衬线阅读版网页
 
 飞书日报会收到摘要卡片，并提供“阅读全文”按钮打开 HTML 阅读版。
+系统会自动生成 `docs/index.html` 作为阅读首页，日报默认只保留最近 14 份。
 
 ## 配置说明
 
@@ -102,6 +103,7 @@ report:
   output_dir: reports
   html_output_dir: docs
   site_base_url: https://wangzianna.github.io/daily-news-push/
+  keep_html: 14
 
 weekly_report:
   title: 周末深度报告
@@ -125,6 +127,7 @@ weekly_report:
   output_dir: weekly_reports
   html_output_dir: docs
   site_base_url: https://wangzianna.github.io/daily-news-push/
+  keep_html: 8
 
 feishu:
   enabled: true
@@ -268,12 +271,12 @@ python -m daily_news weekly --no-push
 生成结果：
 
 - `weekly_reports/YYYY-W周数.md`：Markdown 原稿
-- `docs/weekly-YYYY-W周数.html`：衬线阅读版网页
+- `docs/weekly/YYYY-W周数.html`：衬线阅读版网页
 
 飞书会收到摘要卡片，并提供“阅读全文”按钮打开 HTML 阅读版。
 
 HTML 阅读版使用偏传统书籍的排版：宋体/衬线字体、适中的正文宽度、克制字号、舒适行距和留白，兼顾阅读感与信息密度。
-GitHub Actions 会把 `docs/*.html` 自动提交回仓库；如果“阅读全文”暂时打不开，等待 Pages 刷新后再打开即可。
+GitHub Actions 会把 `docs/` 自动提交回仓库，并自动更新 `docs/index.html`。默认日报保留最近 14 份，周报保留最近 8 份；如果“阅读全文”暂时打不开，等待 Pages 刷新后再打开即可。
 
 ## GitHub Actions
 
@@ -291,7 +294,7 @@ schedule:
   - cron: "0 12 * * 0"
 ```
 
-日报和周报工作流都会把 `docs/*.html` 提交回仓库。首次使用 GitHub Pages 时，在 GitHub 仓库中进入：
+日报和周报工作流都会把 `docs/` 提交回仓库。首次使用 GitHub Pages 时，在 GitHub 仓库中进入：
 
 `Settings -> Pages -> Build and deployment -> Source`
 

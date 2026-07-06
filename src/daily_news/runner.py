@@ -6,7 +6,13 @@ from zoneinfo import ZoneInfo
 from .config import load_config
 from .dedupe import dedupe_items, sort_items
 from .feishu import push_to_feishu
-from .html_report import daily_html_filename, save_book_html, weekly_html_filename
+from .html_report import (
+    daily_html_filename,
+    prune_html_reports,
+    render_index,
+    save_book_html,
+    weekly_html_filename,
+)
 from .quality import apply_quality_rules
 from .report import render_markdown, save_report
 from .rss import fetch_all_sources
@@ -64,6 +70,12 @@ def run_daily(config_path: str, sources_path: str, push: bool = True) -> str:
         filename_prefix=daily_html_filename(timezone_name),
         eyebrow="DAILY REPORT",
     )
+    prune_html_reports(
+        config["report"].get("html_output_dir", "docs"),
+        "daily",
+        int(config["report"].get("keep_html", 14)),
+    )
+    render_index(config["report"].get("html_output_dir", "docs"))
     report_url = build_report_url(str(config["report"].get("site_base_url", "")), html_path)
 
     if push and bool(config["feishu"].get("enabled", True)):
@@ -133,6 +145,12 @@ def run_weekly(config_path: str, sources_path: str, push: bool = True) -> str:
         filename_prefix=weekly_html_filename(timezone_name),
         eyebrow="WEEKLY DEEP REPORT",
     )
+    prune_html_reports(
+        weekly_config.get("html_output_dir", "docs"),
+        "weekly",
+        int(weekly_config.get("keep_html", 8)),
+    )
+    render_index(weekly_config.get("html_output_dir", "docs"))
     report_url = build_report_url(str(weekly_config.get("site_base_url", "")), html_path)
 
     if push and bool(config["feishu"].get("enabled", True)):
@@ -156,4 +174,4 @@ def build_report_url(site_base_url: str, html_path) -> str | None:
     if not site_base_url:
         return None
     base = site_base_url.rstrip("/") + "/"
-    return base + html_path.name
+    return base + "/".join(html_path.parts[-2:])
