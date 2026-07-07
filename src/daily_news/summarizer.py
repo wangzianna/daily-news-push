@@ -15,13 +15,13 @@ def generate_daily_summary(
     model: str,
     temperature: float,
     timezone_name: str,
-) -> str:
+) -> tuple[str, dict[str, int] | None]:
     if not items:
-        return "\n".join([f"## {section}\n暂无可用资讯。" for section in REPORT_SECTIONS])
+        return "\n".join([f"## {section}\n暂无可用资讯。" for section in REPORT_SECTIONS]), None
 
     api_key = os.environ.get(api_key_env)
     if not api_key:
-        return fallback_summary(items, api_key_env)
+        return fallback_summary(items, api_key_env), None
 
     client = OpenAI(api_key=api_key, base_url=base_url)
     prompt = build_prompt(items, timezone_name)
@@ -36,7 +36,17 @@ def generate_daily_summary(
             {"role": "user", "content": prompt},
         ],
     )
-    return response.choices[0].message.content or fallback_summary(items, api_key_env)
+
+    usage = None
+    if response.usage:
+        usage = {
+            "prompt_tokens": response.usage.prompt_tokens,
+            "completion_tokens": response.usage.completion_tokens,
+            "total_tokens": response.usage.total_tokens,
+        }
+
+    summary = response.choices[0].message.content or fallback_summary(items, api_key_env)
+    return summary, usage
 
 
 def build_prompt(items: list[NewsItem], timezone_name: str) -> str:
@@ -56,6 +66,9 @@ def build_prompt(items: list[NewsItem], timezone_name: str) -> str:
    撰写时优先以"全文"为依据，只在"全文"为空时退回到"摘要"，
    并在结论后括号注明该条仅有摘要、未获取到全文。
 9. 不要凭单句标题做推测，必须以资讯中能看到的文字为依据。
+10. 资讯可能混合中英文。生成日报时把英文内容直接翻译成中文表述，
+    公司名/产品名/术语保留英文原文（如 OpenAI、GPT-5、HBM、benchmark、agent）。
+    不要音译，也不要加"据外媒报道"之类的铺垫。
 
 资讯列表：
 {items_as_context(items, timezone_name)}

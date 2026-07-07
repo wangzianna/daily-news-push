@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import concurrent.futures
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
 import re
 from typing import Any
+from urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
 
 import feedparser
 import requests
@@ -15,9 +18,35 @@ from .models import NewsItem, Source
 TAG_RE = re.compile(r"<[^>]+>")
 SPACE_RE = re.compile(r"\s+")
 
+_MAX_WORKERS = 8
 
-def fetch_source(source: Source, timeout: int, user_agent: str, limit: int) -> list[NewsItem]:
-    response = requests.get(source.url, headers={"User-Agent": user_agent}, timeout=timeout)
+
+def _build_session() -> requests.Session:
+    session = requests.Session()
+    retry = Retry(
+        total=2,
+        backoff_factor=0.5,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET"],
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
+
+
+_SESSION = _build_session()
+
+
+def fetch_source(
+    source: Source,
+    timeout: int,
+    user_agent: str,
+    limit: int,
+    session: requests.Session | None = None,
+) -> list[NewsItem]:
+    http = session or _SESSION
+    response = http.get(source.url, headers={"User-Agent": user_agent}, timeout=timeout)
     response.raise_for_status()
     parsed = feedparser.parse(response.content)
     if parsed.bozo and not parsed.entries:
@@ -40,6 +69,7 @@ def fetch_source(source: Source, timeout: int, user_agent: str, limit: int) -> l
                 summary=extract_summary(entry),
                 weight=source.weight,
                 language=source.language,
+                credibility=source.credibility,
             )
         )
     return items
@@ -50,14 +80,25 @@ def fetch_all_sources(
     timeout: int,
     user_agent: str,
     limit_per_source: int,
+    max_workers: int = _MAX_WORKERS,
 ) -> tuple[list[NewsItem], dict[str, str]]:
     items: list[NewsItem] = []
     errors: dict[str, str] = {}
-    for source in sources:
-        try:
-            items.extend(fetch_source(source, timeout, user_agent, limit_per_source))
-        except Exception as exc:
-            errors[source.id] = str(exc)
+
+    if not sources:
+        return items, errors
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(max_workers, len(sources))) as executor:
+        future_to_source = {
+            executor.submit(fetch_source, source, timeout, user_agent, limit_per_source): source
+            for source in sources
+        }
+        for future in concurrent.futures.as_completed(future_to_source):
+            source = future_to_source[future]
+            try:
+                items.extend(future.result())
+            except Exception as exc:
+                errors[source.id] = str(exc)
     return items, errors
 
 

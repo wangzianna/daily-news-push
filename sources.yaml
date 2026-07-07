@@ -12,7 +12,7 @@ sources:
     language: en
     enabled: true
     weight: 10
-    last_fetch_at: null
+    credibility: primary
 
   - id: anthropic_news
     name: Anthropic News
@@ -21,7 +21,7 @@ sources:
     language: en
     enabled: true
     weight: 10
-    last_fetch_at: null
+    credibility: primary
 
   - id: google_ai
     name: Google AI Blog
@@ -30,7 +30,7 @@ sources:
     language: en
     enabled: true
     weight: 9
-    last_fetch_at: null
+    credibility: primary
 
   - id: google_deepmind
     name: Google DeepMind
@@ -39,7 +39,7 @@ sources:
     language: en
     enabled: true
     weight: 9
-    last_fetch_at: null
+    credibility: primary
 
   - id: mit_ai
     name: MIT News - Artificial Intelligence
@@ -48,7 +48,7 @@ sources:
     language: en
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: institution
 
   - id: deeplearning_ai_batch
     name: The Batch - DeepLearning.AI
@@ -57,7 +57,7 @@ sources:
     language: en
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: primary
 
   # ---------- Economy ----------
   - id: financial_times
@@ -67,7 +67,7 @@ sources:
     language: en
     enabled: true
     weight: 10
-    last_fetch_at: null
+    credibility: media
 
   - id: federal_reserve_monetary
     name: Federal Reserve - Monetary Policy
@@ -76,7 +76,7 @@ sources:
     language: en
     enabled: true
     weight: 9
-    last_fetch_at: null
+    credibility: institution
 
   - id: imf_blog
     name: IMF Blog
@@ -85,7 +85,7 @@ sources:
     language: en
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: institution
 
   - id: our_world_in_data
     name: Our World in Data
@@ -94,7 +94,7 @@ sources:
     language: en
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: research
 
   - id: world_bank_blogs
     name: World Bank Blogs
@@ -103,7 +103,7 @@ sources:
     language: en
     enabled: true
     weight: 7
-    last_fetch_at: null
+    credibility: institution
 
   # ---------- Health ----------
   - id: medlineplus_whats_new
@@ -113,7 +113,7 @@ sources:
     language: en
     enabled: true
     weight: 10
-    last_fetch_at: null
+    credibility: institution
 
   - id: medlineplus_new_links
     name: MedlinePlus - New Links
@@ -122,7 +122,7 @@ sources:
     language: en
     enabled: true
     weight: 9
-    last_fetch_at: null
+    credibility: institution
 
   - id: kff_health_news
     name: KFF Health News
@@ -131,7 +131,7 @@ sources:
     language: en
     enabled: true
     weight: 9
-    last_fetch_at: null
+    credibility: media
 
   - id: harvard_health
     name: Harvard Gazette - Health
@@ -140,7 +140,7 @@ sources:
     language: en
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: institution
 
   # ---------- Product / Tech / Design ----------
   - id: the_verge
@@ -150,7 +150,7 @@ sources:
     language: en
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: media
 
   - id: nngroup
     name: Nielsen Norman Group
@@ -159,7 +159,7 @@ sources:
     language: en
     enabled: true
     weight: 9
-    last_fetch_at: null
+    credibility: primary
 
   - id: ux_collective
     name: UX Collective
@@ -168,7 +168,7 @@ sources:
     language: en
     enabled: true
     weight: 7
-    last_fetch_at: null
+    credibility: media
 
 
   # ---------- Chinese / Economy & Business ----------
@@ -179,7 +179,7 @@ sources:
     language: zh
     enabled: true
     weight: 10
-    last_fetch_at: null
+    credibility: primary
 
   - id: caixin_finance_zh
     name: 财新 - 金融
@@ -188,7 +188,7 @@ sources:
     language: zh
     enabled: false
     weight: 9
-    last_fetch_at: null
+    credibility: primary
 
   - id: kr36_feed_zh
     name: 36氪
@@ -197,8 +197,61 @@ sources:
     language: zh
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: primary
 
+  - id: jiqizhixin_zh
+    name: 机器之心
+    url: https://www.jiqizhixin.com/rss
+    category: ai
+    language: zh
+    enabled: true
+    weight: 9
+    credibility: primary
+
+  - id: qbitai_zh
+    name: 量子位
+    url: https://www.qbitai.com/feed
+    category: ai
+    language: zh
+    enabled: true
+    weight: 8
+    credibility: primary
+
+  - id: geekpark_zh
+    name: 极客公园
+    url: https://www.geekpark.net/rss
+    category: product_tech
+    language: zh
+    enabled: true
+    weight: 7
+    credibility: primary
+
+  - id: huxiu_zh
+    name: 虎嗅网
+    url: https://www.huxiu.com/rss/0.xml
+    category: economy
+    language: zh
+    enabled: true
+    weight: 8
+    credibility: primary
+
+  - id: sspai_zh
+    name: 少数派
+    url: https://sspai.com/feed
+    category: product_tech
+    language: zh
+    enabled: true
+    weight: 6
+    credibility: primary
+
+  - id: infoq_cn
+    name: InfoQ 中文
+    url: https://feed.infoq.cn/
+    category: product_tech
+    language: zh
+    enabled: true
+    weight: 7
+    credibility: primary
 
 
 weekly_report_sources:
@@ -214,7 +267,7 @@ weekly_report_sources:
     language: en
     enabled: true
     weight: 10
-    last_fetch_at: null
+    credibility: institution
 
   - id: kff_womens_health_policy
     name: KFF - Women's Health Policy
@@ -223,7 +276,7 @@ weekly_report_sources:
     language: en
     enabled: true
     weight: 9
-    last_fetch_at: null
+    credibility: media
 
   - id: cgd_gender
     name: CGD - Gender Equality and Inclusion
@@ -232,7 +285,7 @@ weekly_report_sources:
     language: en
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: institution
 
   - id: the_19th
     name: The 19th
@@ -241,7 +294,7 @@ weekly_report_sources:
     language: en
     enabled: true
     weight: 8
-    last_fetch_at: null
+    credibility: media
 
   - id: women_in_data
     name: Women in Data
@@ -250,4 +303,4 @@ weekly_report_sources:
     language: en
     enabled: true
     weight: 6
-    last_fetch_at: null
+    credibility: media

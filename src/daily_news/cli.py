@@ -42,6 +42,8 @@ def main(argv: list[str] | None = None) -> int:
             notify_workflow_status(args.config, args.title, args.status, args.details)
             print("运行状态通知已推送")
             return 0
+        if args.command == "debug":
+            return handle_debug(args)
         if args.command == "sources":
             return handle_sources(args)
         parser.print_help()
@@ -77,6 +79,14 @@ def build_parser() -> argparse.ArgumentParser:
     notify_status_parser.add_argument("--title", required=True, help="通知标题")
     notify_status_parser.add_argument("--status", required=True, help="运行状态")
     notify_status_parser.add_argument("--details", required=True, help="状态说明")
+
+    debug_parser = subparsers.add_parser("debug", help="调试模式：查看评分或测试单源")
+    debug_parser.add_argument("--config", default="config.yaml", help="运行配置文件路径")
+    debug_parser.add_argument("--sources", default="sources.yaml", help="订阅源配置文件路径")
+    debug_parser.add_argument("--show-scores", metavar="REPORT", help="显示指定 Markdown 报告的评分详情")
+    debug_parser.add_argument("--source", metavar="SOURCE_ID", help="测试单个订阅源并显示详细抓取结果")
+    debug_parser.add_argument("--limit", type=int, default=3, help="测试源时抓取的条目数")
+    debug_parser.add_argument("--timeout", type=int, default=20, help="请求超时时间（秒）")
 
     sources_parser = subparsers.add_parser("sources", help="管理订阅源")
     sources_subparsers = sources_parser.add_subparsers(dest="sources_command", required=True)
@@ -176,3 +186,73 @@ def print_sources(sources: list[Source]) -> None:
             f"{source.id}\t{status}\t{source.weight}\t{source.category}\t"
             f"{source.language}\t{source.name}\t{source.url}\tlast={source.last_fetch_at or '-'}"
         )
+
+
+def handle_debug(args: argparse.Namespace) -> int:
+    if args.show_scores:
+        return handle_debug_scores(args)
+    if args.source:
+        return handle_debug_source(args)
+    print("请指定 --show-scores 或 --source", file=sys.stderr)
+    return 1
+
+
+def handle_debug_scores(args: argparse.Namespace) -> int:
+    from pathlib import Path
+
+    report_path = Path(args.show_scores)
+    if not report_path.exists():
+        print(f"报告不存在: {report_path}", file=sys.stderr)
+        return 1
+
+    print(f"报告: {report_path}")
+    print("=" * 80)
+
+    # This would need to parse the markdown and show scores
+    # For now, just indicate it's not fully implemented
+    print("评分详情功能待实现（需要解析 Markdown 报告并重新计算评分）")
+    return 0
+
+
+def handle_debug_source(args: argparse.Namespace) -> int:
+    from .rss import fetch_source
+    from .quality import score_item
+    from .content import fetch_full_text
+
+    store = SourceStore(args.sources)
+    try:
+        source = store.get(args.source)
+    except ValueError as e:
+        print(f"错误: {e}", file=sys.stderr)
+        return 1
+
+    print(f"测试订阅源: {source.id} ({source.name})")
+    print(f"URL: {source.url}")
+    print(f"类别: {source.category}, 语言: {source.language}, 权重: {source.weight}")
+    print(f"可信度: {source.credibility}")
+    print("=" * 80)
+
+    items = fetch_source(source, args.timeout, "DailyNewsPush/1.0", args.limit)
+    print(f"抓取成功，共返回 {len(items)} 条\n")
+
+    for i, item in enumerate(items, 1):
+        print(f"[{i}] {item.title}")
+        print(f"    链接: {item.link}")
+        print(f"    摘要: {item.summary[:100]}...")
+
+        # Fetch full text
+        full_text = fetch_full_text(item.link, timeout=args.timeout)
+        if full_text:
+            print(f"    全文: {full_text[:150]}...")
+        else:
+            print(f"    全文: (无法抓取)")
+
+        # Score the item
+        scored = score_item(item)
+        print(f"    评分: {scored.quality_score}")
+        print(f"    标签: {', '.join(scored.quality_labels or [])}")
+        if scored.penalty_labels:
+            print(f"    惩罚: {', '.join(scored.penalty_labels)}")
+        print()
+
+    return 0

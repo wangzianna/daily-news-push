@@ -47,13 +47,13 @@ def generate_deep_report(
     model: str,
     temperature: float,
     timezone_name: str,
-) -> str:
+) -> tuple[str, dict[str, int] | None]:
     if not items:
-        return fallback_deep_report([], topic, timezone_name, api_key_env)
+        return fallback_deep_report([], topic, timezone_name, api_key_env), None
 
     api_key = os.environ.get(api_key_env)
     if not api_key:
-        return fallback_deep_report(items, topic, timezone_name, api_key_env)
+        return fallback_deep_report(items, topic, timezone_name, api_key_env), None
 
     client = OpenAI(api_key=api_key, base_url=base_url)
     response = client.chat.completions.create(
@@ -67,9 +67,19 @@ def generate_deep_report(
             {"role": "user", "content": build_deep_report_prompt(items, topic, timezone_name)},
         ],
     )
-    return response.choices[0].message.content or fallback_deep_report(
+
+    usage = None
+    if response.usage:
+        usage = {
+            "prompt_tokens": response.usage.prompt_tokens,
+            "completion_tokens": response.usage.completion_tokens,
+            "total_tokens": response.usage.total_tokens,
+        }
+
+    report = response.choices[0].message.content or fallback_deep_report(
         items, topic, timezone_name, api_key_env
     )
+    return report, usage
 
 
 def build_deep_report_prompt(items: list[NewsItem], topic: str, timezone_name: str) -> str:
@@ -92,6 +102,9 @@ def build_deep_report_prompt(items: list[NewsItem], topic: str, timezone_name: s
 8. 每条材料同时给出"摘要"（RSS 原文）和"全文"（正文前 1200 字）。
    撰写时优先以"全文"为依据，仅在"全文"为空时使用"摘要"，
    并对仅有摘要的材料明确注明"该条仅有摘要、未获取到全文"。
+9. 材料可能混合中英文。生成报告时把英文内容直接翻译成中文表述，
+   公司名/产品名/术语保留英文原文（如 OpenAI、GPT-5、HBM、benchmark、agent）。
+   不要音译，也不要加"据外媒报道"之类的铺垫。
 
 材料：
 {items_as_context(items, timezone_name)}

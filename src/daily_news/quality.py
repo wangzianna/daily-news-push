@@ -2,50 +2,24 @@ from __future__ import annotations
 
 import re
 from collections import defaultdict
+from datetime import datetime
 from urllib.parse import urlsplit
 
 from .models import NewsItem
 
 
-PRIMARY_SOURCE_DOMAINS = {
-    "openai.com",
-    "deepmind.google",
-    "anthropic.com",
-    "microsoft.com",
-    "googleblog.com",
-    "apple.com",
-    "meta.com",
-    "about.fb.com",
-    "nvidia.com",
-    "github.blog",
-    "36kr.com",
-    "caixin.com",
+CREDIBILITY_SCORES = {
+    "primary": 35,
+    "research": 35,
+    "institution": 30,
+    "media": 0,
 }
 
-RESEARCH_DOMAINS = {
-    "arxiv.org",
-    "nature.com",
-    "science.org",
-    "nejm.org",
-    "thelancet.com",
-    "cell.com",
-    "acm.org",
-    "ieee.org",
-    "paperswithcode.com",
-}
-
-INSTITUTION_DOMAINS = {
-    "who.int",
-    "cdc.gov",
-    "nih.gov",
-    "fda.gov",
-    "ema.europa.eu",
-    "oecd.org",
-    "worldbank.org",
-    "imf.org",
-    "gov.cn",
-    "miit.gov.cn",
-    "mofcom.gov.cn",
+CREDIBILITY_LABELS = {
+    "primary": "一手来源",
+    "research": "研究来源",
+    "institution": "机构来源",
+    "media": None,
 }
 
 DEPTH_KEYWORDS = (
@@ -177,16 +151,12 @@ def score_item(item: NewsItem) -> NewsItem:
     penalties: list[str] = []
     score = item.weight
 
-    # 正面信号：来源可信度
-    if domain in PRIMARY_SOURCE_DOMAINS:
-        score += 35
-        labels.append("一手来源")
-    if domain in INSTITUTION_DOMAINS:
-        score += 30
-        labels.append("机构来源")
-    if domain in RESEARCH_DOMAINS:
-        score += 35
-        labels.append("研究来源")
+    # 正面信号：来源可信度（基于 YAML 声明）
+    credibility_score = CREDIBILITY_SCORES.get(item.credibility, 0)
+    score += credibility_score
+    credibility_label = CREDIBILITY_LABELS.get(item.credibility)
+    if credibility_label:
+        labels.append(credibility_label)
 
     # 正面信号：内容深度
     if contains_any(text, DEPTH_KEYWORDS):
@@ -218,6 +188,19 @@ def score_item(item: NewsItem) -> NewsItem:
     item.penalty_labels = penalties
     item.evidence_type = classify_health_evidence(item, domain, text)
     item.ai_type = classify_ai_type(item, domain, text)
+
+    if item.published_at:
+        now = datetime.now(item.published_at.tzinfo) if item.published_at.tzinfo else datetime.now()
+        hours_old = (now - item.published_at).total_seconds() / 3600
+        if hours_old <= 24:
+            item.quality_score += 8
+        elif hours_old <= 48:
+            item.quality_score += 3
+        elif hours_old > 72:
+            item.quality_score -= 5
+        if hours_old > 168:
+            item.quality_score -= 20
+
     return item
 
 
@@ -233,9 +216,9 @@ def classify_health_evidence(item: NewsItem, domain: str, text: str) -> str | No
     category = item.category.lower()
     if category not in HEALTH_CATEGORIES and not contains_any(text, HEALTH_CATEGORIES):
         return None
-    if domain in INSTITUTION_DOMAINS:
+    if item.credibility == "institution":
         return "医学机构"
-    if domain in RESEARCH_DOMAINS or contains_any(text, ("论文", "临床试验", "study", "trial", "journal")):
+    if item.credibility == "research" or contains_any(text, ("论文", "临床试验", "study", "trial", "journal")):
         return "研究论文"
     if contains_any(text, ("政策", "指南", "监管", "报告", "policy", "guideline")):
         return "政策报告"
@@ -248,7 +231,7 @@ def classify_ai_type(item: NewsItem, domain: str, text: str) -> str | None:
     category = item.category.lower()
     if category not in AI_CATEGORIES and not contains_any(text, AI_CATEGORIES):
         return None
-    if domain in PRIMARY_SOURCE_DOMAINS or contains_any(text, ("发布", "上线", "release", "announces", "introduces")):
+    if item.credibility == "primary" or contains_any(text, ("发布", "上线", "release", "announces", "introduces")):
         return "官方发布"
     if contains_any(text, ("模型", "benchmark", "推理", "多模态", "上下文", "能力", "model")):
         return "模型能力更新"

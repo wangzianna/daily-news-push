@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import os
 from datetime import datetime
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from .cluster import dedupe_by_cluster
 from .config import load_config
 from .content import enrich_items_with_full_text
 from .dedupe import dedupe_items, sort_items
@@ -15,177 +17,146 @@ from .html_report import (
     save_book_html,
     weekly_html_filename,
 )
+from .pipeline import Pipeline
 from .quality import apply_quality_rules
 from .report import load_published, render_markdown, save_report
 from .rss import fetch_all_sources
 from .sources import SourceStore
-from .summarizer import generate_daily_summary, translate_items
+from .summarizer import generate_daily_summary
 from .weekly import generate_deep_report, save_weekly_report, select_topic_items
 
 
 def run_daily(config_path: str, sources_path: str, push: bool = True) -> str:
     config = load_config(config_path)
-    timezone_name = config["app"]["timezone"]
-    store = SourceStore(sources_path)
-    sources = store.list(enabled_only=True)
+    pipeline = Pipeline(config, sources_path, report_type="daily", push=push)
 
-    items, errors = fetch_all_sources(
-        sources=sources,
-        timeout=int(config["app"]["fetch_timeout_seconds"]),
-        user_agent=str(config["app"]["user_agent"]),
-        limit_per_source=int(config["app"]["max_items_per_source"]),
-    )
-    now = datetime.now(ZoneInfo(timezone_name)).isoformat()
-    fetched_source_ids = {item.source_id for item in items}
-    for source_id in fetched_source_ids:
-        store.set_last_fetch_at(source_id, now)
+    # Step 1: Fetch sources
+    pipeline.fetch_sources(source_sections=["sources"])
 
-    sorted_items = sort_items(dedupe_items(items))
-    sorted_items = exclude_published(sorted_items, config, timezone_name)
-    selected_items = apply_quality_rules(
-        sorted_items,
+    # Step 2: Dedupe and filter
+    pipeline.dedupe_and_filter(exclude_published=True)
+
+    # Step 3: Quality and clustering
+    pipeline.apply_quality_and_clustering(
         max_per_direction=int(config["app"].get("max_items_per_direction_group", 4)),
         max_total=int(config["app"].get("max_items_total", 16)),
+        cluster_threshold=int(config["app"].get("cluster_threshold", 80)),
     )
-    translate_items(
-        selected_items,
+
+    # Step 4: Enrich with full text
+    pipeline.enrich_full_text(max_length=int(config["app"].get("full_text_max_length", 1200)))
+
+    # Step 5: Generate summary
+    pipeline.generate_summary(
+        generate_daily_summary,
         api_key_env=str(config["llm"]["api_key_env"]),
         base_url=config["llm"].get("base_url"),
         model=str(config["llm"]["model"]),
         temperature=float(config["llm"]["temperature"]),
     )
-    enrich_items_with_full_text(
-        selected_items,
-        timeout=int(config["app"]["fetch_timeout_seconds"]),
-        user_agent=str(config["app"]["user_agent"]),
-        max_length=int(config["app"].get("full_text_max_length", 1200)),
-    )
-    summary = generate_daily_summary(
-        selected_items,
-        api_key_env=str(config["llm"]["api_key_env"]),
-        base_url=config["llm"].get("base_url"),
-        model=str(config["llm"]["model"]),
-        temperature=float(config["llm"]["temperature"]),
-        timezone_name=timezone_name,
-    )
+
+    # Step 6: Save markdown report
+    timezone_name = config["app"]["timezone"]
     markdown = render_markdown(
         title=str(config["report"]["title"]),
-        summary=summary,
-        items=selected_items,
+        summary=pipeline.summary,
+        items=pipeline.selected_items,
         timezone_name=timezone_name,
-        errors=errors,
+        errors=pipeline.errors,
     )
-    report_path = save_report(markdown, config["report"]["output_dir"], timezone_name)
-    html_path = save_book_html(
+    report_path = pipeline.save_report(markdown, config["report"]["output_dir"])
+
+    # Step 7: Save HTML report
+    html_path = pipeline.save_html(
         markdown,
         title=str(config["report"]["title"]),
         topic="每日精选",
-        source_items=selected_items,
         output_dir=config["report"].get("html_output_dir", "docs"),
-        timezone_name=timezone_name,
         filename_prefix=daily_html_filename(timezone_name),
         eyebrow="DAILY REPORT",
     )
-    prune_html_reports(
-        config["report"].get("html_output_dir", "docs"),
-        "daily",
-        int(config["report"].get("keep_html", 14)),
-    )
-    render_index(config["report"].get("html_output_dir", "docs"))
     report_url = build_report_url(str(config["report"].get("site_base_url", "")), html_path)
 
-    if push and bool(config["feishu"].get("enabled", True)):
-        push_to_feishu(
-            title=str(config["report"]["title"]),
-            summary=summary,
-            items=selected_items,
-            timezone_name=timezone_name,
-            report_url=report_url,
-            errors=errors,
-            timeout=int(config["app"]["fetch_timeout_seconds"]),
-        )
+    # Step 8: Push to Feishu
+    pipeline.push_to_feishu(
+        report_url=report_url,
+        push_func=push_to_feishu,
+        summary=pipeline.summary,
+        items=pipeline.selected_items,
+    )
 
     return str(report_path)
 
 
 def run_weekly(config_path: str, sources_path: str, push: bool = True) -> str:
     config = load_config(config_path)
-    timezone_name = config["app"]["timezone"]
     weekly_config = config["weekly_report"]
-    store = SourceStore(sources_path)
+    pipeline = Pipeline(config, sources_path, report_type="weekly", push=push)
+
+    # Step 1: Fetch sources
     source_sections = list(weekly_config.get("source_sections", ["weekly_report_sources", "sources"]))
-    sources = store.list_many(source_sections, enabled_only=True)
+    pipeline.fetch_sources(source_sections=source_sections)
 
-    items, errors = fetch_all_sources(
-        sources=sources,
-        timeout=int(config["app"]["fetch_timeout_seconds"]),
-        user_agent=str(config["app"]["user_agent"]),
-        limit_per_source=int(weekly_config.get("max_items_per_source", config["app"]["max_items_per_source"])),
-    )
-    now = datetime.now(ZoneInfo(timezone_name)).isoformat()
-    fetched_source_ids = {item.source_id for item in items}
-    for source_id in fetched_source_ids:
-        store.set_last_fetch_at(source_id, now, sections=source_sections)
+    # Step 2: Dedupe and quality filter (no exclude_published for weekly)
+    pipeline.dedupe_and_filter(exclude_published=False)
 
-    scored_items = apply_quality_rules(
-        sort_items(dedupe_items(items)),
+    # Step 3: Apply quality rules and topic selection
+    pipeline.apply_quality_and_clustering(
         max_per_direction=int(weekly_config.get("max_items_per_direction_group", 40)),
         max_total=int(weekly_config.get("candidate_items", 40)),
+        cluster_threshold=int(config["app"].get("cluster_threshold", 80)),
     )
-    selected_items = select_topic_items(
-        scored_items,
+    pipeline.selected_items = select_topic_items(
+        pipeline.selected_items,
         keywords=list(weekly_config.get("keywords", [])),
         max_items=int(weekly_config.get("max_source_items", 24)),
     )
-    enrich_items_with_full_text(
-        selected_items,
-        timeout=int(config["app"]["fetch_timeout_seconds"]),
-        user_agent=str(config["app"]["user_agent"]),
-        max_length=int(config["app"].get("full_text_max_length", 1200)),
-    )
-    report = generate_deep_report(
-        selected_items,
+
+    # Step 4: Enrich with full text
+    pipeline.enrich_full_text(max_length=int(config["app"].get("full_text_max_length", 1200)))
+
+    # Step 5: Generate deep report
+    pipeline.generate_summary(
+        generate_deep_report,
         topic=str(weekly_config["topic"]),
         api_key_env=str(config["llm"]["api_key_env"]),
         base_url=config["llm"].get("base_url"),
         model=str(config["llm"]["model"]),
         temperature=float(config["llm"]["temperature"]),
-        timezone_name=timezone_name,
     )
+
+    # Step 6: Save markdown report
+    timezone_name = config["app"]["timezone"]
     report_path = save_weekly_report(
-        report,
+        pipeline.summary,
         weekly_config.get("output_dir", "weekly_reports"),
         timezone_name,
     )
-    html_path = save_book_html(
-        report,
+
+    # Step 7: Save HTML report
+    html_output_dir = weekly_config.get("html_output_dir", weekly_config.get("output_dir", "weekly_reports"))
+    html_path = pipeline.save_html(
+        pipeline.summary,
         title=str(weekly_config["title"]),
         topic=str(weekly_config["topic"]),
-        source_items=selected_items,
-        output_dir=weekly_config.get("html_output_dir", weekly_config.get("output_dir", "weekly_reports")),
-        timezone_name=timezone_name,
+        output_dir=html_output_dir,
         filename_prefix=weekly_html_filename(timezone_name),
         eyebrow="WEEKLY DEEP REPORT",
     )
-    prune_html_reports(
-        weekly_config.get("html_output_dir", "docs"),
-        "weekly",
-        int(weekly_config.get("keep_html", 8)),
-    )
-    render_index(weekly_config.get("html_output_dir", "docs"))
     report_url = build_report_url(str(weekly_config.get("site_base_url", "")), html_path)
 
+    # Step 8: Push to Feishu
     if push and bool(config["feishu"].get("enabled", True)):
         from .feishu import push_deep_report_to_feishu
 
         push_deep_report_to_feishu(
             title=str(weekly_config["title"]),
             topic=str(weekly_config["topic"]),
-            report_markdown=report,
-            source_items=selected_items,
+            report_markdown=pipeline.summary,
+            source_items=pipeline.selected_items,
             timezone_name=timezone_name,
             report_url=report_url,
-            errors=errors,
+            errors=pipeline.errors,
             timeout=int(config["app"]["fetch_timeout_seconds"]),
         )
 

@@ -14,6 +14,7 @@ class Source:
     enabled: bool = True
     weight: int = 0
     last_fetch_at: str | None = None
+    credibility: str = "media"
 
 
 @dataclass
@@ -33,3 +34,4 @@ class NewsItem:
     ai_type: str | None = None
     language: str = "en"
     full_text: str = ""
+    credibility: str = "media"
