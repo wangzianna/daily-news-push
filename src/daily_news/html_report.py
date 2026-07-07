@@ -106,6 +106,30 @@ def render_book_html(
       font-weight: 700;
     }}
 
+    h3 {{
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }}
+
+    blockquote {{
+      margin: 0 0 1.2em;
+      padding: 10px 16px;
+      border-left: 3px solid var(--rule);
+      color: var(--muted);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.7;
+      background: var(--soft);
+    }}
+
+    blockquote + blockquote {{
+      margin-top: -1em;
+      border-left-color: var(--accent);
+    }}
+
     p {{
       margin: 0 0 1em;
       text-align: justify;
@@ -319,6 +343,7 @@ def markdown_to_book_html(markdown: str) -> str:
     list_lines: list[str] = []
     list_type: str | None = None
     paragraph: list[str] = []
+    blockquote: list[str] = []
 
     def flush_paragraph() -> None:
         nonlocal paragraph
@@ -334,23 +359,44 @@ def markdown_to_book_html(markdown: str) -> str:
         list_lines = []
         list_type = None
 
+    def flush_blockquote() -> None:
+        nonlocal blockquote
+        if blockquote:
+            inner = "<br>".join(inline_markup(line) for line in blockquote)
+            blocks.append(f"      <blockquote>{inner}</blockquote>")
+            blockquote = []
+
     for raw_line in markdown.splitlines():
         line = raw_line.strip()
         if not line:
             flush_paragraph()
             flush_list()
+            flush_blockquote()
             continue
         if line.startswith("# "):
             continue
         if line.startswith("## "):
             flush_paragraph()
             flush_list()
+            flush_blockquote()
             blocks.append(f"      <h2>{escape(line[3:].strip())}</h2>")
+            continue
+        if line.startswith("### "):
+            flush_paragraph()
+            flush_list()
+            flush_blockquote()
+            blocks.append(f"      <h3>{escape(line[4:].strip())}</h3>")
+            continue
+        if line.startswith("> "):
+            flush_paragraph()
+            flush_list()
+            blockquote.append(line[2:].strip())
             continue
         ordered = re.match(r"^\d+[.、]\s*(.+)$", line)
         unordered = re.match(r"^[-*]\s+(.+)$", line)
         if ordered or unordered:
             flush_paragraph()
+            flush_blockquote()
             next_type = "ol" if ordered else "ul"
             if list_type and list_type != next_type:
                 flush_list()
@@ -358,10 +404,12 @@ def markdown_to_book_html(markdown: str) -> str:
             list_lines.append((ordered or unordered).group(1))
             continue
         flush_list()
+        flush_blockquote()
         paragraph.append(line)
 
     flush_paragraph()
     flush_list()
+    flush_blockquote()
     return "\n".join(blocks)
 
 
