@@ -56,11 +56,7 @@ class Pipeline:
         for source_id in self.errors:
             failure_count = self.store.increment_consecutive_failures(source_id)
             if failure_count >= 3:
-                try:
-                    self.store.set_enabled(source_id, False)
-                    self.errors[source_id] = f"{self.errors[source_id]} (自动禁用：连续失败 {failure_count} 次)"
-                except ValueError:
-                    pass
+                self.errors[source_id] = f"{self.errors[source_id]} (连续失败 {failure_count} 次，建议检查或手动停用)"
 
         # Check error thresholds and send alerts
         self._check_and_alert_errors(sources)
@@ -175,7 +171,8 @@ class Pipeline:
             eyebrow=eyebrow,
         )
         subfolder = "daily" if "daily" in filename_prefix else "weekly"
-        prune_html_reports(output_dir, subfolder, int(self.config["report"].get("keep_html", 14)))
+        keep_config = self.config["weekly_report"] if self.report_type == "weekly" else self.config["report"]
+        prune_html_reports(output_dir, subfolder, int(keep_config.get("keep_html", 14)))
         render_index(output_dir)
         return html_path
 
