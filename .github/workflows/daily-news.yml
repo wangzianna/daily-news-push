@@ -31,24 +31,24 @@ jobs:
           fi
 
       - name: Setup Python
-        if: steps.daily_exists.outputs.exists != 'true'
+        if: steps.daily_exists.outputs.exists != 'true' || github.event_name == 'workflow_dispatch'
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
-        if: steps.daily_exists.outputs.exists != 'true'
+        if: steps.daily_exists.outputs.exists != 'true' || github.event_name == 'workflow_dispatch'
         run: pip install -r requirements.txt
 
       - name: Generate daily report
-        if: steps.daily_exists.outputs.exists != 'true'
+        if: steps.daily_exists.outputs.exists != 'true' || github.event_name == 'workflow_dispatch'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           PYTHONPATH: src
         run: python -m daily_news run --config config.yaml --sources sources.yaml --no-push
 
       - name: Upload report artifact
-        if: always() && steps.daily_exists.outputs.exists != 'true'
+        if: always() && (steps.daily_exists.outputs.exists != 'true' || github.event_name == 'workflow_dispatch')
         uses: actions/upload-artifact@v4
         with:
           name: daily-news-report
@@ -58,7 +58,7 @@ jobs:
             docs/daily/*.html
 
       - name: Commit HTML report
-        if: success() && steps.daily_exists.outputs.exists != 'true'
+        if: success() && (steps.daily_exists.outputs.exists != 'true' || github.event_name == 'workflow_dispatch')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -67,7 +67,7 @@ jobs:
           git push
 
       - name: Notify Feishu
-        if: success() && steps.daily_exists.outputs.exists != 'true'
+        if: success() && (steps.daily_exists.outputs.exists != 'true' || github.event_name == 'workflow_dispatch')
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
           PYTHONPATH: src
@@ -76,7 +76,7 @@ jobs:
           python -m daily_news notify-daily --config config.yaml
 
       - name: Notify failure
-        if: failure() && steps.daily_exists.outputs.exists != 'true'
+        if: failure() && (steps.daily_exists.outputs.exists != 'true' || github.event_name == 'workflow_dispatch')
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
           PYTHONPATH: src
