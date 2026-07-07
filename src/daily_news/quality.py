@@ -64,6 +64,41 @@ DEPTH_KEYWORDS = (
     "interview",
 )
 
+# 正面信号：数据驱动、原创调查、独家报道
+DATA_KEYWORDS = (
+    "数据",
+    "统计",
+    "报告",
+    "指数",
+    "调研",
+    "data",
+    "statistics",
+    "index",
+    "report",
+    "survey",
+)
+
+EXCLUSIVE_KEYWORDS = (
+    "独家",
+    "首发",
+    "调查",
+    "深度报道",
+    "exclusive",
+    "investigation",
+    "scoop",
+)
+
+# 企业公关稿：信息密度低，但不同于营销推广
+PR_KEYWORDS = (
+    "宣布",
+    "发布",
+    "推出",
+    "announce",
+    "launch",
+    "introduce",
+    " unveil",
+)
+
 MARKETING_KEYWORDS = (
     "限时",
     "福利",
@@ -77,21 +112,6 @@ MARKETING_KEYWORDS = (
     "赞助",
     "sponsored",
     "webinar",
-)
-
-FINANCING_KEYWORDS = (
-    "融资",
-    "完成",
-    "获投",
-    "投资",
-    "估值",
-    "a轮",
-    "b轮",
-    "c轮",
-    "series a",
-    "series b",
-    "funding",
-    "raises",
 )
 
 CLICKBAIT_PATTERNS = (
@@ -108,6 +128,25 @@ CLICKBAIT_PATTERNS = (
 )
 
 REPOST_KEYWORDS = ("转载", "转自", "编译", "来源：", "via ", "repost")
+
+# AI 内容分类：投融资/商业化关键词（仅用于分类，不降权）
+AI_FINANCING_KEYWORDS = (
+    "融资",
+    "获投",
+    "投资",
+    "估值",
+    "a轮",
+    "b轮",
+    "c轮",
+    "series a",
+    "series b",
+    "funding",
+    "raises",
+    "商业化",
+    "收入",
+    "营收",
+    "订阅",
+)
 
 HEALTH_CATEGORIES = {"健康", "医疗", "医学", "生命科学", "health", "medical", "medicine"}
 AI_CATEGORIES = {"AI", "人工智能", "科技", "技术", "ai", "technology", "tech"}
@@ -138,6 +177,7 @@ def score_item(item: NewsItem) -> NewsItem:
     penalties: list[str] = []
     score = item.weight
 
+    # 正面信号：来源可信度
     if domain in PRIMARY_SOURCE_DOMAINS:
         score += 35
         labels.append("一手来源")
@@ -147,22 +187,31 @@ def score_item(item: NewsItem) -> NewsItem:
     if domain in RESEARCH_DOMAINS:
         score += 35
         labels.append("研究来源")
+
+    # 正面信号：内容深度
     if contains_any(text, DEPTH_KEYWORDS):
         score += 20
         labels.append("深度内容")
+    if contains_any(text, DATA_KEYWORDS):
+        score += 10
+        labels.append("数据驱动")
+    if contains_any(text, EXCLUSIVE_KEYWORDS):
+        score += 15
+        labels.append("原创/独家")
 
+    # 负面信号：内容质量
     if contains_any(text, MARKETING_KEYWORDS):
         score -= 35
         penalties.append("营销软文")
-    if contains_any(text, FINANCING_KEYWORDS):
-        score -= 5
-        penalties.append("融资/商业通稿")
     if any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in CLICKBAIT_PATTERNS):
         score -= 25
         penalties.append("标题党")
     if contains_any(text, REPOST_KEYWORDS):
         score -= 20
         penalties.append("转载/编译")
+    if contains_any(text, PR_KEYWORDS):
+        score -= 5
+        penalties.append("公关稿")
 
     item.quality_score = score
     item.quality_labels = labels or ["常规资讯"]
@@ -205,7 +254,7 @@ def classify_ai_type(item: NewsItem, domain: str, text: str) -> str | None:
         return "模型能力更新"
     if contains_any(text, ("产品", "应用", "agent", "copilot", "workflow", "工具")):
         return "产品应用"
-    if contains_any(text, FINANCING_KEYWORDS + ("商业化", "收入", "营收", "订阅")):
+    if contains_any(text, AI_FINANCING_KEYWORDS):
         return "投融资/商业化"
     if contains_any(text, ("风险", "安全", "监管", "版权", "隐私", "合规", "regulation", "risk", "safety")):
         return "风险与监管"
