@@ -14,7 +14,7 @@
 - 健康类内容标注证据类型，AI 类内容标注内容类型
 - DeepSeek API 生成日报总结
 - 飞书 Webhook 结构化卡片推送
-- GitHub Actions 每天北京时间 09:07 自动运行，09:27 兜底重试
+- GitHub Actions 每天北京时间 08:07 自动运行，08:27 兜底重试
 - GitHub Actions 每周日北京时间 20:07 自动生成主题深度报告，20:27 兜底重试
 
 日报结构：
@@ -280,12 +280,12 @@ GitHub Actions 会先生成 HTML、提交 `docs/`、等待 Pages 刷新，再推
 
 ## GitHub Actions
 
-日报工作流位于 `.github/workflows/daily-news.yml`，默认每天北京时间 09:07 运行，09:27 兜底重试。GitHub Actions 的 cron 使用 UTC，所以配置为：
+日报工作流位于 `.github/workflows/daily-news.yml`，默认每天北京时间 08:07 运行，08:27 兜底重试。GitHub Actions 的 cron 使用 UTC，所以配置为：
 
 ```yaml
 schedule:
-  - cron: "7 1 * * *"
-  - cron: "27 1 * * *"
+  - cron: "7 0 * * *"
+  - cron: "27 0 * * *"
 ```
 
 周末深度报告工作流位于 `.github/workflows/weekly-deep-report.yml`，默认每周日北京时间 20:07 运行，20:27 兜底重试：

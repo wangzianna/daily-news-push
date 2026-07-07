@@ -2,10 +2,10 @@ name: Daily News Push
 
 on:
   schedule:
-    # 09:07 and 09:27 Beijing time, 01:07 and 01:27 UTC.
+    # 08:07 and 08:27 Beijing time, 00:07 and 00:27 UTC.
     # GitHub may delay or drop jobs at minute 0, so use a backup run.
-    - cron: "7 1 * * *"
-    - cron: "27 1 * * *"
+    - cron: "7 0 * * *"
+    - cron: "27 0 * * *"
   workflow_dispatch:
 
 permissions:
