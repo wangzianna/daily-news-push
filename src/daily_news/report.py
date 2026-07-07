@@ -25,6 +25,7 @@ def items_as_context(items: list[NewsItem], timezone_name: str) -> str:
     lines = []
     for index, item in enumerate(items, start=1):
         published = format_datetime(item.published_at, timezone_name)
+        body = item.full_text or item.summary or ""
         lines.append(
             "\n".join(
                 [
@@ -38,6 +39,7 @@ def items_as_context(items: list[NewsItem], timezone_name: str) -> str:
                     f"   发布时间：{published}",
                     f"   链接：{item.link}",
                     f"   摘要：{item.summary}",
+                    f"   全文：{body}",
                 ]
             )
         )

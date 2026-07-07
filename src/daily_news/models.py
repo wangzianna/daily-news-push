@@ -32,3 +32,4 @@ class NewsItem:
     evidence_type: str | None = None
     ai_type: str | None = None
     language: str = "en"
+    full_text: str = ""

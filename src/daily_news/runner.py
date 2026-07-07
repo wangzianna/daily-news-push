@@ -5,6 +5,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from .config import load_config
+from .content import enrich_items_with_full_text
 from .dedupe import dedupe_items, sort_items
 from .feishu import push_to_feishu
 from .html_report import (
@@ -52,6 +53,12 @@ def run_daily(config_path: str, sources_path: str, push: bool = True) -> str:
         base_url=config["llm"].get("base_url"),
         model=str(config["llm"]["model"]),
         temperature=float(config["llm"]["temperature"]),
+    )
+    enrich_items_with_full_text(
+        selected_items,
+        timeout=int(config["app"]["fetch_timeout_seconds"]),
+        user_agent=str(config["app"]["user_agent"]),
+        max_length=int(config["app"].get("full_text_max_length", 1200)),
     )
     summary = generate_daily_summary(
         selected_items,
@@ -129,6 +136,12 @@ def run_weekly(config_path: str, sources_path: str, push: bool = True) -> str:
         scored_items,
         keywords=list(weekly_config.get("keywords", [])),
         max_items=int(weekly_config.get("max_source_items", 24)),
+    )
+    enrich_items_with_full_text(
+        selected_items,
+        timeout=int(config["app"]["fetch_timeout_seconds"]),
+        user_agent=str(config["app"]["user_agent"]),
+        max_length=int(config["app"].get("full_text_max_length", 1200)),
     )
     report = generate_deep_report(
         selected_items,
