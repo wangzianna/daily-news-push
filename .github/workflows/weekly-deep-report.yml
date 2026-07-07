@@ -2,8 +2,10 @@ name: Weekly Deep Report
 
 on:
   schedule:
-    # Sunday 20:00 Beijing time, 12:00 UTC.
-    - cron: "0 12 * * 0"
+    # Sunday 20:07 and 20:27 Beijing time, 12:07 and 12:27 UTC.
+    # GitHub may delay or drop jobs at minute 0, so use a backup run.
+    - cron: "7 12 * * 0"
+    - cron: "27 12 * * 0"
   workflow_dispatch:
 
 permissions:
@@ -17,22 +19,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Check whether this week's report already exists
+        id: weekly_exists
+        run: |
+          report_file="docs/weekly/$(TZ=Asia/Shanghai date +%Y-W%U).html"
+          if [ -f "$report_file" ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "This week's report already exists: $report_file"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Python
+        if: steps.weekly_exists.outputs.exists != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
+        if: steps.weekly_exists.outputs.exists != 'true'
         run: pip install -r requirements.txt
 
       - name: Generate weekly deep report
+        if: steps.weekly_exists.outputs.exists != 'true'
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           PYTHONPATH: src
         run: python -m daily_news weekly --config config.yaml --sources sources.yaml --no-push
 
       - name: Upload report artifact
-        if: always()
+        if: always() && steps.weekly_exists.outputs.exists != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: weekly-deep-report
@@ -42,7 +58,7 @@ jobs:
             docs/weekly/*.html
 
       - name: Commit HTML report
-        if: success()
+        if: success() && steps.weekly_exists.outputs.exists != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -51,7 +67,7 @@ jobs:
           git push
 
       - name: Notify Feishu
-        if: success()
+        if: success() && steps.weekly_exists.outputs.exists != 'true'
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
           PYTHONPATH: src
