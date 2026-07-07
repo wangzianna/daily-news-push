@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -197,6 +198,7 @@ def notify_latest_daily(config_path: str) -> str:
         subtitle="今日简报",
         markdown=markdown_path.read_text(encoding="utf-8"),
         report_url=report_url,
+        action_url=github_run_url(),
         timeout=int(config["app"]["fetch_timeout_seconds"]),
     )
     return report_url
@@ -223,9 +225,32 @@ def notify_latest_weekly(config_path: str) -> str:
         subtitle=str(weekly_config["topic"]),
         markdown=markdown_path.read_text(encoding="utf-8"),
         report_url=report_url,
+        action_url=github_run_url(),
         timeout=int(config["app"]["fetch_timeout_seconds"]),
     )
     return report_url
+
+
+def notify_workflow_status(config_path: str, title: str, status: str, details: str) -> None:
+    config = load_config(config_path)
+    from .feishu import push_workflow_status_notice
+
+    push_workflow_status_notice(
+        title=title,
+        status=status,
+        details=details,
+        run_url=github_run_url(),
+        timeout=int(config["app"]["fetch_timeout_seconds"]),
+    )
+
+
+def github_run_url() -> str | None:
+    server_url = os.environ.get("GITHUB_SERVER_URL")
+    repository = os.environ.get("GITHUB_REPOSITORY")
+    run_id = os.environ.get("GITHUB_RUN_ID")
+    if not server_url or not repository or not run_id:
+        return None
+    return f"{server_url.rstrip('/')}/{repository}/actions/runs/{run_id}"
 
 
 def latest_file(directory: str, pattern: str):

@@ -276,7 +276,7 @@ python -m daily_news weekly --no-push
 飞书会收到摘要卡片，并提供“阅读全文”按钮打开 HTML 阅读版。
 
 HTML 阅读版使用偏传统书籍的排版：宋体/衬线字体、适中的正文宽度、克制字号、舒适行距和留白，兼顾阅读感与信息密度。
-GitHub Actions 会先生成 HTML、提交 `docs/`、等待 Pages 刷新，再推送飞书通知。`docs/index.html` 会自动更新。默认日报保留最近 14 份，周报保留最近 8 份；如果“阅读全文”暂时打不开，等待 Pages 刷新后再打开即可。
+GitHub Actions 会先生成 HTML、提交 `docs/`、等待 Pages 刷新，再推送飞书通知。`docs/index.html` 会自动更新。默认日报保留最近 14 份，周报保留最近 8 份；如果“阅读全文”暂时打不开，等待 Pages 刷新后再打开即可。成功通知会带“查看运行日志”按钮；如果任务生成、提交或推送失败，也会自动向飞书发送异常提醒。
 
 ## GitHub Actions
 
@@ -297,6 +297,13 @@ schedule:
 ```
 
 两个兜底任务都会先检查当天/本周 HTML 是否已存在，已存在就跳过，因此不会重复推送。
+
+### 如何确认是否成功
+
+1. 看飞书通知：成功通知里会有“阅读全文”和“查看运行日志”按钮。
+2. 看异常提醒：如果 GitHub Actions 某一步失败，会收到“每日资讯推送异常”或“周末深度报告异常”。
+3. 看 GitHub：进入仓库 `Actions`，打开 `Daily News Push` 或 `Weekly Deep Report`，绿色对勾代表运行成功，红色叉号代表失败。
+4. 看页面：日报发布后会出现在 `https://wangzianna.github.io/daily-news-push/daily/YYYY-MM-DD.html`，首页 `https://wangzianna.github.io/daily-news-push/` 也会自动更新。
 
 日报和周报工作流都会把 `docs/` 提交回仓库。首次使用 GitHub Pages 时，在 GitHub 仓库中进入：
 

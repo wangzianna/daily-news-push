@@ -36,6 +36,12 @@ def main(argv: list[str] | None = None) -> int:
             report_url = notify_latest_weekly(args.config)
             print(f"周报通知已推送: {report_url}")
             return 0
+        if args.command == "notify-status":
+            from .runner import notify_workflow_status
+
+            notify_workflow_status(args.config, args.title, args.status, args.details)
+            print("运行状态通知已推送")
+            return 0
         if args.command == "sources":
             return handle_sources(args)
         parser.print_help()
@@ -65,6 +71,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     notify_weekly_parser = subparsers.add_parser("notify-weekly", help="推送最近一次周报 HTML 链接")
     notify_weekly_parser.add_argument("--config", default="config.yaml", help="运行配置文件路径")
+
+    notify_status_parser = subparsers.add_parser("notify-status", help="推送 GitHub Actions 运行状态")
+    notify_status_parser.add_argument("--config", default="config.yaml", help="运行配置文件路径")
+    notify_status_parser.add_argument("--title", required=True, help="通知标题")
+    notify_status_parser.add_argument("--status", required=True, help="运行状态")
+    notify_status_parser.add_argument("--details", required=True, help="状态说明")
 
     sources_parser = subparsers.add_parser("sources", help="管理订阅源")
     sources_subparsers = sources_parser.add_subparsers(dest="sources_command", required=True)

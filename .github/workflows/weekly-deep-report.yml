@@ -74,3 +74,10 @@ jobs:
         run: |
           sleep 60
           python -m daily_news notify-weekly --config config.yaml
+
+      - name: Notify failure
+        if: failure() && steps.weekly_exists.outputs.exists != 'true'
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          PYTHONPATH: src
+        run: python -m daily_news notify-status --config config.yaml --title "周末深度报告异常" --status "失败" --details "周报生成、发布或飞书推送过程中有步骤失败，请打开运行日志查看具体原因。"

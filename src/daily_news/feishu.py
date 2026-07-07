@@ -83,11 +83,33 @@ def push_html_report_notice(
     subtitle: str,
     markdown: str,
     report_url: str,
+    action_url: str | None = None,
+    action_text: str = "查看运行日志",
     timeout: int = 20,
 ) -> None:
     webhook = os.environ.get("FEISHU_WEBHOOK_URL")
     if not webhook:
         raise RuntimeError("缺少 FEISHU_WEBHOOK_URL 环境变量")
+
+    actions = [
+        {
+            "tag": "button",
+            "text": {"tag": "plain_text", "content": "阅读全文"},
+            "url": report_url,
+            "type": "primary",
+            "value": {"url": report_url},
+        }
+    ]
+    if action_url:
+        actions.append(
+            {
+                "tag": "button",
+                "text": {"tag": "plain_text", "content": action_text},
+                "url": action_url,
+                "type": "default",
+                "value": {"url": action_url},
+            }
+        )
 
     payload = {
         "msg_type": "interactive",
@@ -101,17 +123,56 @@ def push_html_report_notice(
                 markdown_div(f"**{escape_markdown(subtitle)}**\n{trim(markdown.strip(), 1800)}"),
                 {
                     "tag": "action",
-                    "actions": [
-                        {
-                            "tag": "button",
-                            "text": {"tag": "plain_text", "content": "阅读全文"},
-                            "url": report_url,
-                            "type": "primary",
-                            "value": {"url": report_url},
-                        }
-                    ],
+                    "actions": actions,
                 },
             ],
+        },
+    }
+    response = requests.post(webhook, json=payload, timeout=timeout)
+    response.raise_for_status()
+    data = response.json()
+    if data.get("code", 0) != 0:
+        raise RuntimeError(f"飞书推送失败: {data}")
+
+
+def push_workflow_status_notice(
+    title: str,
+    status: str,
+    details: str,
+    run_url: str | None = None,
+    timeout: int = 20,
+) -> None:
+    webhook = os.environ.get("FEISHU_WEBHOOK_URL")
+    if not webhook:
+        raise RuntimeError("缺少 FEISHU_WEBHOOK_URL 环境变量")
+
+    template = "red" if status.lower() in {"failure", "failed", "失败"} else "green"
+    elements = [markdown_div(f"**状态：{escape_markdown(status)}**\n{escape_markdown(details)}")]
+    if run_url:
+        elements.append(
+            {
+                "tag": "action",
+                "actions": [
+                    {
+                        "tag": "button",
+                        "text": {"tag": "plain_text", "content": "查看运行日志"},
+                        "url": run_url,
+                        "type": "primary",
+                        "value": {"url": run_url},
+                    }
+                ],
+            }
+        )
+
+    payload = {
+        "msg_type": "interactive",
+        "card": {
+            "config": {"wide_screen_mode": True, "enable_forward": True},
+            "header": {
+                "title": {"tag": "plain_text", "content": title},
+                "template": template,
+            },
+            "elements": elements,
         },
     }
     response = requests.post(webhook, json=payload, timeout=timeout)
