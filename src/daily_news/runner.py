@@ -18,7 +18,7 @@ from .quality import apply_quality_rules
 from .report import load_published, render_markdown, save_report
 from .rss import fetch_all_sources
 from .sources import SourceStore
-from .summarizer import generate_daily_summary
+from .summarizer import generate_daily_summary, translate_items
 from .weekly import generate_deep_report, save_weekly_report, select_topic_items
 
 
@@ -45,6 +45,13 @@ def run_daily(config_path: str, sources_path: str, push: bool = True) -> str:
         sorted_items,
         max_per_direction=int(config["app"].get("max_items_per_direction_group", 4)),
         max_total=int(config["app"].get("max_items_total", 16)),
+    )
+    translate_items(
+        selected_items,
+        api_key_env=str(config["llm"]["api_key_env"]),
+        base_url=config["llm"].get("base_url"),
+        model=str(config["llm"]["model"]),
+        temperature=float(config["llm"]["temperature"]),
     )
     summary = generate_daily_summary(
         selected_items,

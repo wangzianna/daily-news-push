@@ -31,3 +31,4 @@ class NewsItem:
     penalty_labels: list[str] | None = None
     evidence_type: str | None = None
     ai_type: str | None = None
+    language: str = "en"

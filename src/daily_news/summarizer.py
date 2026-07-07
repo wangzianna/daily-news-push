@@ -81,3 +81,95 @@ def fallback_summary(items: list[NewsItem], api_key_env: str = "DEEPSEEK_API_KEY
         f"- 未配置 {api_key_env}，已生成基础版摘要。建议配置大模型 API 以获得趋势判断。",
     ]
     return "\n".join(lines)
+
+
+def translate_items(
+    items: list[NewsItem],
+    api_key_env: str,
+    base_url: str | None,
+    model: str,
+    temperature: float,
+) -> None:
+    api_key = os.environ.get(api_key_env)
+    if not api_key:
+        return
+
+    english_items = [
+        (index, item)
+        for index, item in enumerate(items)
+        if item.language == "en" or _is_english(item.title)
+    ]
+    if not english_items:
+        return
+
+    context_lines = [
+        f"[{index}] TITLE: {item.title}\nSUMMARY: {item.summary or '无'}"
+        for index, item in english_items
+    ]
+    prompt = f"""将以下英文资讯的标题和摘要翻译成中文。
+
+翻译要求：
+1. 标题翻译要准确、自然、简洁，适合日报阅读。
+2. 摘要翻译要保留关键信息和数据，语句通顺。
+3. 公司名、产品名、人名可以保留英文原文（如 OpenAI、GPT-5、Sam Altman）。
+4. 专有名词和术语保持准确（如 HBM、benchmark、agent 等）。
+5. 不要添加原文没有的信息，不要改写原意。
+
+请严格按以下 JSON 格式输出，不要输出任何其他内容：
+[{{"index": 序号, "title_zh": "中文标题", "summary_zh": "中文摘要"}}]
+
+资讯列表：
+{chr(10).join(context_lines)}
+"""
+
+    try:
+        client = OpenAI(api_key=api_key, base_url=base_url)
+        response = client.chat.completions.create(
+            model=model,
+            temperature=temperature,
+            messages=[
+                {
+                    "role": "system",
+                    "content": "你是专业的中英翻译，擅长将英文资讯准确自然地翻译成中文。请严格按 JSON 格式输出。",
+                },
+                {"role": "user", "content": prompt},
+            ],
+        )
+        _apply_translations(items, english_items, response.choices[0].message.content or "")
+    except Exception as exc:
+        print(f"翻译失败，保留英文原文: {exc}")
+
+
+def _apply_translations(
+    items: list[NewsItem],
+    english_items: list[tuple[int, NewsItem]],
+    response_text: str,
+) -> None:
+    import json
+
+    text = response_text.strip()
+    start = text.find("[")
+    end = text.rfind("]") + 1
+    if start < 0 or end <= start:
+        return
+    try:
+        translations = json.loads(text[start:end])
+    except json.JSONDecodeError:
+        return
+
+    translation_map = {entry["index"]: entry for entry in translations if isinstance(entry, dict)}
+    for index, item in english_items:
+        entry = translation_map.get(index)
+        if not entry:
+            continue
+        if entry.get("title_zh"):
+            item.title = entry["title_zh"].strip()
+        if entry.get("summary_zh"):
+            item.summary = entry["summary_zh"].strip()
+
+
+def _is_english(text: str) -> bool:
+    if not text:
+        return False
+    chinese = sum(1 for c in text if "一" <= c <= "鿿")
+    return chinese / len(text) < 0.05

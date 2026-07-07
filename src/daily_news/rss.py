@@ -39,6 +39,7 @@ def fetch_source(source: Source, timeout: int, user_agent: str, limit: int) -> l
                 link=link,
                 summary=extract_summary(entry),
                 weight=source.weight,
+                language=source.language,
             )
         )
     return items

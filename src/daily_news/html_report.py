@@ -116,18 +116,13 @@ def render_book_html(
     }}
 
     blockquote {{
-      margin: 0 0 1.2em;
-      padding: 10px 16px;
-      border-left: 3px solid var(--rule);
-      color: var(--muted);
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
       font-size: clamp(15px, 2.6vw, 18px);
-      line-height: 1.7;
-      background: var(--soft);
-    }}
-
-    blockquote + blockquote {{
-      margin-top: -1em;
-      border-left-color: var(--accent);
+      line-height: 1.75;
+      background: transparent;
     }}
 
     p {{
