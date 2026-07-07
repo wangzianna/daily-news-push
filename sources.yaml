@@ -171,6 +171,36 @@ sources:
     last_fetch_at: null
 
 
+  # ---------- Chinese / Economy & Business ----------
+  - id: caixin_latest_zh
+    name: 财新 - 最新文章
+    url: https://rsshub.app/caixin/latest
+    category: economy
+    language: zh
+    enabled: true
+    weight: 10
+    last_fetch_at: null
+
+  - id: caixin_finance_zh
+    name: 财新 - 金融
+    url: https://rsshub.app/caixin/finance/market
+    category: economy
+    language: zh
+    enabled: true
+    weight: 9
+    last_fetch_at: null
+
+  - id: kr36_feed_zh
+    name: 36氪
+    url: https://www.36kr.com/feed
+    category: product_tech
+    language: zh
+    enabled: true
+    weight: 8
+    last_fetch_at: null
+
+
+
 weekly_report_sources:
   # =========================
   # Weekly Deep Report Sources
