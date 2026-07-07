@@ -15,7 +15,7 @@ from .html_report import (
     weekly_html_filename,
 )
 from .quality import apply_quality_rules
-from .report import render_markdown, save_report
+from .report import load_published, render_markdown, save_report
 from .rss import fetch_all_sources
 from .sources import SourceStore
 from .summarizer import generate_daily_summary
@@ -40,10 +40,11 @@ def run_daily(config_path: str, sources_path: str, push: bool = True) -> str:
         store.set_last_fetch_at(source_id, now)
 
     sorted_items = sort_items(dedupe_items(items))
+    sorted_items = exclude_published(sorted_items, config, timezone_name)
     selected_items = apply_quality_rules(
         sorted_items,
-        max_per_direction=int(config["app"].get("max_items_per_direction_group", 3)),
-        max_total=int(config["app"].get("max_items_total", 12)),
+        max_per_direction=int(config["app"].get("max_items_per_direction_group", 4)),
+        max_total=int(config["app"].get("max_items_total", 16)),
     )
     summary = generate_daily_summary(
         selected_items,
@@ -261,3 +262,24 @@ def latest_file(directory: str, pattern: str):
         return None
     files = sorted(path.glob(pattern), key=lambda item: item.name, reverse=True)
     return files[0] if files else None
+
+
+def exclude_published(
+    items: list[NewsItem], config: dict, timezone_name: str
+) -> list[NewsItem]:
+    from .dedupe import normalize_url
+
+    html_dir = config["report"].get("html_output_dir", "docs")
+    published_links, published_titles = load_published(html_dir, timezone_name)
+    if not published_links and not published_titles:
+        return items
+
+    result: list[NewsItem] = []
+    for item in items:
+        if normalize_url(item.link) in published_links:
+            continue
+        title_key = f"{item.title.strip()}||{item.source.strip()}"
+        if title_key in published_titles:
+            continue
+        result.append(item)
+    return result

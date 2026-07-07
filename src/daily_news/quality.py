@@ -18,6 +18,8 @@ PRIMARY_SOURCE_DOMAINS = {
     "about.fb.com",
     "nvidia.com",
     "github.blog",
+    "36kr.com",
+    "caixin.com",
 }
 
 RESEARCH_DOMAINS = {
@@ -113,8 +115,8 @@ AI_CATEGORIES = {"AI", "人工智能", "科技", "技术", "ai", "technology", "
 
 def apply_quality_rules(
     items: list[NewsItem],
-    max_per_direction: int = 3,
-    max_total: int = 12,
+    max_per_direction: int = 4,
+    max_total: int = 16,
 ) -> list[NewsItem]:
     scored = [score_item(item) for item in items]
     grouped: dict[str, list[NewsItem]] = defaultdict(list)
@@ -153,7 +155,7 @@ def score_item(item: NewsItem) -> NewsItem:
         score -= 35
         penalties.append("营销软文")
     if contains_any(text, FINANCING_KEYWORDS):
-        score -= 15
+        score -= 5
         penalties.append("融资/商业通稿")
     if any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in CLICKBAIT_PATTERNS):
         score -= 25

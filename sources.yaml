@@ -174,7 +174,7 @@ sources:
   # ---------- Chinese / Economy & Business ----------
   - id: caixin_latest_zh
     name: 财新 - 最新文章
-    url: https://rsshub.app/caixin/latest
+    url: https://rsshub.rssforever.com/caixin/latest
     category: economy
     language: zh
     enabled: true
@@ -183,10 +183,10 @@ sources:
 
   - id: caixin_finance_zh
     name: 财新 - 金融
-    url: https://rsshub.app/caixin/finance/market
+    url: https://rsshub.rssforever.com/caixin/finance/market
     category: economy
     language: zh
-    enabled: true
+    enabled: false
     weight: 9
     last_fetch_at: null
 

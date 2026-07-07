@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import re
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timedelta
+from html import unescape
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from .dedupe import normalize_url
 from .models import NewsItem
 
 
@@ -122,3 +125,44 @@ def format_labels(labels: list[str] | None) -> str:
     if not labels:
         return "无"
     return "、".join(labels)
+
+
+_LINK_RE = re.compile(r'href="(https?://[^"]+)"')
+_HEADING_RE = re.compile(r"<h2>精选资讯</h2>(.*)", re.DOTALL)
+_ITEM_TITLE_RE = re.compile(r"<strong>\d+[.、]\s*([^<]+)</strong>")
+_SOURCE_META_RE = re.compile(r"来源：([^｜<]+)")
+
+
+def load_published(html_dir: str, timezone_name: str) -> tuple[set[str], set[str]]:
+    directory = Path(html_dir) / "daily"
+    if not directory.exists():
+        return set(), set()
+
+    today = datetime.now(ZoneInfo(timezone_name)).date()
+    for offset in range(1, 8):
+        date = today - timedelta(days=offset)
+        report_path = directory / f"{date.isoformat()}.html"
+        if report_path.exists():
+            break
+    else:
+        files = sorted(directory.glob("*.html"), reverse=True)
+        report_path = files[0] if files else None
+
+    if report_path is None:
+        return set(), set()
+
+    html = report_path.read_text(encoding="utf-8")
+    links: set[str] = {normalize_url(match) for match in _LINK_RE.findall(html)}
+
+    items_section = _HEADING_RE.search(html)
+    titles: set[str] = set()
+    if items_section:
+        block = items_section.group(1)
+        for title_match, meta_match in zip(
+            _ITEM_TITLE_RE.finditer(block), _SOURCE_META_RE.finditer(block)
+        ):
+            title = unescape(title_match.group(1).strip())
+            source = unescape(meta_match.group(1).strip())
+            titles.add(f"{title}||{source}")
+
+    return links, titles

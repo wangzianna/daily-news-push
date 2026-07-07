@@ -10,7 +10,7 @@
 - 每条资讯包含标题、来源、发布时间、链接、摘要
 - 按链接去重，按质量分、分类、权重、发布时间排序
 - 高质量过滤：优先一手来源、机构来源、研究来源、深度报道，降低营销软文、融资通稿、标题党、重复转载权重
-- 每个方向最多保留 3 条，日报总量最多 12 条
+- 每个方向最多保留 4 条，日报总量最多 16 条
 - 健康类内容标注证据类型，AI 类内容标注内容类型
 - DeepSeek API 生成日报总结
 - 飞书 Webhook 结构化卡片推送
@@ -87,7 +87,7 @@ python -m daily_news run --no-push
 app:
   timezone: Asia/Shanghai
   max_items_per_source: 15
-  max_items_per_direction_group: 3
+  max_items_per_direction_group: 4
   max_items_total: 12
   fetch_timeout_seconds: 20
 
@@ -203,7 +203,7 @@ python -m daily_news sources test zhihu-daily --limit 5
 - 优先选择一手来源、机构来源、研究来源、深度报道。
 - 降低营销软文、融资通稿、标题党、重复转载/编译内容的权重。
 - 每个方向最多保留 3 条。
-- 最终日报最多保留 12 条。
+- 最终日报最多保留 16 条。
 - 每条精选资讯都会保留原始链接。
 
 健康类内容会标注证据类型：
