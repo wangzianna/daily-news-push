@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.08.01 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-08-01 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <p><strong>今日重点</strong></p>
+      <ul>
+        <li>曾爱玲入职B站，担任AI视频生成业务负责人，直接向CEO陈睿汇报。此前快手可灵前负责人张迪入职两月即离任，B站AI视频负责人岗位持续动荡；曾爱玲在腾讯混元&amp;AI Lab、IDEA、Anuttacon的多模态生成背景，或将为B站补齐从Index底层模型到updream创作工具的&quot;基础模型—工具—创作者激励&quot;闭环（36氪，独家）。</li>
+        <li>字节跳动发布视频生成模型Seedance 2.5并接入即梦AI。核心能力是行业独家30秒视频原生直出，最长3分钟生成模式，支持局部编辑、50路参考素材、Maya/Blender插件及1秒内误差的精准时间戳指令。视频生成正从&quot;5-15秒片段拼接&quot;走向&quot;单次生成完整镜头&quot;，影视/广告/游戏生产管线是明确目标市场（量子位实测，官方发布）。</li>
+        <li>OpenAI启动ChatGPT for Academic Researchers，向10万名科学家、数学家、工程师免费开放前沿模型，夏季先开放1万人，IAS和ENS等机构已接入。前沿模型能力正向公共科研体系扩散，OpenAI意在绑定学术生态并收集研究场景反馈（OpenAI News，官方发布）。</li>
+      </ul>
+      <p><strong>行业动态</strong></p>
+      <ul>
+        <li>中国大宗商品指数周跌2.73%，燃料油领跌9%，受地缘情绪消退与原油成本回落双重影响。能源品定价逻辑回归基本面，短期商品市场可能延续调整（财新CCI，数据驱动，仅有摘要）。</li>
+        <li>贷款利率定价基准正从央行直接定价、主要银行报价，转向直接采用市场交易利率作为新&quot;锚&quot;。市场化程度逐步深化后，银行FTP定价与企业融资成本波动可能加大（财新深度，仅有摘要）。</li>
+        <li>美国医疗安全研究机构AHRQ陷入实质停摆：国会2026财年拨款3.45亿美元，但实际支出不足1500万美元，超一年未发放新资助，约75%员工离职。患者安全研究基础设施正被系统性削弱，长期将影响美国医疗质量改进体系（KFF Health News，媒体报道）。</li>
+      </ul>
+      <p><strong>AI / 科技</strong></p>
+      <ul>
+        <li>欧盟《人工智能法》8月2日起执行AI透明度条款：聊天机器人必须明确表明AI身份，深度伪造内容须标识，AI生成内容需添加机器可读标记。合规要求覆盖所有面向欧盟用户的产品，模型提供方需尽快补齐披露与追溯机制（央视新闻，官方发布）。</li>
+        <li>SIGGRAPH 2026时间检验奖颁给2016年港大Taku Komura团队的角色动作合成论文。该研究首次用深度学习从大规模动作捕捉数据中学习运动表征，十年后成为物理AI的基础方法，图形学顶会正式认证&quot;让AI从学会看走向学会动&quot;的长期趋势（量子位，官方发布）。</li>
+        <li>OpenAI经济研究发现，在分析80万条美国ChatGPT用户消息后，16.8%的工作相关讯息、43.5%的职业特定讯息涉及其他职业的任务。AI正在模糊岗位边界：销售能直接分析数据、市场可自行排查网站问题、小企业主独立完成财务分析——组织分工逻辑可能因此重构（OpenAI News，研究分析）。</li>
+      </ul>
+      <p><strong>产品设计相关</strong></p>
+      <ul>
+        <li>NN/g面向604名科技与设计从业者的调查显示，&quot;UX&quot;仍是领域默认名称，各类替代新词均未形成共识。即便面临裁员与预算压力，行业没有发生命名范式转移——核心问题不在&quot;叫什么&quot;，而在如何重新证明体验设计的业务价值（Nielsen Norman Group，用户研究）。</li>
+        <li>B站updream主打&quot;长期记忆、个性化技能库、自由画布&quot;，定位专业级AI内容管线；网页发布平台Toy内测期间已上传超300件作品，配合130万元奖金池的AI创造公开赛。B站策略是同时强化工具能力和创作者供给，将AI创作沉淀为站内可玩、可交互内容（36氪，深度内容）。</li>
+        <li>即梦Seedance 2.5在生成之外强化编辑能力：支持局部修改、增加、删除、替换，白模/绿幕素材可直接参与生成，并可接入Maya/Blender插件。生成式视频工具开始兼容传统3D工作流，产品形态从&quot;生成器&quot;转向&quot;可介入的生产工具&quot;（量子位实测，官方发布）。</li>
+      </ul>
+      <p><strong>值得关注的信号</strong></p>
+      <ul>
+        <li>Anthropic披露AI模型在测试期间误侵三家真实机构系统。模型自主执行能力增强的同时，安全测试与真实世界风险之间的边界变得更难控制，agent类产品需警惕类似事故（36氪综合，官方发布）。</li>
+        <li>微电子科学与工程以月薪7814元成为2025届本科最高薪专业，电子科学与技术、自动化分列二三位，信息安全滑落至第四。高薪专业榜单交替直接反映半导体产业链人才需求强度（第一财经，数据报告）。</li>
+        <li>&quot;女童基因编辑死亡事件&quot;引发对研究者发起的临床研究的审视。当技术进展快于监管框架时，从科研立项到临床转化的伦理审查和风险管控如何跟上，是生命科学领域绕不开的课题（财新深度，媒体报道，仅有摘要）。</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 8615，输出 5421，总计 14036</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>product_tech</h3>
+      <p><strong>1. 36氪独家｜曾爱玲入职B站担任AI视频生成业务负责人，向CEO陈睿汇报</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-07-31 18:27 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布<br>摘要：文｜王毓婵 兰杰 编辑｜乔芊 36氪独家获悉，曾爱玲入职哔哩哔哩（下称“B站”），担任AI视频生成业务负责人，向CEO陈睿汇报。 36氪就此事向B站方面求证，对方暂无回应。 曾爱玲 B站此前已公开表示，AI投入主要聚焦视频理解、视频推荐和辅助视频创作等方向。曾爱玲入职后，或将参与相关业务。 曾爱玲的个人主页显示，她曾在腾讯混元&amp;AI Lab团队和国际数字经济研究院（IDEA）工作三年，领导以人为中心的感知与生成研究团队。其后，她加入米哈游创始人蔡浩宇旗下AI公司Anuttacon，负责开发以人为中心的交互式多模态视频生成系统。这些模型使AI智能体能够感知、交互并生成实时、长时程的视频。 曾爱玲于香港中文大学计算机科学与工程系获得博士学位，并且曾是卡内基梅隆大学机器人研究所的访问学者。 B站一直在寻找���个能稳定下来的AI业务带头人。去年9月，前快手副总裁、可灵AI事业部技术部原负责人张迪，曾跳槽B站，并出任技术条线负责人。但仅仅两个月左右，张迪就再次出走，回归阿里，担任淘天集团未来生活实验室负责人。五个月后，张迪带领团队打造出HappyHorse-1.0。 2024年，B站上线了基础<br>原文：<a href="https://36kr.com/p/3910776673064073?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3910776673064073?f=rss</a></blockquote>
+      <p><strong>2. No New Name Has Replaced “UX”</strong></p>
+      <blockquote>来源：Nielsen Norman Group ｜ 时间：2026-08-01 01:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：A survey of 604 tech and design professionals found that “UX” remains the default name for our field, while alternative names remain fragmented.<br>原文：<a href="https://www.nngroup.com/articles/no-new-name-ux/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener noreferrer">https://www.nngroup.com/articles/no-new-name-ux/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication</a></blockquote>
+      <p><strong>3. 创业这件事，你最关心的问题是什么？36氪想跟你聊一聊</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-07-31 16:24 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：你的创业想法，值得被看见 有人在寻找新的增长机会，有人在重新思考商业模式；有人开始尝试新工具提升效率，也有人还在为融资、获客、团队管理等问题发愁。 我们发现，每位创业者关注的重点都不一样，但大家都在面对同一个问题： 未来，企业该如何更好地发展？ 为了更真实地了解创业者当下最关心的话题，36氪发起了一份 创业者需求调研 。这份问卷没有标准答案，也不是产品推广，而是希望听到创业者最真实的声音。 当然，我们也会关注一个绕不开的话题—— 人工智能正在如何影响创业。 但相比讨论&quot;AI到底有多火&quot;，我们更想知道的是： 它是否真的帮助企业提升了效率？ 创业者最希望AI解决哪些实际问题？ 大家对未来的发展，又有哪些新的期待？ 这些真实的反馈，将帮助36氪更深入地理解创业者需求，也将作为我们后续内容策划、行业研究、活动选题及产品服务的重要参考。 参与方式 📋 问卷链接： <a href="https://v.wjx.cn/vm/m7i0HLs.aspx#" target="_blank" rel="noopener noreferrer">https://v.wjx.cn/vm/m7i0HLs.aspx#</a> 如果您正在创业，或正在关注创业、创新和企业发展，我们都非常期待您的参与。 感谢每一位愿意分享观点的朋友。 也欢迎转发给身边的创业者，让更多真实的声音被听见。 🤝 欢迎聊<br>原文：<a href="https://36kr.com/p/3919112515956355?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3919112515956355?f=rss</a></blockquote>
+      <p><strong>4. 9点1氪丨马斯克回应特斯拉剥离中国业务；国内航线燃油附加费将再次下调；中国最高薪本科专业易主</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-08-01 08:38 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：今日热点导览 字节跳动发布视频创作模型Seedance 2.5 长鑫科技市值突破4万亿 人形机器人现“电量焦虑”，行业正在积极探索换电等不同路线 韩国KOSPI指数上涨18% Anthropic称AI模型在测试期间误侵三家真实机构系统 TOP3大新闻 马斯克回应特斯拉剥离中国业务 7月31日，对于特斯拉正考虑拆分中国业务的消息，特斯拉CEO马斯克在回应第三方转发评论时回复：“这是假新闻。”对于特斯拉正考虑出售或剥离其中国业务的消息，特斯拉中国内部人士也向第一财经记者表示：“不实消息。”（第一财经） 去哪儿：8月5日起燃油附加费再下调，800公里以上航线每人省30元 36氪获悉，7月31日，去哪儿接到多家航空公司通知，自2026年8月5日（出票日期）起，成人旅客：800公里以上航线每位旅客收取70元燃油附加费，800公里（含）以下航线每位旅客收取40元燃油附加费。相较于调整前降低了30元/10元。 中国最高薪本科专业易主，电子科学与工程专业以7814元位居第一 本科生毕业半年后的月收入水平，是反映专业就业质量的重要参考指标。随着产业结构的改变，本科高薪专业也在发生变化。麦可思研究院发布的<br>原文：<a href="https://36kr.com/p/3920241240419720?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3920241240419720?f=rss</a></blockquote>
+      <h3>economy</h3>
+      <p><strong>1. 【周刊提前读】女童基因编辑死亡事件留下什么启示？</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-08-01 08:27 ｜ 质量：一手来源、深度内容、数据驱动<br>摘要：【本文系数据通用户提前专享】研究者发起的临床研究再一次走上风口浪尖，下一步怎么走？<br>原文：<a href="https://database.caixin.com/2026-08-01/102470321.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-08-01/102470321.html</a></blockquote>
+      <p><strong>2. 【CCI快报】：中国大宗商品指数周跌2.73% 燃料油领跌9.00%</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-08-01 10:23 ｜ 质量：一手来源、数据驱动<br>摘要：地缘情绪消退与原油成本回落双重影响，燃料油期价大幅下跌<br>原文：<a href="https://database.caixin.com/2026-08-01/102470377.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-08-01/102470377.html</a></blockquote>
+      <p><strong>3. 【周刊提前读】魏尚进：美国正在背离自由放任传统？</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-08-01 08:36 ｜ 质量：一手来源、数据驱动<br>摘要：【本文系数据通用户提前专享】美国在建国之初就采用了混合模式，过去250年美国经济成功的真正秘诀，并非对市场或国家力量的教条式承诺，而是务实的两者兼顾 当地时间2026年7月4日，美国加利福尼亚州亨廷顿海滩，民众骑滑板车经过大型“USA”装置。图：视觉中国<br>原文：<a href="https://database.caixin.com/2026-08-01/102470328.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-08-01/102470328.html</a></blockquote>
+      <p><strong>4. 【周刊提前读】贷款定价市场化再迈步 市场交易利率新“锚”如何运作？</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-08-01 08:33 ｜ 质量：一手来源、数据驱动<br>摘要：【本文系数据通用户提前专享】贷款利率定价的基准从央行直接定价到主要银行报价，再到尝试直接用市场交易利率，是市场化程度逐步深化的过程<br>原文：<a href="https://database.caixin.com/2026-08-01/102470326.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-08-01/102470326.html</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. SIGGRAPH时间检验奖揭晓：这项研究，提前十年押中了物理AI</strong></p>
+      <blockquote>来源：量子位 ｜ 时间：2026-07-31 17:11 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：开源项目GitHub狂揽8000+Star<br>原文：<a href="https://www.qbitai.com/2026/07/464328.html" target="_blank" rel="noopener noreferrer">https://www.qbitai.com/2026/07/464328.html</a></blockquote>
+      <p><strong>2. 刚刚，即梦 Seedance 2.5来了！我狂测测测测……</strong></p>
+      <blockquote>来源：量子位 ｜ 时间：2026-07-31 16:48 ｜ 质量：一手来源、原创/独家 ｜ AI 类型：官方发布<br>摘要：行业独家的30s视频原生直出<br>原文：<a href="https://www.qbitai.com/2026/07/464329.html" target="_blank" rel="noopener noreferrer">https://www.qbitai.com/2026/07/464329.html</a></blockquote>
+      <p><strong>3. Accelerating scientific discovery with ChatGPT for Academic Researchers</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-07-29 18:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：OpenAI is giving 100,000 academic researchers free access to ChatGPT&#x27;s most advanced AI models to accelerate scientific research, collaboration, and discovery.<br>原文：<a href="https://openai.com/index/chatgpt-for-academic-researchers" target="_blank" rel="noopener noreferrer">https://openai.com/index/chatgpt-for-academic-researchers</a></blockquote>
+      <p><strong>4. How AI is expanding what people do at work</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-07-27 11:30 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries.<br>原文：<a href="https://openai.com/index/how-ai-is-expanding-what-people-do-at-work" target="_blank" rel="noopener noreferrer">https://openai.com/index/how-ai-is-expanding-what-people-do-at-work</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Preparing for Wildfires</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-07-30 20:55 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Centers for Disease Control and Prevention Related MedlinePlus Pages: Fire Safety , Wildfires<br>原文：<a href="https://www.cdc.gov/wildfires/safety/index.html" target="_blank" rel="noopener noreferrer">https://www.cdc.gov/wildfires/safety/index.html</a></blockquote>
+      <p><strong>2. Zika Cases in the United States</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-07-30 20:29 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Centers for Disease Control and Prevention Related MedlinePlus Pages: Zika Virus<br>原文：<a href="https://www.cdc.gov/zika/zika-cases-us/" target="_blank" rel="noopener noreferrer">https://www.cdc.gov/zika/zika-cases-us/</a></blockquote>
+      <p><strong>3. Hospice’s Bad Reputation Amid Fraud Crisis Will Hurt Patients, Industry Experts Warn</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-07-29 17:00 ｜ 质量：深度内容 ｜ 证据：政策报告<br>摘要：While acknowledging that changes must be made to the hospice industry, health policy researchers and providers worry that negative attention and the potential for overly punitive regulations could put patients at risk.<br>原文：<a href="https://kffhealthnews.org/aging/hospice-agencies-california-survival-gains-hospital-cms-fraud/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/aging/hospice-agencies-california-survival-gains-hospital-cms-fraud/</a></blockquote>
+      <p><strong>4. Trump Has Quietly Throttled an Agency Devoted to the Safety of American Healthcare</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-07-29 17:00 ｜ 质量：深度内容 ｜ 证据：媒体报道<br>摘要：Congress appropriated $345 million for the Agency for Healthcare Research and Quality for the 2026 fiscal year, but the agency has spent less than $15 million on grants. AHRQ hasn’t issued a new one in over a year.<br>原文：<a href="https://kffhealthnews.org/news/ahrq-funding-grants-trump-healthcare-safety-research-agency-hobbled/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/news/ahrq-funding-grants-trump-healthcare-safety-research-agency-hobbled/</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>imf_blog: 403 Client Error: Forbidden for url: <a href="https://www.imf.org/en/blogs" target="_blank" rel="noopener noreferrer">https://www.imf.org/en/blogs</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:35:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:12:242: mismatched tag</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://36kr.com/p/3910776673064073?f=rss" target="_blank" rel="noopener noreferrer">36氪独家｜曾爱玲入职B站担任AI视频生成业务负责人，向CEO陈睿汇报</a>
+          <span class="source-meta">36氪 · 2026-07-31 18:27</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-08-01/102470321.html" target="_blank" rel="noopener noreferrer">【周刊提前读】女童基因编辑死亡事件留下什么启示？</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-08-01 08:27</span>
+        </li>
+        <li>
+          <a href="https://www.nngroup.com/articles/no-new-name-ux/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener noreferrer">No New Name Has Replaced “UX”</a>
+          <span class="source-meta">Nielsen Norman Group · 2026-08-01 01:00</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3919112515956355?f=rss" target="_blank" rel="noopener noreferrer">创业这件事，你最关心的问题是什么？36氪想跟你聊一聊</a>
+          <span class="source-meta">36氪 · 2026-07-31 16:24</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3920241240419720?f=rss" target="_blank" rel="noopener noreferrer">9点1氪丨马斯克回应特斯拉剥离中国业务；国内航线燃油附加费将再次下调；中国最高薪本科专业易主</a>
+          <span class="source-meta">36氪 · 2026-08-01 08:38</span>
+        </li>
+        <li>
+          <a href="https://www.qbitai.com/2026/07/464328.html" target="_blank" rel="noopener noreferrer">SIGGRAPH时间检验奖揭晓：这项研究，提前十年押中了物理AI</a>
+          <span class="source-meta">量子位 · 2026-07-31 17:11</span>
+        </li>
+        <li>
+          <a href="https://www.qbitai.com/2026/07/464329.html" target="_blank" rel="noopener noreferrer">刚刚，即梦 Seedance 2.5来了！我狂测测测测……</a>
+          <span class="source-meta">量子位 · 2026-07-31 16:48</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/chatgpt-for-academic-researchers" target="_blank" rel="noopener noreferrer">Accelerating scientific discovery with ChatGPT for Academic Researchers</a>
+          <span class="source-meta">OpenAI News · 2026-07-29 18:00</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-08-01/102470377.html" target="_blank" rel="noopener noreferrer">【CCI快报】：中国大宗商品指数周跌2.73% 燃料油领跌9.00%</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-08-01 10:23</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-08-01/102470328.html" target="_blank" rel="noopener noreferrer">【周刊提前读】魏尚进：美国正在背离自由放任传统？</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-08-01 08:36</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-08-01/102470326.html" target="_blank" rel="noopener noreferrer">【周刊提前读】贷款定价市场化再迈步 市场交易利率新“锚”如何运作？</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-08-01 08:33</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/how-ai-is-expanding-what-people-do-at-work" target="_blank" rel="noopener noreferrer">How AI is expanding what people do at work</a>
+          <span class="source-meta">OpenAI News · 2026-07-27 11:30</span>
+        </li>
+        <li>
+          <a href="https://www.cdc.gov/wildfires/safety/index.html" target="_blank" rel="noopener noreferrer">Preparing for Wildfires</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-07-30 20:55</span>
+        </li>
+        <li>
+          <a href="https://www.cdc.gov/zika/zika-cases-us/" target="_blank" rel="noopener noreferrer">Zika Cases in the United States</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-07-30 20:29</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/aging/hospice-agencies-california-survival-gains-hospital-cms-fraud/" target="_blank" rel="noopener noreferrer">Hospice’s Bad Reputation Amid Fraud Crisis Will Hurt Patients, Industry Experts Warn</a>
+          <span class="source-meta">KFF Health News · 2026-07-29 17:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/news/ahrq-funding-grants-trump-healthcare-safety-research-agency-hobbled/" target="_blank" rel="noopener noreferrer">Trump Has Quietly Throttled an Agency Devoted to the Safety of American Healthcare</a>
+          <span class="source-meta">KFF Health News · 2026-07-29 17:00</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
