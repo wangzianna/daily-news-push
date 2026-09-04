@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.09.04 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-09-04 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ol>
+        <li><strong>OpenAI 正式推出 GPT-6 Astra，称其为“全球智能水平最高、对齐效果最优”的模型</strong>。官方宣称其在计算机操作、网页浏览、软件工程、网络安全、科学研究与专业办公领域均达业界顶尖水平，在 FrontierMath 四级、ARC-AGI-3、ExploitBench 等测试中取得满分。API 定价为输入 10 美元/百万词元、输出 50 美元/百万词元，与 Anthropic Fable 5.1 持平；缓存命中价 1 美元，高于后者的 0.25 美元。同日释放的 Playco、Legora 等客户实证表明，这一代模型的竞争重点已转向真实工作流中的“可完成度”（财新 T 早报 × OpenAI News；内容类型：官方发布）。</li>
+      </ol>
+      <ol>
+        <li><strong>医疗 AI 开始接入医生信任的数据源</strong>。OpenAI 推出 Epic 电子病历集成与 Healthcare Public Data 插件，医疗机构可在合规工作区内让 ChatGPT 调取经授权的患者背景资料，并结构化访问 PubMed、DailyMed、CMS Coverage 等官方数据集。医疗 AI 正从“通用问答”走向“可治理的数据工作台”，价值关键取决于与院内系统的对接深度（OpenAI News；内容类型：官方发布；证据类型：媒体报道）。</li>
+      </ol>
+      <ol>
+        <li><strong>财新评论：经济分化正滑向“割裂”</strong>。文章认为“K 型分化”已不足以形容现状——高科技增长未能通过产业链、就业与税收传导给传统部门，传导管道可能已堵死；另一篇评论也提醒，平台与 AI 能提高效率，但无法单独填补总需求缺口，不应把就业与居民收入增长的希望全押在新技术上（财新观点）。</li>
+      </ol>
+      <h2>行业动态</h2>
+      <ol>
+        <li><strong>钙钛矿材料公司日耀光电完成数千万元 Pre-A 轮融资</strong>，天创资本与吉林省科投联合出资，此前已获长兴基金数千万元天使轮投资。公司出自中科院长春应化所秦川江团队，布局 SAM 空穴传输材料、薄膜在线检测装备、钙钛矿电池组件三大产品线。核心看点是新型自由基 SAM 分子解决了大面积涂布难题，有机会改变钙钛矿产线依赖 NiOx 加钝化层的传统工序（36氪；该条仅有摘要）。</li>
+      </ol>
+      <ol>
+        <li><strong>医疗器械创新进入“源头创新”兑现期</strong>。张江今年已有 14 款Ⅲ类创新医疗器械获批，数量创历史新高，覆盖植入式脑机接口手部运动功能代偿系统、介入式左心室辅助设备、首款国产双源光子计数 CT；会上还启动了“全球首个基于外科世界模型的人形手术机器人项目”。礼来亚洲基金董事高韵判断，“未来十年是医疗器械行业比较好的布局期”（36氪；该条仅有摘要；证据类型：行业论坛观点/个人经验）。</li>
+      </ol>
+      <ol>
+        <li><strong>康佳公告主动退市，今起停牌</strong>。昔日“彩电一哥”选择主动离开 A 股，目前可获取信息有限，后续方案待公告披露（财新；该条正文抓取异常，仅能确认标题信息）。</li>
+      </ol>
+      <h2>AI / 科技</h2>
+      <ol>
+        <li><strong>AI 游戏开发实证：从写代码到“在引擎里做游戏”</strong>。Playco 用 GPT-6 Astra 从同一灰盒基础搭建出三个不同主题的游戏原型，多数首次即成功，手动修复量较上一代模型减少 50%。模型需要理解空间关系、视觉参照、UI 响应与“游戏感”，而不只是生成代码；Playbot 已能直接连接 Unity 和 Godot 进行编辑、运行与测试（OpenAI News；内容类型：官方发布）。</li>
+      </ol>
+      <ol>
+        <li><strong>法律金融文档审阅实证：AI Agent 完成高容错工作流</strong>。Legora 的 Agent 在单次运行中审阅 41 份文件，发现全部 4 处预设错误，财务报表 tie-out 工作流基准成绩提升近 40%。这代表“AI 自动执行 + 专业人工复核”的边界正在向更严谨的专业场景推进（OpenAI News；内容类型：官方发布）。</li>
+      </ol>
+      <ol>
+        <li><strong>MIT 项目 Julia 成为百万用户级科学计算语言</strong>。Julia 源于 2009 年一群研究者对既有科学计算语言的“不满邮件”，如今用于新药研发、喷气发动机、热泵等复杂系统建模，并孵化出商业化公司 JuliaHub。科学计算基础设施需要长周期投入，但回报体现在下游研发效率上（MIT News；内容类型：产品应用）。</li>
+      </ol>
+      <h2>产品设计相关</h2>
+      <ol>
+        <li><strong>AR 眼镜座次重排：雷鸟创新上半年全球 AR 出货量第一、中国智能眼镜品类第一</strong>。IDC、Counterpoint 等数据显示其全球 AR 市场份额达 24.8%，相当于全球每卖出四台 AR 眼镜就有一台来自雷鸟；在华为、阿里等大厂密集入局的中国市场，首次实现无屏 AI 眼镜与有屏 AR 眼镜全部阵营的品类销量第一（来源：36氪转引 IDC/Counterpoint/CINNO 等；原文标注公关稿；该条仅有摘要）。</li>
+      </ol>
+      <ol>
+        <li><strong>“银河星仔”原生智能体人形机器人 24 小时预订超 200 台</strong>。不同于传统预设脚本机器人，其产品定义核心是“无需动捕或视频示范”，在真实环境中通过人机交互主动学习，具备“边看、边想、边行动”的实时规划能力。具身智能产品的体验逻辑，正从“编程实现”转向“交互中成长”（36氪快讯；该条仅有摘要）。</li>
+      </ol>
+      <ol>
+        <li><strong>“外科世界模型”进入手术机器人产品概念阶段</strong>。霖晏医疗在张江医疗器械论坛启动全球首个基于外科世界模型的人形手术机器人项目，试图把世界模型作为手术机器人的“设计底座”。方向比现有单点手术机器人更具想象力，但落地路径仍需观察（36氪；该条仅有摘要；证据类型：行业项目发布）。</li>
+      </ol>
+      <h2>值得关注的信号</h2>
+      <ol>
+        <li><strong>宏观关键词正从 K 型变成 i 型</strong>：新动能增长若不能转化为就业、税收与消费，就可能出现“你涨你的、我跌我的”割裂状态。对科技产业而言，AI 带来的效率提升仍需回答“谁在买单、谁在受益”的问题（财新观点）。</li>
+      </ol>
+      <ol>
+        <li><strong>美国医疗系统多重张力在累积</strong>：医院暴力事件触发“强制人员配置”的呼声；麻疹疫情期间儿科医生劝家长接种疫苗的难度上升；医院垄断被指持续推高患者与保险公司成本；无家可归者若想留在 Medicaid，可能要证明自己有工作。这些议题共同指向医疗系统的劳动安全、垄断定价与公共福利之间的深层矛盾（KFF Health News；证据类型：政策报告）。</li>
+      </ol>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 6692，输出 17454，总计 24146</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>product_tech</h3>
+      <p><strong>1. 硬氪首发 | 解决钙钛矿材料涂布难题，中科院系企业完成数千万元Pre-A轮融资</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-04 10:22 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布<br>摘要：作者｜乔钰杰 编辑｜袁斯来 本文1500字，预计阅读4分钟 硬氪获悉，钙钛矿太阳能电池企业长春日耀光电科技有限公司（以下简称“日耀光电”）完成数千万元Pre-A轮融资，由天津创业投资管理有限公司（天创资本）与吉林省科技投资基金有限公司（吉林省科投）联合出资。此前，公司曾获长兴基金数千万元天使轮独家投资。 日耀光电成立于2023年，依托中国科学院长春应用化学研究所秦川江研究员团队的研究成果创立，团队在Science、Nature等期刊累计发表论文110余篇。 公司目前布局新型自组装分子（SAM分子）材料、薄膜在线检测装备、钙钛矿太阳能电池组件三大产品线。 SAM材料是日耀光电的核心突破口。该材料主要用作钙钛矿电池的空穴传输层。 团队开发的新型自由基SAM分子，通过独特的分子设计在结构中引入官能团或扭转构型，显著提升其在溶液中的分散性，在国际上首次解决了SAM薄膜的大面积涂布难题。 （图源/企业） 目前，钙钛矿电池产线普遍采用氧化镍（NiOx）作为空穴传输层，再叠加钝化层材料，工序复杂、成本较高。日耀光电开发的SAM材料可实现无NiOx的大面积制备新工艺，改进产线结构，使产线投资成本减少2<br>原文：<a href="https://36kr.com/p/3963287086496899?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3963287086496899?f=rss</a></blockquote>
+      <p><strong>2. 科氪｜2026 年上半年雷鸟创新包揽第一，雷鸟 iO 首销即爆款开启新增长曲线</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-03 23:11 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：近日，IDC、Counterpoint、CINNO、洛图科技、奥维云网等多家权威市场研究机构相继发布了 2026 年上半年 AR 眼镜与智能眼镜市场报告，雷鸟创新（RayNeo）以横扫之势，包揽全球 AR 眼镜与中国智能眼镜市场出货量和销量第一。 其中，IDC、Counterpoint 数据共同显示，上半年雷鸟创新以领先优势稳居全球 AR 眼镜出货量榜首，市场份额更高达 24.8% 。换言之，在全球范围内，每售出四台 AR 眼镜，就有一台来自雷鸟创新。至此，雷鸟创新已经连续 5 个季度斩获全球 AR 眼镜出货量第一。 官方图片 值得注意的是，伴随着华为、阿里等大厂集体下场和密集的新品发布，中国市场已经成为全球 AR 与 AI 眼镜竞争最为激烈的关键市场。在这样的背景下，雷鸟创新不仅连续 5 年稳居中国 AR 眼镜销量第一，更在 2026 上半年进一步扩大优势，以绝对优势拿下中国 AR 眼镜销量第一的同时，首次实现中国智能眼镜品类销量第一，覆盖无屏 AI 眼镜与有屏 AR 眼镜的全部阵营。CINNO 数据显示，上半年雷鸟创新 AI/AR 眼镜市场占有率为 25%。在最卷的市场拿下全品类第<br>原文：<a href="https://36kr.com/p/3967816023929097?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3967816023929097?f=rss</a></blockquote>
+      <p><strong>3. 全球首个原生智能体机器人“银河星仔”，上线24小时，全网预订超200台</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-04 12:18 ｜ 质量：一手来源、原创/独家<br>摘要：银河通用旗下全球首款原生智能体人形机器人“银河星仔”预订开启后热度走高，上线24小时预订量突破200台。该产品于2026年世界机器人大会（WRC）首发，搭载银河通用全自研的物理世界原生智能体与亿级参数具身大模型，为人形机器人的实时多模态交互与精准运动控制打造。不同于传统预设脚本机器人，它无需动捕或视频示范，能够直接在真实环境中通过人机交互主动学习，并具备像人类一样的动态思考与行为规划能力——边看、边想、边行动。<br>原文：<a href="https://36kr.com/newsflashes/3968589656125697?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/3968589656125697?f=rss</a></blockquote>
+      <p><strong>4. 医疗器械创新提速，新机会在哪？| 最前线</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-03 14:34 ｜ 质量：一手来源、原创/独家 ｜ 证据：个人经验<br>摘要：文 | 刘凌果 编辑 | 海若镜 “未来十年，其实是医疗器械行业比较好的布局期。”在刚刚结束的张江药谷创新大会·医疗器械论坛上，礼来亚洲基金执行董事高韵提到。 8月28日至29日，2026年张江药谷创新大会·医疗器械论坛在上海张江科学会堂举行。大会以“源创首发·链聚全球”为主题，设置主论坛、10场分论坛及投融资路演，覆盖脑机接口、手术机器人、器械出海、生物材料、高端植介入等领域。 大会上，张江科学城建设管理办公室主任、中国（上海）自由贸易试验区张江管理局局长肖健介绍，今年以来，张江已有14款Ⅲ类创新医疗器械获批，数量创历史新高。其中，包括博睿康的植入式脑机接口手部运动功能代偿系统、丰凯利的介入式左心室辅助设备，以及首款国产双源光子计数CT。会议期间，霖晏医疗发起的“全球首个基于外科世界模型的人形手术机器人项目”也正式启动。 过去十余年，“国产替代”是医疗器械行业较为清晰的增长路径。企业围绕海外成熟产品进行本土开发，再凭借成本、供应链等优势入院。 但随着更多企业涌入同一热门赛道，竞争格局也随之变化，国产企业间的赛跑加剧。圆桌论坛中，艾科脉创始人阴杰以脉冲电场消融赛道为例提到：“我们开始做<br>原文：<a href="https://36kr.com/p/3967062669811204?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3967062669811204?f=rss</a></blockquote>
+      <h3>economy</h3>
+      <p><strong>1. 财新闻｜昔日“彩电一哥”康佳公告主动退市，今起停牌</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-04 09:38 ｜ 质量：一手来源、深度内容、数据驱动<br>摘要：中国对尼泊尔第三批紧急援助物资运抵加德满都；人贩子“梅姨”年龄首次曝光，律师：年龄情况可以适用无期徒刑和死刑；报告：50岁以上游客成中国9月错峰游主力 图：视觉中国 尼泊尔有声音要求美国、印度、中国等提供气候赔偿，外交部回应 9月3日外交部发言人郭嘉昆主持例行记者会。<br>原文：<a href="https://mini.caixin.com/2026-09-04/102481605.html" target="_blank" rel="noopener noreferrer">https://mini.caixin.com/2026-09-04/102481605.html</a></blockquote>
+      <p><strong>2. T早报｜OpenAI推出GPT-6 Astra；长江存储科创板IPO审核状态变更为“已问询”；英伟达129亿美元收购Hugging Face</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-04 08:25 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：推荐：1至7月规上电子信息制造业营收同比增长19.4%；多家大模型厂商订阅套餐上线天猫；穆迪：中国云厂商AI资本支出暴增 仍低于美国同行 【财新网】 OpenAI推出GPT-6 Astra 称是全球智能水平最高模型 当地时间9月3日，OpenAI推出GPT‑6 Astra，称是全球智能水平最高、对齐效果最优的模型，在计算机操作、网页浏览、软件工程、网络安全、科学研究以及专业办公领域均达到业界顶尖水平。根据OpenAI，GPT-6 Astra在FrontierMath四级测试集、ARC‑AGI‑3和ExploitBench测试集在内的多个测试集中取得满分级成绩。GPT-6 Astra将率先对少量机构开放。GPT-6 Astra的输入价格为每百万词元10美元，输出50美元，两项价格与Anthropic目前最强模型Fable 5.1持平；缓存命中1美元，高于Fable 5.1的0.25美元。<br>原文：<a href="https://www.caixin.com/2026-09-04/102481591.html" target="_blank" rel="noopener noreferrer">https://www.caixin.com/2026-09-04/102481591.html</a></blockquote>
+      <p><strong>3. K型分化？ i型割裂？</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-04 11:00 ｜ 质量：一手来源、数据驱动 ｜ AI 类型：官方发布<br>摘要：如果“K型”考验的是经济的韧性，那“i型”考验的则是社会的黏性 2021年，我就在用“K型分化”来形容经济中不同人群、不同产业、不同城市的变化。但现在的经济，用这个词来形容，已经不是那么准确了。K型已经变成了i型，分化变成割裂。 第一，传导机制的失灵。 在K型分化中，理论上“向上”的那一笔（高科技、新动能）通过产业链、就业和财富效应，终究会慢慢渗透到“向下”的那一笔（传统行业）。但现在之所以觉得成了“i型”，是因为这条传导管道堵死了。高科技企业的高速增长，既没有创造足够多的中低端就业来吸纳转型人群，也没有通过高利润转化为全民性的税收反哺和消费提振。上面跑得飞快，下面不仅感觉不到牵引力，反而被旧模式出清的漩涡越吸越深。这种“各过各的”状态，比分化更危险。因为分化还有弥合的希望，而割裂意味着“你涨你的，我跌我的，我们毫无关系”。 推荐进入 财新数据库 ，可随时查阅宏观经济、股票债券、公司人物，财经数据尽在掌握。<br>原文：<a href="https://opinion.caixin.com/2026-09-04/102481643.html" target="_blank" rel="noopener noreferrer">https://opinion.caixin.com/2026-09-04/102481643.html</a></blockquote>
+      <p><strong>4. 冷静认识平台和AI对经济增长的支撑作用</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-04 10:20 ｜ 质量：一手来源、数据驱动 ｜ AI 类型：官方发布<br>摘要：未来中小微企业的发展、劳动者的就业、居民收入水平的提高、宏观资产负债表的填充、遏制经济增长继续放缓，不能把宝全押在信息网络、交易平台、AI工作和智能制造上 21世纪是平台经济发展的黄金时期，进入第三个十年后，AI技术和智能制造又兴起。但是，这样的新技术产业就能支撑起经济增长的速度吗？就能够增加就业机会、提高居民收入，扩大消费需求，扭转总需求不足对经济增长的拖累吗？对此，需要冷静地思考。 理性认识人类社会的两次信息技术革命 在人类漫长的经济社会发展历史中，人类从狩猎动物到牧养禽畜，从采集植物果实到种植作物，不能不说是农业社会中的两大生产方式的革命。而蒸汽机技术与电能及传输技术的应用，则是人类用机器和电力进行大规模生产工业社会中的两次技术革命。20世纪中后期，电子计算机问世、信息移动传输、形成无线和有线网络、数据整理归类、集成数据运算平台，这是20世纪中后期到21世纪初的第一次信息网络社会的技术革命。而从中国和美国AI的大规模应用算起，则是21世纪第二次数据信息和算法大模型的技术革命。 推荐进入 财新数据库 ，可随时查阅宏观经济、股票债券、公司人物，财经数据尽在掌握。<br>原文：<a href="https://opinion.caixin.com/2026-09-04/102481620.html" target="_blank" rel="noopener noreferrer">https://opinion.caixin.com/2026-09-04/102481620.html</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. Playco cut manual fixes 50% prototyping games with GPT-6 Astra</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-03 20:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model.<br>原文：<a href="https://openai.com/index/playco-game-prototyping-with-astra" target="_blank" rel="noopener noreferrer">https://openai.com/index/playco-game-prototyping-with-astra</a></blockquote>
+      <p><strong>2. Healthcare organizations can now connect EHR and additional industry data to ChatGPT</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-01 20:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ 证据：媒体报道 ｜ AI 类型：官方发布<br>摘要：ChatGPT can now connect to trusted healthcare data, helping clinicians securely access patient context, medical research, and more.<br>原文：<a href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources" target="_blank" rel="noopener noreferrer">https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources</a></blockquote>
+      <p><strong>3. Legora reviewed 41 documents in minutes with GPT-6 Astra</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-03 20:00 ｜ 质量：一手来源 ｜ AI 类型：官方发布<br>摘要：Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow.<br>原文：<a href="https://openai.com/index/legora-financial-statement-review-with-astra" target="_blank" rel="noopener noreferrer">https://openai.com/index/legora-financial-statement-review-with-astra</a></blockquote>
+      <p><strong>4. How an MIT research project became a global programming language</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-08-31 12:00 ｜ 质量：机构来源、深度内容 ｜ AI 类型：产品应用<br>摘要：With millions of users across the world, Julia has been used to conduct cutting-edge research and to design new drugs, jet engines, heat pumps, and more.<br>原文：<a href="https://news.mit.edu/2026/how-mit-research-project-became-global-programming-language-0831" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/how-mit-research-project-became-global-programming-language-0831</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Listen to the Latest ‘KFF Health News Minute’</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-08-29 04:00 ｜ 质量：深度内容、数据驱动 ｜ 证据：政策报告 ｜ AI 类型：产品应用<br>摘要：The &quot;KFF Health News Minute&quot; brings original healthcare and health policy reporting from our newsroom to the airwaves each week.<br>原文：<a href="https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/</a></blockquote>
+      <p><strong>2. Two New Medical Tests Added to MedlinePlus</strong></p>
+      <blockquote>来源：MedlinePlus - What&#x27;s New ｜ 时间：2024-10-16 12:00 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Two New Medical Tests Added to MedlinePlus<br>原文：<a href="https://medlineplus.gov/whatsnew/" target="_blank" rel="noopener noreferrer">https://medlineplus.gov/whatsnew/</a></blockquote>
+      <p><strong>3. Tattoos</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-08-28 02:12 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Boston Children&#x27;s Hospital Related MedlinePlus Pages: Piercing and Tattoos<br>原文：<a href="https://youngmenshealthsite.org/guides/tattoos/" target="_blank" rel="noopener noreferrer">https://youngmenshealthsite.org/guides/tattoos/</a></blockquote>
+      <p><strong>4. Nutrition Assistance Programs</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-08-12 05:23 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Social Security Administration Related MedlinePlus Pages: Financial Assistance , Homelessness and Health , Nutrition , Nutrition for Older Adults<br>原文：<a href="https://www.ssa.gov/pubs/EN-05-10100.pdf" target="_blank" rel="noopener noreferrer">https://www.ssa.gov/pubs/EN-05-10100.pdf</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>imf_blog: 403 Client Error: Forbidden for url: <a href="https://www.imf.org/en/blogs" target="_blank" rel="noopener noreferrer">https://www.imf.org/en/blogs</a></li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:35:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://36kr.com/p/3963287086496899?f=rss" target="_blank" rel="noopener noreferrer">硬氪首发 | 解决钙钛矿材料涂布难题，中科院系企业完成数千万元Pre-A轮融资</a>
+          <span class="source-meta">36氪 · 2026-09-04 10:22</span>
+        </li>
+        <li>
+          <a href="https://mini.caixin.com/2026-09-04/102481605.html" target="_blank" rel="noopener noreferrer">财新闻｜昔日“彩电一哥”康佳公告主动退市，今起停牌</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-04 09:38</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/playco-game-prototyping-with-astra" target="_blank" rel="noopener noreferrer">Playco cut manual fixes 50% prototyping games with GPT-6 Astra</a>
+          <span class="source-meta">OpenAI News · 2026-09-03 20:00</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3967816023929097?f=rss" target="_blank" rel="noopener noreferrer">科氪｜2026 年上半年雷鸟创新包揽第一，雷鸟 iO 首销即爆款开启新增长曲线</a>
+          <span class="source-meta">36氪 · 2026-09-03 23:11</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources" target="_blank" rel="noopener noreferrer">Healthcare organizations can now connect EHR and additional industry data to ChatGPT</a>
+          <span class="source-meta">OpenAI News · 2026-09-01 20:00</span>
+        </li>
+        <li>
+          <a href="https://www.caixin.com/2026-09-04/102481591.html" target="_blank" rel="noopener noreferrer">T早报｜OpenAI推出GPT-6 Astra；长江存储科创板IPO审核状态变更为“已问询”；英伟达129亿美元收购Hugging Face</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-04 08:25</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/3968589656125697?f=rss" target="_blank" rel="noopener noreferrer">全球首个原生智能体机器人“银河星仔”，上线24小时，全网预订超200台</a>
+          <span class="source-meta">36氪 · 2026-09-04 12:18</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3967062669811204?f=rss" target="_blank" rel="noopener noreferrer">医疗器械创新提速，新机会在哪？| 最前线</a>
+          <span class="source-meta">36氪 · 2026-09-03 14:34</span>
+        </li>
+        <li>
+          <a href="https://opinion.caixin.com/2026-09-04/102481643.html" target="_blank" rel="noopener noreferrer">K型分化？ i型割裂？</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-04 11:00</span>
+        </li>
+        <li>
+          <a href="https://opinion.caixin.com/2026-09-04/102481620.html" target="_blank" rel="noopener noreferrer">冷静认识平台和AI对经济增长的支撑作用</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-04 10:20</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/legora-financial-statement-review-with-astra" target="_blank" rel="noopener noreferrer">Legora reviewed 41 documents in minutes with GPT-6 Astra</a>
+          <span class="source-meta">OpenAI News · 2026-09-03 20:00</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/how-mit-research-project-became-global-programming-language-0831" target="_blank" rel="noopener noreferrer">How an MIT research project became a global programming language</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-08-31 12:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/" target="_blank" rel="noopener noreferrer">Listen to the Latest ‘KFF Health News Minute’</a>
+          <span class="source-meta">KFF Health News · 2026-08-29 04:00</span>
+        </li>
+        <li>
+          <a href="https://medlineplus.gov/whatsnew/" target="_blank" rel="noopener noreferrer">Two New Medical Tests Added to MedlinePlus</a>
+          <span class="source-meta">MedlinePlus - What&#x27;s New · 2024-10-16 12:00</span>
+        </li>
+        <li>
+          <a href="https://youngmenshealthsite.org/guides/tattoos/" target="_blank" rel="noopener noreferrer">Tattoos</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-08-28 02:12</span>
+        </li>
+        <li>
+          <a href="https://www.ssa.gov/pubs/EN-05-10100.pdf" target="_blank" rel="noopener noreferrer">Nutrition Assistance Programs</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-08-12 05:23</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
