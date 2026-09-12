@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.09.12 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-09-12 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li>Anthropic 于美东 9 月 10 日发布报告，指控 DeepSeek、小米、月之暗面等将用户与大模型的对话输入 Claude、再用其回复训练自有模型以&quot;蒸馏&quot;能力；中国商务部回应称美方相关指控&quot;于事无凭，于法无据&quot;。模型能力来源的正当性正被武器化为中美 AI 竞争的新战场，但该报告属企业单方发布，结论仍需第三方验证（财新；AI 内容类型：企业官方发布）。</li>
+        <li>世界模型赛道升温：魔芯科技即将完成约 10 亿元新一轮融资，估值由约 40 亿元升至近 100 亿元，一个月内约 2.5 倍，为今年第五轮；创始人陈天润为浙大 00 后博士、与梁文锋同门（36氪，仅有摘要、未获取到全文）。</li>
+        <li>硬件侧，情感智能珠宝公司 SHAKESPEARE 完成数千万元天使轮，出资方含荣耀 AI Connect 生态企业极选智能与珠宝 DP 服务商瑞钰控股，资金用于多模态情感交互模型与珠宝工艺研发（36氪，仅有摘要、未获取到全文；健康相关，证据类型：媒体报道）。</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li>存储与服务器硬件出现利润与市值重估：长鑫利润率反超三星、SK 海力士，成为盈利水平最高的存储厂商；戴尔市值一夜飙升 2500 亿元，创历史新高（36氪早报，仅有摘要、未获取到全文）。</li>
+        <li>吉利在民营车企中先行&quot;去家族化&quot;，李书福交棒年轻一代职业经理人，未选择家族成员接班，治理结构信号意义大于人事本身（财新，仅获取到标题与图注，无正文细节）。</li>
+        <li>产业投资向&quot;硬科技＋空间基础设施&quot;延伸：烁威光电在 36氪产业未来大会介绍太空钙钛矿光伏与新一代空间能源系统布局，应用指向卫星、星舰等场景（36氪，仅有摘要、未获取到全文）。</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li>OpenAI 在 ChatGPT Work 中推出 Data agent：可连接 Amazon Redshift、BigQuery、Snowflake、Databricks、MongoDB、ClickHouse、Datadog 等数据源及 Google Drive、SharePoint 文件，用自然语言完成分析并生成可分享的交互式 dashboard，无需写查询（OpenAI，官方发布）。</li>
+        <li>MIT 研究者用 GPT-5.6 Sol 结合 Codex 自动运行量子芯片常规测量、分析结果并校准 qubit，把研究者从数百至上千次前期测量中解放出来，转向实验设计与数据分析（OpenAI，官方发布）。</li>
+        <li>GPT-6 Astra 加速进入生产系统：Perplexity 用它撰写沟通内容、修改软件、监控生产系统，人工检查频率显著低于早期模型；Cognition 的 Devin 用它测试自身产出，目标是减少人工 code review（OpenAI，官方发布）。</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li>Data agent 的取向是&quot;对话即分析&quot;：把企业 metric 定义、自定义计算与数据关系内化为上下文，让非分析师直接产出可交互、可分享的结果，压缩&quot;提需求—等报表&quot;链路（OpenAI，官方发布）。</li>
+        <li>情感智能珠宝押注&quot;珠宝工艺 × 智能穿戴&quot;的品类交集：首款产品为 AI 身心健康陪伴戒指，2026 年 4 月在国内发售，团队覆盖计算机、AI、医学心理学与消费背景，是传统高溢价消费品接入 AI 的样本（36氪，仅有摘要、未获取到全文；健康相关，证据类型：媒体报道）。</li>
+        <li>Devin 的&quot;自证式&quot;测试交互值得借鉴：交付物不止结论，还包含模拟器运行录屏与&quot;通过项／未覆盖项&quot;清单，把&quot;证明它能跑&quot;本身做成产品能力（OpenAI，官方发布）。</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li>财新评论指出，&quot;资助学生因用苹果 17 Pro Max 而被催捐&quot;实为自导自演，当事人已被采取刑事强制措施；当事实核查缺位、专业媒体调查与公共监督弱化时，情绪化内容更易挤占舆论场——流量造假的成本正在被重新定价（财新）。</li>
+        <li>36氪早报信号：OpenAI 据报考虑放缓前沿 AI 开发、奥特曼希望其他公司跟进；明星 AI 研究员离开 Meta 加盟 Anthropic；多家券商收紧个人程序化交易接入——前沿模型竞争可能从&quot;更快&quot;转向&quot;更稳&quot;，并伴随人才争夺（36氪，仅有摘要、未获取到全文）。</li>
+        <li>美国 Medicaid 新工作要求明年 1 月生效，多数成年人需每月工作/上学/培训/志愿服务至少 80 小时；原住民与阿拉斯加原住民获豁免，但约 70 万夏威夷原住民被排除在外，临床医生担忧加剧该群体的就医与就业困难（KFF Health News，证据类型：媒体报道）。</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 6481，输出 4662，总计 11143</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>economy</h3>
+      <p><strong>1. 火线评论｜“催捐”为自导自演，流量生意何以屡次重创舆论场</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-12 12:18 ｜ 质量：一手来源、深度内容、原创/独家<br>摘要：在一些热点事件的传播过程中，如果事实核查机制缺位、专业媒体的深度调查与公共监督作用没有得到充分发挥，舆论场的客观理性氛围就容易被情绪化内容挤占 【财新网】/火线评论 一个人的谎言，又一次搅动了大众的情绪，欺骗了全社会。一男子在社交平台发文称“常年资助的一位家境不好的学生，因使用苹果17 Pro Max手机，不符合受助标准，他停止资助后遭对方质问催捐”，经过热搜加持之后，成为手机上疯转的话题。然而，经官方查证，该男子实为自导自演编造。 这不是第一起，也不会是最后一起。谎言有代价。据了解，该男子已被采取刑事强制措施。一个社会不太可能彻底屏蔽谎言，但是，一个人的社交媒体谎言，何以成为热点事件，才是更值得深思的。<br>原文：<a href="https://opinion.caixin.com/2026-09-12/102484300.html" target="_blank" rel="noopener noreferrer">https://opinion.caixin.com/2026-09-12/102484300.html</a></blockquote>
+      <p><strong>2. Anthropic称中国大模型泄露中国用户数据给其模型用于“蒸馏”训练</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-12 08:06 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：中国商务部称美国官方对中国大模型工业规模”蒸馏美模型的指控，于事无凭，于法无据 【财新网】 多次指责中国大模型“蒸馏”（distill）美国模型后，Anthropic进一步发难。美东时间9月10日，美国大模型公司Anthropic发布了一份长篇报告，其中指控DeepSeek、小米、月之暗面等中国AI实验室存在不当使用用户数据的行为。 按照Anthropic的说法，DeepSeek、小米、月之暗面等公司将用户与中国大模型之间的对话内容输入Claude，再将Claude生成的回复用于训练中国大模型，以“蒸馏”Claude的能力。<br>原文：<a href="https://www.caixin.com/2026-09-12/102484195.html" target="_blank" rel="noopener noreferrer">https://www.caixin.com/2026-09-12/102484195.html</a></blockquote>
+      <p><strong>3. 【周刊提前读】血液供需紧张 如何破解献血信任难题？</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-12 09:31 ｜ 质量：一手来源、数据驱动<br>摘要：【本文系数据通用户提前专享】供需紧张加剧，如何破解献血的供需与信任难题？ 2026年9月5日，北京市东城区隆福寺文化街区的北京市红十字血液中心献血点，志愿者在招募献血者。图：许雯<br>原文：<a href="https://database.caixin.com/2026-09-12/102484224.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-09-12/102484224.html</a></blockquote>
+      <p><strong>4. 【周刊提前读】李书福交棒年轻一代经理人 吉利为何选择“去家族化”</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-12 09:28 ｜ 质量：一手来源、数据驱动<br>摘要：【本文系数据通用户提前专享】吉利在民营车企中先行一步，没有选择家族成员接班 2026年4月24日，北京，吉利控股集团创始人李书福出席北京国际车展吉利品牌活动。图：Tingshu Wang/IC photo<br>原文：<a href="https://database.caixin.com/2026-09-12/102484222.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-09-12/102484222.html</a></blockquote>
+      <h3>product_tech</h3>
+      <p><strong>1. 情感智能珠宝硬件公司完成天使轮融资，荣耀AI Connect生态企业等押注｜硬氪首发</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-12 10:30 ｜ 质量：一手来源、深度内容、原创/独家 ｜ 证据：媒体报道 ｜ AI 类型：官方发布<br>摘要：作者｜黄楠 编辑｜袁斯来 硬氪获悉，情感智能珠宝硬件企业SHAKESPEARE莎士比亚近日完成数千万元天使轮融资，由荣耀AI Connect生态企业极选智能、国内头部珠宝DP服务商瑞钰控股共同出资。势能资本长期担任公司独家财务顾问。融资资金将主要用于核心算法迭代、多模态情感交互模型开发、新品类的珠宝工艺研发及全球化渠道拓展。 莎士比亚2025年成立于杭州，公司定位“情感智能珠宝”品牌，致力于将传统珠宝工艺与智能穿戴技术深度融合，为提供具备情感陪伴能力的智能珠宝产品。其首款产品为AI身心健康陪伴戒指，已于2026年4月在国内市场正式发售。 莎士比亚创始人杨勋忠历任茵曼COO，茵曼内衣创始人，韩束总经理，其创办的瑞钰控股作为年销售额超20亿元的头部品牌服务商，服务过周大生、周大福、潮宏基、老庙等国内主流珠宝品牌。核心团队来自清华、北大、中科院、复旦、浙大等顶尖院校，覆盖计算机、人工智能、医学心理学等领域，形成消费、技术、医疗、审美交叉的复合型能力底座。 珠宝与智能穿戴，正在发生一场关于品类定义的碰撞。 全球珠宝市场坐拥数千亿美元的存量规模，智能穿戴赛道同样处于高速增长阶段。然而两个行业的交<br>原文：<a href="https://36kr.com/p/3977590035119112?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3977590035119112?f=rss</a></blockquote>
+      <p><strong>2. 和梁文锋师出同门，浙大00后做世界模型，将再融10亿元｜36氪首发</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-11 19:49 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布<br>摘要：文｜王欣逸 编辑｜张雨忻 世界模型赛道将再添一笔大额融资。 《智能涌现》独家获悉，近日，专注4D世界模型领域的魔芯科技即将完成新一轮融资，融资规模或达10亿元，估值也有望跃升至近100亿元。这将是他们今年的第五轮融资，也是近一个月以来的第二轮融资。 据了解，上一轮融资完成后，魔芯科技的估值已近40亿元，这也意味着，新一轮融资完成后，仅一个月的时间，其估值将增长至约2.5倍。 魔芯科技即将迎来新一轮融资，这为似乎慢慢冷静下来的世界模型赛道，又添了一把火。消息显示，魔芯科技已于日前完成股份制改造，新一轮融资也延续了此前产业资本密集参与的特点，历史股东有深创投、浙创投、华为哈勃、联想控股、富瀚微、晶科能源、中芯聚源、杰华特、Prosperity7 Ventures、鼎晖百孚、龙芯创投等。 创始人兼CEO陈天润是一位00后，也是浙江大学计算机科学与技术学院2022级博士生，师从中国工程院院士、原浙江大学校长潘云鹤，和DeepSeek创始人梁文锋是同门师兄弟。他的研究方向是三维视觉、空间智能、世界模型算法，在Science、Nature Photonics等期刊以及ICCV、CVPR等会议上发表<br>原文：<a href="https://36kr.com/p/3978921197140998?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3978921197140998?f=rss</a></blockquote>
+      <p><strong>3. 主题演讲：中国太空钙钛矿光伏与新一代空间能源系统开拓者｜36氪2026产业未来大会</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-12 11:10 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：2026年，产业投资进入深水区，资本、技术与产业加速融合，旧的投资逻辑不再使用，新的共识正在诞生。2026产业未来大会聚焦新周期机遇，共探产业未来与“中国之光”的诞生。 9月9日至10日，由36氪主办的2026产业未来大会以“深水之上，共振新生”为主题的在北京亦庄举行。来自国资平台、产业投资基金、企业CVC、创新企业及专家学者走到一起，聚焦量子科技等未来产业走向产业化。大会深度探讨当下前沿技术与产业视角，集中展示超导、光量子、离子阱等技术路线突破，分享大量具体产业场景、产业体系搭建、与异构计算前景。共同探讨科技产业投资的未来。 以下对话，经36氪整理编辑： 演讲者：烁威光电 联合创始人&amp;CTO 徐帆 徐帆：感谢主持人的介绍，也感谢产业未来大会的邀请。我是来自烁威光电的徐帆。今天向大家介绍一下烁威光电在太空钙钛矿光伏领域的发展思路和现状。这个题目也体现了公司的愿景：成为中国太空钙钛矿光伏与新一代空间能源系统领域的开拓者和领军者。 我的汇报主要分为三个部分。首先是行业与市场格局。早期，包括马斯克在内的产业参与者已经在太空光伏领域进行了多种尝试，应用对象包括卫星、星舰等；同时，国家“十五五”<br>原文：<a href="https://36kr.com/p/3978950863485960?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3978950863485960?f=rss</a></blockquote>
+      <p><strong>4. 9点1氪丨房贷延长到40年但申请人不能超过35岁？机构回应；长鑫利润率反超三星SK海力士；戴尔市值一夜飙升2500亿元，创历史新高</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-12 09:11 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：今日热点导览 月之暗面借Kimi K3加速增长，2026年底年化收入目标20亿美元 多家券商收紧个人程序化交易接入 OpenAI据报考虑放缓前沿AI开发，奥特曼希望其他公司跟进 国际油价11日下跌 明星AI研究员离开Meta，加盟Anthropic TOP3大新闻 房贷延长到40年但申请人不能超过35岁？机构回应 8月28日，中国人民银行、国家金融监督管理总局联合印发《关于改革完善房地产信贷管理推动加快构建房地产发展新模式的意见》，将个人住房贷款期限由最长30年延长至最长40年。 北京地区房屋中介机构人士表示：“贷款年限跟房龄、房子结构、建筑模式、贷款人的年龄均有关系。”根据银行不同，通常“借款人年龄+贷款期限”不超过70年或75年。建设银行一位贷后管理部门人士表示：“公积金暂不参与延期。”且公积金年限认定较为严格。“砖混住宅47减房龄，钢混住宅57减房龄，在住建委新改造名单的可以按67减房龄。” 而存量按揭申请延长还款期限政策进度不一，以北京地区为例，建设银行贷后管理人员表示“存量房的相关政策细则仍在研讨中。”（界面新闻） 长鑫利润率反超三星SK海力士，成最高盈利水平存储厂商 9月1<br>原文：<a href="https://36kr.com/p/3979727038004226?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3979727038004226?f=rss</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. How GPT-5.6 Sol helps run quantum computing experiments</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-09 01:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.<br>原文：<a href="https://openai.com/index/codex-quantum-computing-experiments" target="_blank" rel="noopener noreferrer">https://openai.com/index/codex-quantum-computing-experiments</a></blockquote>
+      <p><strong>2. Now everyone can put data to work</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-10 23:00 ｜ 质量：一手来源、数据驱动 ｜ AI 类型：官方发布<br>摘要：Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.<br>原文：<a href="https://openai.com/index/put-data-to-work" target="_blank" rel="noopener noreferrer">https://openai.com/index/put-data-to-work</a></blockquote>
+      <p><strong>3. Perplexity trusts GPT-6 Astra with end-to-end systems</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-14 08:00 ｜ 质量：一手来源 ｜ AI 类型：官方发布<br>摘要：Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.<br>原文：<a href="https://openai.com/index/perplexity-improving-accuracy-with-astra" target="_blank" rel="noopener noreferrer">https://openai.com/index/perplexity-improving-accuracy-with-astra</a></blockquote>
+      <p><strong>4. Cognition helps Devin test its own work with GPT‑6 Astra</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-12 00:00 ｜ 质量：一手来源 ｜ AI 类型：官方发布<br>摘要：GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more.<br>原文：<a href="https://openai.com/index/cognition-devin-testing-with-astra" target="_blank" rel="noopener noreferrer">https://openai.com/index/cognition-devin-testing-with-astra</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Indigenous Groups Are Exempt From Medicaid Work Rules, but Native Hawaiians Aren’t</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-11 17:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道 ｜ AI 类型：产品应用<br>摘要：Native Hawaiians will have to comply with the new work requirements in President Donald Trump’s signature One Big Beautiful Bill Act, despite facing significant obstacles to employment and healthcare.<br>原文：<a href="https://kffhealthnews.org/medicaid/native-hawaiians-not-exempt-medicaid-work-requirements-indigenous-groups/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/medicaid/native-hawaiians-not-exempt-medicaid-work-requirements-indigenous-groups/</a></blockquote>
+      <p><strong>2. Readers Wrestle With Healthcare Inequalities and Want a Word With Congress</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-11 17:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道<br>摘要：KFF Health News gives readers a chance to comment on a recent batch of stories.<br>原文：<a href="https://kffhealthnews.org/letter-to-the-editor/congressional-benefits-hospice-care-hospital-monopolies-student-loans-ai-solutions-common-ground/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/letter-to-the-editor/congressional-benefits-hospice-care-hospital-monopolies-student-loans-ai-solutions-common-ground/</a></blockquote>
+      <p><strong>3. Two New Medical Tests Added to MedlinePlus</strong></p>
+      <blockquote>来源：MedlinePlus - What&#x27;s New ｜ 时间：2024-10-16 12:00 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Two New Medical Tests Added to MedlinePlus<br>原文：<a href="https://medlineplus.gov/whatsnew/" target="_blank" rel="noopener noreferrer">https://medlineplus.gov/whatsnew/</a></blockquote>
+      <p><strong>4. Tattoos</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-08-28 02:12 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Boston Children&#x27;s Hospital Related MedlinePlus Pages: Piercing and Tattoos<br>原文：<a href="https://youngmenshealthsite.org/guides/tattoos/" target="_blank" rel="noopener noreferrer">https://youngmenshealthsite.org/guides/tattoos/</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>imf_blog: 403 Client Error: Forbidden for url: <a href="https://www.imf.org/en/blogs" target="_blank" rel="noopener noreferrer">https://www.imf.org/en/blogs</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:35:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://opinion.caixin.com/2026-09-12/102484300.html" target="_blank" rel="noopener noreferrer">火线评论｜“催捐”为自导自演，流量生意何以屡次重创舆论场</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-12 12:18</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3977590035119112?f=rss" target="_blank" rel="noopener noreferrer">情感智能珠宝硬件公司完成天使轮融资，荣耀AI Connect生态企业等押注｜硬氪首发</a>
+          <span class="source-meta">36氪 · 2026-09-12 10:30</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3978921197140998?f=rss" target="_blank" rel="noopener noreferrer">和梁文锋师出同门，浙大00后做世界模型，将再融10亿元｜36氪首发</a>
+          <span class="source-meta">36氪 · 2026-09-11 19:49</span>
+        </li>
+        <li>
+          <a href="https://www.caixin.com/2026-09-12/102484195.html" target="_blank" rel="noopener noreferrer">Anthropic称中国大模型泄露中国用户数据给其模型用于“蒸馏”训练</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-12 08:06</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3978950863485960?f=rss" target="_blank" rel="noopener noreferrer">主题演讲：中国太空钙钛矿光伏与新一代空间能源系统开拓者｜36氪2026产业未来大会</a>
+          <span class="source-meta">36氪 · 2026-09-12 11:10</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3979727038004226?f=rss" target="_blank" rel="noopener noreferrer">9点1氪丨房贷延长到40年但申请人不能超过35岁？机构回应；长鑫利润率反超三星SK海力士；戴尔市值一夜飙升2500亿元，创历史新高</a>
+          <span class="source-meta">36氪 · 2026-09-12 09:11</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-09-12/102484224.html" target="_blank" rel="noopener noreferrer">【周刊提前读】血液供需紧张 如何破解献血信任难题？</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-12 09:31</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-09-12/102484222.html" target="_blank" rel="noopener noreferrer">【周刊提前读】李书福交棒年轻一代经理人 吉利为何选择“去家族化”</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-12 09:28</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/codex-quantum-computing-experiments" target="_blank" rel="noopener noreferrer">How GPT-5.6 Sol helps run quantum computing experiments</a>
+          <span class="source-meta">OpenAI News · 2026-09-09 01:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/put-data-to-work" target="_blank" rel="noopener noreferrer">Now everyone can put data to work</a>
+          <span class="source-meta">OpenAI News · 2026-09-10 23:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/perplexity-improving-accuracy-with-astra" target="_blank" rel="noopener noreferrer">Perplexity trusts GPT-6 Astra with end-to-end systems</a>
+          <span class="source-meta">OpenAI News · 2026-09-14 08:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/cognition-devin-testing-with-astra" target="_blank" rel="noopener noreferrer">Cognition helps Devin test its own work with GPT‑6 Astra</a>
+          <span class="source-meta">OpenAI News · 2026-09-12 00:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/medicaid/native-hawaiians-not-exempt-medicaid-work-requirements-indigenous-groups/" target="_blank" rel="noopener noreferrer">Indigenous Groups Are Exempt From Medicaid Work Rules, but Native Hawaiians Aren’t</a>
+          <span class="source-meta">KFF Health News · 2026-09-11 17:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/letter-to-the-editor/congressional-benefits-hospice-care-hospital-monopolies-student-loans-ai-solutions-common-ground/" target="_blank" rel="noopener noreferrer">Readers Wrestle With Healthcare Inequalities and Want a Word With Congress</a>
+          <span class="source-meta">KFF Health News · 2026-09-11 17:00</span>
+        </li>
+        <li>
+          <a href="https://medlineplus.gov/whatsnew/" target="_blank" rel="noopener noreferrer">Two New Medical Tests Added to MedlinePlus</a>
+          <span class="source-meta">MedlinePlus - What&#x27;s New · 2024-10-16 12:00</span>
+        </li>
+        <li>
+          <a href="https://youngmenshealthsite.org/guides/tattoos/" target="_blank" rel="noopener noreferrer">Tattoos</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-08-28 02:12</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
