@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.09.15 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-09-15 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li>OpenAI 推出 ChatGPT for Financial Services：把 Daloopa、PitchBook、LSEG News、Crunchbase 等 premium 数据内置并由 OpenAI 索引托管，替代自建 MCP connector，配合 GPT-6 Astra 做研究、建模与客户材料。对金融机构是数据接入与溯源合规门槛的下降，对数据连接类创业公司则是直接挤压。（OpenAI News，AI 内容类型：官方发布）</li>
+        <li>北京中关村学院 7 名博士生用一个暑假从零训练出 7B 模型 ZGCM-1，并公开数据配方、权重、代码、checkpoint 与训练日志；多项通用评测与 Qwen3-8B 相近，部分数学推理与搜索评测可与 Qwen3-235B-A22B、GLM-5.1 比较。团队用几百个 Agent 分担数据、跑实验、看日志、做评测，并对 Agent 在研发流程中的表现做了评级——&quot;AI4AI&quot;正在从概念变成可复现的完整工程样本。（量子位，AI 内容类型：官方发布）</li>
+        <li>康微视觉完成近亿元 Pre-A 轮，南京精智达清源投资基金领投，川商基金及老股东清源资本跟投，资金用于扩团队、扩产能与下一代技术平台。公司主攻高端泛半导体光学检测设备，瞄准长期由康代、奥宝（现 KLA）、牧德、由田新技四家上市公司垄断、合计年营收超 30 亿元的高端 PCB 检测市场，AI 算力爆发正推动 PCB 升级，国产检测设备的替代窗口在打开。（36氪，仅摘要、未获取到全文）</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li>中控技术判断流程工业（化工、石化）正处在资本开支收缩、全行业周期底部，给出的方向是&quot;让工厂从自动控制走向自主运行&quot;。若该目标落地，工业 AI 的价值主张会从降本工具转向产能与安全冗余；但高温高压、易燃易爆场景意味着验证周期不会短。（36氪，仅摘要、未获取到全文）</li>
+        <li>36氪发布 2026 年度产业投资名册，核心变化是产业资本从&quot;给钱&quot;转向给产线、给测试客户、给第一张订单，北汽产投、广汽资本、联想创投、小米产投、中芯聚源、腾讯投资、米哈游等入列，智元创投 A 计划意味着机器人公司开始反哺下一代技术；2025 年美团、比亚迪、TCL 已出现在具身智能融资名单中，出资人越来越接近技术的使用现场。（36氪，仅摘要、未获取到全文；该条被标记为公关稿）</li>
+        <li>OWID 复盘有机农业与常规农业之争：Clark 与 Tilman 的 meta 分析显示两者在碳排放、用水上差异不明显，有机在土地利用和水污染上反而更差（产量更低、占地更多）。结论高度依赖口径——按单位土地计有机常胜，按单位食物产量计没有明确赢家，这会直接影响农业补贴与消费者沟通的话术。（Our World in Data，研究来源）</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li>Google 发布 Dialogues 新一期：NASA 宇航员 Christina Koch 与 Google SVP James Manyika 对谈，涉及在 ISS 驻留 328 天、首次全女性太空行走、Artemis II 绕月，以及宇航员、机器人、AI 之间的伙伴关系。把&quot;人机协作&quot;叙事放进太空探索这类高信任场景，是 AI 公共沟通的一种典型姿态。（Google AI Blog，AI 内容类型：官方发布）</li>
+        <li>OpenAI 案例：生物工程师 César de la Fuente 的实验室用 Codex 与 ChatGPT 从现存及已灭绝生物的基因组中筛选抗菌候选分子。背景是 2021 年约 500 万死亡与细菌耐药相关、预计到 2050 年大致翻倍，且已 50 年没有新类别抗生素，AI 在药物发现最前端（候选筛选）的加速价值正被具体案例验证。（OpenAI News，AI 内容类型：官方发布；健康证据类型：不适用，属企业案例而非临床研究）</li>
+        <li>36氪项目周榜本期 TOP10 覆盖 AI 算力到智能硬件：万泽时代做 AI 工业碳管理并已启动 A1 轮，字字动画以全链路 AI 平台做漫剧、已披露 10 部作品累计 12 亿播放。AI 应用正继续向碳管理、漫剧这类垂直内容与合规场景下沉。（36氪，仅摘要、未获取到全文）</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li>ChatGPT for Financial Services 的产品方法值得借鉴：与 Morgan Stanley、Evercore 通过 design partnership 反推需求，把 premium 数据内置索引以换取更高准确率和 granular citations，让银行家能逐条回溯数字与结论来源，权限与数据连接由企业集中管理。核心取舍是&quot;用内置数据换溯源能力&quot;，而不是让用户自己接数据源。（OpenAI News，AI 内容类型：官方发布）</li>
+        <li>字字动画把漫剧生产从重人工流程改造成标准化、可规模化的全链路 AI 平台，10 部作品 12 亿播放说明该路径已获内容侧验证。同类&quot;AI 内容工厂&quot;的竞争点会从生成能力转向流程编排与质量控制。（36氪，仅摘要、未获取到全文）</li>
+        <li>康微视觉的产品切口是高端 PCB 光学检测设备，团队兼具芯片端算法、智能驾驶视觉感知与精密设备落地经验。对 AI 硬件团队的启示是：优先在被少数厂商垄断的高价值检测环节找位置，而非做通用方案。（36氪，仅摘要、未获取到全文）</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li>美国国会民主党议员要求叫停 CPSC 的急诊病历采集计划：KFF 独家披露该机构施压医院将可识别个人健康信息交给私营公司分析，覆盖超 1 万种伤害或病症（含疫苗反应、自杀未遂等），范围超出机构使命，已招致医院与隐私倡导者反弹。医疗数据采集的合规半径正在收紧。（KFF Health News，健康证据类型：媒体报道）</li>
+        <li>UN 报告估算全球有 1.38 亿童工，而 SDG&quot;2025 年前消除一切形式的童工&quot;目标已大幅落空；OWID 指出争议核心在口径——&quot;儿童从事的、可能有害的工作&quot;如何界定，直接决定政策力度与跨国可比性。看这类数字要先看定义。（Our World in Data，研究来源）</li>
+        <li>卢森堡对 Gazprombank 前高管展开调查，起因是 FT 调查发现四名前董事通过规避制裁的交易方案自肥。制裁合规风险正从机构本身外溢到个人与欧洲司法辖区。（Financial Times，仅摘要、未获取到全文）</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 6975，输出 6902，总计 13877</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>ai</h3>
+      <p><strong>1. Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.</strong></p>
+      <blockquote>来源：Google AI Blog ｜ 时间：2026-09-15 03:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：Christina Koch sits down with James Manyika, Google’s Senior Vice President of Research, Labs, Technology &amp; Society.<br>原文：<a href="https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/" target="_blank" rel="noopener noreferrer">https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/</a></blockquote>
+      <p><strong>2. Introducing ChatGPT for Financial Services</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-10 15:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：Introducing ChatGPT for Financial Services, combining built-in financial data and GPT-6 Astra for research, modeling, and client-ready materials.<br>原文：<a href="https://openai.com/index/introducing-chatgpt-financial-services" target="_blank" rel="noopener noreferrer">https://openai.com/index/introducing-chatgpt-financial-services</a></blockquote>
+      <p><strong>3. 7名博士生仅用3个月从零训练7B大模型：代码+数据+训练日志全公开</strong></p>
+      <blockquote>来源：量子位 ｜ 时间：2026-09-15 10:17 ｜ 质量：一手来源、数据驱动 ｜ AI 类型：官方发布<br>摘要：几百个Agent参与研发，AI开始造AI<br>原文：<a href="https://www.qbitai.com/2026/09/489227.html" target="_blank" rel="noopener noreferrer">https://www.qbitai.com/2026/09/489227.html</a></blockquote>
+      <p><strong>4. How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-11 00:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.<br>原文：<a href="https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials" target="_blank" rel="noopener noreferrer">https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials</a></blockquote>
+      <h3>product_tech</h3>
+      <p><strong>1. 中控技术俞海斌：AI，驱动流程工业的下一站 | 36氪 2026产业未来大会</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-14 16:46 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：2026年，产业投资进入深水区，资本、技术与产业加速融合，旧的投资逻辑不再使用，新的共识正在诞生。2026产业未来大会聚焦新周期机遇，共探产业未来与“中国之光”的诞生。 9月9日至10日，由36氪主办的2026产业未来大会以“深水之上，共振新生”为主题的在北京亦庄举行。来自国资平台、产业投资基金、企业CVC、创新企业及专家学者走到一起，聚焦量子科技等未来产业走向产业化。大会深度探讨当下前沿技术与产业视角，集中展示超导、光量子、离子阱等技术路线突破，分享大量具体产业场景、产业体系搭建、与异构计算前景。共同探讨科技产业投资的未来。 以下为演讲内容，经36氪整理编辑： 演讲者：中控技术战略委员会副主任、总裁级战略顾问 俞海斌 各位来宾、业界朋友，大家好！我是中控技术俞海斌，感谢36氪的邀请。今天大会的主题是“深水之上，共振新生”。 对我们做工业的人来说，“深水”很具体——化工、石化这些流程工业，高温高压、易燃易爆，这几年资本开支收缩，全行业都在周期底部。 而“新生”的方向在哪里？我想用一句话概括今天的分享——让工厂从自动控制，走向自主运行。这也是我的主题：AI，驱动流程工业的下一站。 今天的<br>原文：<a href="https://36kr.com/p/3978416117464071?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3978416117464071?f=rss</a></blockquote>
+      <p><strong>2. 前高通算法研发经理跨界AI算力板检测，获近亿元战略投资丨36氪首发</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-15 09:30 ｜ 质量：一手来源、原创/独家 ｜ AI 类型：官方发布<br>摘要：图源/企业 本文约 2500 字，建议阅读 5 分钟 作者丨欧雪 编辑丨袁斯来 硬氪获悉，深圳康微视觉技术有限公司（以下简称“康微视觉”）近日已完成近亿元Pre-A轮融资。本轮由南京精智达清源投资基金领投，川商基金及老股东清源资本跟投，投中资本担任独家财务顾问。资金将主要用于扩充研发与运营团队、扩大产能以应对爆发式订单增长，以及下一代产品与技术平台的研发。 康微视觉2019年成立于深圳，是一家专注于高端泛半导体光学检测设备的高新技术企业。核心团队多毕业于西安交通大学与华中科技大学，创始人兼CEO张晖拥有近20年算法芯片化与产品化经验，曾任职高通负责芯片算法研发，后以CTO身份联合创立智能驾驶公司前向启创，该公司于2019年被上市公司收购。团队兼具芯片端算法、智能驾驶视觉感知与精密设备落地三重基因。 2019年，张晖与团队从被收购的智能驾驶公司退出后，开始寻找新的方向。当时市场上一个被忽视的结构性机会引起了他的注意：全球高端PCB检测设备市场长期由美国康代、奥宝（现KLA）以及台湾牧德科技、由田新技四家上市公司垄断，四家合计年营收超过30亿元。 与此同时，AI算力爆发正推动PCB产业向高<br>原文：<a href="https://36kr.com/p/3983995421440769?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3983995421440769?f=rss</a></blockquote>
+      <p><strong>3. 36氪2026年度「产业投资行业」系列名册正式发布</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-14 14:45 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：记录产业资本深度。 技术越往产业深处走 资本越需要拿出钱以外的本事 一家创业公司的股东，也可能是它的第一批客户。 2025年，美团、比亚迪、TCL等产业力量，已经出现在具身智能企业的融资名单中。进入“十五五”开局之年，人工智能、先进制造、半导体等领域的技术竞争继续向产业深处推进。创业公司需要资金，也需要一条能试产的产线、一批愿意测试新品的客户，以及技术走出实验室之后的第一张订单。 产业资本的分量，恰恰在这些具体的环节里显现。 2026年的中国最具影响力产业投资机构，勾勒出了一幅有实体产业纵深的资本版图。北汽产投、广汽资本、吉利资本背后，是汽车工业积累的制造体系；联想创投、海尔资本、小米产投，连接着庞大的终端与供应链；中芯聚源、芯联资本等机构，则靠近芯片产业的核心环节。腾讯投资、米哈游、三七互娱创投基金也在其中，产业资本的来源远比“制造业的钱”更丰富。 这张名单上，还有智元创投A计划。一个仍在成长中的机器人产业，已经开始为下一代技术提供资本。曾经作为融资对象的新公司，也有机会成为新一轮创新的组织者。 与单纯的资金供给相比，这些出资人更接近技术的使用现场。机器人能否在产线上连续工作，芯片能<br>原文：<a href="https://36kr.com/p/3982887655160834?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3982887655160834?f=rss</a></blockquote>
+      <p><strong>4. 36氪项目推荐周榜｜从AI算力到智能硬件，本周TOP10项目正在寻找下一增长曲线</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-14 16:11 ｜ 质量：一手来源、数据驱动 ｜ AI 类型：官方发布<br>摘要：头图 【36氪项目推荐】 将智能工具融入传统报道流程，提升项目报道与内容生产效率，降低企业对外传播的门槛。同时，围绕项目展示、品牌曝光与资源连接，持续探索更适合早期创业项目的传播方式。 希望为创业者提供更便捷的一站式项目展示窗口。让值得关注的项目更快被看见，也让创新与机会更高效地连接。 分隔符 榜单 01 万泽时代 图 1 万泽时代聚焦 AI 工业碳管理赛道，希望将人工智能能力应用到工业碳管理场景中，提升企业在碳数据处理、分析及管理过程中的数字化水平。当前项目已启动 A1 轮融资，在“双碳”与工业数字化持续推进的背景下，AI 与碳管理的结合也为企业精细化管理提供了新的技术路径。 链接： <a href="https://36kr.com/p/3975868815569156" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3975868815569156</a> 一句话总结 用 AI 切入工业碳管理，探索“双碳”背景下企业数字化管理的新路径。 02 字字动画 图2 字字动画瞄准快速增长的漫剧内容市场，通过全链路 AI 平台提升内容生产效率，尝试将漫剧制作从传统的重人工流程转向更加标准化、规模化的内容生产模式。项目目前已披露 10 部漫剧累计获得 12 亿播放量，既具备 AI 内容生产属性，也<br>原文：<a href="https://36kr.com/p/3982971072707332?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3982971072707332?f=rss</a></blockquote>
+      <h3>economy</h3>
+      <p><strong>1. 138 million children are in child labor. What does this actually mean?</strong></p>
+      <blockquote>来源：Our World in Data ｜ 时间：2026-08-10 08:00 ｜ 质量：研究来源、深度内容、数据驱动<br>摘要：According to a UN report published last year, there are 138 million children in child labor. In this article, we look at what this estimate exactly captures.<br>原文：<a href="https://ourworldindata.org/138-million-children-are-in-child-labor-what-does-this-actually-mean" target="_blank" rel="noopener noreferrer">https://ourworldindata.org/138-million-children-are-in-child-labor-what-does-this-actually-mean</a></blockquote>
+      <p><strong>2. Is organic farming better for the environment than conventional farming?</strong></p>
+      <blockquote>来源：Our World in Data ｜ 时间：2026-09-14 08:00 ｜ 质量：研究来源<br>摘要：Organic farming often wins when we compare impacts on one unit of land, but there is no clear winner when we look at impacts per unit of food production.<br>原文：<a href="https://ourworldindata.org/is-organic-farming-better-for-the-environment-than-conventional-farming" target="_blank" rel="noopener noreferrer">https://ourworldindata.org/is-organic-farming-better-for-the-environment-than-conventional-farming</a></blockquote>
+      <p><strong>3. Luxembourg probes Gazprombank ex-managers</strong></p>
+      <blockquote>来源：Financial Times ｜ 时间：2026-09-15 12:00 ｜ 质量：原创/独家<br>摘要：Inquiry follows an FT investigation that found four former directors enriched themselves through a sanctions-busting trading scheme<br>原文：<a href="https://www.ft.com/content/f00de325-5045-4e98-9068-9261bfe9eff3?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">https://www.ft.com/content/f00de325-5045-4e98-9068-9261bfe9eff3?syn-25a6b1a6=1</a></blockquote>
+      <p><strong>4. We published a new topic page on economic inequality</strong></p>
+      <blockquote>来源：Our World in Data ｜ 时间：2026-07-27 08:00 ｜ 质量：研究来源、数据驱动<br>摘要：Learn how inequality is measured, who produces key databases, and what the data tells us.<br>原文：<a href="https://ourworldindata.org/we-published-a-new-topic-page-on-economic-inequality" target="_blank" rel="noopener noreferrer">https://ourworldindata.org/we-published-a-new-topic-page-on-economic-inequality</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Listen to the Latest ‘KFF Health News Minute’</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-10 17:00 ｜ 质量：深度内容、数据驱动 ｜ 证据：政策报告 ｜ AI 类型：产品应用<br>摘要：The &quot;KFF Health News Minute&quot; brings original healthcare and health policy reporting from our newsroom to the airwaves each week.<br>原文：<a href="https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/</a></blockquote>
+      <p><strong>2. Journalists Detail Data on Suicide, Primary Care Shortages, and Gun Violence</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-12 17:00 ｜ 质量：数据驱动 ｜ 证据：研究论文 ｜ AI 类型：产品应用<br>摘要：KFF Health News journalists made the rounds on national and local media recently to discuss topical stories. Here’s a collection of their appearances.<br>原文：<a href="https://kffhealthnews.org/on-air/on-air-september-12-2026-opioid-settlements-primary-care-gun-violence/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/on-air/on-air-september-12-2026-opioid-settlements-primary-care-gun-violence/</a></blockquote>
+      <p><strong>3. A Generation of Kids Suffer as Trump Destabilizes Immigrant Families</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-14 17:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道 ｜ AI 类型：产品应用<br>摘要：Children in immigrant families are facing health threats from President Donald Trump’s policies: separation from parents detained or deported by Immigration and Customs Enforcement, economic and housing instability, withdrawal from health and nutrition programs, and an overarching environment of fear.<br>原文：<a href="https://kffhealthnews.org/race-and-health/trump-ice-immigration-immigrant-families-kids-parents-separation-health-trauma/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/race-and-health/trump-ice-immigration-immigrant-families-kids-parents-separation-health-trauma/</a></blockquote>
+      <p><strong>4. Democrats Demand Trump Administration Halt Collection of Patients’ ER Records</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-09 00:22 ｜ 质量：数据驱动 ｜ 证据：媒体报道<br>摘要：Senate and House Democrats say the Trump administration’s plan to collect patients’ medical data violates privacy and will discourage people from seeking medical care.<br>原文：<a href="https://kffhealthnews.org/health-industry/patient-privacy-consumer-product-safety-commission-trump-democrats-hospital-records/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/health-industry/patient-privacy-consumer-product-safety-commission-trump-democrats-hospital-records/</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>imf_blog: 403 Client Error: Forbidden for url: <a href="https://www.imf.org/en/blogs" target="_blank" rel="noopener noreferrer">https://www.imf.org/en/blogs</a></li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:35:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ResponseError(&#x27;too many 502 error responses&#x27;))</li>
+        <li>caixin_latest_zh: HTTPSConnectionPool(host=&#x27;rsshub.rssforever.com&#x27;, port=443): Max retries exceeded with url: /caixin/latest (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;rsshub.rssforever.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/" target="_blank" rel="noopener noreferrer">Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.</a>
+          <span class="source-meta">Google AI Blog · 2026-09-15 03:00</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3978416117464071?f=rss" target="_blank" rel="noopener noreferrer">中控技术俞海斌：AI，驱动流程工业的下一站 | 36氪 2026产业未来大会</a>
+          <span class="source-meta">36氪 · 2026-09-14 16:46</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/introducing-chatgpt-financial-services" target="_blank" rel="noopener noreferrer">Introducing ChatGPT for Financial Services</a>
+          <span class="source-meta">OpenAI News · 2026-09-10 15:00</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3983995421440769?f=rss" target="_blank" rel="noopener noreferrer">前高通算法研发经理跨界AI算力板检测，获近亿元战略投资丨36氪首发</a>
+          <span class="source-meta">36氪 · 2026-09-15 09:30</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3982887655160834?f=rss" target="_blank" rel="noopener noreferrer">36氪2026年度「产业投资行业」系列名册正式发布</a>
+          <span class="source-meta">36氪 · 2026-09-14 14:45</span>
+        </li>
+        <li>
+          <a href="https://www.qbitai.com/2026/09/489227.html" target="_blank" rel="noopener noreferrer">7名博士生仅用3个月从零训练7B大模型：代码+数据+训练日志全公开</a>
+          <span class="source-meta">量子位 · 2026-09-15 10:17</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3982971072707332?f=rss" target="_blank" rel="noopener noreferrer">36氪项目推荐周榜｜从AI算力到智能硬件，本周TOP10项目正在寻找下一增长曲线</a>
+          <span class="source-meta">36氪 · 2026-09-14 16:11</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials" target="_blank" rel="noopener noreferrer">How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules</a>
+          <span class="source-meta">OpenAI News · 2026-09-11 00:00</span>
+        </li>
+        <li>
+          <a href="https://ourworldindata.org/138-million-children-are-in-child-labor-what-does-this-actually-mean" target="_blank" rel="noopener noreferrer">138 million children are in child labor. What does this actually mean?</a>
+          <span class="source-meta">Our World in Data · 2026-08-10 08:00</span>
+        </li>
+        <li>
+          <a href="https://ourworldindata.org/is-organic-farming-better-for-the-environment-than-conventional-farming" target="_blank" rel="noopener noreferrer">Is organic farming better for the environment than conventional farming?</a>
+          <span class="source-meta">Our World in Data · 2026-09-14 08:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/" target="_blank" rel="noopener noreferrer">Listen to the Latest ‘KFF Health News Minute’</a>
+          <span class="source-meta">KFF Health News · 2026-09-10 17:00</span>
+        </li>
+        <li>
+          <a href="https://www.ft.com/content/f00de325-5045-4e98-9068-9261bfe9eff3?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Luxembourg probes Gazprombank ex-managers</a>
+          <span class="source-meta">Financial Times · 2026-09-15 12:00</span>
+        </li>
+        <li>
+          <a href="https://ourworldindata.org/we-published-a-new-topic-page-on-economic-inequality" target="_blank" rel="noopener noreferrer">We published a new topic page on economic inequality</a>
+          <span class="source-meta">Our World in Data · 2026-07-27 08:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/on-air/on-air-september-12-2026-opioid-settlements-primary-care-gun-violence/" target="_blank" rel="noopener noreferrer">Journalists Detail Data on Suicide, Primary Care Shortages, and Gun Violence</a>
+          <span class="source-meta">KFF Health News · 2026-09-12 17:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/race-and-health/trump-ice-immigration-immigrant-families-kids-parents-separation-health-trauma/" target="_blank" rel="noopener noreferrer">A Generation of Kids Suffer as Trump Destabilizes Immigrant Families</a>
+          <span class="source-meta">KFF Health News · 2026-09-14 17:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/health-industry/patient-privacy-consumer-product-safety-commission-trump-democrats-hospital-records/" target="_blank" rel="noopener noreferrer">Democrats Demand Trump Administration Halt Collection of Patients’ ER Records</a>
+          <span class="source-meta">KFF Health News · 2026-09-09 00:22</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
