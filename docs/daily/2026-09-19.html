@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.09.19 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-09-19 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li>OpenAI 公开模型失准（misalignment）报告框架，并一次性附上过去六个月观察到的 6 起意外或令人担忧的模型行为；其明确表示，行业尚未把 alignment 与监控解决到足以长期全速扩展的程度（OpenAI，官方发布）。判断：头部实验室把风险披露从&quot;攒够再写进系统卡&quot;改为观察后尽快发布，透明度可能成为同行默认基准，也为其后续降速预留了公开依据。</li>
+        <li>Anthropic、OpenAI、SpaceXAI、Google 因公开呼吁协同管控 AI 前沿发展节奏，被指构成竞争者之间的非法商业协议，遭四名原告起诉至加州北区联邦法院（36氪，仅有摘要，未获取到全文）。影响：AI 安全领域的&quot;全行业协同&quot;表述可能被纳入反垄断审查，未来联合安全声明的措辞与形式将更谨慎。</li>
+        <li>蚂蚁集团发布面向智能体商业的信任基础设施 APASS，基于 KYA（认知你的智能体）理念建立身份与意图两条信任链；其 CEO 韩歆毅称智能体商业的&quot;ChatGPT 时刻&quot;正在到来，商业交互起点从搜索页转向意图驱动的服务调度（极客公园）。判断：Agent 替人做真实交易的瓶颈已从支付能力，转到身份与授权能否被验证。</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li>理想汽车启动核心技术外供，涉及自研马赫芯片、斯科半导体碳化硅模组与增程器；芯片业务已注册芯创智核（上海）并由高层决议批准分拆，已向具身智能公司推销马赫芯片（36氪独家，仅有摘要，未获取到全文）。判断：整车厂把自研算力与动力资产开放给第三方，短期补收入，长期是&quot;车企还是供应商&quot;的分化点；具身智能公司的算法迁移难度决定成交。</li>
+        <li>创新药盈利面扩大：信达生物 2026 上半年营收 86.18 亿元、同比增长 44.76%，已摆脱对 PD-1 肿瘤药单品依赖；市场从&quot;故事&quot;转向价值兑现，企业以多元路径谋增长（财新）。判断：行业正进入按收入结构而非管线叙事定价的阶段。</li>
+        <li>Medicaid 送餐实验：马萨诸塞州近 1900 名接受医学定制餐至少三个月的居民，急诊就诊减少 20%、住院减少 31%（发表于 Nature Medicine）；但预算削减与政策不确定性下，已有州重新考虑覆盖（KFF Health News，健康证据类型：政策报告）。判断：&quot;食物即医疗&quot;的成本效益已有研究支撑，能否落地更多取决于财政而非证据。</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li>《AI 前沿指数报告 2026Q1》扫描 2025Q1 至 2026Q1 共 11.8 万篇论文：跨机构合作约占六成、国际跨机构合作占 29.9%；基础模型仍是活跃前沿，研究向推理多模态、强化学习式后训练、智能体与行动能力深入，模型周边的检索、知识集成、评估与工程化工作流从辅助模块变为创新对象；中国大陆研究最集中于热点方向，美国覆盖面更广（财新，AI 内容类型：官方发布）。判断：创新重心正从单个模型转向模型周边工具链与工程化。</li>
+        <li>Google 扩展 AI &amp; Economy Research Program 并引入经济学家，聚焦未来工作、生产率与增长、全球技术扩散、AI 对科学发现的影响；此前已上线 AI &amp; Economy ATLAS v1.0（Google AI Blog，AI 内容类型：官方发布）。判断：AI 经济影响研究开始机构化，其结果会反向影响政策口径与产品定位。</li>
+        <li>OpenAI 分析 2026 年 4 至 7 月逾 150 万条工作相关 ChatGPT 消息，发现&quot;任务跨界&quot;（task crossover）具有持续性——员工反复使用本职之外的任务，且占比随时间上升（OpenAI，AI 内容类型：官方发布）。判断：职称不变而职责被重新划分，企业应按任务而非岗位设计 AI 权限与流程。</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li>Hex 的 agentic 数据平台用 GPT-6 Astra 生成交互式可视化：模型能深入底层库完成 geospatial 可视化所需的复杂数据变换，产出既功能完整又具美感的可分享数据制品（OpenAI，AI 内容类型：官方发布）。判断：数据可视化的门槛从&quot;会写图、会转换&quot;转向&quot;能否产出愿意分享出去的交付物&quot;，评价标准随之上移。</li>
+        <li>蚂蚁 APASS 的核验设计给出三个维度，其中软件特征维度校验 Agent 的代码指纹、软件版本与挂载的 Skill 清单，用于应对代码被打包迁移到云端后设备、IP、模型与插件全部改变的场景（极客公园）。判断：静态 API Key 与一次性免密授权在开放网络的长任务中无法兜底，授权边界需要按意图与运行时状态动态界定。</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li>FDA 上市后研究长期滞后：Tavneos 2021 年获批时被要求补做多年安全性研究，计划 300 名患者截至去年秋季仅入组 21 人，同期 FDA 已识别数十例&quot;可能或很可能&quot;与该药相关的肝损伤（KFF Health News，健康证据类型：媒体报道）。信号：&quot;加速批准＋事后验证&quot;的监管缺口可能在更多药品与器械上暴露。</li>
+        <li>医疗费用正在成为中期选举议题：保费与免赔额上涨、就诊前先刷卡渐成常态，两党候选人开始提出降费方案（KFF Health News，健康证据类型：媒体报道）。信号：就医可负担性可能成为选情变量，并推高相关政策的优先级。</li>
+        <li>中国大宗商品指数周跌 1.29%，平板玻璃领跌 6.78%，供应压力仍存、需求旺季不旺（财新）。信号：建材价格走弱显示地产链需求端仍未修复，旺季成色是后续观察点。</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 7415，输出 7624，总计 15039</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>economy</h3>
+      <p><strong>1. AI论文跨机构合作占比六成 国际跨机构合作占29.9%</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-19 09:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：《AI前沿指数报告2026Q1》还指出，中国大陆对热点方向的研究最为集中，而美国在AI领域的研究覆盖面更广 【财新网】 近期，新中人工智能协会（Sino-Singapore AI Association，SSAIA）与新加坡管理大学联合发布的《AI前沿指数报告2026Q1》，报告扫描了2025年第一季度至2026年第一季度11.8万篇论文，从论文主题、引用、作者和合作机构等多方面分析人工智能研究的变化。 报告称，2026年的数据证明，基础模型自身仍是活跃前沿，研究继续向推理多模态、强化学习式后训练、智能体与行动能力深入；与此同时，模型周边的检索、知识集成、评估与工程化工作流从辅助模块变为创新的对象。<br>原文：<a href="https://www.caixin.com/2026-09-19/102486382.html" target="_blank" rel="noopener noreferrer">https://www.caixin.com/2026-09-19/102486382.html</a></blockquote>
+      <p><strong>2. 【周刊提前读】创新药盈利之后</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-19 10:45 ｜ 质量：一手来源、数据驱动<br>摘要：【本文系数据通用户提前专享】从“故事”到价值兑现，市场要求更高，企业多元路径谋增长<br>原文：<a href="https://database.caixin.com/2026-09-19/102486512.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-09-19/102486512.html</a></blockquote>
+      <p><strong>3. 【CCI快报】：中国大宗商品指数周跌1.29% 平板玻璃领跌6.78%</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-19 10:25 ｜ 质量：一手来源、数据驱动<br>摘要：供应压力仍存、需求旺季不旺，平板玻璃价格走弱<br>原文：<a href="https://database.caixin.com/2026-09-19/102486454.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-09-19/102486454.html</a></blockquote>
+      <p><strong>4. 【周刊提前读】美伊战争重创中东经济 “安全港”迪拜还受出海中企青睐吗？</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-19 10:12 ｜ 质量：一手来源、数据驱动<br>摘要：【本文系数据通用户提前专享】战事给这一中东经济枢纽带来了什么？中国企业“出海”在调整节奏中发现新机<br>原文：<a href="https://database.caixin.com/2026-09-19/102486442.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-09-19/102486442.html</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. Our framework for reporting model misalignment</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-17 01:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior.<br>原文：<a href="https://openai.com/index/model-misalignment-reporting-framework" target="_blank" rel="noopener noreferrer">https://openai.com/index/model-misalignment-reporting-framework</a></blockquote>
+      <p><strong>2. Hex turns complex analysis into visual reports with GPT‑6 Astra</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-16 20:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：GPT-6 Astra helps Hex’s data agents turn answers into interactive visualizations that employees are proud to share.<br>原文：<a href="https://openai.com/index/hex-gpt-6-astra" target="_blank" rel="noopener noreferrer">https://openai.com/index/hex-gpt-6-astra</a></blockquote>
+      <p><strong>3. New experts join Google’s AI &amp; Economy team</strong></p>
+      <blockquote>来源：Google AI Blog ｜ 时间：2026-09-18 22:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：Text &quot;AI &amp; Economy Research Program&quot; all over a green grid background, with the Google G logo in the bottom right corner<br>原文：<a href="https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/" target="_blank" rel="noopener noreferrer">https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/</a></blockquote>
+      <p><strong>4. How workers are unlocking new ways of working</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-16 17:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work.<br>原文：<a href="https://openai.com/index/unlocking-new-ways-of-working" target="_blank" rel="noopener noreferrer">https://openai.com/index/unlocking-new-ways-of-working</a></blockquote>
+      <h3>product_tech</h3>
+      <p><strong>1. 当智能体开始替人花钱，如何证明「它是谁」？</strong></p>
+      <blockquote>来源：极客公园 ｜ 时间：2026-09-16 15:45 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：在蚂蚁集团，负责 AI 支付安全的陈树鹏是个深度的智能体使用者。日常写代码、梳理汇报、提炼会议纪要，AI 几乎接管了他工作流里的大部分环节。 这种高度依赖背后，却存在着一个清晰的分水岭。一旦任务涉及真金白银，比如调用付费数据接口、购买素材或预订服务，绝大多数人都会本能地把权限卡死不愿交出钱包。哪怕是陈树鹏自己，手头测试过大量任务型框架，真正被他允许支付权限的智能体也仅仅只有两三个。 但在产业一线，这种放权又势在必行。 在 2026 外滩大会上，蚂蚁集团 CEO 韩歆毅表示，智能体商业的「ChatGPT 时刻」正在到来，其核心标志正是从单纯的对话能力展示，加速走向真实的商业交易闭环。商业世界的交互起点，正在从过去的搜索页面演进为意图驱动的服务调度。 在技术上，调用 API 扣费及定期支付看似早已是成熟的基础设施。但真正让人犹豫的，是 Agent 与传统自动化脚本的本质区别。以往的自动化扣款跑在封闭受控的系统里，按固定规则触发；现在的 Agent 为了办成一件事，需要在开放网络里自主探索、解析未经清洗的公开网页、调用第三方插件。面对一个在外部环境里自主决策的长任务，过去那种一次性给出的静态<br>原文：<a href="http://www.geekpark.net/news/370440" target="_blank" rel="noopener noreferrer">http://www.geekpark.net/news/370440</a></blockquote>
+      <p><strong>2. OpenAI等四家企业遭起诉，被指控合谋呼吁管控AI发展节奏</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-19 11:29 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：当地时间周五提交至联邦法院的一份民事诉讼显示，人工智能巨头Anthropic、OpenAI、SpaceXAI以及谷歌因近期呼吁协同放缓人工智能研发速度，被指控存在串通行为。 诉状指出，Anthropic首席执行官达里奥·阿莫代伊本月早些时候公开呼吁“全行业协同”，以“管控人工智能前沿的发展节奏”，SpaceXAI负责人埃隆·马斯克、OpenAI首席执行官萨姆·奥尔特曼以及谷歌深度思维联合创始人德米斯·哈萨比斯均对此表示认同。依据美国反垄断法，上述行为属于竞争者之间达成的非法商业协议。 代理四名原告、在加州北区法院提起本次诉讼的律师之一Nick Rowley表示，提起本案，是为了防止全球最具实力的营利性科技企业达成“利己的私下协议”，进而导致人工智能“迅速脱离人类掌控”。 Rowley在一份声明中表示：“面对核战争这类足以造成物种灭绝的威胁，以及如今这项人类历史上面临的最大风险，人类理应拥有牢不可破的防护机制。法律规则应当由政府以透明、合法的方式制定，并对公众负责。”（新浪财经）<br>原文：<a href="https://36kr.com/newsflashes/3989670755253248?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/3989670755253248?f=rss</a></blockquote>
+      <p><strong>3. 理想开始卖技术：马赫芯片、碳化硅、增程器要外供｜36氪独家</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-18 14:31 ｜ 质量：一手来源、原创/独家 ｜ AI 类型：官方发布<br>摘要：文 | 徐蔡钰 编辑 | 李勤 杨轩 理想汽车，开始开放多项自研技术的对外合作，寻求更多收入来源。 36氪从多位产业人士处获悉后梳理，今年以来，理想汽车已经开启了多项核心技术的对外供应计划，而伴随业务拆分，部分业务也有引入外部资金的计划。 典型启动外供的业务有自研马赫芯片、碳化硅模组公司斯科半导体及增程器等。目前，马赫芯片、碳化硅模组等都已经成立独立的公司实体，寻求更多外部客户，斯科半导体也准备引入更多外部资金。 而其他的动力技术，如增程系统也向外释放出接纳外部客户的信息。但自研电池尚无计划，行业人士表示，“电池的定制化程度很高，外供难度太大。” 自研马赫芯片的业务独立和外供，已经有诸多信号。今年7月，理想为芯片业务注册了一家全资控股的新公司：芯创智核（上海）科技有限公司。 据36氪了解，理想高层也已经决议批准芯片业务分拆，与此同时，业务拓展等动作也在同步进行。消息人士透露，已经有具身智能公司与理想高层洽谈过，“后者明确推销了马赫芯片”，最终这些具身公司是否使用马赫芯片，可能取决于算法迁移难度。 马赫M100是理想第一颗量产的辅助驾驶芯片，单颗算力为1280TOPS，内存带宽达到273<br>原文：<a href="https://36kr.com/p/3988488062630661?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3988488062630661?f=rss</a></blockquote>
+      <p><strong>4. 8月底公募基金资产净值合计达39.63万亿元</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-19 12:14 ｜ 质量：一手来源、数据驱动 ｜ 降权：公关稿<br>摘要：中国证券投资基金业协会最新发布的数据显示，截至2026年8月底，我国境内公募基金管理机构共165家，其中基金管理公司150家，取得公募资格的资产管理机构15家。以上机构管理的公募基金资产净值合计39.63万亿元，与7月底相比增长5293.09亿元，环比增长约1.35%。（上证报）<br>原文：<a href="https://36kr.com/newsflashes/3989791714262016?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/3989791714262016?f=rss</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Listen to the Latest ‘KFF Health News Minute’</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-17 17:00 ｜ 质量：深度内容、数据驱动 ｜ 证据：政策报告 ｜ AI 类型：产品应用<br>摘要：The &quot;KFF Health News Minute&quot; brings original healthcare and health policy reporting from our newsroom to the airwaves each week.<br>原文：<a href="https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/</a></blockquote>
+      <p><strong>2. Cost-Saving Medicaid Meal Deliveries Threatened by Cuts, Policy Uncertainty</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-18 17:00 ｜ 质量：常规资讯 ｜ 证据：政策报告 ｜ AI 类型：产品应用<br>摘要：An experiment to provide meals to some Medicaid recipients shows food can be cost-effective medicine. But even as federal officials tout the power of nutrition, Medicaid budget cuts could lead states to think twice about covering healthy food for sick residents. One has already reconsidered.<br>原文：<a href="https://kffhealthnews.org/medicaid/medicaid-meal-deliveries-food-nutrition-waivers-trump-massachusetts-north-carolina/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/medicaid/medicaid-meal-deliveries-food-nutrition-waivers-trump-massachusetts-north-carolina/</a></blockquote>
+      <p><strong>3. The Drugs and Devices Have Been on the Market for Years. But FDA-Ordered Studies Still Aren’t Done.</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-18 17:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道<br>摘要：To get drugs and devices out faster, the FDA lets companies conduct studies of safety or efficacy after the products are approved. In many cases, such “postmarket” studies are behind schedule or overdue, records show.<br>原文：<a href="https://kffhealthnews.org/health-industry/fda-approval-drugs-medical-devices-postmarket-studies-safety-delays-amgen-tavneos/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/health-industry/fda-approval-drugs-medical-devices-postmarket-studies-safety-delays-amgen-tavneos/</a></blockquote>
+      <p><strong>4. Sticker Shock at the Doctor’s Office Could Motivate Midterm Voters</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-18 17:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道 ｜ AI 类型：产品应用<br>摘要：Steep jumps in health insurance premiums and deductibles are top of mind for many voters heading into midterm elections. KFF Health News chief Washington correspondent Julie Rovner explains how rising costs may shape competitive races. She also distills plans from candidates on both sides of the aisle to bring costs down.<br>原文：<a href="https://kffhealthnews.org/elections/healthcare-affordability-shapes-competitive-races-midterm-elections/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/elections/healthcare-affordability-shapes-competitive-races-midterm-elections/</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>imf_blog: 403 Client Error: Forbidden for url: <a href="https://www.imf.org/en/blogs" target="_blank" rel="noopener noreferrer">https://www.imf.org/en/blogs</a></li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:35:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ResponseError(&#x27;too many 502 error responses&#x27;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://www.caixin.com/2026-09-19/102486382.html" target="_blank" rel="noopener noreferrer">AI论文跨机构合作占比六成 国际跨机构合作占29.9%</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-19 09:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/model-misalignment-reporting-framework" target="_blank" rel="noopener noreferrer">Our framework for reporting model misalignment</a>
+          <span class="source-meta">OpenAI News · 2026-09-17 01:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/hex-gpt-6-astra" target="_blank" rel="noopener noreferrer">Hex turns complex analysis into visual reports with GPT‑6 Astra</a>
+          <span class="source-meta">OpenAI News · 2026-09-16 20:00</span>
+        </li>
+        <li>
+          <a href="https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/" target="_blank" rel="noopener noreferrer">New experts join Google’s AI &amp; Economy team</a>
+          <span class="source-meta">Google AI Blog · 2026-09-18 22:00</span>
+        </li>
+        <li>
+          <a href="http://www.geekpark.net/news/370440" target="_blank" rel="noopener noreferrer">当智能体开始替人花钱，如何证明「它是谁」？</a>
+          <span class="source-meta">极客公园 · 2026-09-16 15:45</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/3989670755253248?f=rss" target="_blank" rel="noopener noreferrer">OpenAI等四家企业遭起诉，被指控合谋呼吁管控AI发展节奏</a>
+          <span class="source-meta">36氪 · 2026-09-19 11:29</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3988488062630661?f=rss" target="_blank" rel="noopener noreferrer">理想开始卖技术：马赫芯片、碳化硅、增程器要外供｜36氪独家</a>
+          <span class="source-meta">36氪 · 2026-09-18 14:31</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/unlocking-new-ways-of-working" target="_blank" rel="noopener noreferrer">How workers are unlocking new ways of working</a>
+          <span class="source-meta">OpenAI News · 2026-09-16 17:00</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-09-19/102486512.html" target="_blank" rel="noopener noreferrer">【周刊提前读】创新药盈利之后</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-19 10:45</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-09-19/102486454.html" target="_blank" rel="noopener noreferrer">【CCI快报】：中国大宗商品指数周跌1.29% 平板玻璃领跌6.78%</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-19 10:25</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-09-19/102486442.html" target="_blank" rel="noopener noreferrer">【周刊提前读】美伊战争重创中东经济 “安全港”迪拜还受出海中企青睐吗？</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-19 10:12</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/3989791714262016?f=rss" target="_blank" rel="noopener noreferrer">8月底公募基金资产净值合计达39.63万亿元</a>
+          <span class="source-meta">36氪 · 2026-09-19 12:14</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/" target="_blank" rel="noopener noreferrer">Listen to the Latest ‘KFF Health News Minute’</a>
+          <span class="source-meta">KFF Health News · 2026-09-17 17:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/medicaid/medicaid-meal-deliveries-food-nutrition-waivers-trump-massachusetts-north-carolina/" target="_blank" rel="noopener noreferrer">Cost-Saving Medicaid Meal Deliveries Threatened by Cuts, Policy Uncertainty</a>
+          <span class="source-meta">KFF Health News · 2026-09-18 17:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/health-industry/fda-approval-drugs-medical-devices-postmarket-studies-safety-delays-amgen-tavneos/" target="_blank" rel="noopener noreferrer">The Drugs and Devices Have Been on the Market for Years. But FDA-Ordered Studies Still Aren’t Done.</a>
+          <span class="source-meta">KFF Health News · 2026-09-18 17:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/elections/healthcare-affordability-shapes-competitive-races-midterm-elections/" target="_blank" rel="noopener noreferrer">Sticker Shock at the Doctor’s Office Could Motivate Midterm Voters</a>
+          <span class="source-meta">KFF Health News · 2026-09-18 17:00</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
