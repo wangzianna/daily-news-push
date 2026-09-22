@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.09.22 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-09-22 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li><strong>OceanBase 登顶国际 Data Agent 榜单</strong>：其 Data Agent 方案以 90.62% 准确率位列 Data Agent Benchmark 第一，成为首个突破 90% 的参评方案，且基于国产大模型 GLM-5.2 构建，超过多项基于 GPT、Claude Opus、Claude Fable 的方案。DAB 考察的是&quot;理解数据—规划执行—验证修复&quot;闭环而非单纯 Text-to-SQL，说明企业选型的关键变量已从&quot;模型强弱&quot;转向&quot;模型+agent+数据系统&quot;的协同能力。（量子位，AI 内容类型：官方发布）</li>
+        <li><strong>波士顿动力暂缓上市</strong>：现代汽车高管称其明年 IPO 可能性不大，旗舰产品 Atlas 尚未规模化部署且公司仍未盈利；现代 7 月宣布收购软银所持约 10% 股份使其成为全资子公司，Atlas 生产版本发布后股价一度翻倍、后因机器人战略缺乏更新回吐大部分涨幅。判断：靠演示视频和舞台表演融资的阶段已结束，估值锚点转向规模化部署与盈利。（财新）</li>
+        <li><strong>泛茶&quot;爆雷&quot;两年后调查扩围</strong>：警方以涉嫌非法吸收公众存款罪调查核心人员后，已扩展至渠道商、经销商和&quot;开票人员&quot;，向开单、收款、资金流转的外围网络延伸；2026 年春节后部分原经销网络重新组织&quot;金融茶&quot;交易，&quot;炒茶&quot;风潮又起。这类&quot;买茶不提货、到期高价回购&quot;的模式具备快速重组能力，参与外围环节同样面临法律风险。（财新）</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li><strong>二手奢侈品与一手市场走势分化</strong>：贝恩估算 2025 年中国内地个人奢侈品市场同比收缩 3%–5%，二手市场增长 15%–20%（均为行业研究估算）。增速差需要拆成需求扩大、供给增加与周转加快三部分，不能直接当成消费升级；政策端（商务部等九部门）已提出发展二手交易平台、售后回购、租赁、二手小店和寄卖店，但现行行业分类只有更宽泛的&quot;旧货零售&quot;，社零中服装、化妆品、金银珠宝也无法单列奢侈品——鼓励政策与统计口径缺位并存。（财新，数据驱动）</li>
+        <li><strong>香港元朗狗咬致死案与动物治理困局</strong>：9 月 20 日凌晨一名 27 岁女子骑共享单车回家时被 3 只狗追赶围咬身亡，警方联合渔护署捕获 3 只成年唐狗，其中 2 只已植入芯片、1 只未植入。广阔郊野让动物种群治理长期拉锯，此次事件暴露芯片登记覆盖不全与饲主责任追溯难的问题。（财新）</li>
+        <li><strong>低空经济资金向核心机载系统延伸</strong>：庆为航空完成超 5000 万元新一轮融资（中信建投资本、光谷科创投、江西金控资本联合投资），半年内连融三轮（此前为高瓴创投、松禾资本、梅花创投），资金用于 DAL A 级电传飞控计算平台与智能座舱显示系统的研发与适航；今年国内低空领域投融资事件超 160 起、总规模近 300 亿元。判断：同时具备 DAL A 级机载核心航电研制与适航能力的企业仍是极少数，投资逻辑正从整机转向&quot;大脑和神经系统&quot;。（36氪，仅有摘要，未获取到全文）</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li><strong>OpenAI 提出全球 AI 标准路径</strong>：呼吁协调评估、报告与治理以提升安全性，并重申三大目标——构建自动化 AI 研究员并在对齐问题上迭代、释放科学进步与经济增长、为每个人提供个人 AGI；文中称 AI 已加速其自身研发，AI 驱动的研究在数学（含 Navier-Stokes 千禧年问题）上取得进展。头部实验室主动输出评测与报告规范，实质是在抢占治理框架的定义权。（OpenAI News，AI 内容类型：官方发布）</li>
+        <li><strong>OpenAI 经济研究揭示&quot;任务交叉&quot;常态化</strong>：分析 2026 年 4–7 月超过 150 万条工作相关 ChatGPT 消息后发现，员工用 AI 承担本职之外的活动具有复现性，且这类任务在其 AI 使用中的占比随时间上升。若这些活动沉淀为常规职责，岗位内涵将被拓宽而头衔不变，企业的岗位设计与人才评估需要同步更新。（OpenAI News，AI 内容类型：官方发布）</li>
+        <li><strong>冰辰量子连续完成两轮数千万元级天使系列融资</strong>：天使轮由元禾璞华、产业方量旋科技联合领投，天使+轮由中赢创投领投；公司 2026 年 3 月成立于深圳，专注中性原子量子计算上游核心装备，以冷原子系统为切入点，把实验室&quot;手搓&quot;式装置转化为标准化、可量产产品。行业背景是中性原子路线快速迭代：2023 年 Atom Computing 突破 1000 量子比特，2024 年加州理工团队实现超过 6100 个量子比特的阵列。判断：产业化瓶颈正从物理指标转向工程化与供应链。（36氪，仅有摘要，未获取到全文）</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li><strong>GNOME 的设计演进与争议</strong>：今年 8 月 Linux 在北美市场份额突破 10%，Win10 结束支持与 Steam Deck 火爆推动迁移，DHH 为其发行版 Omarchy 募得 800 万美元；GNOME 1（1999–2002）界面接近 Win95，工作区在当时已存在，Sawfish 支持 Lisp 深度定制；GNOME 1997 年创立时冠以 GNU 前缀，2021 年与 GNU Project 分道扬镳，如今仅作为非营利组织下的独立品牌名。判断：新用户门槛已从安装驱动转向命令行与发行版碎片化，桌面环境&quot;挑战习惯（GNOME）还是贴合习惯（KDE）&quot;仍是迁移的关键变量。（少数派，深度）</li>
+        <li><strong>Hex 用 GPT-6 Astra 把分析变成可视化产物</strong>：Hex 联合创始人兼 CTO 称，数据工作的重要一环是沟通结果，但&quot;模型在数据可视化上挣扎了很久&quot;；GPT-6 Astra 能与底层库协作、完成地理空间可视化所需的复杂变换，产出&quot;不只是功能可用、而且美观&quot;的数据产物。判断：agent 的竞争点正从&quot;给出答案&quot;延伸到&quot;交出可分享的数据产品&quot;，输出物的设计质量成为产品力。（OpenAI News，AI 内容类型：官方发布）</li>
+        <li><strong>非侵入脑机接口拿到大额早期融资</strong>：华超神控（BCI-Sonics）完成 2 亿元 Pre-A 轮，红杉中国与云启资本联合领投，比邻星投资、元禾控股、徐汇科创投、德石投资跟投，老股东经纬创投、德联资本持续加注，累计融资近 3 亿元，资金用于产品研发、核心人才引进、临床研究推进和 AI 基础设施建设。判断：非侵入路线以&quot;临床+AI 基础设施&quot;双线投入换取产品化空间，正在被资本接受。（36氪，仅有摘要，未获取到全文）</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li><strong>UV Index 的读法与常见误区</strong>：美国使用的 UV Index 与 WHO 国际报道指南一致；1–2 无需防护，3–7 需防护（午后避晒、暴露皮肤足量涂抹 SPF-15 以上广谱防晒、穿防护衣物、戴宽檐帽与太阳镜），8+ 需额外防护；UV Index 不是温度指标，它由纬度、海拔、时间、地面条件、云量和臭氧层状况计算，0 表示无日照（仅夜间使用），11 表示极端辐射（10 分钟内可晒伤），高海拔低温环境同样可能紫外线很强。（证据类型：医学机构 — EPA、Skin Cancer Foundation）</li>
+        <li><strong>自杀预防思路转向&quot;降低手段可得性&quot;</strong>：约翰霍普金斯精神科医生 Paul Nestadt 直言无法判断哪位患者会在半年内自杀；研究显示对自杀风险的预测仅略好于抛硬币，且 50 年来没有改善，因此他主张采取不依赖精准识别高危个体的干预，例如确保身边没有上膛的枪。（KFF Health News，证据类型：媒体报道）</li>
+        <li><strong>Gaucher 病的识别与治疗窗口</strong>：这是一种鞘脂贮积症（溶酶体贮积病），由葡糖脑苷脂在组织堆积所致，因父母传递缺陷基因而发病，通常父母双方各携一份异常基因、自身并无症状；症状因类型而异，可涉及肝、脾和骨骼问题，诊断基于血液检查；1 型和 3 型可通过酶替代疗法并有时配合药物治疗，2 型则导致早夭（婴儿型通常在 2 岁内死亡）。（证据类型：医学机构 — Merck Manuals / MedlinePlus）</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 7678，输出 9818，总计 17496</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>economy</h3>
+      <p><strong>1. 火线评论｜香港郊野困局：命案之后，香港流浪狗治理与野猪前车之鉴</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-22 10:32 ｜ 质量：一手来源、深度内容、原创/独家<br>摘要：香港广阔的郊野环境，虽然是城市珍贵的自然资源，但也让动物种群治理陷入持久拉锯 【财新网】/火线评论 在传统的新闻学定义中，人咬狗才是新闻，但近日香港一宗狗咬人的夺命惨剧迅速登上各家媒体的头条。 悲剧发生在元朗壆围南路。9月20日凌晨， 一名27岁女子在香港元朗骑共享单车回家时，被3只狗追赶并围咬身亡。 事件发生后，香港警方联合渔护署迅速在事发一带搜捕，捕获3只成年土狗（香港称为唐狗），其中2只已植入芯片，另外1只未有植入芯片。署方正根据狗只牌照上的资料联络畜养人，以跟进调查。<br>原文：<a href="https://opinion.caixin.com/2026-09-22/102487340.html" target="_blank" rel="noopener noreferrer">https://opinion.caixin.com/2026-09-22/102487340.html</a></blockquote>
+      <p><strong>2. 广州“金融茶”爆雷两年后调查扩围 数百名核心人员及经销商被带走</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-22 10:09 ｜ 质量：一手来源、深度内容、原创/独家<br>摘要：多名广州芳村茶商透露，2026年以来，警方对泛茶的调查从公司核心人员逐步扩展至渠道商、经销商和“开票人员” 泛茶创立于2021年，之后迅速扩张，至2024年“爆雷”前，全国经销商门店发展到近500家。 【财新网】 泛茶“爆雷”两年后，警方对这家“金融茶”公司的调查明显扩围。 近期，多名广州芳村茶商告诉财新，2026年春节过后，部分原泛茶经销网络重新组织“金融茶”交易，“炒茶”风潮又起。在4月至5月间，警方以涉嫌非法吸收公众存款罪对核心人员展开调查，此后调查拓展至渠道商、经销商和“开票人员”，向此前参与开单、收款和资金流转的外围网络延伸。 泛茶创立于2021年，之后迅速扩张，至2024年“爆雷”前，全国经销商门店发展到近500家。在广州芳村茶叶市场，泛茶被视作最典型的“金融茶”品牌之一：投资者购买茶叶后往往并不实际提货，而是等待一定期限后由经销商或相关平台以更高价格回购。<br>原文：<a href="https://china.caixin.com/2026-09-22/102487324.html" target="_blank" rel="noopener noreferrer">https://china.caixin.com/2026-09-22/102487324.html</a></blockquote>
+      <p><strong>3. 二奢繁荣：是买的人多了，还是卖的人急了</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-22 09:35 ｜ 质量：一手来源、深度内容、数据驱动<br>摘要：当一手市场收缩、二手市场增长，我们需要重新辨认这场繁荣的来源 2025年，中国内地个人奢侈品市场与二手市场走势分化。贝恩估计，前者同比收缩3%至5%，后者增长15%至20%；两项数字均为行业研究估算。新品销售记录当期新增商品，二手交易承接多年积累的存量，增速差异需要进一步拆成需求扩大、供给增加与周转加快。 二手奢侈品已进入循环消费政策范围。商务部等九部门提出发展二手交易平台、售后回购、租赁、二手小店和寄卖店。但现行行业分类只设范围更广的“旧货零售”，社零中的服装、化妆品和金银珠宝等类别也无法单列奢侈品。本文据此从交易链条与不同统计口径出发，分析二手市场的增长结构。<br>原文：<a href="https://opinion.caixin.com/2026-09-22/102487319.html" target="_blank" rel="noopener noreferrer">https://opinion.caixin.com/2026-09-22/102487319.html</a></blockquote>
+      <p><strong>4. 波士顿动力暂缓上市，拒绝“花式造梦”</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-09-22 11:51 ｜ 质量：一手来源、数据驱动 ｜ 降权：公关稿<br>摘要：波士顿动力的按兵不动，标志着那个靠演示视频和舞台表演就能融资的时代彻底结束了 当地时间2026年6月24日，韩国首尔江南区三成洞，访客参观波士顿动力Atlas机器人。图：视觉中国 9月14日，现代汽车高管在接受采访时透露，集团旗下人形机器人公司波士顿动力明年进行IPO的可能性不大，其旗舰产品Atlas尚未实现规模化部署，且公司仍未盈利。 现代汽车于2021年收购波士顿动力控股权，并于7月宣布计划收购软银所持约10%股份，使其成为全资子公司。今年早些时候，在现代汽车发布Atlas生产版本后，其股价一度翻倍，但此后因机器人战略缺乏更新而回吐大部分涨幅。 在这个挤破头想去二级市场讲故事的赛道里，现代的这番表态显得尤为罕见。但它不仅没有让波士顿动力的光环褪色，反而撕开了具身智能行业最真实的现状：一边是背靠大树、不急着套现、死磕真实落地的沉淀者；另一边则是被资本赶上架，靠舞台表演硬撑估值的造梦者。 推荐进入 财新数据库 ，可随时查阅宏观经济、股票债券、公司人物，财经数据尽在掌握。<br>原文：<a href="https://opinion.caixin.com/2026-09-22/102487372.html" target="_blank" rel="noopener noreferrer">https://opinion.caixin.com/2026-09-22/102487372.html</a></blockquote>
+      <h3>product_tech</h3>
+      <p><strong>1. 港科大团队推冷原子系统标准化方案，获量旋科技等两轮数千万融资丨36氪首发</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-22 09:13 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布<br>摘要：图源/企业 本文约 2400 字，建议阅读 5 分钟 作者丨欧雪 编辑丨袁斯来 硬氪获悉，深圳市冰辰量子技术有限公司（下称“冰辰量子”）已于近期连续完成两轮数千万元级天使系列融资。天使轮由元禾璞华、产业投资方量旋科技联合领投，天使+轮由中赢创投领投，金雨茂物、祥峰投资、辰峰资本、源来资本跟投，产业方璇相科技跟投，翊荣资本担任长期财务顾问。融资资金将主要用于场地建设、人才引进及核心产品迭代。 冰辰量子2026年3月成立于深圳，是一家专注于中性原子量子计算上游核心装备的科技公司。公司以冷原子系统为切入点，致力于将传统“手搓”式的实验室装置转化为标准化、可量产的高性能产品，解决中性原子量子计算产业化过程中的工程化难题。 公司创始人兼首席科学家陈鹏毕业于中国科学院上海光学精密机械研究所，师从我国冷原子领域先驱王育竹院士，现任香港科技大学（广州）助理教授，曾先后在香港科技大学、中国科学技术大学从事科研工作。 中性原子量子计算在过去几年间经历了快速发展。2023年Atom Computing率先突破1000量子比特门槛，2024年加州理工学院团队实现了超过6100个量子比特的阵列，单比特操控精度达<br>原文：<a href="https://36kr.com/p/3993888512801792?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3993888512801792?f=rss</a></blockquote>
+      <p><strong>2. 红杉、云启领投，“华超神控”完成2亿元Pre-A轮融资</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-22 12:28 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：近日，非侵入AI脑机接口公司“华超神控”（BCI-Sonics）宣布完成2亿元人民币Pre-A轮融资。本轮融资由红杉中国与云启资本联合领投，比邻星投资、元禾控股、徐汇科创投、德石投资跟投，老股东经纬创投、德联资本持续加注。循光资本持续担任独家战略财务顾问。所募资金将用于产品研发、核心人才引进、临床研究推进和AI基础设施建设。此前，公司已相继完成由经纬创投领投的天使轮和由德联资本、道远资本联合领投的天使+轮融资，成立至今累计融资近3亿元。<br>原文：<a href="https://36kr.com/newsflashes/3994079888391168?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/3994079888391168?f=rss</a></blockquote>
+      <p><strong>3. 以人为本还是脱离实际？GNOME 桌面环境的演进及争议</strong></p>
+      <blockquote>来源：少数派 ｜ 时间：2026-09-21 17:02 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：反复失败的预言1999年，时任SUSE首席技术官的DirkHohndel大概不会想到，自己口中的「Linux桌面元年」此后会被反复提起，成为圈内一个著名的迷因。每年都有人扮演先知，然后看着统计报告上的 ... 查看全文 本文为会员文章，出自 《单篇文章》 ，订阅后可阅读全文。<br>原文：<a href="https://sspai.com/prime/story/the-development-and-controversies-of-gnome-de" target="_blank" rel="noopener noreferrer">https://sspai.com/prime/story/the-development-and-controversies-of-gnome-de</a></blockquote>
+      <p><strong>4. 36氪首发丨高瓴投过的飞控与显示系统供应商再获超五千万元融资，半年内连融三轮</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-22 10:42 ｜ 质量：一手来源、数据驱动、原创/独家 ｜ AI 类型：官方发布<br>摘要：作者 | 乔钰杰 编辑 | 袁斯来 本文约2500字，建议阅读5分钟 硬氪获悉，高安全等级飞控与显示系统供应商深圳市庆为航空科技有限公司（简称“庆为航空”）近日完成超5000万元新一轮融资，由中信建投资本、光谷科创投、江西金控资本联合投资。 这是公司继高瓴创投、松禾资本、梅花创投之后，在半年内完成的第三轮融资。资金将主要用于加速高安全等级（DAL A）电传飞控计算平台和智能座舱显示系统的研发与适航进程。 在2026年低空经济投融资持续升温的背景下，资本正从整机制造向核心机载系统延伸。据不同口径统计，今年国内低空领域投融资事件超过160起，总规模近300亿元。然而，国内真正具备DAL A级（民航最高安全等级）机载核心航电系统研制与适航能力的企业，仍是极少数。 庆为航空成立于2023年，总部位于深圳南山，2024年底在西安设立研发中心，2026年在成都设立机载适航电子科技有限公司，主要研制可适航的高安全等级电传飞控计算平台、智能座舱显示系统和综合模块化开放平台，即民用飞行器的“大脑和神经系统”。 飞控计算机和显示系统直接决定飞行器的安全可靠控制与指示。对于以多座级载客为目标的低空飞行器（e<br>原文：<a href="https://36kr.com/p/3993975293836292?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3993975293836292?f=rss</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. Building standards for the next phase of AI</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-21 18:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.<br>原文：<a href="https://openai.com/index/building-standards-next-phase-ai" target="_blank" rel="noopener noreferrer">https://openai.com/index/building-standards-next-phase-ai</a></blockquote>
+      <p><strong>2. Hex turns complex analysis into visual reports with GPT‑6 Astra</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-16 20:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：GPT-6 Astra helps Hex’s data agents turn answers into interactive visualizations that employees are proud to share.<br>原文：<a href="https://openai.com/index/hex-gpt-6-astra" target="_blank" rel="noopener noreferrer">https://openai.com/index/hex-gpt-6-astra</a></blockquote>
+      <p><strong>3. 国产数据库跑出AI新能力！OceanBase登顶国际Data Agent榜单</strong></p>
+      <blockquote>来源：量子位 ｜ 时间：2026-09-21 15:31 ｜ 质量：一手来源、数据驱动 ｜ AI 类型：官方发布<br>摘要：OceanBase团队提交的Data Agent方案登顶国际数据智能体基准Data Agent Benchmark<br>原文：<a href="https://www.qbitai.com/2026/09/493231.html" target="_blank" rel="noopener noreferrer">https://www.qbitai.com/2026/09/493231.html</a></blockquote>
+      <p><strong>4. How workers are unlocking new ways of working</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-16 17:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work.<br>原文：<a href="https://openai.com/index/unlocking-new-ways-of-working" target="_blank" rel="noopener noreferrer">https://openai.com/index/unlocking-new-ways-of-working</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Gaucher Disease</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-09-15 20:36 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Merck &amp; Co., Inc. Related MedlinePlus Pages: Gaucher Disease<br>原文：<a href="https://www.merckmanuals.com/home/children-s-health-issues/hereditary-metabolic-disorders/gaucher-disease" target="_blank" rel="noopener noreferrer">https://www.merckmanuals.com/home/children-s-health-issues/hereditary-metabolic-disorders/gaucher-disease</a></blockquote>
+      <p><strong>2. UV Index Scale</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-08-25 21:02 ｜ 质量：机构来源、数据驱动 ｜ 证据：医学机构<br>摘要：Source: Environmental Protection Agency Related MedlinePlus Pages: Sun Exposure<br>原文：<a href="https://www.epa.gov/sunsafety/uv-index-scale-0" target="_blank" rel="noopener noreferrer">https://www.epa.gov/sunsafety/uv-index-scale-0</a></blockquote>
+      <p><strong>3. UV Index: Know Your Risk</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-08-25 20:59 ｜ 质量：机构来源、数据驱动 ｜ 证据：医学机构<br>摘要：Source: Skin Cancer Foundation Related MedlinePlus Pages: Sun Exposure<br>原文：<a href="https://www.skincancer.org/blog/the-uv-index-know-your-risk/" target="_blank" rel="noopener noreferrer">https://www.skincancer.org/blog/the-uv-index-know-your-risk/</a></blockquote>
+      <p><strong>4. It’s Hard To Predict Who Will Be Suicidal. It’s Easier To Ensure People Can’t Shoot Themselves.</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-21 17:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道<br>摘要：Some mental health experts favor suicide prevention steps that are applied broadly, with protections that aren’t tied to an individual’s specific risk.<br>原文：<a href="https://kffhealthnews.org/mental-health/suicide-prevention-guns-firearms-red-flag-laws-nra-maryland-eleven-minutes/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/mental-health/suicide-prevention-guns-firearms-red-flag-laws-nra-maryland-eleven-minutes/</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>imf_blog: 403 Client Error: Forbidden for url: <a href="https://www.imf.org/en/blogs" target="_blank" rel="noopener noreferrer">https://www.imf.org/en/blogs</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:35:91: not well-formed (invalid token)</li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://opinion.caixin.com/2026-09-22/102487340.html" target="_blank" rel="noopener noreferrer">火线评论｜香港郊野困局：命案之后，香港流浪狗治理与野猪前车之鉴</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-22 10:32</span>
+        </li>
+        <li>
+          <a href="https://china.caixin.com/2026-09-22/102487324.html" target="_blank" rel="noopener noreferrer">广州“金融茶”爆雷两年后调查扩围 数百名核心人员及经销商被带走</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-22 10:09</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3993888512801792?f=rss" target="_blank" rel="noopener noreferrer">港科大团队推冷原子系统标准化方案，获量旋科技等两轮数千万融资丨36氪首发</a>
+          <span class="source-meta">36氪 · 2026-09-22 09:13</span>
+        </li>
+        <li>
+          <a href="https://opinion.caixin.com/2026-09-22/102487319.html" target="_blank" rel="noopener noreferrer">二奢繁荣：是买的人多了，还是卖的人急了</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-22 09:35</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/building-standards-next-phase-ai" target="_blank" rel="noopener noreferrer">Building standards for the next phase of AI</a>
+          <span class="source-meta">OpenAI News · 2026-09-21 18:00</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/3994079888391168?f=rss" target="_blank" rel="noopener noreferrer">红杉、云启领投，“华超神控”完成2亿元Pre-A轮融资</a>
+          <span class="source-meta">36氪 · 2026-09-22 12:28</span>
+        </li>
+        <li>
+          <a href="https://sspai.com/prime/story/the-development-and-controversies-of-gnome-de" target="_blank" rel="noopener noreferrer">以人为本还是脱离实际？GNOME 桌面环境的演进及争议</a>
+          <span class="source-meta">少数派 · 2026-09-21 17:02</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3993975293836292?f=rss" target="_blank" rel="noopener noreferrer">36氪首发丨高瓴投过的飞控与显示系统供应商再获超五千万元融资，半年内连融三轮</a>
+          <span class="source-meta">36氪 · 2026-09-22 10:42</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/hex-gpt-6-astra" target="_blank" rel="noopener noreferrer">Hex turns complex analysis into visual reports with GPT‑6 Astra</a>
+          <span class="source-meta">OpenAI News · 2026-09-16 20:00</span>
+        </li>
+        <li>
+          <a href="https://www.qbitai.com/2026/09/493231.html" target="_blank" rel="noopener noreferrer">国产数据库跑出AI新能力！OceanBase登顶国际Data Agent榜单</a>
+          <span class="source-meta">量子位 · 2026-09-21 15:31</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/unlocking-new-ways-of-working" target="_blank" rel="noopener noreferrer">How workers are unlocking new ways of working</a>
+          <span class="source-meta">OpenAI News · 2026-09-16 17:00</span>
+        </li>
+        <li>
+          <a href="https://opinion.caixin.com/2026-09-22/102487372.html" target="_blank" rel="noopener noreferrer">波士顿动力暂缓上市，拒绝“花式造梦”</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-09-22 11:51</span>
+        </li>
+        <li>
+          <a href="https://www.merckmanuals.com/home/children-s-health-issues/hereditary-metabolic-disorders/gaucher-disease" target="_blank" rel="noopener noreferrer">Gaucher Disease</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-09-15 20:36</span>
+        </li>
+        <li>
+          <a href="https://www.epa.gov/sunsafety/uv-index-scale-0" target="_blank" rel="noopener noreferrer">UV Index Scale</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-08-25 21:02</span>
+        </li>
+        <li>
+          <a href="https://www.skincancer.org/blog/the-uv-index-know-your-risk/" target="_blank" rel="noopener noreferrer">UV Index: Know Your Risk</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-08-25 20:59</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/mental-health/suicide-prevention-guns-firearms-red-flag-laws-nra-maryland-eleven-minutes/" target="_blank" rel="noopener noreferrer">It’s Hard To Predict Who Will Be Suicidal. It’s Easier To Ensure People Can’t Shoot Themselves.</a>
+          <span class="source-meta">KFF Health News · 2026-09-21 17:00</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
