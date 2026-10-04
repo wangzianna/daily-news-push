@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.10.04 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-10-04 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li><strong>DeepSeek 弹性计算团队大规模扩招，并借技术报告公开沙盒基础设施 DSec</strong>：单个扩展分片约 160 台服务器、3 万 CPU 核、250TB 内存，日均服务约 300 万个沙盒，高峰并发超 38 万个、每秒可创建 5000+；从 DeepSeek-V3.2 到 V4.1，agent 训练、评测与数据预处理的全部负载都跑在 DSec 上，下一步要把运行环境的数量和种类扩充成百上千倍。判断：agent 训练的瓶颈正从算力转向&quot;环境供给&quot;，沙盒调度与镜像复用效率成为模型迭代速度的隐性变量。（量子位；AI 内容类型：官方发布）</li>
+      </ul>
+      <ul>
+        <li><strong>特斯拉 Q3 交付 48.7 万辆、生产 46.4 万辆</strong>，交付同比下降 2%，但高于高盛、摩根士丹利、瑞银等 23 家机构预期的 46.2 万辆，股价收涨 4.65%；前三季度累计销售 132.5 万辆。判断：在美国补贴退坡造成的高基数下，靠欧洲市场回暖守住近 49 万辆规模，全年销量有望恢复增长。（财新）</li>
+      </ul>
+      <ul>
+        <li><strong>阿里云在中国汽车公有云市场份额达 45.2%</strong>，在智能驾驶、智能座舱、工业提效等六项市场及细分赛道均列第一；行业主线被概括为&quot;座舱全面进入 Agent 时代&quot;&quot;智驾竞争下沉到工程层&quot;。判断：车企胜负越来越取决于数据产线效率与训练集群稳定性，云厂商的 AI 底座成为产业级变量。（极客公园；AI 内容类型：官方发布）</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li>国庆假期前 3 天，全国高速公路新能源车充电 296.86 万次、充电量 7161.93 万千瓦时，日均同比分别增长 48.41% 和 49.39%，统计覆盖 6.27 万个高速充电设施（枪）。判断：长途补能需求接近五成增长，高速充电网络的高峰调度压力持续加大。（36氪；仅有摘要，未获取到全文）</li>
+      </ul>
+      <ul>
+        <li>海口海关：国庆前 3 天海南离岛免税购物金额 3.58 亿元、购物 5.51 万人次、商品 27.70 万件，同比增 8.85%、12.90%、8.02%。判断：人次增速快于金额增速，隐含客单价同比回落，免税增长的质量比总量更值得跟踪。（36氪／央视新闻；仅有摘要，未获取到全文）</li>
+      </ul>
+      <ul>
+        <li>曾执掌南京博物院十余年的徐湖平因受贿罪被判有期徒刑三年、罚金 20 万元；其于 2025 年 12 月&quot;馆藏《江南春》图卷现身拍卖市场&quot;事件后被从家中带走调查。判断：文博机构馆藏去向与内部治理将成为后续监管焦点。（财新）</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li>Meshy 的 ARR 从 100 万美元增至 1 亿美元，用时不到两年；而同题对比中，GPT-6 Astra 在角色、复杂道具等 3D 资产上的还原度仍明显弱于专业 3D 模型。判断：通用模型能力外溢并未压缩垂直 3D 工具的收入空间，&quot;专业资产质量&quot;仍是付费理由；对照 Bessemer《The State of AI 2025》，&quot;超新星&quot;型公司平均约 1.5 年达到 1 亿美元 ARR，Meshy 已接近这一节奏。（量子位；AI 内容类型：官方发布）</li>
+      </ul>
+      <ul>
+        <li>MIT 研究：针对&quot;算法单一化&quot;（algorithmic monoculture）的主要质疑（含系统性排斥）经系统评估后并非决定性成立，但数学上证明单一算法会形成信息回声室、抑制探索；在招聘场景中，某些情况下反而有利于求职者。判断：对 AI 招聘工具的监管讨论需要区分条件，而非一概否定。（MIT News；AI 内容类型：产品应用）</li>
+      </ul>
+      <ul>
+        <li>OpenAI 启动 Codex Originals 新一轮征集，面向开发者、研究者和创作者收集 Codex 使用故事。判断：属生态与开发者心智运营动作，重点在社区留存而非单纯能力发布。（OpenAI News；AI 内容类型：官方发布）</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li>座舱产品被&quot;推倒重来&quot;：旧体系建立在规则引擎与多模块拼接之上，新范式改由 Harness（工程治理框架）+ 大模型承担意图理解、任务分解和工具调用；阿里云明确不做完整座舱产品，只提供云、模型等全栈能力与生态服务 Agent。判断：面对高度定制化的座舱，能力边界划分比功能堆砌更能决定成败。（极客公园）</li>
+      </ul>
+      <ul>
+        <li>车企座舱团队的观察：闲聊并不是用户的核心高频场景，用户更关心系统能否在合适时机高效完成车控、导航和服务任务。判断：产品价值焦点从&quot;能聊天&quot;转向任务完成率，&quot;能办事&quot;才是建立信任的前提。（极客公园）</li>
+      </ul>
+      <ul>
+        <li>亿邦智库与 Pattern 栢藤联合发布《品牌全球化加速增长洞察报告》，围绕全球增长机会、品牌经营体系、合作模式三个问题，主结论指向品牌出海进入&quot;系统能力竞争阶段&quot;。判断：单品与渠道红利减弱后，营销、运营与本地化落地资源的组合效率成为分水岭。（36氪；仅有摘要，未获取到全文；原稿带公关属性）</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li><strong>法国高中生抗议升级并外溢</strong>：10 月 2 日多地出现焚烧垃圾桶、路障封锁交通、部分学校遭纵火，警方使用催泪瓦斯和橡胶子弹；事态涉及超过 1020 所学校，全法超 400 所学校关闭转线上教学，教育部长称 170 名学生、65 名教职员工受伤，另有报道称近 400 名警察受伤。起因是教师短缺与资源不足。（财新）判断：教育资源分配矛盾正从校园议题转为社会冲突。</li>
+      </ul>
+      <ul>
+        <li><strong>健康政策信号（证据类型：政策报告）</strong>：老年多重用药患者宜与全科医生复核用药清单；多州试点 Medicaid 送餐以控费并改善患者健康；小企业称已无力为员工提供医保；朋友、邻居担任非正式照护者时，请假时间难以获得保护。（KFF Health News）</li>
+      </ul>
+      <ul>
+        <li><strong>健康与 AI 交叉信号（证据类型：研究论文）</strong>：KFF 与美联社的农村民调显示，农村 MAHA 支持者认为特朗普政府的健康政策尚未触达其社区；同时，Anthropic 的 Claude agent 可能帮助开发新的基因编辑技术，已进入主流健康媒体讨论。判断：AI agent 进入生物医学研发环节，其证据等级值得持续跟踪。（KFF Health News）</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 7638，输出 8007，总计 15645</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>economy</h3>
+      <p><strong>1. 【商圈】执掌南博十余年 徐湖平的两个面孔与三重角色</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-04 10:25 ｜ 质量：一手来源、深度内容、原创/独家<br>摘要：2025年12月，“南京博物院馆藏《江南春》图卷现身拍卖市场”事件引发轩然大波后，徐湖平被从家中带走调查；2026年9月，徐湖平因受贿罪被判有期徒刑三年，并处罚金20万元<br>原文：<a href="https://database.caixin.com/2026-10-04/102490690.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-10-04/102490690.html</a></blockquote>
+      <p><strong>2. 欧洲市场复苏贡献增量 特斯拉第三季度交付超预期</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-03 14:16 ｜ 质量：一手来源、数据驱动 ｜ 降权：公关稿<br>摘要：2026年前三季度，特斯拉销售汽车132.5万辆，全年销量有望恢复增长 【财新网】 2026年第三季度，特斯拉共生产汽车46.4万辆，交付48.7万辆。美国当地时间10月2日，特斯拉（NASDAQ：TSLA）发布上述数据。 特斯拉第三季度交付量同比下跌2%，但跌幅好于市场预期。高盛、摩根士丹利、巴克莱银行、瑞银等23家机构之前预计，特斯拉第三季度交付量为46.2万辆。受此影响，特斯拉10月2日收报370.59美元/股，涨4.65%。 2025年第三季度，特斯拉的交付量基数较高，当时美国电动汽车税收抵免优惠即将取消，美国市场出现一波提前购车高峰。2026年第三季度，特斯拉能够基本保持在近49万辆交付规模，主要得益于欧洲市场回暖。<br>原文：<a href="https://www.caixin.com/2026-10-03/102490583.html" target="_blank" rel="noopener noreferrer">https://www.caixin.com/2026-10-03/102490583.html</a></blockquote>
+      <p><strong>3. 法国超1020所学校爆发高中生骚乱 抗议教育资源不足</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-04 11:41 ｜ 质量：一手来源<br>摘要：当地时间2026年10月2日，法国罗讷河口省马赛，学生封锁奥巴涅市的约里奥-居里高中。图：视觉中国 当地时间2026年10月2日，法国多地发生焚烧垃圾桶、路障封锁交通等现象，部分学校遭遇抗议者纵火，与之同时，以中学生为主体的抗议者与警察发生激烈肢体冲突，警方使用了催泪瓦斯和橡胶子弹。由于高中生抗议运动激化，全法国范围内超过400所学校关闭，转为线上教学。本次抗议始于9月下旬，当时，克雷泰伊圣埃克苏佩里中学的学生们动员起来，抗议学校的教师短缺和资源不足，随后的几天里，抗议活动蔓延至整个法兰西岛大区（包括巴黎及其周边大都市区），学生们试图在数十所学校设置路障。10月2日，法国教育部长爱德华·热弗雷称，抗议活动已造成170名学生和65名学校教职员工受伤。另有报道称，有近400名警察受伤。<br>原文：<a href="https://photos.caixin.com/2026-10-04/102490692.html" target="_blank" rel="noopener noreferrer">https://photos.caixin.com/2026-10-04/102490692.html</a></blockquote>
+      <p><strong>4. 财新闻｜169金89银83铜收官，中国队创境外参加亚运会最佳战绩</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-04 09:34 ｜ 质量：一手来源<br>摘要：169金89银83铜收官，中国队创境外参加亚运会最佳战绩 第二十届亚运会中国队共收获169枚金牌、89枚银牌、83枚铜牌，共计341枚奖牌收官，位居金牌榜、奖牌榜首位，<br>原文：<a href="https://mini.caixin.com/2026-10-04/102490686.html" target="_blank" rel="noopener noreferrer">https://mini.caixin.com/2026-10-04/102490686.html</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. DeepSeek扩招！弹性计算团队大量HC，尤其需要资深工程师</strong></p>
+      <blockquote>来源：量子位 ｜ 时间：2026-10-03 15:54 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：岗位JD甩了篇技术报告<br>原文：<a href="https://www.qbitai.com/2026/10/501381.html" target="_blank" rel="noopener noreferrer">https://www.qbitai.com/2026/10/501381.html</a></blockquote>
+      <p><strong>2. Are you a Codex Original?</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-28 08:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：We’re collecting real stories of builders, tinkerers, researchers, and creators who are using Codex to do incredible things. If you want to be a part of the next chapter of the Codex Originals program, tell us more about your story and project below.<br>原文：<a href="https://openai.com/form/codex-originals" target="_blank" rel="noopener noreferrer">https://openai.com/form/codex-originals</a></blockquote>
+      <p><strong>3. The effects of an “algorithmic monoculture” depend on the details</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-09-29 12:00 ｜ 质量：机构来源、深度内容 ｜ AI 类型：产品应用<br>摘要：In a study focusing on hiring decisions, MIT researchers found the use of a single algorithm by many firms could benefit job seekers in certain situations.<br>原文：<a href="https://news.mit.edu/2026/algorithmic-monoculture-effects-depend-on-details-0929" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/algorithmic-monoculture-effects-depend-on-details-0929</a></blockquote>
+      <p><strong>4. GPT-6要“吃掉”3D公司？这家公司不到2年ARR翻百倍，破1亿美元</strong></p>
+      <blockquote>来源：量子位 ｜ 时间：2026-10-04 08:53 ｜ 质量：一手来源 ｜ AI 类型：官方发布<br>摘要：专业3D模型反而更稀缺了<br>原文：<a href="https://www.qbitai.com/2026/10/501451.html" target="_blank" rel="noopener noreferrer">https://www.qbitai.com/2026/10/501451.html</a></blockquote>
+      <h3>product_tech</h3>
+      <p><strong>1. 品牌出海进入系统能力竞争阶段,亿邦智库 x Pattern栢藤《品牌全球化加速增长洞察报告》解析增长新路径</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-30 11:42 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：当AI重塑消费者的发现与决策路径，平台规则与合规要求日趋复杂，不同区域市场的增长节奏与竞争形态也在加速分化。从成熟市场到新兴区域，全球化探索持续深入，增长的稳定性、效率与可持续性，正成为品牌共同面对的新命题。 为寻找答案，品牌方、创始人、CEO及服务商都在追问同一个核心问题：当商品供给持续增加、销量增长却未能同步，如何通过更精准的营销、更高效的运营和更深入的本地化服务及落地资源，获得更多市场份额？ 2026年9月17日，由Pattern栢藤创办的Accelerate26跨境生态加速大会首次落地中国深圳。这场北美电商领域的年度盛会，旨在将栢藤在北美积累的头部平台方、服务商与品牌决策者资源，与本土最具出海实力的品牌创始人和高管直接链接，助力中国品牌加速全球化布局。 会上，亿邦智库与Pattern栢藤联合发布《智赢·共生—品牌全球化加速增长洞察报告》(以下简称《报告》)，亿邦动力董事长、亿邦智库院长郑敏进行现场解读，重点回答三个关键问题：全球增长机会在哪里？品牌需要建立怎样的经营体系？什么样的合作模式能够将市场机会持续转化为商业结果？ 01 全球市场持续扩容，增长逻辑发生了什么变化？ 洞察一<br>原文：<a href="https://36kr.com/p/4005358837076101?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4005358837076101?f=rss</a></blockquote>
+      <p><strong>2. 中国智能汽车的后台，越来越像阿里云的主场</strong></p>
+      <blockquote>来源：极客公园 ｜ 时间：2026-09-28 22:54 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：中国智能汽车产业，正在经历一场没有硝烟、却极为深刻的范式迭代。 在 2026 云栖大会汽车行业峰会上，我们看到了智能汽车竞争的主线：智能座舱正全面进入 Agent 时代，车不再是执行指令的机器，而是能理解你的意图、主动帮你把事情办成的智能体；智能驾驶的竞争，也早已从算法层下沉到工程层。数据产线的效率、训练集群的稳定性、模型迭代的周期，这些工程层的东西，正在决定胜负。 如果切换一下视角，会发现另一条更隐蔽的竞争主线正在成形： 谁能成为中国智能汽车产业的算力与 AI 底座？ 数据给了一个相当清晰的答案。根据沙利文联合头豹近日发布的《2026 年中国汽车 AI 云市场追踪报告（26H1）》， 阿里云在中国汽车公有云市场份额达到 45.2%，在智能驾驶、智能座舱、工业提效等六项市场及细分赛道均拿下第一。 阿里云智能集团公共云事业部 AI 汽车行业总经理李强对这件事的总结，只有五个字： 芯、云、模一体 。从智能座舱到自动驾驶，从端侧小模型到云端万亿参数推理集群，再到车企内部组织效能的提升，阿里云正在构建一套覆盖中国智能汽车全产业链的 AI 基础设施。 智能座舱：把「能聊天」变成「能办事」 前两年<br>原文：<a href="http://www.geekpark.net/news/371357" target="_blank" rel="noopener noreferrer">http://www.geekpark.net/news/371357</a></blockquote>
+      <p><strong>3. 国庆假期前3天高速公路新能源汽车充电近300万次、充电量超0.71亿千瓦时</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-04 12:43 ｜ 质量：一手来源、数据驱动<br>摘要：36氪获悉，国庆假期前3天新能源汽车充电需求旺盛，高速公路充电基础设施运行平稳。10月1日0时至10月3日24时，通过对纳入国家充电设施监测服务平台的6.27万个高速公路充电设施（枪）进行统计分析，今年国庆假期前三天全国高速公路新能源汽车充电次数共计296.86万次，日均98.95万次，较去年国庆假期同期增长48.41%；充电量达到7161.93万千瓦时，日均2387.31万千瓦时，较去年国庆假期同期增长49.39%，节假日绿色出行渗透率持续提升，人民群众使用新能源汽车长途旅行趋势愈发明显。<br>原文：<a href="https://36kr.com/newsflashes/4011081585938312?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/4011081585938312?f=rss</a></blockquote>
+      <p><strong>4. 国庆假期前三天，海南离岛免税购物金额超3.5亿元</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-04 12:01 ｜ 质量：一手来源、数据驱动<br>摘要：据海口海关统计，10月1日至3日，2026年国庆假期前三天，海口海关共监管海南离岛免税购物金额3.58亿元，参与购物人数5.51万人次，购买离岛免税商品27.70万件，比2025年同期分别增长8.85%、12.90%、8.02%。（央视新闻）<br>原文：<a href="https://36kr.com/newsflashes/4010976947212424?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/4010976947212424?f=rss</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Listen to the Latest ‘KFF Health News Minute’</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-10-01 21:11 ｜ 质量：深度内容、数据驱动 ｜ 证据：政策报告 ｜ AI 类型：产品应用<br>摘要：The &quot;KFF Health News Minute&quot; brings original healthcare and health policy reporting from our newsroom to the airwaves each week.<br>原文：<a href="https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/</a></blockquote>
+      <p><strong>2. Journalists Evaluate Rural Voter Sentiment, MAHA Movement, and Gene-Editing Finding</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-10-03 17:00 ｜ 质量：常规资讯 ｜ 证据：研究论文<br>摘要：KFF Health News journalists made the rounds on national and local media recently to discuss topical stories. Here’s a collection of their appearances.<br>原文：<a href="https://kffhealthnews.org/on-air/on-air-october-3-2026-kff-ap-rural-voter-poll-glp1-rfk-maha-summit-claude/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/on-air/on-air-october-3-2026-kff-ap-rural-voter-poll-glp1-rfk-maha-summit-claude/</a></blockquote>
+      <p><strong>3. Two New Medical Tests Added to MedlinePlus</strong></p>
+      <blockquote>来源：MedlinePlus - What&#x27;s New ｜ 时间：2024-10-16 12:00 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Two New Medical Tests Added to MedlinePlus<br>原文：<a href="https://medlineplus.gov/whatsnew/" target="_blank" rel="noopener noreferrer">https://medlineplus.gov/whatsnew/</a></blockquote>
+      <p><strong>4. Bioterrorism and Botulism: The Threat</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-09-07 21:57 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Centers for Disease Control and Prevention Related MedlinePlus Pages: Biodefense and Bioterrorism<br>原文：<a href="https://www.cdc.gov/botulism/bioterrorism/index.html" target="_blank" rel="noopener noreferrer">https://www.cdc.gov/botulism/bioterrorism/index.html</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>imf_blog: 403 Client Error: Forbidden for url: <a href="https://www.imf.org/en/blogs" target="_blank" rel="noopener noreferrer">https://www.imf.org/en/blogs</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:34:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://database.caixin.com/2026-10-04/102490690.html" target="_blank" rel="noopener noreferrer">【商圈】执掌南博十余年 徐湖平的两个面孔与三重角色</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-04 10:25</span>
+        </li>
+        <li>
+          <a href="https://www.qbitai.com/2026/10/501381.html" target="_blank" rel="noopener noreferrer">DeepSeek扩招！弹性计算团队大量HC，尤其需要资深工程师</a>
+          <span class="source-meta">量子位 · 2026-10-03 15:54</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4005358837076101?f=rss" target="_blank" rel="noopener noreferrer">品牌出海进入系统能力竞争阶段,亿邦智库 x Pattern栢藤《品牌全球化加速增长洞察报告》解析增长新路径</a>
+          <span class="source-meta">36氪 · 2026-09-30 11:42</span>
+        </li>
+        <li>
+          <a href="http://www.geekpark.net/news/371357" target="_blank" rel="noopener noreferrer">中国智能汽车的后台，越来越像阿里云的主场</a>
+          <span class="source-meta">极客公园 · 2026-09-28 22:54</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/4011081585938312?f=rss" target="_blank" rel="noopener noreferrer">国庆假期前3天高速公路新能源汽车充电近300万次、充电量超0.71亿千瓦时</a>
+          <span class="source-meta">36氪 · 2026-10-04 12:43</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/4010976947212424?f=rss" target="_blank" rel="noopener noreferrer">国庆假期前三天，海南离岛免税购物金额超3.5亿元</a>
+          <span class="source-meta">36氪 · 2026-10-04 12:01</span>
+        </li>
+        <li>
+          <a href="https://openai.com/form/codex-originals" target="_blank" rel="noopener noreferrer">Are you a Codex Original?</a>
+          <span class="source-meta">OpenAI News · 2026-09-28 08:00</span>
+        </li>
+        <li>
+          <a href="https://www.caixin.com/2026-10-03/102490583.html" target="_blank" rel="noopener noreferrer">欧洲市场复苏贡献增量 特斯拉第三季度交付超预期</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-03 14:16</span>
+        </li>
+        <li>
+          <a href="https://photos.caixin.com/2026-10-04/102490692.html" target="_blank" rel="noopener noreferrer">法国超1020所学校爆发高中生骚乱 抗议教育资源不足</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-04 11:41</span>
+        </li>
+        <li>
+          <a href="https://mini.caixin.com/2026-10-04/102490686.html" target="_blank" rel="noopener noreferrer">财新闻｜169金89银83铜收官，中国队创境外参加亚运会最佳战绩</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-04 09:34</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/algorithmic-monoculture-effects-depend-on-details-0929" target="_blank" rel="noopener noreferrer">The effects of an “algorithmic monoculture” depend on the details</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-09-29 12:00</span>
+        </li>
+        <li>
+          <a href="https://www.qbitai.com/2026/10/501451.html" target="_blank" rel="noopener noreferrer">GPT-6要“吃掉”3D公司？这家公司不到2年ARR翻百倍，破1亿美元</a>
+          <span class="source-meta">量子位 · 2026-10-04 08:53</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/news/listen-kff-health-news-minute-2026/" target="_blank" rel="noopener noreferrer">Listen to the Latest ‘KFF Health News Minute’</a>
+          <span class="source-meta">KFF Health News · 2026-10-01 21:11</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/on-air/on-air-october-3-2026-kff-ap-rural-voter-poll-glp1-rfk-maha-summit-claude/" target="_blank" rel="noopener noreferrer">Journalists Evaluate Rural Voter Sentiment, MAHA Movement, and Gene-Editing Finding</a>
+          <span class="source-meta">KFF Health News · 2026-10-03 17:00</span>
+        </li>
+        <li>
+          <a href="https://medlineplus.gov/whatsnew/" target="_blank" rel="noopener noreferrer">Two New Medical Tests Added to MedlinePlus</a>
+          <span class="source-meta">MedlinePlus - What&#x27;s New · 2024-10-16 12:00</span>
+        </li>
+        <li>
+          <a href="https://www.cdc.gov/botulism/bioterrorism/index.html" target="_blank" rel="noopener noreferrer">Bioterrorism and Botulism: The Threat</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-09-07 21:57</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
