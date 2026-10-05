@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.10.05 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-10-05 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li><strong>决策模型新品类两周内从首发走向群战</strong>：Jev 之后，OpenAI Decisions API、Cloudflare Clef、亚马逊 Strands Decider、上海 AI 实验室 Intern-Decision、StartLux-Decision 接连出现。判断：Agent 大量琐碎判断可被廉价结构化模型替代，中国团队以开源多规格切入，可能推动该品类快速商品化。（来源：极客公园；AI 内容类型：官方发布）</li>
+        <li><strong>马斯克确认与台积电讨论 Terafab 芯片制造合作</strong>：英特尔仍是唯一正式点名合作伙伴，计划提供 14A 工艺。判断：Terafab 目标年产约 1TW AI 算力，约为当前全球年产出的 50 倍，需求压力下马斯克从“自建替代”转向多源合作，先进制程与封装竞争更复杂。（来源：量子位；AI 内容类型：官方发布）</li>
+        <li><strong>美国 Medicaid 新规 10 月 1 日生效，合法移民面临失去医保</strong>：CBO 估计到 2034 年额外 10 万移民无保险，KFF 调查 9 州发现更多人面临风险。判断：政策冲击大于预期，难民、性贩运受害者等合法居留群体首当其冲。（来源：KFF Health News；健康证据类型：媒体报道；AI 内容类型：风险与监管）</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li><strong>熊猫债外资发行人募资占比首超中资</strong>：上半年外资发行人募资占市场总规模 54%，拟用于境外规模 587 亿元、占外资募资 68%。判断：人民币债券发行人结构进一步多元化，跨境资金使用特征明显。（来源：36氪/新华社；仅有摘要、未获取到全文）</li>
+        <li><strong>理想自研电池全面上车，供应链主导权向车企转移</strong>：理想表态欢迎任何电池厂商合作，但必须纳入自研体系、跨越技术标准并实现数据与定义深度互通；8 月已退出宁德时代前五大客户。判断：车企对电池定义权和数据链的掌控增强，头部供应商地位可能松动。（来源：36氪；仅有摘要、未获取到全文）</li>
+        <li><strong>港股科技与半导体情绪偏暖</strong>：恒指午间休盘跌 0.08%，恒生科技指数涨 0.27%，硬件设备、半导体、可选消费零售领涨，南向资金净买入 68.64 亿港元。判断：南向资金持续流入，科技硬件板块相对强势。（来源：36氪；仅有摘要、未获取到全文）</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li><strong>openJiuwen X-Router 自演进模型路由降低 Token 消耗</strong>：基于任务复杂度在 Agent 与模型之间动态选择最优模型，昇腾亲和，实测减少 50+% Token 消耗。判断：多模型混用时代，路由层可显著降本，Agent 从“一个模型包打天下”转向“一支模型队伍”。（来源：量子位；AI 内容类型：官方发布）</li>
+        <li><strong>OpenAI 联合美国 SBDC 培训小企业用 AI</strong>：通过 OpenAI Academy 社区培训师计划培训约 150 名 SBDC 顾问，目标触达至少 1000 家小企业。判断：AI 落地从开发者向小微企业实操延伸，渠道与培训成为渗透关键。（来源：OpenAI News；AI 内容类型：官方发布）</li>
+        <li><strong>科技工人运动被记录</strong>：MIT 博士生 JS Tan 合著新书，讲述科技员工抗议兴起及随后雇主反弹。判断：科技行业劳工关系与政治表达趋紧，对企业管理和人才策略有潜在影响。（来源：MIT News；AI 内容类型：产品应用）</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li><strong>决策模型把“判断”从“生成”剥离</strong>：Jev 只回答带预设选项的问题，返回带概率的结构化结果，定价每百万输入 token 0.042 美元、输出免费。判断：将高频判断做成廉价基础设施，是 AI 产品设计的重要范式。（来源：极客公园；AI 内容类型：官方发布）</li>
+        <li><strong>智能路由引入“调度层”设计</strong>：openJiuwen 在 Agent 与模型之间增加面向请求的决策能力，简单任务用轻快模型，复杂任务调度更强模型。判断：可借鉴外卖分单、医院分诊逻辑，产品应内建“看菜下饭”能力。（来源：量子位；AI 内容类型：官方发布）</li>
+        <li><strong>北魏雕塑的辨识度美学</strong>：北魏陶制猎犬等雕塑在失去彩绘与金箔后，仍凭极具辨识度的美学抉择展现时代力量感。判断：产品设计可关注形态、比例与材质褪去后的本质辨识度。（来源：财新）</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li><strong>美国农村选民对 MAHA 政策感知脱节</strong>：KFF-AP 调查超 2000 名农村注册选民，约 8 成认为特朗普医疗政策对社区健康有负面或无影响，68% MAHA 支持者同感。判断：政策品牌与基层实际感知存在明显落差，可能影响中期选举。（来源：KFF Health News；健康证据类型：政策报告）</li>
+        <li><strong>Q 热作为潜在生物恐怖剂</strong>：Coxiella burnetii 高度传染，少于 10 个细菌即可致病，对热、干燥和常见消毒剂极强抵抗，曾被武器化。判断：生物安全风险需长期准备，联邦与地方卫生部门协作不可松懈。（来源：MedlinePlus/CDC；健康证据类型：医学机构）</li>
+        <li><strong>“法律与秩序”成为全球选战共同话术</strong>：巴西、以色列、南非选举中，安全与治安议题成为左右翼趋同的动员策略。判断：安全议题可能进一步压缩左右翼政策差异，值得跟踪其对经济与移民政策的外溢影响。（来源：财新）</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 8118，输出 9804，总计 17922</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>product_tech</h3>
+      <p><strong>1. Jev 之后，中国团队开始深挖 AI 的「直觉层」</strong></p>
+      <blockquote>来源：极客公园 ｜ 时间：2026-10-04 19:41 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：作者｜桦林舞王 编辑｜靖宇 9 月 15 日，前 OpenAI 研究员 Diogo Almeida 创办的 TypeSafe AI 发布了 Jev。这款模型不写一个字，只做判断。 两周之后，整个行业都在做同一件事。OpenAI 在开发者日上推出 Decisions API，Cloudflare 在 10 月 1 日开源了 Clef，亚马逊也放出了 Strands Decider。 国内同样没闲着，上海人工智能实验室开源了多模态决策模型 Intern-Decision。 9 月 30 日，一家成立不到五个月的上海公司 StartLux（原点星辉）发布了开源的 StartLux-Decision，并宣称在公开评测中超过 Jev。 一个新品类在两周内从「首发」走到「群战」，这种速度在大模型行业也不多见。 而 StartLux 背后的掌舵人，是盛大网络联合创始人陈大年。 被 Jev 点燃的「直觉」 要理解这轮热潮，得先说清楚决策模型到底在干什么。 TypeSafe 把 Jev 称为「System One 模型」，名字取自卡尼曼的《思考，快与慢》。系统一是人快速、直觉的那部分思维，系统二负责慢思<br>原文：<a href="http://www.geekpark.net/news/372081" target="_blank" rel="noopener noreferrer">http://www.geekpark.net/news/372081</a></blockquote>
+      <p><strong>2. 上半年熊猫债外资发行人募资占比首超中资</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-05 12:52 ｜ 质量：一手来源、深度内容、数据驱动 ｜ 降权：公关稿<br>摘要：国家外汇管理局日前发布的《2026年上半年中国国际收支报告》显示，上半年，熊猫债外资发行人募资规模上升。外资发行人募资规模占熊猫债市场总募资规模的54%，首次超过中资背景发行人募资规模。近年来，熊猫债发行主体结构逐步变化，从早期国际机构试点、境外中资机构主导，逐渐演变为境外中资和外资主体共同参与。从募集资金在境内外使用看，外资发行人募集资金拟用于境外的规模为587亿元人民币，占外资募资规模的68%。（新华社）<br>原文：<a href="https://36kr.com/newsflashes/4012383246209157?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/4012383246209157?f=rss</a></blockquote>
+      <p><strong>3. 理想再谈自研电池：电芯谁来造都行，前提是打通数据</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-09-30 13:41 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：自研电池上车，是理想汽车今年的核心战略之一。 今年6月，理想第一次公开回应业界对理想自研电池的种种质疑时，舆论焦点还集中在为何自研、是否可靠。近日，理想再次就自研电池召开沟通会。但这一次，质疑声渐弱，取而代之的是对车企自研对电池供应链重构的讨论。 在长达2小时的沟通会里，理想汽车联合创始人马东辉、理想汽车整车电动研发高级副总裁刘立国、电池研发负责人柳志民三位高管至少三次明确表态：欢迎任何电池厂商合作，但前提是必须纳入理想的自研电池体系下，也就是跨越理想的技术标准门槛，并实现数据与定义的深度互通。 今年以来，理想从新一代L8开始，全面搭载自研电池，此后，自研电池相继在旗舰电动产品MEGA、i9等车型上装载。这一动作直接导致理想在8月份，退出宁德时代前五大客户名单。 在此之前，理想的动力电池供应绝大部分来自宁德时代，常年成为宁德时代核心客户，同时引入欣旺达作为第二电池供应商。36氪曾报道，欣旺达在理想汽车的供货份额高点时也仅3成左右。 正是凭借在头部客户中牢牢锁住大体量的供货份额，宁德时代才长期坐拥超40%的市场体量。而理想自研电池的全面上车，意味着宁德时代在这家车企的供货地位即将动摇。<br>原文：<a href="https://36kr.com/p/3994346489084932?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/3994346489084932?f=rss</a></blockquote>
+      <p><strong>4. 恒指午间休盘跌0.08%，恒生科技指数涨0.27%</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-05 12:01 ｜ 质量：一手来源、数据驱动 ｜ AI 类型：官方发布<br>摘要：36氪获悉，恒指午间休盘跌0.08%，恒生科技指数涨0.27%；硬件设备、半导体、可选消费零售板块领涨，傅里叶涨超13%，海光芯正涨超5%，阿里巴巴涨近1%；企业服务、建材、交通运输板块跌幅居前，中科集团控股跌超6%，秦港股份跌超3%，华新建材跌超1%；南向资金净买入68.64亿港元。<br>原文：<a href="https://36kr.com/newsflashes/4012455820054656?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/4012455820054656?f=rss</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. Helping small businesses put AI to work</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-09-30 18:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI.<br>原文：<a href="https://openai.com/index/helping-small-businesses-put-ai-to-work" target="_blank" rel="noopener noreferrer">https://openai.com/index/helping-small-businesses-put-ai-to-work</a></blockquote>
+      <p><strong>2. Documenting the tech worker movement</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-10-03 01:00 ｜ 质量：机构来源、深度内容 ｜ AI 类型：产品应用<br>摘要：Writing as a participant and researcher, PhD student JS Tan SM ’22 has co-authored a new book about the rise of tech worker protests and the employer backlash that followed.<br>原文：<a href="https://news.mit.edu/2026/documenting-tech-worker-movement-0918" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/documenting-tech-worker-movement-0918</a></blockquote>
+      <p><strong>3. openJiuwen X-Router自演进模型路由技术首发，昇腾亲和，Agent越跑越省，实测减少50+%Token消耗</strong></p>
+      <blockquote>来源：量子位 ｜ 时间：2026-10-02 15:34 ｜ 质量：一手来源、原创/独家 ｜ AI 类型：官方发布<br>摘要：让每一次请求选对模型，让每一次反馈都成为下一次更优、更省的选择<br>原文：<a href="https://www.qbitai.com/2026/10/500098.html" target="_blank" rel="noopener noreferrer">https://www.qbitai.com/2026/10/500098.html</a></blockquote>
+      <p><strong>4. AI算力硬合作，马斯克还是更相信中国制造</strong></p>
+      <blockquote>来源：量子位 ｜ 时间：2026-10-04 14:12 ｜ 质量：一手来源 ｜ AI 类型：官方发布<br>摘要：一种混搭的可能：英特尔继续供先进工艺，即前端用14A；后端再接台积电，来补工厂运营、良率、封装这些能力。<br>原文：<a href="https://www.qbitai.com/2026/10/501605.html" target="_blank" rel="noopener noreferrer">https://www.qbitai.com/2026/10/501605.html</a></blockquote>
+      <h3>economy</h3>
+      <p><strong>1. 大西洋观察｜法律与秩序：新时代的选战话术</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-05 08:50 ｜ 质量：一手来源<br>摘要：今天的“法律与秩序”，犹如30年前的“傻瓜，问题是经济”，将成为左右共持的选举策略 【财新网】 不管是10月4日在南美最大经济体巴西举行的全国大选，还是即将在10月27日即将在以色列举行的议会选举，抑或是在南非长期执政的非国大而言，一个能统一左右政治光谱的话题，就是在应对国家安全和公共安全问题上的日趋一致。 在巴西大选中，强硬治安政策被认为是右翼弗拉维奥·博索纳罗对抗左翼阵营、现总统卢拉所在工党的关键筹码（参见财新网报道《分析｜巴西大选前瞻：拉美右翼浪潮会否席卷拉美第一大经济体？》）。<br>原文：<a href="https://international.caixin.com/2026-10-05/102490768.html" target="_blank" rel="noopener noreferrer">https://international.caixin.com/2026-10-05/102490768.html</a></blockquote>
+      <p><strong>2. 北魏猎犬：平城的美意识｜收藏</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-05 08:46 ｜ 质量：一手来源<br>摘要：北魏雕塑即便在岁月沧桑中失去了彩绘与金箔，却仍能凭借其极具辨识度的美学抉择，绽放出带有时代力量感的美 第一次知道有北魏陶制猎犬雕塑，是在2017年底伦敦著名古董商埃斯肯纳齐（Eskenazi Ltd）的六朝展览上。当年展出的著名藏家Norman Kurland的系列收藏中一对十分生动的北魏彩绘陶制猎犬，用朱塞佩·埃斯肯纳齐（Giuseppe Eskenazi）的原话说，就是它们看起来“几乎是活的”。当时我接触收藏仅五年，还在宋朝的瓷器中摸爬滚打，对于真正宋以前的艺术，可谓是一无所知，只是知道埃斯肯纳齐这样的国际大古董商，价格也是国际的，于是小心翼翼地挑了这对自己觉得可能会稍微不那么贵的猎犬询价。<br>原文：<a href="https://mini.caixin.com/2026-10-05/102490744.html" target="_blank" rel="noopener noreferrer">https://mini.caixin.com/2026-10-05/102490744.html</a></blockquote>
+      <p><strong>3. 财新闻｜名古屋亚运会闭幕！下一站，多哈！</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-05 07:51 ｜ 质量：一手来源<br>摘要：名古屋亚运会闭幕！下一站，多哈！ 10月4日，第二十届亚洲运动会在日本名古屋闭幕。<br>原文：<a href="https://mini.caixin.com/2026-10-05/102490715.html" target="_blank" rel="noopener noreferrer">https://mini.caixin.com/2026-10-05/102490715.html</a></blockquote>
+      <p><strong>4. 焦土之上，东线战场的几个片段｜画志·2026年第三季</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-04 15:51 ｜ 质量：一手来源<br>摘要：暂无摘要<br>原文：<a href="https://mini.caixin.com/2026-10-04/102490713.html" target="_blank" rel="noopener noreferrer">https://mini.caixin.com/2026-10-04/102490713.html</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Rural MAHA Followers Say Trump Health Policies Haven’t Reached Their Communities</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-30 18:01 ｜ 质量：深度内容、数据驱动 ｜ 证据：政策报告 ｜ AI 类型：产品应用<br>摘要：President Donald Trump has championed sprawling health policy changes under the Make America Healthy Again movement, but a KFF-Associated Press survey of rural voters found people aren’t seeing the initiatives reach their communities.<br>原文：<a href="https://kffhealthnews.org/rural-health/kff-ap-poll-rural-voters-maha-make-america-healthy-again-local-impact-midterms/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/rural-health/kff-ap-poll-rural-voters-maha-make-america-healthy-again-local-impact-midterms/</a></blockquote>
+      <p><strong>2. US Poised To Boot Legal Immigrants From Medicaid, Including Refugees and Sex-Trafficking Victims</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-09-30 17:00 ｜ 质量：深度内容、数据驱动 ｜ 证据：媒体报道 ｜ AI 类型：风险与监管<br>摘要：The Congressional Budget Office estimated 100,000 more immigrants will be uninsured by 2034 because of Medicaid eligibility changes under President Trump’s One Big Beautiful Bill Act that take effect Oct. 1. A KFF Health News survey of nine states found many more are at imminent risk of losing health coverage.<br>原文：<a href="https://kffhealthnews.org/medicaid/immigrants-kicked-off-medicaid-refugees-asylum-seekers-trump-big-beautiful-bill-cbo-2/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/medicaid/immigrants-kicked-off-medicaid-refugees-asylum-seekers-trump-big-beautiful-bill-cbo-2/</a></blockquote>
+      <p><strong>3. Gaucher Disease</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-09-15 20:36 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Merck &amp; Co., Inc. Related MedlinePlus Pages: Gaucher Disease<br>原文：<a href="https://www.merckmanuals.com/home/children-s-health-issues/hereditary-metabolic-disorders/gaucher-disease" target="_blank" rel="noopener noreferrer">https://www.merckmanuals.com/home/children-s-health-issues/hereditary-metabolic-disorders/gaucher-disease</a></blockquote>
+      <p><strong>4. Bioterrorism and Q fever: The Threat</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-09-07 21:56 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Centers for Disease Control and Prevention Related MedlinePlus Pages: Biodefense and Bioterrorism<br>原文：<a href="https://www.cdc.gov/q-fever/bioterrorism/index.html" target="_blank" rel="noopener noreferrer">https://www.cdc.gov/q-fever/bioterrorism/index.html</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>imf_blog: 403 Client Error: Forbidden for url: <a href="https://www.imf.org/en/blogs" target="_blank" rel="noopener noreferrer">https://www.imf.org/en/blogs</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:35:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="http://www.geekpark.net/news/372081" target="_blank" rel="noopener noreferrer">Jev 之后，中国团队开始深挖 AI 的「直觉层」</a>
+          <span class="source-meta">极客公园 · 2026-10-04 19:41</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/4012383246209157?f=rss" target="_blank" rel="noopener noreferrer">上半年熊猫债外资发行人募资占比首超中资</a>
+          <span class="source-meta">36氪 · 2026-10-05 12:52</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/helping-small-businesses-put-ai-to-work" target="_blank" rel="noopener noreferrer">Helping small businesses put AI to work</a>
+          <span class="source-meta">OpenAI News · 2026-09-30 18:00</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/3994346489084932?f=rss" target="_blank" rel="noopener noreferrer">理想再谈自研电池：电芯谁来造都行，前提是打通数据</a>
+          <span class="source-meta">36氪 · 2026-09-30 13:41</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/4012455820054656?f=rss" target="_blank" rel="noopener noreferrer">恒指午间休盘跌0.08%，恒生科技指数涨0.27%</a>
+          <span class="source-meta">36氪 · 2026-10-05 12:01</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/documenting-tech-worker-movement-0918" target="_blank" rel="noopener noreferrer">Documenting the tech worker movement</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-10-03 01:00</span>
+        </li>
+        <li>
+          <a href="https://www.qbitai.com/2026/10/500098.html" target="_blank" rel="noopener noreferrer">openJiuwen X-Router自演进模型路由技术首发，昇腾亲和，Agent越跑越省，实测减少50+%Token消耗</a>
+          <span class="source-meta">量子位 · 2026-10-02 15:34</span>
+        </li>
+        <li>
+          <a href="https://international.caixin.com/2026-10-05/102490768.html" target="_blank" rel="noopener noreferrer">大西洋观察｜法律与秩序：新时代的选战话术</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-05 08:50</span>
+        </li>
+        <li>
+          <a href="https://mini.caixin.com/2026-10-05/102490744.html" target="_blank" rel="noopener noreferrer">北魏猎犬：平城的美意识｜收藏</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-05 08:46</span>
+        </li>
+        <li>
+          <a href="https://mini.caixin.com/2026-10-05/102490715.html" target="_blank" rel="noopener noreferrer">财新闻｜名古屋亚运会闭幕！下一站，多哈！</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-05 07:51</span>
+        </li>
+        <li>
+          <a href="https://mini.caixin.com/2026-10-04/102490713.html" target="_blank" rel="noopener noreferrer">焦土之上，东线战场的几个片段｜画志·2026年第三季</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-04 15:51</span>
+        </li>
+        <li>
+          <a href="https://www.qbitai.com/2026/10/501605.html" target="_blank" rel="noopener noreferrer">AI算力硬合作，马斯克还是更相信中国制造</a>
+          <span class="source-meta">量子位 · 2026-10-04 14:12</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/rural-health/kff-ap-poll-rural-voters-maha-make-america-healthy-again-local-impact-midterms/" target="_blank" rel="noopener noreferrer">Rural MAHA Followers Say Trump Health Policies Haven’t Reached Their Communities</a>
+          <span class="source-meta">KFF Health News · 2026-09-30 18:01</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/medicaid/immigrants-kicked-off-medicaid-refugees-asylum-seekers-trump-big-beautiful-bill-cbo-2/" target="_blank" rel="noopener noreferrer">US Poised To Boot Legal Immigrants From Medicaid, Including Refugees and Sex-Trafficking Victims</a>
+          <span class="source-meta">KFF Health News · 2026-09-30 17:00</span>
+        </li>
+        <li>
+          <a href="https://www.merckmanuals.com/home/children-s-health-issues/hereditary-metabolic-disorders/gaucher-disease" target="_blank" rel="noopener noreferrer">Gaucher Disease</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-09-15 20:36</span>
+        </li>
+        <li>
+          <a href="https://www.cdc.gov/q-fever/bioterrorism/index.html" target="_blank" rel="noopener noreferrer">Bioterrorism and Q fever: The Threat</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-09-07 21:56</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
