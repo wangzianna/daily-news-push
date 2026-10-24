@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.10.24 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-10-24 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li><strong>大模型价格战正在转向：从低价换规模转向更高的定价</strong>：中国信通院报告显示，国内模型的归一化均价从 2025 年下半年的 6.8 元升至 2026 年以来的 13.46 元，接近翻倍；同期国外典型模型的归一化均价约为 117.8 元。国内虽仍有价格优势，但下调空间已明显收窄。判断：靠低价换规模的阶段基本结束，产品侧需按新的单位调用成本重算定价与毛利模型。（36氪转引信通院《大模型词元服务性能监测报告（2026年）》；仅有摘要、未获取到全文）</li>
+        <li><strong>AI 的角色从“处理数据”转向“发现问题”</strong>：OpenAI 联合 PerturbAI、Scripps Research，用数千个由 GPT-Rosalind 驱动的 agent 在 32 分钟内解析数百万小鼠脑细胞的实验数据，并将基因扰动效应与既有文献关联，找出可帮助理解疾病的研究方向；同期 GPT-5.6 Sol 在 PHP 中发现关键漏洞。判断：agent 的价值正从效率工具迁移到“发现能力”，且这一能力在安全攻防两侧同步放大。（OpenAI News，官方发布）</li>
+        <li><strong>遥感“情报化”获资本验证</strong>：瑞启深空三个月内完成两轮融资，本轮超亿元天使+轮，累计近 3.5 亿元；已有超 6000 万在手订单，年底目标 2 亿元订单、3000 万元营收，客户指向全球头部海运企业、矿业集团与金融机构。判断：商业航天的变现路径正从“卖数据”转向“卖情报订阅”，订单先行是当前一级市场为数不多可验证的指标。（36氪；仅有摘要、未获取到全文）</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li><strong>燃料油领涨大宗商品</strong>：中国大宗商品指数周涨 0.43%，燃料油单周涨 7.75%，主要驱动因素是地缘扰动导致供应收紧，以及库存持续去化。判断：能源品的波动更多来自供给端事件，而非需求修复，短期价格弹性集中在燃料油、LNG 等直接受运输与地缘影响的品类。（财新）</li>
+        <li><strong>上游能源强、养殖弱的分化延续</strong>：10 月中旬 22 种生产资料价格上涨、25 种下降；液化天然气 6749.4 元/吨，环比涨 9.1%，生猪（外三元）9.8 元/千克，环比降 4.9%。判断：成本压力集中在用能企业，猪价下行则意味着 CPI 端压力有限，为下游消费留出空间。（国家统计局 / 36氪；仅有摘要、未获取到全文）</li>
+        <li><strong>A 股并购对赌进入“后遗症”阶段</strong>：2020 年以来近 700 家上市公司披露 840 多起重大资产重组，逾 410 家附带业绩对赌；高估值叠加高承诺后，承诺不兑现时“民事违约”与“刑事诉讼”的边界模糊。判断：事前估值与条款设计的价值高于事后追偿，投行、法务与财务顾问的前置风控需求上升。（财新）</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li><strong>agent 规模化科研出现实证案例</strong>：上述脑细胞数据项目把原本以月计的分析压缩到 32 分钟，并给出可追查的生物学连接。重点不在速度，而在于 AI 能覆盖人类研究者无力穷尽的实验数据量——这正是现代生物实验“产出远大于可分析量”的解法。（OpenAI News，官方发布）</li>
+        <li><strong>AI 可发现互联网级漏洞，攻防同时提速</strong>：在 Patch the Planet 计划中，GPT-5.6 Sol 发现 PHP 关键漏洞，Wiz 独立发现并报告，PHP 维护方主导修复，Cloudflare 等参与前置防护与协同；OpenAI 同步放出可检查 PHP 版本的 Codex skill。判断：披露窗口内的协同响应能力将成为开源基础设施安全的新标配，但同一能力也可被攻击者用于快速构造利用手段。（OpenAI News，官方发布）</li>
+        <li><strong>国家级 AI 安全机构网络扩容</strong>：OpenAI 与波兰 NASK 国家研究院签约，NASK 的 AI 安全研究中心承担波兰 AISI 职能，双方在模型评估、漏洞识别与防护加固上合作；此前 OpenAI 已与美国 CAISSI、英国 AISI 建立类似关系。判断：前沿模型的安全评估正形成“厂商 + 公共研究机构”的双轨结构，合规成本持续前置。（OpenAI News，官方发布）</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li><strong>UX 学科边界需要重新划定</strong>：NN/g 发布 UX 学科词汇表，厘清 UX、UI、visual design、interaction design、service design、UX research、DesignOps 的分工，并提到其调研收集到 134 种与 UX 相关的职位名称。更值得注意的，是新纳入的 agent experience（AX）——设计对象从“界面”扩展到“agent 的行为与协作方式”。（NN/g）</li>
+        <li><strong>适老化监护产品跑通政府集中采购的付费路径</strong>：“在么在么”（原“死了么”）公布收费标准：1.0 系统 99 元/年、2.0 系统 199 元/年，由政府集中采购，独居老人免费安装使用。判断：独居老人监护类产品个人付费意愿低，政府购买是更现实的商业模式，也意味着产品指标需围绕采购方的考核口径设计。（36氪；仅有摘要、未获取到全文）</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li><strong>美国 Medicaid 收紧落地，并已产生政治反噬</strong>：2025 年共和党税法案（One Big Beautiful Bill Act）相关条款自 10 月 1 日生效，预计到 2034 年削减 Medicaid 支出约 9000 亿美元；CBO 估计到 2034 年将新增 10 万无保险移民，KFF 对九州的调查显示难民、人口贩运受害者、战争逃亡者等合法居留群体已面临失去覆盖的风险。同时，加州第 22 选区（约六成选民参保 Medicaid）共和党议员 Valadao 因支持削减在选战中承压，医疗成本成为摇摆选区核心议题。判断：支付方收缩会向社区医疗、数字健康与患者援助项目传导，并可能影响后续立法节奏。（KFF Health News，健康证据类型：媒体报道）</li>
+        <li><strong>人民币升值周期已持续一年半</strong>：从 2025 年初至今，人民币相对美元处于升值周期，市场预期温和有序升值至少延续到年底。判断：出口企业结汇节奏、跨境业务定价与财务模型的汇率假设都需重新校准。（财新）</li>
+        <li><strong>AI 基础设施本身成为竞争变量</strong>：OpenAI 披露 Habitat 存储平台支撑 10 亿 ChatGPT 用户、40 个地理区域、500PB 以上数据，通过可靠多租户、全局缓存与 Azure Cosmos DB 实现读取性能 12 倍提升。判断：规模化 AI 产品的门槛正从模型能力扩散到存储与数据层的工程能力。（OpenAI News，官方发布）</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 5803，输出 6344，总计 12147</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>economy</h3>
+      <p><strong>1. 从“泥土”到“陶罐”：再向江村行｜纪行</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-24 08:12 ｜ 质量：一手来源、深度内容、数据驱动、原创/独家<br>摘要：这是一代知识分子的乡村情结。农村调查首先是一种认知冲击：不能仅凭城市经验或西方理论来理解中国，必须回到中国社会自身的结构与历史之中 10月18日一早，复旦大学望道新闻卓越班2024级、2025级、2026级学子和部分业界导师从上海出发，踏访苏州开弦弓村和毗邻的丝绸古镇震泽，重走费孝通先生26次访问过的“江村”。 太湖流域的开弦弓村，傍依在一条弓弯的小清河西侧，村名由此得来。这里的民居保留了江南特色的白墙灰瓦，茶棚、咖啡屋不见店主当街揽客，洋溢着静谧祥和的烟火气。曾24次陪同费孝通调研的村民姚夫坤，引导大学生参观乡村历史文化陈列馆，对江村过往和费老轶事如数家珍。吴江区委副书记戴丹讲述当地产业变迁的脉络，幽默解读电视剧《繁花》原著作者、吴江人金宇澄的“不响”含义，即心中有数，嘴上不急，专注时代，追求卓越。<br>原文：<a href="https://mini.caixin.com/2026-10-24/102496706.html" target="_blank" rel="noopener noreferrer">https://mini.caixin.com/2026-10-24/102496706.html</a></blockquote>
+      <p><strong>2. 【CCI快报】：中国大宗商品指数周涨0.43% 燃料油领涨7.75%</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-24 11:55 ｜ 质量：一手来源、数据驱动<br>摘要：地缘扰动致供应收紧、库存持续去化，燃料油价格强势上行<br>原文：<a href="https://database.caixin.com/2026-10-24/102496763.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-10-24/102496763.html</a></blockquote>
+      <p><strong>3. 【周刊提前读】A股并购对赌多发后遗症 事后追偿不如事先防范</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-24 08:42 ｜ 质量：一手来源、数据驱动<br>摘要：【本文系数据通用户提前专享】高估值叠加高业绩承诺的对赌协议成为并购常见操作后，当承诺不能兑现，到底是“民事违约”还是“刑事诉讼” 2020年以来，共有近700家上市公司披露了840多起重大资产重组事项，有逾410家附带业绩对赌协议。业绩对赌失败的代价不只是一笔未兑现的利润。<br>原文：<a href="https://database.caixin.com/2026-10-24/102496723.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-10-24/102496723.html</a></blockquote>
+      <p><strong>4. 【周刊提前读】人民币大幅升值动因何在？影响几何？</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-10-24 08:39 ｜ 质量：一手来源、数据驱动<br>摘要：【本文系数据通用户提前专享】在各种因素作用之下，市场预期人民币温和有序升值的趋势至少会延续到年底 从2025年初至今，人民币相对美元的升值周期已有一年半，并且似乎仍有动力继续。图：徐劲柏/视觉中国<br>原文：<a href="https://database.caixin.com/2026-10-24/102496721.html" target="_blank" rel="noopener noreferrer">https://database.caixin.com/2026-10-24/102496721.html</a></blockquote>
+      <h3>product_tech</h3>
+      <p><strong>1. 9点1氪丨国内大模型均价涨至13元；原“死了么”APP公布收费标准，最高199元/年；寒武纪第三季度净利润14.04亿元，同比增长147.74%</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-24 09:06 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：今日热点导览 微信紧急更新适配iPhoneDuo 证监会核准设立花旗证券中国公司 国际金价跌破4000，现货黄金创7月以来新低 人民币兑美元中间价报6.7180，上调15点 沃尔沃第三季度由盈转亏，将再砍2500个岗位 TOP3大新闻 国内大模型均价涨至13元 10月23日，中国信通院人工智能所联合发布《大模型词元服务性能监测报告（2026年）》。报告提出，经历了过去两年价格战后，2026年国内外模型服务价格明显上涨。国内2025下半年归一化均价为6.8元，而今年以来均价为13.46元，涨幅接近1倍。但国外价格仍高于国内，2026年以来发布的典型模型平均归一价格约为117.8元。(界面新闻) 原“死了么”APP公布收费标准，最高199元/年 近日，因原名引发巨大争议的“在么在么”（原“死了么”）App正式公布收费标准，引发广泛关注。10月22日，据南都N视频报道，该App创始人吕功琛称，“在么在么”App重点服务独居老人，软件系统分为1.0和2.0，“1.0系统99元/年，2.0系统199元/年，由政府集中采购，独居老人可免费安装、使用”。 吕功琛介绍，“在么在么”App上线后一直收费<br>原文：<a href="https://36kr.com/p/4039177193411718?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4039177193411718?f=rss</a></blockquote>
+      <p><strong>2. 三个月融两轮，要把遥感数据卖成“情报”，「瑞启深空」获超亿元天使+轮融资｜36氪首发</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-23 18:24 ｜ 质量：一手来源、数据驱动、原创/独家 ｜ AI 类型：官方发布<br>摘要：36氪获悉，瑞启深空科技（苏州）有限公司（以下简称“瑞启深空”）近日完成超亿元天使+轮融资。 本轮融资由东吴创新领投，苏创投、火炬电子、乾融资本、金雨茂物等机构跟投， 资金将用于卫星研制与发射、地面系统搭建以及早期商业化交付。 瑞启深空 成立于2026年3月，是一家以天基能力为底座、以AI为驱动的智能遥感星座公司，业务覆盖智能遥感数据服务、卫星研制和星座运营。 这是瑞启深空在三个月内完成的第二轮融资。加上此前2.2亿元天使轮融资，累计融资金额近3.5亿元。 在商业航天一级市场资金向头部集中的当下，这样的节奏对于早期项目而言是一个积极信号。 瑞启深空由创始人、董事长兼CEO杜一光联合吉天星舟等发起创立。任露泉、林君、段广仁三位院士作为首席科学家，分别在仿生智能遥感、地理空间信息体系、卫星及星座智能控制等方向提供技术支撑。 已验证技术和可预期的商业进展是资本加注的重要因素。杜一光给出了一组数字：瑞启深空在三个月时间内积累了超6000万在手订单，与全球领先海运企业、头部矿业集团、大型金融公司等客户达成智能情报产品合作意向，预计年底在手订单总额将达2亿元，实现3000万元的营业收入。 发射节奏<br>原文：<a href="https://36kr.com/p/4038309503997065?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4038309503997065?f=rss</a></blockquote>
+      <p><strong>3. UX Disciplines: Glossary</strong></p>
+      <blockquote>来源：Nielsen Norman Group ｜ 时间：2026-10-24 01:00 ｜ 质量：一手来源、深度内容<br>摘要：Definitions of fields related to user experience, including UX design, UI design, visual design, interaction design, service design, UX research, and DesignOps<br>原文：<a href="https://www.nngroup.com/articles/ux-disciplines-glossary/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener noreferrer">https://www.nngroup.com/articles/ux-disciplines-glossary/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication</a></blockquote>
+      <p><strong>4. 国家统计局：10月中旬22种产品价格上涨，生猪价格环比下降4.9%</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-24 12:14 ｜ 质量：一手来源、数据驱动<br>摘要：36氪获悉，国家统计局消息，据对全国流通领域9大类50种重要生产资料市场价格的监测显示，2026年10月中旬与9月下旬相比，22种产品价格上涨，25种下降，3种持平。其中，液化天然气价格为6749.4元/吨，环比增长9.1%；生猪（外三元）价格为9.8元/千克，环比下降4.9%。<br>原文：<a href="https://36kr.com/newsflashes/4039336083936386?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/4039336083936386?f=rss</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. Using thousands of AI agents to uncover new leads in biological data</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-10-21 12:50 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells.<br>原文：<a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data" target="_blank" rel="noopener noreferrer">https://openai.com/index/scaling-ai-research-for-complex-biological-data</a></blockquote>
+      <p><strong>2. OpenAI and Poland’s NASK partner to advance AI safety and security</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-10-23 08:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem.<br>原文：<a href="https://openai.com/index/openai-nask-ai-safety-security-partnership" target="_blank" rel="noopener noreferrer">https://openai.com/index/openai-nask-ai-safety-security-partnership</a></blockquote>
+      <p><strong>3. Patch the Planet: global response coordination as agents uncover critical vulnerabilities</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-10-21 15:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.<br>原文：<a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities" target="_blank" rel="noopener noreferrer">https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities</a></blockquote>
+      <p><strong>4. Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-10-24 01:00 ｜ 质量：一手来源 ｜ AI 类型：官方发布<br>摘要：Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.<br>原文：<a href="https://openai.com/index/scaling-storage-one-billion-users-part-two" target="_blank" rel="noopener noreferrer">https://openai.com/index/scaling-storage-one-billion-users-part-two</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Ask A Scientist (Videos for Kids)</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-10-24 02:27 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: National Eye Institute - Related MedlinePlus Pages: Eye Care<br>原文：<a href="https://www.youtube.com/playlist?list=PLNol8zIT_P1Ab0LlsJBW3I0lvHXyQw5fG" target="_blank" rel="noopener noreferrer">https://www.youtube.com/playlist?list=PLNol8zIT_P1Ab0LlsJBW3I0lvHXyQw5fG</a></blockquote>
+      <p><strong>2. Tracheomalacia</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-09-25 19:28 ｜ 质量：机构来源、深度内容 ｜ 证据：医学机构<br>摘要：Source: Mayo Foundation for Medical Education and Research Related MedlinePlus Pages: Tracheal Disorders<br>原文：<a href="https://www.mayoclinic.org/diseases-conditions/tracheomalacia/symptoms-causes/syc-20587222?p=1" target="_blank" rel="noopener noreferrer">https://www.mayoclinic.org/diseases-conditions/tracheomalacia/symptoms-causes/syc-20587222?p=1</a></blockquote>
+      <p><strong>3. Medicaid at Risk for Hundreds of Thousands of Lawfully Present Immigrants</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-10-23 17:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道 ｜ AI 类型：风险与监管<br>摘要：Hundreds of thousands of lawfully present immigrants could lose government health coverage. This change stems from healthcare cuts in a GOP budget law. KFF Health News’ Andrew Jones tells WAMU’s “Health Hub” which Medicaid enrollees are affected and shares resources for newly uninsured people in the Washington, D.C., area.<br>原文：<a href="https://kffhealthnews.org/medicaid/wamu-health-hub-medicaid-legal-immigrants-lose-coverage-gop-law/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/medicaid/wamu-health-hub-medicaid-legal-immigrants-lose-coverage-gop-law/</a></blockquote>
+      <p><strong>4. GOP Congressman in California Swing-District Race Defends Vote for Medicaid Cuts</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-10-23 17:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道 ｜ AI 类型：产品应用<br>摘要：In a race that could help decide control of Congress, Republican U.S. Rep. David Valadao is trying to hold on to his swing-district seat. The congressman didn’t mention healthcare at a recent campaign rally in Bakersfield, but voters can&#x27;t stop talking about it.<br>原文：<a href="https://kffhealthnews.org/elections/valadao-villegas-california-22nd-house-district-healthcare-costs-ads-swing/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/elections/valadao-villegas-california-22nd-house-district-healthcare-costs-ads-swing/</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>imf_blog: &lt;unknown&gt;:2:0: syntax error</li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:34:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://mini.caixin.com/2026-10-24/102496706.html" target="_blank" rel="noopener noreferrer">从“泥土”到“陶罐”：再向江村行｜纪行</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-24 08:12</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4039177193411718?f=rss" target="_blank" rel="noopener noreferrer">9点1氪丨国内大模型均价涨至13元；原“死了么”APP公布收费标准，最高199元/年；寒武纪第三季度净利润14.04亿元，同比增长147.74%</a>
+          <span class="source-meta">36氪 · 2026-10-24 09:06</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4038309503997065?f=rss" target="_blank" rel="noopener noreferrer">三个月融两轮，要把遥感数据卖成“情报”，「瑞启深空」获超亿元天使+轮融资｜36氪首发</a>
+          <span class="source-meta">36氪 · 2026-10-23 18:24</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data" target="_blank" rel="noopener noreferrer">Using thousands of AI agents to uncover new leads in biological data</a>
+          <span class="source-meta">OpenAI News · 2026-10-21 12:50</span>
+        </li>
+        <li>
+          <a href="https://www.nngroup.com/articles/ux-disciplines-glossary/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener noreferrer">UX Disciplines: Glossary</a>
+          <span class="source-meta">Nielsen Norman Group · 2026-10-24 01:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/openai-nask-ai-safety-security-partnership" target="_blank" rel="noopener noreferrer">OpenAI and Poland’s NASK partner to advance AI safety and security</a>
+          <span class="source-meta">OpenAI News · 2026-10-23 08:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities" target="_blank" rel="noopener noreferrer">Patch the Planet: global response coordination as agents uncover critical vulnerabilities</a>
+          <span class="source-meta">OpenAI News · 2026-10-21 15:00</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-10-24/102496763.html" target="_blank" rel="noopener noreferrer">【CCI快报】：中国大宗商品指数周涨0.43% 燃料油领涨7.75%</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-24 11:55</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-10-24/102496723.html" target="_blank" rel="noopener noreferrer">【周刊提前读】A股并购对赌多发后遗症 事后追偿不如事先防范</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-24 08:42</span>
+        </li>
+        <li>
+          <a href="https://database.caixin.com/2026-10-24/102496721.html" target="_blank" rel="noopener noreferrer">【周刊提前读】人民币大幅升值动因何在？影响几何？</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-10-24 08:39</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/4039336083936386?f=rss" target="_blank" rel="noopener noreferrer">国家统计局：10月中旬22种产品价格上涨，生猪价格环比下降4.9%</a>
+          <span class="source-meta">36氪 · 2026-10-24 12:14</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/scaling-storage-one-billion-users-part-two" target="_blank" rel="noopener noreferrer">Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)</a>
+          <span class="source-meta">OpenAI News · 2026-10-24 01:00</span>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/playlist?list=PLNol8zIT_P1Ab0LlsJBW3I0lvHXyQw5fG" target="_blank" rel="noopener noreferrer">Ask A Scientist (Videos for Kids)</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-10-24 02:27</span>
+        </li>
+        <li>
+          <a href="https://www.mayoclinic.org/diseases-conditions/tracheomalacia/symptoms-causes/syc-20587222?p=1" target="_blank" rel="noopener noreferrer">Tracheomalacia</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-09-25 19:28</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/medicaid/wamu-health-hub-medicaid-legal-immigrants-lose-coverage-gop-law/" target="_blank" rel="noopener noreferrer">Medicaid at Risk for Hundreds of Thousands of Lawfully Present Immigrants</a>
+          <span class="source-meta">KFF Health News · 2026-10-23 17:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/elections/valadao-villegas-california-22nd-house-district-healthcare-costs-ads-swing/" target="_blank" rel="noopener noreferrer">GOP Congressman in California Swing-District Race Defends Vote for Medicaid Cuts</a>
+          <span class="source-meta">KFF Health News · 2026-10-23 17:00</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
