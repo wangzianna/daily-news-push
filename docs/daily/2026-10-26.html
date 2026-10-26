@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.10.26 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-10-26 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li><strong>大模型服务结束价格战、进入涨价周期</strong>：国内归一化均价从 2025 下半年的 6.8 元升至今年以来的 13.46 元，接近翻倍；国外典型模型约 117.8 元，仍是国内的 9 倍量级。（中国信通院《大模型词元服务性能监测报告（2026年）》，经 36氪 转述；该条正文被安全检测拦截，仅有摘要）这意味着按 token 补贴获客的路径基本关闭，后续竞争会转向单位 token 的有效产出与场景绑定。</li>
+        <li><strong>AI agent 开始产出可验证的科研成果与安全成果</strong>：OpenAI、PerturbAI 与 Scripps Research 用数千个基于 GPT-Rosalind 的 agent，在 32 分钟内解析数百万个小鼠脑细胞的实验数据，并把基因扰动效应与文献结论关联起来；同期 GPT-5.6 Sol 在 Patch the Planet 计划中发现 PHP 关键漏洞。（OpenAI News｜内容类型：官方发布）agent 的价值从“省人力”转向“覆盖人类无力穷举的搜索空间”。</li>
+        <li><strong>太空机器人成为商业航天的下一个产业命题</strong>：今控科技完成数千万元天使轮，鼎晖VGC 领投，上海交大何俊创立；智能控制器、伺服驱动器、关节模组、多维力传感器已完成热真空、高低温、辐照试验，计划 2026 年底随算力卫星入轨验证，2027 年中“今控一号”上轨验证工具自主更换与连接器插拔。（36氪｜仅有摘要，未获取到全文）在轨维护从概念进入工程验证期。</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li><strong>算力需求已体现在财报上</strong>：寒武纪第三季度净利润 14.04 亿元，同比增长 147.74%。（36氪｜仅有摘要）结合模型服务涨价，说明上游算力仍处于供不应求的定价环境。</li>
+        <li><strong>在轨可靠性验证成为太空硬件融资的门槛</strong>：今控科技把“核心器件通过环境试验 + 明确入轨时间表”作为融资叙事的核心。（36氪｜仅有摘要）对同类公司而言，没有在轨验证计划就很难拿到下一轮。</li>
+        <li><strong>支付模式创新先于技术</strong>：原“死了么”、现“在么在么”公布 99 元/年（1.0）与 199 元/年（2.0）两档，采用政府集中采购、独居老人免费安装使用的方式。（36氪｜仅有摘要）面向独居老人的安全类产品，绕开个人付费意愿、转向 B2G 路径，值得同类硬件+服务产品参考。</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li><strong>国家级 AI 安全评估网络正在成形</strong>：OpenAI 与波兰 NASK 国家研究院签署协议，NASK 的 AI 安全研究中心即波兰 AISI，双方将合作评估能力日益增强的系统、识别潜在漏洞、强化防护；此前 OpenAI 已与美国 CAISSI、英国 AISI 等公共研究机构合作。（OpenAI News｜内容类型：官方发布）前沿模型的第三方评估正从企业自律转为跨国公共机构常态介入。</li>
+        <li><strong>AI 漏洞发现的攻防双刃已具体化</strong>：Patch the Planet 联盟处理了 PHP 的关键漏洞，Wiz 独立发现同批问题，Cloudflare 等参与协调，官方同时放出 Codex skill 版 PHP 版本检查器推动修复。（OpenAI News｜内容类型：官方发布）AI 既能以互联网级规模挖洞，也能帮攻击方加速构造利用，补丁窗口期会被压缩。</li>
+        <li><strong>用几何先验提升胎儿 MRI 可用性</strong>：MIT、波士顿儿童医院与 Inria 的 E(3)-Pose 模型，利用对称性在扫描中实时校正胎儿运动造成的切片错位，输出可供放射科医生判读的高分辨率图像，论文发表于 ECCV 2026。（MIT News｜内容类型：模型能力更新；证据类型：学术会议论文，尚未进入临床）目标是用算法减少因成像失败导致的复诊。</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li><strong>NN/g 把 Agent experience（AX）列入 UX 学科术语表</strong>：术语表系统区分 UX、UI、视觉设计、交互设计、服务设计、UX 研究、DesignOps 等，并指出该领域职位名称极不标准，UX 职业调研中出现了 134 种不同头衔。（Nielsen Norman Group）把 AX 与既有学科并列，意味着“产品要为 agent 这类使用者设计”开始被当作独立实践领域，而非交互设计的分支。</li>
+        <li><strong>傲腾是“技术封神、商业失败”的完整样本</strong>：3D XPoint 用相变原理按字节寻址，写入可直接覆盖、无需先擦后写，P5800X 1.6TB 标称顺序读 7200 MB/s、4K 随机读写均超 1500K IOPS、延迟约 6μs；但颗粒成本高导致定价居高不下，Intel 于 2022 年第二季度宣布逐步关停，美光把唯一量产 3D XPoint 的犹他州 Lehi 厂出售给德州仪器，产品线止步 PCIe 4.0。（少数派）性能优势无法抵消成本结构，是做硬件定义时最容易低估的一课。</li>
+        <li><strong>术语混乱本身是协作成本</strong>：NN/g 指出同一头衔在不同组织含义不同，一个人常兼做多个领域的工作。（Nielsen Norman Group）对跨团队协作的产品组织来说，先统一职责边界比统一职级更有效。</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li><strong>数据中心投资被拿来与早期互联网对照</strong>：FT 刊出读者来信，主张数据中心应吸取早期互联网的教训。（Financial Times｜该条仅有标题与作者署名，未获取到正文，具体论点无法核实）在算力供给紧张与涨价并存的当下，这类周期性质疑值得持续跟踪。</li>
+        <li><strong>生物多样性数据容易被误读</strong>：2026 版 Living Planet Index 报告的头条是 1970—2022 年被研究野生动物种群平均下降 73%，但该数字不代表物种灭绝数量、也不代表种群或个体数量的损失，覆盖哺乳类、鸟类、爬行类、两栖类与鱼类，暂不含无脊椎动物与植物。（Our World in Data）引用此类指标时若不说明口径，会直接误导决策。</li>
+        <li><strong>仿晒产品的合规边界</strong>：晒黑药片、注射剂与鼻喷剂未获美国 FDA 批准，其中 canthaxanthin 虽为获批食品着色剂，但未获批用于皮肤着色；喷雾晒黑与自助晒黑乳使用 FDA 批准成分，按说明使用被认为安全。（美国癌症协会，经 MedlinePlus｜证据类型：医学机构科普）消费健康类产品做卖点包装时，“成分合法”与“用途获批”是两件事。</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 6391，输出 4029，总计 10420</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>product_tech</h3>
+      <p><strong>1. 曲高和寡、终成绝唱：傲腾 P5800X 测试报告</strong></p>
+      <blockquote>来源：少数派 ｜ 时间：2026-10-26 11:26 ｜ 质量：一手来源、深度内容、数据驱动<br>摘要：一起来看看 3D XPoint 这夸张的性能表现吧。 查看全文<br>原文：<a href="https://sspai.com/post/115074" target="_blank" rel="noopener noreferrer">https://sspai.com/post/115074</a></blockquote>
+      <p><strong>2. 9点1氪丨国内大模型均价涨至13元；原“死了么”APP公布收费标准，最高199元/年；寒武纪第三季度净利润14.04亿元，同比增长147.74%</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-24 09:06 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：今日热点导览 微信紧急更新适配iPhoneDuo 证监会核准设立花旗证券中国公司 国际金价跌破4000，现货黄金创7月以来新低 人民币兑美元中间价报6.7180，上调15点 沃尔沃第三季度由盈转亏，将再砍2500个岗位 TOP3大新闻 国内大模型均价涨至13元 10月23日，中国信通院人工智能所联合发布《大模型词元服务性能监测报告（2026年）》。报告提出，经历了过去两年价格战后，2026年国内外模型服务价格明显上涨。国内2025下半年归一化均价为6.8元，而今年以来均价为13.46元，涨幅接近1倍。但国外价格仍高于国内，2026年以来发布的典型模型平均归一价格约为117.8元。(界面新闻) 原“死了么”APP公布收费标准，最高199元/年 近日，因原名引发巨大争议的“在么在么”（原“死了么”）App正式公布收费标准，引发广泛关注。10月22日，据南都N视频报道，该App创始人吕功琛称，“在么在么”App重点服务独居老人，软件系统分为1.0和2.0，“1.0系统99元/年，2.0系统199元/年，由政府集中采购，独居老人可免费安装、使用”。 吕功琛介绍，“在么在么”App上线后一直收费<br>原文：<a href="https://36kr.com/p/4039177193411718?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4039177193411718?f=rss</a></blockquote>
+      <p><strong>3. 上海交大教授创业，瞄准太空制造，「今控科技」完成数千万元天使轮融资｜36氪首发</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-10-26 10:34 ｜ 质量：一手来源、原创/独家 ｜ AI 类型：官方发布<br>摘要：商业航天的下一站，可能不只是将更多卫星送入太空，而是让机器人在太空真正“干起活来”。 随着低轨卫星互联网、太空算力平台和商业空间站加速发展，越来越多的高价值设备部署在轨道上。谁来完成设备维护、模块更换、精密装配，乃至未来的太空制造，正成为新的产业命题。 在地面，这些工作已大量由工业机器人承担，但微重力、强辐照和极端温差的太空环境，对机器人可靠控制、精细操作和自主决策提出了更高要求。 36氪获悉，近日，太空智能机器人公司「今控科技」完成数千万元天使轮融资，由鼎晖VGC领投，上海交大菡源资产、国科绿色基金、灵巧智能等跟投。 本轮融资将主要用于太空机器人核心器件研发、在轨验证及产品工程化。 今控科技成立于2026年4月，由上海交通大学教授、博士生导师何俊创立。公司聚焦太空机器人领域，以太空制造为长期方向，致力于构建未来太空制造的智能作业底座。 目前，公司自主研发的智能控制器、伺服驱动器、关节模组、多维力传感器等核心器件，已完成热真空、高低温、辐照等环境试验，计划于2026年底搭载一颗算力卫星入轨验证。 2027年年中，公司还计划将“今控一号”机器人送入轨道，验证工具自主更换、连接器插拔等复杂<br>原文：<a href="https://36kr.com/p/4042095201620869?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4042095201620869?f=rss</a></blockquote>
+      <p><strong>4. UX Disciplines: Glossary</strong></p>
+      <blockquote>来源：Nielsen Norman Group ｜ 时间：2026-10-24 01:00 ｜ 质量：一手来源、深度内容<br>摘要：Definitions of fields related to user experience, including UX design, UI design, visual design, interaction design, service design, UX research, and DesignOps<br>原文：<a href="https://www.nngroup.com/articles/ux-disciplines-glossary/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener noreferrer">https://www.nngroup.com/articles/ux-disciplines-glossary/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. Using thousands of AI agents to uncover new leads in biological data</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-10-21 12:50 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells.<br>原文：<a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data" target="_blank" rel="noopener noreferrer">https://openai.com/index/scaling-ai-research-for-complex-biological-data</a></blockquote>
+      <p><strong>2. OpenAI and Poland’s NASK partner to advance AI safety and security</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-10-23 08:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem.<br>原文：<a href="https://openai.com/index/openai-nask-ai-safety-security-partnership" target="_blank" rel="noopener noreferrer">https://openai.com/index/openai-nask-ai-safety-security-partnership</a></blockquote>
+      <p><strong>3. Patch the Planet: global response coordination as agents uncover critical vulnerabilities</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-10-21 15:00 ｜ 质量：一手来源、深度内容 ｜ AI 类型：官方发布<br>摘要：Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.<br>原文：<a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities" target="_blank" rel="noopener noreferrer">https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities</a></blockquote>
+      <p><strong>4. Why teaching AI about symmetry could make prenatal diagnosis more reliable</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-10-20 02:20 ｜ 质量：机构来源、深度内容 ｜ AI 类型：模型能力更新<br>摘要：A model developed by researchers at MIT and Boston Children&#x27;s Hospital adjusts scans on the fly to track fetal movement, potentially sparing families repeat hospital visits.<br>原文：<a href="https://news.mit.edu/2026/teaching-ai-about-symmetry-could-make-prenatal-diagnosis-more-reliable-1019" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/teaching-ai-about-symmetry-could-make-prenatal-diagnosis-more-reliable-1019</a></blockquote>
+      <h3>economy</h3>
+      <p><strong>1. Letter: Data centres ought to heed lessons of the early internet</strong></p>
+      <blockquote>来源：Financial Times ｜ 时间：2026-10-26 08:29 ｜ 质量：深度内容、数据驱动<br>摘要：From Jonathan Aylen, Honorary Senior Research Fellow, Manchester Institute of Innovation Research, Alliance Manchester Business School, University of Manchester, UK<br>原文：<a href="https://www.ft.com/content/b1ad81fb-c7e6-4c36-83ec-98967314900e" target="_blank" rel="noopener noreferrer">https://www.ft.com/content/b1ad81fb-c7e6-4c36-83ec-98967314900e</a></blockquote>
+      <p><strong>2. A 73% average decline in wildlife populations: an overview of the 2026 Living Planet Index report</strong></p>
+      <blockquote>来源：Our World in Data ｜ 时间：2026-10-08 08:00 ｜ 质量：研究来源、深度内容、数据驱动<br>摘要：A guide to understanding the Living Planet Index and what it does and doesn’t mean.<br>原文：<a href="https://ourworldindata.org/2026-lpi-update" target="_blank" rel="noopener noreferrer">https://ourworldindata.org/2026-lpi-update</a></blockquote>
+      <p><strong>3. 138 million children are in child labor. What does this actually mean?</strong></p>
+      <blockquote>来源：Our World in Data ｜ 时间：2026-08-10 08:00 ｜ 质量：研究来源、深度内容、数据驱动<br>摘要：According to a UN report published last year, there are 138 million children in child labor. In this article, we look at what this estimate exactly captures.<br>原文：<a href="https://ourworldindata.org/138-million-children-are-in-child-labor-what-does-this-actually-mean" target="_blank" rel="noopener noreferrer">https://ourworldindata.org/138-million-children-are-in-child-labor-what-does-this-actually-mean</a></blockquote>
+      <p><strong>4. How high is current immigration to the United States in historical perspective?</strong></p>
+      <blockquote>来源：Our World in Data ｜ 时间：2026-09-21 08:00 ｜ 质量：研究来源、数据驱动<br>摘要：We use long-run census data to understand the scale of recent US migration trends, and how these compare to previous centuries.<br>原文：<a href="https://ourworldindata.org/how-high-is-current-immigration-to-the-united-states-in-historical-perspective" target="_blank" rel="noopener noreferrer">https://ourworldindata.org/how-high-is-current-immigration-to-the-united-states-in-historical-perspective</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Ask A Scientist (Videos for Kids)</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-10-24 02:27 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: National Eye Institute - Related MedlinePlus Pages: Eye Care<br>原文：<a href="https://www.youtube.com/playlist?list=PLNol8zIT_P1Ab0LlsJBW3I0lvHXyQw5fG" target="_blank" rel="noopener noreferrer">https://www.youtube.com/playlist?list=PLNol8zIT_P1Ab0LlsJBW3I0lvHXyQw5fG</a></blockquote>
+      <p><strong>2. Tracheomalacia</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-09-25 19:28 ｜ 质量：机构来源、深度内容 ｜ 证据：医学机构<br>摘要：Source: Mayo Foundation for Medical Education and Research Related MedlinePlus Pages: Tracheal Disorders<br>原文：<a href="https://www.mayoclinic.org/diseases-conditions/tracheomalacia/symptoms-causes/syc-20587222?p=1" target="_blank" rel="noopener noreferrer">https://www.mayoclinic.org/diseases-conditions/tracheomalacia/symptoms-causes/syc-20587222?p=1</a></blockquote>
+      <p><strong>3. Is It Safe to Get a Fake (Sunless) Tan?</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-09-27 03:07 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: American Cancer Society Related MedlinePlus Pages: Tanning<br>原文：<a href="https://www.cancer.org/cancer/risk-prevention/sun-and-uv/tanning-pills-and-products.html" target="_blank" rel="noopener noreferrer">https://www.cancer.org/cancer/risk-prevention/sun-and-uv/tanning-pills-and-products.html</a></blockquote>
+      <p><strong>4. Tracheal Stenosis</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-09-25 21:05 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Boston Children&#x27;s Hospital Related MedlinePlus Pages: Tracheal Disorders<br>原文：<a href="https://www.childrenshospital.org/conditions-treatments/tracheal-stenosis" target="_blank" rel="noopener noreferrer">https://www.childrenshospital.org/conditions-treatments/tracheal-stenosis</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>imf_blog: &lt;unknown&gt;:2:0: syntax error</li>
+        <li>world_bank_blogs: &lt;unknown&gt;:34:91: not well-formed (invalid token)</li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>caixin_latest_zh: HTTPSConnectionPool(host=&#x27;rsshub.rssforever.com&#x27;, port=443): Max retries exceeded with url: /caixin/latest (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;rsshub.rssforever.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://sspai.com/post/115074" target="_blank" rel="noopener noreferrer">曲高和寡、终成绝唱：傲腾 P5800X 测试报告</a>
+          <span class="source-meta">少数派 · 2026-10-26 11:26</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data" target="_blank" rel="noopener noreferrer">Using thousands of AI agents to uncover new leads in biological data</a>
+          <span class="source-meta">OpenAI News · 2026-10-21 12:50</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4039177193411718?f=rss" target="_blank" rel="noopener noreferrer">9点1氪丨国内大模型均价涨至13元；原“死了么”APP公布收费标准，最高199元/年；寒武纪第三季度净利润14.04亿元，同比增长147.74%</a>
+          <span class="source-meta">36氪 · 2026-10-24 09:06</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4042095201620869?f=rss" target="_blank" rel="noopener noreferrer">上海交大教授创业，瞄准太空制造，「今控科技」完成数千万元天使轮融资｜36氪首发</a>
+          <span class="source-meta">36氪 · 2026-10-26 10:34</span>
+        </li>
+        <li>
+          <a href="https://www.nngroup.com/articles/ux-disciplines-glossary/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener noreferrer">UX Disciplines: Glossary</a>
+          <span class="source-meta">Nielsen Norman Group · 2026-10-24 01:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/openai-nask-ai-safety-security-partnership" target="_blank" rel="noopener noreferrer">OpenAI and Poland’s NASK partner to advance AI safety and security</a>
+          <span class="source-meta">OpenAI News · 2026-10-23 08:00</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities" target="_blank" rel="noopener noreferrer">Patch the Planet: global response coordination as agents uncover critical vulnerabilities</a>
+          <span class="source-meta">OpenAI News · 2026-10-21 15:00</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/teaching-ai-about-symmetry-could-make-prenatal-diagnosis-more-reliable-1019" target="_blank" rel="noopener noreferrer">Why teaching AI about symmetry could make prenatal diagnosis more reliable</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-10-20 02:20</span>
+        </li>
+        <li>
+          <a href="https://www.ft.com/content/b1ad81fb-c7e6-4c36-83ec-98967314900e" target="_blank" rel="noopener noreferrer">Letter: Data centres ought to heed lessons of the early internet</a>
+          <span class="source-meta">Financial Times · 2026-10-26 08:29</span>
+        </li>
+        <li>
+          <a href="https://ourworldindata.org/2026-lpi-update" target="_blank" rel="noopener noreferrer">A 73% average decline in wildlife populations: an overview of the 2026 Living Planet Index report</a>
+          <span class="source-meta">Our World in Data · 2026-10-08 08:00</span>
+        </li>
+        <li>
+          <a href="https://ourworldindata.org/138-million-children-are-in-child-labor-what-does-this-actually-mean" target="_blank" rel="noopener noreferrer">138 million children are in child labor. What does this actually mean?</a>
+          <span class="source-meta">Our World in Data · 2026-08-10 08:00</span>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/playlist?list=PLNol8zIT_P1Ab0LlsJBW3I0lvHXyQw5fG" target="_blank" rel="noopener noreferrer">Ask A Scientist (Videos for Kids)</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-10-24 02:27</span>
+        </li>
+        <li>
+          <a href="https://www.mayoclinic.org/diseases-conditions/tracheomalacia/symptoms-causes/syc-20587222?p=1" target="_blank" rel="noopener noreferrer">Tracheomalacia</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-09-25 19:28</span>
+        </li>
+        <li>
+          <a href="https://ourworldindata.org/how-high-is-current-immigration-to-the-united-states-in-historical-perspective" target="_blank" rel="noopener noreferrer">How high is current immigration to the United States in historical perspective?</a>
+          <span class="source-meta">Our World in Data · 2026-09-21 08:00</span>
+        </li>
+        <li>
+          <a href="https://www.cancer.org/cancer/risk-prevention/sun-and-uv/tanning-pills-and-products.html" target="_blank" rel="noopener noreferrer">Is It Safe to Get a Fake (Sunless) Tan?</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-09-27 03:07</span>
+        </li>
+        <li>
+          <a href="https://www.childrenshospital.org/conditions-treatments/tracheal-stenosis" target="_blank" rel="noopener noreferrer">Tracheal Stenosis</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-09-25 21:05</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
