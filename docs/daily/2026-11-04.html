@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.11.04 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-11-04 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li><strong>币安 63.4 亿美元被盗案暴露“AI 内部工具”这一新的攻击路径</strong>：朝鲜黑客用一场持续四个月的虚假面试诱导工程师安装恶意软件，随后借助币安内部 AI 工具逐步控制多名员工设备，取得钱包签名权限，再通过 EIP-7702 授权机制绕过正常提现流程转移资产。影响判断：社工攻击和 AI 横向移动的组合，已成为加密与金融基础设施的主要威胁方式；签名权限治理与员工设备的“AI 工具权限半径”需要重新设计。（财新，全文）</li>
+        <li><strong>民主党重夺美国国会参众两院</strong>：在特朗普任期至 2029 年 1 月的剩余时间里，民主党将同时掌控两院，对其重大议程、法案与重要人事任命形成显著牵制，涉及特朗普本人及亲信的国会调查也更易启动。影响判断：美国科技与加密监管的人事和政策不确定性上升，需要提前准备合规预案。（财新，全文）</li>
+        <li><strong>字节跳动内部用户规模排名发生变化：红果反超豆包</strong>：截至 2026 年 9 月，抖音、红果短剧、豆包去重用户分别为 10.29 亿、4.3 亿、4.19 亿，红果升至集团第二大应用；短剧是全网时长增量的第一引擎。影响判断：注意力仍在从长视频向短剧迁移，AI 助手虽已是亿级入口，但尚未占据集团用户规模的第二位置。（QuestMobile／财新，全文）</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li><strong>「涌源合生」完成 5000 万元天使轮融资</strong>（顺为资本、云沐资本联合投资），定位“AI+生物数据铸造平台”，为科研机构、药企和模型团队交付 AI-ready 的序列—功能数据集，资金用于扩充数据集生产、DNA 合成产能与数据基建。判断：AI 生物设计的瓶颈正从“生成候选”转向“湿实验验证数据”，数据铸造有望成为可独立售卖的基础设施层。（36氪，仅有摘要、未获取到全文）</li>
+        <li><strong>快手系 AI 芯片公司「凌川科技」完成 10 亿元 B 轮融资</strong>，由亦庄国投屹唐盛和基金、启明创投、朝晖资本联合领投；公司前身为快手异构计算与芯片事业部，2024 年 3 月拆分独立，自研 SL200 智能视频 SoC，3D 芯片已回片、计划明年规模出货。判断：视频与多模态推理专用算力仍受资本偏好，但“回片→规模出货”是最关键的验证点。（36氪，仅有摘要、未获取到全文）</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li><strong>OpenAI 发布社区安全报告，并收紧未成年人保护</strong>：披露 2026 年 Q3 向执法机构转介超过 200 起潜在暴力威胁，同时新增针对未成年人的枪支相关内容限制，强化“更早干预”机制。判断：平台安全正从模型层扩展到“报告+执法协作”的可审计体系，这会成为 AI 产品合规叙事的标配动作。（OpenAI，内容类型：官方发布，全文）</li>
+        <li><strong>MIT 的 Regina Barzilay 与 Jim Collins 获 2026 年 Pritzker AI 科学研究卓越奖</strong>，表彰其将深度学习、生物工程与实验验证结合，发现首个 AI 发现的抗生素 halicin（2020 年发表于 Cell）。判断：AI for Science 的评价标准正在形成，“AI 预测+湿实验闭环”是获奖核心，与涌源合生的数据铸造逻辑彼此呼应。（MIT News，内容类型：产品应用，全文）</li>
+        <li><strong>MIT.nano 牵头召开 NEMO 用户会议</strong>：25 家实验室与机构的 65 名代表围绕开源平台 NEMO 讨论共享科研设施的培训、排期、计费与跨机构协作，指出跨学科趋势下“先找到合适的能力”本身已成新难题。判断：科研基础设施的软件层（调度、计费、能力发现）是明显的效率瓶颈，也是 To B 工具的机会点。（MIT News，内容类型：产品应用，全文）</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li><strong>拓竹发布第三代旗舰 3D 打印机 H3C</strong>：标准套装 16499 元、首发直降 1000 元；首次在消费级产品引入 9 个独立打印头，最快 6 秒换头、单次换料废料仅 38mg；顶置一体化 AMS 3H 整合密封保存、自动送料与烘干，并新增 2.85mm 线径支持。判断：竞争焦点已从“打印速度”转向“多材料+低废料”，把换料的时间、耗材与失败率这些隐性成本变成卖点，同时也让校准与耗材管理成为产品体验的一部分。（36氪，仅有摘要、未获取到全文）</li>
+        <li><strong>内容产品的增长与留存出现明显分化</strong>：红果月活从 2024 年 9 月的 1.22 亿、2025 年 9 月的 2.36 亿增至 2026 年 9 月的 4.3 亿（同比 +82%），同期河马剧场下滑、红果漫剧与绿泡泡短剧快速起量。判断：免费短剧的获客红利仍在，但同赛道流量波动剧烈，下一阶段的竞争焦点是留存与用户沉淀，不再只是拉新。（QuestMobile／财新，全文）</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li><strong>一级市场资金正集中流向 AI 的“卖铲子”两端</strong>：一端是数据铸造（涌源合生天使轮），一端是专用算力（凌川 10 亿元 B 轮）。判断：在通用模型之外，可交付的数据资产与专用芯片更受资本青睐；但两条资讯中可获取的全文受限，产能与出货节奏仍需后续跟踪。（36氪，仅有摘要、未获取到全文）</li>
+        <li><strong>美国 Medicare 独立药品计划 2027 年平均月保费从 34 美元升至 51 美元（+50%）</strong>，但参保人可在 12 月 7 日前的开放注册期切换低价计划规避；个案中保费从 39.60 美元涨至 121.90 美元，换计划后为 19.30 美元，一年约省 1000 美元。（证据类型：媒体报道，KFF Health News，全文）判断：药价的政治表态与个人实际账单出现背离，比价行为正成为成本控制的关键变量。</li>
+        <li><strong>医疗“可负担性”已成为中期选举的核心情绪</strong>：在距国会大厦 8 英里、家庭收入中位数超 10.8 万美元且约 94% 居民有保险的社区，仍有数十人睡在车里排队争取免费牙科与视力名额，最早者午夜前即到场。（证据类型：媒体报道，KFF Health News，全文）判断：保险覆盖率并不等于服务可及性，这一落差会持续推动医疗费用与支付政策成为舆论焦点。</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 7001，输出 4733，总计 11734</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>product_tech</h3>
+      <p><strong>1. 用“DNA活字印刷术”给AI造生物数据，「涌源合生」获5000万天使轮融资｜36氪首发</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-11-04 09:00 ｜ 质量：一手来源、深度内容、数据驱动、原创/独家 ｜ AI 类型：官方发布<br>摘要：文｜胡香赟 编辑｜海若镜 36氪获悉，涌源合生科技（深圳）有限公司（下称“涌源合生”）近期已完成5000万元天使轮融资。本轮融资由顺为资本、云沐资本联合投资。本轮募集资金将用于生产高价值数据集、扩大自研创新的DNA合成技术产能和进一步建设数据铸造基础设施。 涌源合生定位“AI+生物领域的数据铸造平台”，为科研机构、药企和模型团队提供从序列构建、功能实验到数据整理的一体化服务，并交付AI-ready的序列—功能数据集。 创始人兼CEO杨宗颖解释，之所以选择这个方向创业，是因为对AI生物设计团队而言，生成候选序列之后，还有一个必须通过实验回答的问题：这些设计在指定条件下究竟表现如何，下一轮应该继续优化哪些方向？“我们希望承接这一环节，将DNA构建、功能测定和数据整理连接起来，围绕客户的研发问题生产序列—功能数据。 数据既可以用于模型训练，也可以用于评估模型、比较候选方案和安排下一轮实验。 ” 图源：涌源合生 2015年，杨宗颖在帝国理工学院攻读合成生物学硕士期间发现，虽然学科热度高涨，实验室的研究范式仍较为原始。“例如，人类细胞内有 2 万多个基因，但研究者往往只改动很少量的基因节点，再观<br>原文：<a href="https://36kr.com/p/4047812928518660?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4047812928518660?f=rss</a></blockquote>
+      <p><strong>2. 8点1氪丨豆包用户数被红果超越；iPhone Duo屏幕开裂争议，特努斯首度回应；美股要“通宵”了，纳斯达克将全天交易23小时</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-11-04 08:01 ｜ 质量：一手来源、深度内容、数据驱动、原创/独家 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：今日热点导览 国际奥委会确认中国不申办2036年奥运会 中际旭创总市值跌破6000亿，高盛下调盈利预测 网传昆仑芯IPO推迟，百度否认市场传闻 遭证监会立案调查，“好想来”母公司股价大跌 钟薛高“复活”单支低至7.5元 特朗普放话力保马斯克 TOP3大新闻 抖音、红果短剧、豆包、今日头条座次更迭，红果反超豆包成抖音集团第二大应用 QuestMobile发布《中国移动互联网秋季大报告》，截至2026年9月，国内移动互联网月活12.81亿，同比增0.9%，月人均使用时长189.8小时，同比增长6.5%。抖音集团内部应用格局发生重大变化，最新前三大应用为抖音、红果短剧、豆包，去重总用户分别为10.29亿、4.3亿、4.19亿，红果短剧用户规模超过豆包，晋升集团第二大应用；而去年同期集团前三还是抖音、今日头条、抖音极速版。从时长数据看，短剧视频、短视频是拉动全网时长增长两大核心引擎，短剧时长增量断层领先，用户注意力持续从传统长视频向短剧迁移。短剧赛道爆发同时行业洗牌剧烈，河马剧场用户规模下滑，红果漫剧、绿泡泡短剧等新玩家快速起量，流量波动大，能否沉淀留存用户成为下一阶段竞争关键。报告指出，AI<br>原文：<a href="https://36kr.com/p/4054687391143044?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4054687391143044?f=rss</a></blockquote>
+      <p><strong>3. 硬氪首发丨快手系AI芯片公司凌川科技完成10亿元B轮融资，3D芯片已回片，明年规模出货</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-11-04 09:33 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：作者 | 邱晓芬 编辑 | 袁斯来 硬氪获悉，人工智能芯片公司「凌川科技」近日完成10亿元B轮融资，本轮融资将主要用于下一代芯片研发与量产及全球市场拓展。 本轮由亦庄国投屹唐盛和基金、启明创投、朝晖资本联合领投，知名投资机构国泰海通开元、华控投资、国寿长三角科创基金、北工投资、建信（北京）投资、沛坤资本、香港科技园创投基金、鼎晖百孚、金舵投资、厦门恒兴、铭时资本，产业投资方石溪资本、龙芯创投、安徽文旅投参与投资，老股东顺禧基金、水木投资集团、九智资本持续追加。 「凌川科技」由北京市人工智能基金与快手集团共同发起设立，前身为快手集团的异构计算与芯片事业部，专注于智能视频与生成式视频等多模态大模型的底层算力。 公司创始人、董事长兼CEO刘凌志为上海交通大学博士、华盛顿大学博士后，曾任快手集团副总裁及华为、英特尔等核心技术管理岗，于2018年起从零到一搭建了快手异构计算和芯片团队，是兼具学术深度与产业实战的领军人物。团队在快手内部自研SL200芯片智能视频SoC芯片，并于2024年3月正式拆分独立运营。 自2017年《Attention Is All You Need》发表，NVIDIA推出<br>原文：<a href="https://36kr.com/p/4054776980378758?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4054776980378758?f=rss</a></blockquote>
+      <p><strong>4. 最前线| 拓竹发布新一代3D打印机，9个独立打印头、最快6秒切换</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-11-04 09:33 ｜ 质量：一手来源、数据驱动、原创/独家 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：11月3日，拓竹发布第三代旗舰3D打印机 H3C，标准套装起售价16499元，首发期间直降1000元。 作为拓竹新一代旗舰产品，H3C此次升级的重点不再局限于打印速度，而是围绕多材料打印展开。新机搭载Swaptek™九头闪切系统、顶置一体化AMS 3H供料系统以及可变线径挤出机三大核心技术。 H3C整机 多头切换是此次升级的核心。H3C首次在消费级产品中引入9个独立打印头，最快6秒即可完成换头。官方数据显示，单次换料产生的废料仅38mg。。Swaptek™九头闪切系统使得每个打印头拥有独立进料通道和主动预加热能，各通道耗材始终保持装载状态，无需反复退料、切料和重新送料。 针对九头切换带来的精度问题，拓竹升级了工具头减重设计、微米级精度补偿和全自动校准系统，减少频繁切换对打印效果的影响。 多材料打印不仅考验打印机本身，也对耗材管理系统提出了更高要求。过去，需要将打印机和多个 AMS 模块分开摆放。H3C则推出了全新的 AMS 3H 系统，将耗材密封保存、自动送料和烘干功能整合在一起，集成于机身顶部。 可变线径挤出机试图解决的是材料边界问题，除常规 1.75mm 外，新增 2.85mm 线<br>原文：<a href="https://36kr.com/p/4054776330900353?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4054776330900353?f=rss</a></blockquote>
+      <h3>economy</h3>
+      <p><strong>1. 币安：一场假面试引发的63亿美元加密货币劫案</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-11-04 11:46 ｜ 质量：一手来源、深度内容、数据驱动、原创/独家 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：朝鲜黑客历时四个月渗透币安钱包团队，诱导下载恶意软件，借内部AI工具获取签名权限 【财新网】 北京时间2026年11月3日晚22时33分，全球最大加密货币交易所币安（Binance）发布初步调查报告，首次完整披露10月29日安全事件的来龙去脉。报告确认：约63.4亿美元加密资产在此次事件中被非法转出，而整起事件的起点，是四个月前一场针对币安工程师的虚假招聘面试。“面试官”诱导币安员工下载恶意软件，进而控制了该员工的计算机，并利用内部AI工具逐步控制其他多名员工的设备，最终获取钱包签名权限，并利用EIP-7702授权机制绕过正常提现流程转移资产。<br>原文：<a href="https://finance.caixin.com/2026-11-04/102500748.html" target="_blank" rel="noopener noreferrer">https://finance.caixin.com/2026-11-04/102500748.html</a></blockquote>
+      <p><strong>2. 民主党重夺美国国会两院控制权 “80后”参议员奥索夫与塔拉里科成新星</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-11-04 13:27 ｜ 质量：一手来源、深度内容、原创/独家<br>摘要：美国民主党将在特朗普截至2029年1月结束的剩余任期内，同时掌握美国国会参众两院的控制权 【财新网】 截至美东时间11月3日晚11时（北京时间11月4日中午12时），美国中期选举参议院激战州的计票进入到后半段，在得克萨斯、俄亥俄、堪萨斯州、艾奥瓦州的参议员席位改选中，民主党再拿下4个州。 这一进展，连同稍早已经确定由民主党占多数的众议院改选结果，使美国民主党将在特朗普截至2029年1月结束的剩余任期内，同时掌握美国国会参众两院的控制权。这将对特朗普政府的所有重大议程与法案、重要人事任命，以及内外决策方向，带来显著的牵制效应。涉及特朗普本人和其亲信的国会调查，也将更容易获得启动。<br>原文：<a href="https://international.caixin.com/2026-11-04/102500797.html" target="_blank" rel="noopener noreferrer">https://international.caixin.com/2026-11-04/102500797.html</a></blockquote>
+      <p><strong>3. 视线｜奥索夫获奥巴马力挺：从调查记者、反腐旗手到明日之星</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-11-04 11:11 ｜ 质量：一手来源、深度内容、原创/独家<br>摘要：当地时间2026年10月28日，美国佐治亚州莫罗，美国前总统奥巴马在中期选举前的集会上与民主党参议员乔恩·奥索夫及民主党州长候选人凯莎·兰斯·巴托斯同台，并向与会者致意。图：Edgar Su/ic photo 【财新网】 随着11月3日中期选举投票日到来，前总统巴拉克·奥巴马（Barack Obama）接连在被认为竞争激烈且结果难料的选区进行造势，并俄亥俄州、密歇根州和佐治亚州举行集会，为民主党候选人进行全线拉票。在佐治亚州，他重点为联邦参议员乔恩·奥索夫（Jon Ossoff）站台——作为唯一一位在特朗普2024年胜选州内寻求连任的民主党参议员，奥索夫在民调中持续领先对手、共和党联邦众议员迈克·柯林斯（Mike Collins）。这场竞选被视为可能左右参议院控制权的关键选战之一。<br>原文：<a href="https://photos.caixin.com/2026-11-04/102500644.html" target="_blank" rel="noopener noreferrer">https://photos.caixin.com/2026-11-04/102500644.html</a></blockquote>
+      <p><strong>4. QuestMobile报告：红果短剧用户量达4.3亿 超越豆包</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-11-04 12:31 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布 ｜ 降权：公关稿<br>摘要：除了占取闲暇娱乐时间，字节跳动在AI入口上的用户规模优势也已显现 【财新网】 11月3日，移动数据调研机构QuestMobile发布2026中国移动互联网秋季报告，该报告显示，字节跳动旗下的红果免费短剧（以下简称“红果”）去重用户量已经增至4.3亿，超越字节跳动的AI助手应用豆包，成为字节跳动用户仅次于抖音的第二大APP。 对比QuestMobile往年同期报告，红果的增长曲线堪称陡峭。2024年9月，红果短剧月活为1.22亿；2025年9月增至2.36亿。今年9月的数值同比增长82%。如此增速，在当下以内容分发为主的移动产品中十分罕见。（详见《财新周刊》 2025年第43期封面报道 《 短剧狂奔 》）<br>原文：<a href="https://www.caixin.com/2026-11-04/102500777.html" target="_blank" rel="noopener noreferrer">https://www.caixin.com/2026-11-04/102500777.html</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. Community safety report and new protections for teens</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-10-30 17:00 ｜ 质量：一手来源、深度内容、数据驱动 ｜ AI 类型：官方发布<br>摘要：OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting.<br>原文：<a href="https://openai.com/index/community-safety-report-and-new-protections-for-teens" target="_blank" rel="noopener noreferrer">https://openai.com/index/community-safety-report-and-new-protections-for-teens</a></blockquote>
+      <p><strong>2. Building connections across the research infrastructure</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-11-04 03:30 ｜ 质量：机构来源、深度内容 ｜ AI 类型：产品应用<br>摘要：MIT.nano and the Northeast Microelectronics Coalition gathered facility leaders and technology professionals from across the nation to explore ways to make shared-access facilities more connected.<br>原文：<a href="https://news.mit.edu/2026/building-connections-across-research-infrastructure-1103" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/building-connections-across-research-infrastructure-1103</a></blockquote>
+      <p><strong>3. Powering up for a pivotal moment</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-11-03 03:55 ｜ 质量：机构来源、深度内容 ｜ AI 类型：产品应用<br>摘要：From a nuclear revival to qubits, the MIT Energy Initiative’s annual research conference tracked deployment of today’s technologies to discovery of tomorrow’s breakthroughs.<br>原文：<a href="https://news.mit.edu/2026/powering-up-for-pivotal-moment-1102" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/powering-up-for-pivotal-moment-1102</a></blockquote>
+      <p><strong>4. Regina Barzilay and Jim Collins win Pritzker Prize for AI and Science Research Excellence for work in AI-enabled antibiotic discovery</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-11-02 13:35 ｜ 质量：机构来源、深度内容 ｜ AI 类型：产品应用<br>摘要：The MIT professors collaborated to identify the first AI-discovered antibiotic, a scientific breakthrough that is widely recognized as a milestone in AI-driven drug discovery.<br>原文：<a href="https://news.mit.edu/2026/regina-barzilay-jim-collins-win-pritzker-prize-ai-and-science-research-excellence-1102" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/regina-barzilay-jim-collins-win-pritzker-prize-ai-and-science-research-excellence-1102</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. Pink Eye (Conjunctivitis): Diagnosis and Treatment</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-10-11 20:40 ｜ 质量：机构来源、深度内容 ｜ 证据：医学机构<br>摘要：Source: Mayo Foundation for Medical Education and Research Related MedlinePlus Pages: Pink Eye<br>原文：<a href="https://www.mayoclinic.org/diseases-conditions/pink-eye/diagnosis-treatment/drc-20376360?p=1" target="_blank" rel="noopener noreferrer">https://www.mayoclinic.org/diseases-conditions/pink-eye/diagnosis-treatment/drc-20376360?p=1</a></blockquote>
+      <p><strong>2. Medicare Drug Plans Are Hiking Premiums While Trump Claims Victory on Medicine Prices</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-10-30 17:01 ｜ 质量：深度内容 ｜ 证据：媒体报道 ｜ AI 类型：产品应用<br>摘要：Millions of Medicare enrollees who buy stand-alone prescription drug plans will see their average monthly premiums rise by 50% in 2027, a new analysis finds. But enrollees can avoid the average increase by switching to lower-cost plans.<br>原文：<a href="https://kffhealthnews.org/medicare/medicare-drug-plans-premium-hikes-affordability-trump-cms/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/medicare/medicare-drug-plans-premium-hikes-affordability-trump-cms/</a></blockquote>
+      <p><strong>3. Expecting a Baby? Five Tips To Help You Prepare for Pregnancy Costs</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-11-03 18:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道<br>摘要：The cost of having a baby is frustratingly difficult to predict. The actual amount families pay varies widely. Here are five tips to help you prepare for the often-unexpected costs of pregnancy and giving birth.<br>原文：<a href="https://kffhealthnews.org/health-care-costs/helpline-pregnancy-expenses-planning-5-tips-surprise-bills/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/health-care-costs/helpline-pregnancy-expenses-planning-5-tips-surprise-bills/</a></blockquote>
+      <p><strong>4. A Few Miles From the US Capitol, Dozens Slept in Their Cars, Waiting for Free Care</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-11-03 18:00 ｜ 质量：常规资讯 ｜ 证据：媒体报道 ｜ AI 类型：产品应用<br>摘要：If you’ve heard about how people are struggling with affording healthcare but haven’t been touched by it or seen it, then this pop-up clinic just outside Washington, D.C., put the problem on full display.<br>原文：<a href="https://kffhealthnews.org/health-care-costs/healthcare-affordability-free-clinic-dental-vision-washington-dc-takoma-park-maryland/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/health-care-costs/healthcare-affordability-free-clinic-dental-vision-washington-dc-takoma-park-maryland/</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>imf_blog: &lt;unknown&gt;:2:0: syntax error</li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>world_bank_blogs: &lt;unknown&gt;:34:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:8:82: not well-formed (invalid token)</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://36kr.com/p/4047812928518660?f=rss" target="_blank" rel="noopener noreferrer">用“DNA活字印刷术”给AI造生物数据，「涌源合生」获5000万天使轮融资｜36氪首发</a>
+          <span class="source-meta">36氪 · 2026-11-04 09:00</span>
+        </li>
+        <li>
+          <a href="https://finance.caixin.com/2026-11-04/102500748.html" target="_blank" rel="noopener noreferrer">币安：一场假面试引发的63亿美元加密货币劫案</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-11-04 11:46</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4054687391143044?f=rss" target="_blank" rel="noopener noreferrer">8点1氪丨豆包用户数被红果超越；iPhone Duo屏幕开裂争议，特努斯首度回应；美股要“通宵”了，纳斯达克将全天交易23小时</a>
+          <span class="source-meta">36氪 · 2026-11-04 08:01</span>
+        </li>
+        <li>
+          <a href="https://international.caixin.com/2026-11-04/102500797.html" target="_blank" rel="noopener noreferrer">民主党重夺美国国会两院控制权 “80后”参议员奥索夫与塔拉里科成新星</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-11-04 13:27</span>
+        </li>
+        <li>
+          <a href="https://photos.caixin.com/2026-11-04/102500644.html" target="_blank" rel="noopener noreferrer">视线｜奥索夫获奥巴马力挺：从调查记者、反腐旗手到明日之星</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-11-04 11:11</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4054776980378758?f=rss" target="_blank" rel="noopener noreferrer">硬氪首发丨快手系AI芯片公司凌川科技完成10亿元B轮融资，3D芯片已回片，明年规模出货</a>
+          <span class="source-meta">36氪 · 2026-11-04 09:33</span>
+        </li>
+        <li>
+          <a href="https://www.caixin.com/2026-11-04/102500777.html" target="_blank" rel="noopener noreferrer">QuestMobile报告：红果短剧用户量达4.3亿 超越豆包</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-11-04 12:31</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4054776330900353?f=rss" target="_blank" rel="noopener noreferrer">最前线| 拓竹发布新一代3D打印机，9个独立打印头、最快6秒切换</a>
+          <span class="source-meta">36氪 · 2026-11-04 09:33</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/community-safety-report-and-new-protections-for-teens" target="_blank" rel="noopener noreferrer">Community safety report and new protections for teens</a>
+          <span class="source-meta">OpenAI News · 2026-10-30 17:00</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/building-connections-across-research-infrastructure-1103" target="_blank" rel="noopener noreferrer">Building connections across the research infrastructure</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-11-04 03:30</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/powering-up-for-pivotal-moment-1102" target="_blank" rel="noopener noreferrer">Powering up for a pivotal moment</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-11-03 03:55</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/regina-barzilay-jim-collins-win-pritzker-prize-ai-and-science-research-excellence-1102" target="_blank" rel="noopener noreferrer">Regina Barzilay and Jim Collins win Pritzker Prize for AI and Science Research Excellence for work in AI-enabled antibiotic discovery</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-11-02 13:35</span>
+        </li>
+        <li>
+          <a href="https://www.mayoclinic.org/diseases-conditions/pink-eye/diagnosis-treatment/drc-20376360?p=1" target="_blank" rel="noopener noreferrer">Pink Eye (Conjunctivitis): Diagnosis and Treatment</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-10-11 20:40</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/medicare/medicare-drug-plans-premium-hikes-affordability-trump-cms/" target="_blank" rel="noopener noreferrer">Medicare Drug Plans Are Hiking Premiums While Trump Claims Victory on Medicine Prices</a>
+          <span class="source-meta">KFF Health News · 2026-10-30 17:01</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/health-care-costs/helpline-pregnancy-expenses-planning-5-tips-surprise-bills/" target="_blank" rel="noopener noreferrer">Expecting a Baby? Five Tips To Help You Prepare for Pregnancy Costs</a>
+          <span class="source-meta">KFF Health News · 2026-11-03 18:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/health-care-costs/healthcare-affordability-free-clinic-dental-vision-washington-dc-takoma-park-maryland/" target="_blank" rel="noopener noreferrer">A Few Miles From the US Capitol, Dozens Slept in Their Cars, Waiting for Free Care</a>
+          <span class="source-meta">KFF Health News · 2026-11-03 18:00</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
