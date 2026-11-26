@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日资讯日报｜每日精选</title>
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #20242a;
+      --muted: #74777d;
+      --rule: #ddd6c8;
+      --accent: #75503c;
+      --soft: #f3eee6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(124, 77, 58, 0.05), transparent 18%, transparent 82%, rgba(124, 77, 58, 0.05)),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+
+    header {
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(18px, 3.2vw, 26px);
+      line-height: 1.5;
+    }
+
+    .meta {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      font-size: clamp(18px, 3.2vw, 24px);
+      line-height: 1.82;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 56px 0 20px;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 36px 0 14px;
+      font-size: clamp(18px, 3vw, 24px);
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    blockquote {
+      margin: 0 0 1.4em;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--ink);
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.75;
+      background: transparent;
+    }
+
+    p {
+      margin: 0 0 1em;
+      text-align: justify;
+    }
+
+    ol, ul {
+      margin: 0 0 1.1em;
+      padding-left: 1.25em;
+    }
+
+    li {
+      margin: 0.38em 0;
+      padding-left: 0.1em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+      word-break: break-word;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .sources {
+      margin-top: 70px;
+      padding: 28px 24px;
+      background: var(--soft);
+      border: 1px solid var(--rule);
+    }
+
+    .sources h2 {
+      margin-top: 0;
+    }
+
+    .source-list {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.68;
+      padding-left: 1.2em;
+    }
+
+    .source-list li {
+      margin-bottom: 0.9em;
+    }
+
+    .source-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82em;
+      margin-top: 0.1em;
+    }
+
+    @media (min-width: 860px) {
+      .page { padding-left: 0; padding-right: 0; }
+      main { columns: 1; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 40px 56px; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div class="eyebrow">DAILY REPORT</div>
+      <h1>每日资讯日报</h1>
+      <div class="subtitle">每日精选</div>
+      <div class="meta">2026.11.26 · 衬线阅读版</div>
+    </header>
+    <main>
+      <p><strong>日期</strong>：2026-11-26 <strong>精选</strong>：16 条，已按质量规则过滤</p>
+      <p>---</p>
+      <h2>今日简报</h2>
+      <h2>今日重点</h2>
+      <ul>
+        <li>香港接连发生大规模个人资料外泄，涉及私立医院、城市售票网及虚拟保险公司，受影响用户或超 180 万；城市售票网约 130 万用户的用户名、姓名、电话、邮箱可能泄露（系统未存身份证件，信用卡资料已遮蔽）。真正的问题在攻击方：借助 AI 智能体，攻击者能以极低成本持续探测漏洞，攻防成本结构被反转，传统边界防御的有效性下降。（财新）</li>
+        <li>OpenAI 称 GPT-6 系列仅凭推理与代码即可设计蛋白质结构与序列，不调用专用生物学模型；在与 Onava 的实验室测试中，基于 GPT-6.2 设计的蛋白在 5 个靶点上显示结合证据，重设计抗体也保持结合能力。（OpenAI，AI 内容类型：官方发布）</li>
+        <li>美国 301“工业产能过剩”调查结果落地，将对含中国、欧盟在内的 14 个贸易伙伴征税，用以恢复此前被最高法院裁定违宪的全球对等关税；此前 7 月已用 301 条加征“强迫劳动关税”。关税工具正从 IEEPA 转向 122/301/232 的组合，企业需按“法律路径的可持续性”而非单次税率做长期合规规划。（财新）</li>
+      </ul>
+      <h2>行业动态</h2>
+      <ul>
+        <li>高盛另类投资调查显示，47% 的欧洲高净值与超高净值受访者认为另类投资（私募股权、房地产、基础设施）是获取 AI 及未来科技敞口的最佳途径，美国受访者仅 24%。AI 主题资金正从公开市场向私募端迁移，公开市场波动对 AI 估值的传导被部分隔断。（36氪，仅摘要，未获取全文）</li>
+        <li>中性原子量子计算公司乾原量子完成超 1 亿元天使轮，合肥产投集团牵头、12 家机构参与，为省市区三级国资与市场化机构联动；资金投向核心光学器件自研、QPU 整机与量子互联接口预研。地方国资正在量子赛道的“整机+互联”环节前置卡位。（36氪，仅摘要，未获取全文）</li>
+        <li>玻璃光计算芯片公司万相常数完成数千万元天使轮，英诺基金独家投资；以玻璃衬底配合飞秒激光直写绕开光刻机，设备到位后数小时即可产出一块芯片。在光计算路线未收敛阶段，能压缩“原型—迭代”周期的工艺选择本身就是竞争力。（36氪，仅摘要，未获取全文）</li>
+      </ul>
+      <h2>AI / 科技</h2>
+      <ul>
+        <li>MIT 研究显示，AI 数据中心的用电需求经全国互联电网传导，2023 年由此增加的空气污染在美国造成约 650 例过早死亡；数据中心负荷集中于弗吉尼亚与得州，但中西部部分州的人均过早死亡率最高，原因是排放与利于细颗粒物生成的大气条件叠加。数据中心的“隐性成本”开始落到远离机房的社区，选址与供电结构会被纳入更严的审视。（MIT News，研究；健康影响部分证据类型：机构研究）</li>
+        <li>MIT 与 Dana-Farber 团队用 LLM 审查近 4000 项医学研究与数百个代码仓库，发现代码的组织与描述信息普遍不足，难以复核与复用。LLM 正被用于“元科研”审计，可复现性有望变成可批量测量的指标。（MIT News，AI 内容类型：模型能力更新）</li>
+        <li>虚拟细胞公司华源智因完成过亿元天使轮，华盖资本领投，讯飞创投等跟投；资金用于大规模人源扰动数据生产、联合实验室建设与药企订单执行，模型路线为细胞多模态基座加适应症后训练的专家模型。AI for Science 的竞争焦点正从模型叙事转向“专病数据 + 药企付费”。（36氪，仅摘要，未获取全文；AI 内容类型：官方发布）</li>
+      </ul>
+      <h2>产品设计相关</h2>
+      <ul>
+        <li>“智能”膝关节植入物在患者未明确知情的情况下被植入，数据上传需患者主动授权，加州患者已起诉医生、Zimmer Biomet 与 Canary Medical；研究者称其有效性尚未被证实，但 Medicare 与商业保险仍为监测付费。“默认开启 + 事后 opt-out”的知情同意结构，在医疗硬件上正同时转化为法律与支付风险。（KFF Health News，证据类型：媒体报道）</li>
+        <li>MIT-IBM 合作指出，多模态基础模型的“流利”表现常掩盖真实理解不足，团队通过 benchmark 与数据高效方法定位具体失败模式。多模态交互产品的体验指标，应与理解能力指标分开评估，否则会高估模型可用度。（MIT News，AI 内容类型：模型能力更新）</li>
+        <li>MedlinePlus 新增 100 页草药与补充剂条目，内容取自 Natural Medicines Comprehensive Database 消费者版。权威健康信息产品向证据薄弱地带扩张，对证据分级与标注设计提出更高要求。（MedlinePlus，证据类型：医学机构）</li>
+      </ul>
+      <h2>值得关注的信号</h2>
+      <ul>
+        <li>金正恩视察武器级核物质生产基地、核动力相关设备生产基地与核武器研究所，称此访是为应对国际核安全格局的地缘政治变化对朝鲜半岛造成的“不稳定核威胁”。（财新）</li>
+        <li>Nebraska 提前 8 个月落地 Medicaid 工作要求，实际失保主因是文书与系统流程，而非受助者未工作；联邦已将各州准备期宽限至 2027 年 7 月，各州须在 12 月 11 日前决定是否按 1 月 1 日原计划执行。福利政策的“最后一公里”行政设计，直接决定覆盖率结果。（KFF Health News，证据类型：媒体报道）</li>
+        <li>财新评述引用的研究显示，仅凭 0.1 秒看照片判断“谁更能干”，对美国参议院选举结果的预测准确率可达 68.8%–71.6%，2002–2004 年 600 场众议院选举为 66.8%；作者主张把“德”与“忠”设计成可观察、可追责的机制。与直觉对抗靠“堵”无效，只能靠机制设计。（财新）</li>
+      </ul>
+      <p>---</p>
+      <p><strong>LLM Token 消耗</strong>：输入 7207，输出 4865，总计 12072</p>
+      <p>---</p>
+      <h2>精选资讯</h2>
+      <h3>economy</h3>
+      <p><strong>1. 香港接连发生大规模资料外泄 AI时代网络安全风险加剧</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-11-26 13:38 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布<br>摘要：借助AI智能体，攻击者能够以极低的成本持续探测软件系统中的漏洞，给传统网络安全防御模式带来挑战 【财新网】 香港接连出现大规模个人资料外泄事故，分别涉及私立医院、公共票务平台及虚拟保险公司，受影响用户总规模或超过180万人次。 11月25日，香港康乐及文化事务署（下称“康文署”）又公布，城市售票网的售票系统遭黑客入侵，约130万使用者的个人资料可能遭泄露。 初步调查显示，城市售票网130万名用户的用户名、姓名、电话号码及电子邮件地址可能被泄露，不过，该系统并未储存用户的身份证明文件，信用卡资料亦经过遮蔽处理。城市售票网是香港主要的公共票务平台之一，为文艺演出、体育赛事及娱乐活动等提供票务服务。该系统由政府康文署的外包承办商自行出资开发并拥有。康文署称，承办商已采取应对措施，并对系统进行全面检查，确认系统可继续正常运作。<br>原文：<a href="https://www.caixin.com/2026-11-26/102508891.html" target="_blank" rel="noopener noreferrer">https://www.caixin.com/2026-11-26/102508891.html</a></blockquote>
+      <p><strong>2. 301过剩产能关税落地后，美国整体关税税率如何？</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-11-26 15:53 ｜ 质量：一手来源、深度内容、原创/独家 ｜ 降权：公关稿<br>摘要：由于美国最高法院裁定对等关税违宪，美国2026财年的关税收入接近一半被退税，整体关税金额不及2025财年 【财新网】 美国将对包括中国、欧盟在内的14个贸易伙伴的商品征收新一轮关税，进而恢复此前被美国最高法院裁定违宪的全球对等关税。 美国贸易代表办公室11月25日宣布了第二轮301关税调查结果，此次调查是针对工业产能过剩。今年7月24日，美国已经通过《1974年贸易法》第301条对60个经济体加征了“强迫劳动关税”。 2026年2月，美国最高法院以6票对3票的表决结果，认定特朗普政府启动“对等关税”等多项关税所援引的美国《国际紧急经济权力法》（IEEPA），在法理上没有授权美国总统征收关税。此后，特朗普援引《1974年贸易法》第122条对全球商品继续加征10%关税，又在7月24日使用《1974年贸易法》第301条加征了“强迫劳动关税”以代替到期的122关税，另外根据1962年《贸易扩展法》第232条还在对一些行业推进贸易调查。<br>原文：<a href="https://international.caixin.com/2026-11-26/102508942.html" target="_blank" rel="noopener noreferrer">https://international.caixin.com/2026-11-26/102508942.html</a></blockquote>
+      <p><strong>3. 以貌取官？权力的相貌</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-11-26 11:47 ｜ 质量：一手来源、深度内容、数据驱动<br>摘要：这项研究打破了“理性组织”的神话。它提醒制度设计者，要想不被直觉主宰，就得设计出把“德”与“忠”变得可观察、可追责的机制，否则与直觉作战，靠堵是堵不住的 2005年，普林斯顿大学的心理学家亚历山大·托多罗夫（Alexander Todorov）做过一个著名的实验，这项实验说起来很简单，就是拿美国国会选举中两名候选人的照片在受试者面前晃那么一晃，时间短到只有十分之一秒，让他们凭借直觉判断，哪一位候选人更加能干。令人瞠目的是，就是基于这零点几秒的“看脸”判断，受试者竟然能以相当高的准确率来预言选举的真实结果。 2004年的参议院选举中，受试者判断认为更有能力的候选人，则在68.8%的竞选中获胜。当托多罗夫把数据扩展到2000、2002和2004年的参议院选举时，这一预测准确率还要更高，达到了71.6%。此外，在2002到2004年的600场众议院选举中，受试者判定为更有能力的候选人也赢得了66.8%的选举。托多罗夫在设计上尽可能地排除了其他解释的可能，他和他的团队最终发现，“看脸”所做的能力判断与选举结果高度相关是一个稳健的统计现象。 推荐进入 财新数据库 ，可随时查阅宏观经济、股票债券、<br>原文：<a href="https://opinion.caixin.com/2026-11-26/102508851.html" target="_blank" rel="noopener noreferrer">https://opinion.caixin.com/2026-11-26/102508851.html</a></blockquote>
+      <p><strong>4. 图集｜朝中社：金正恩视察朝鲜核物质生产及核武器研究部门</strong></p>
+      <blockquote>来源：财新 - 最新文章 ｜ 时间：2026-11-26 13:24 ｜ 质量：一手来源、深度内容 ｜ 降权：公关稿<br>摘要：当地时间2026年11月26日，朝中社发布图片显示，朝鲜最高领导人金正恩于25日实地考察核物质生产及核武器研究部门。图：朝中社 【财新网】 据朝中社2026年11月26日报道，朝鲜劳动党总书记、朝鲜民主主义人民共和国国务委员长金正恩于11月25日实地考察武器级核物质生产基地、核动力相关设备生产基地和核武器研究所。朝中社称，此次工作访问对加强朝鲜国家核武库具有重大意义。 金正恩具体了解了新建的重要物质生产工厂的情况，以及正在扩建的另一家工厂的基础设施建设情况，新生产的核动力相关设备和装置的性能。他表示，这次考察是为应对近期在国际核安全格局发生深刻地缘政治变化，对朝鲜半岛地区造成的不稳定的核威胁。<br>原文：<a href="https://photos.caixin.com/2026-11-26/102508868.html" target="_blank" rel="noopener noreferrer">https://photos.caixin.com/2026-11-26/102508868.html</a></blockquote>
+      <h3>product_tech</h3>
+      <p><strong>1. AI抛售潮下，欧洲富裕投资者将目光投向股市以外的资产</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-11-26 15:40 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布<br>摘要：在公开市场动荡之际，欧洲富裕投资者正转向另类资产类别，以布局人工智能相关投资主题。高盛另类投资部门（Goldman Sachs Alternatives）首次针对高净值和超高净值投资者开展的调查显示，47%的欧洲受访者认为，另类投资是获取AI及未来科技增长敞口的最佳途径，而美国投资者中持这一观点的比例仅为24%。另类投资包括私募股权、房地产和基础设施等资产。（新浪财经）<br>原文：<a href="https://36kr.com/newsflashes/4086281365383552?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/newsflashes/4086281365383552?f=rss</a></blockquote>
+      <p><strong>2. 36氪首发丨合肥产投领投量子计算企业超亿元，攻坚中性原子量子多机互联</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-11-26 09:52 ｜ 质量：一手来源、深度内容、原创/独家 ｜ AI 类型：官方发布<br>摘要：文 | 张卓倩 编辑 | 袁斯来 36氪获悉，中性原子量子计算企业「乾原量子」近日完成超 1 亿元天使轮融资，本轮融资将主要用于核心光学器件自研迭代、乾阵系列中性原子 QPU （量子处理单元）整机研发，以及 QAVEXUS （量子互联技术）多机互联接口的预研与工程调试，同时用于科研团队扩充、实验室建设等产业化配套投入。 本轮由合肥产投集团牵头，联合创谷资本、合肥高投、国元基金、山证投资、鼎兴量子等合计 12 家机构共同参与，是省、市、区三级国资与市场化机构联动投资的项目，中关村产业研究院担任本轮融资财务顾问。 「乾原量子」核心团队源自山西大学光量子技术与器件全国重点实验室，是国内最早开展腔 量子电动力学（以下简称QED）、中性原子阵列研究的团队之一。首席科学家张天才为国家杰出青年科学基金获得者、教育部 “长江学者” 特聘教授，长期深耕量子光学与腔 QED 方向研究；董事长、CEO 李刚为国家高层次青年人才，专注中性原子阵列、光镊量子调控领域。团队自 2002 年起布局腔 QED 相关实验，至今已有二十余年技术积累。 目前公司研发人员占比超 60%，包含 2 位国家重点研发计划首席科学家<br>原文：<a href="https://36kr.com/p/4054916912600195?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4054916912600195?f=rss</a></blockquote>
+      <p><strong>3. 「华源智因」获过亿元天使轮融资，已有基于临床管线的药效预测合作落地｜36氪首发</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-11-26 09:00 ｜ 质量：一手来源、数据驱动、原创/独家 ｜ AI 类型：官方发布<br>摘要：文｜胡香赟 编辑｜海若镜 36氪获悉，近日，「华源智因」已完成过亿元天使轮融资。本轮由华盖资本领投，华方资本、华映资本、梅花资本、同新基金、讯飞创投、启赋资本跟投。募集资金将主要用于大规模人源扰动数据生产、联合实验室建设，以及加速药企订单执行和商业化落地。向阳资本为公司长期独家财务顾问。 华源智因是36氪持续报道的虚拟细胞公司。今年7月，我们曾介绍过华源智因自研的 Wise-Perturb 细胞药物扰动模型等技术进展，团队希望通过细胞多模态测序和患者给药前后样本，在临床前/临床阶段对药物的人体药效进行预测，以此帮助药企完成管线价值评估、患者分层。 本次，华源智因CEO杜润诗介绍称，过去几个月间，公司在模型层面的重点迭代方向，一是对细胞状态做更全面的刻画，整合同一细胞上的组学、形态学等多种信息，训练细胞特异性扰动基座模型；其次是在基座之上针对具体适应症做后训练，用华源智因生产的专病、人源化扰动数据训练专家模型。 图源：华源智因 在AI for Science的叙事里，虚拟细胞已成为最热的概念之一。公开统计中，全球虚拟细胞领域的融资规模已达到30亿美元，甚至已有药企愿意为虚拟细胞模型付出首<br>原文：<a href="https://36kr.com/p/4084622369516167?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4084622369516167?f=rss</a></blockquote>
+      <p><strong>4. 36氪首发丨牛津博士团队绕开光刻机用玻璃做高维光计算芯片，获英诺基金独家天使投资</strong></p>
+      <blockquote>来源：36氪 ｜ 时间：2026-11-26 10:07 ｜ 质量：一手来源、原创/独家 ｜ AI 类型：官方发布<br>摘要：图源/企业 本文约 2400 字，建议阅读 6 分钟 作者丨欧雪 编辑丨袁斯来 硬氪获悉，光计算芯片公司万相常数近期已完成数千万元天使轮融资，由英诺基金独家投资。本轮资金将主要用于光电融合验证板卡的样机开发、飞秒激光直写设备及光电实验室搭建，以及核心研发团队的扩充。泰合资本担任本轮融资财务顾问。 万相常数成立于2026年，致力于用玻璃打造下一代光学AI加速器。公司核心团队由几位牛津大学博士组成。其中，创始人韩启昊为牛津大学光电博士，本硕阶段一直从事模拟数字集成电路设计，博士阶段转向光电领域，课题组在各类光电应用已沉淀了数十年科研积累。 在当前的光计算赛道中，技术路线远未收敛，硅光、薄膜铌酸锂、相变材料、超表面、空间光计算等方案百花齐放，但均面临工程化与量产成本的现实考验。万相常数选择的路径颇为差异化，用一块玻璃形成全球首创的光计算技术路径。 “整个用玻璃去做的话，相当于可以绕过光刻机这一个过程，就不会被卡脖子。”韩启昊告诉硬氪。先进制程的硅光芯片依赖海外流片，周期长、成本高，而玻璃衬底配合飞秒激光直写，只要设备到位，几小时就能做出一块芯片。 这一特性使万相常数在原型验证和迭代速度上具备<br>原文：<a href="https://36kr.com/p/4085953425877377?f=rss" target="_blank" rel="noopener noreferrer">https://36kr.com/p/4085953425877377?f=rss</a></blockquote>
+      <h3>ai</h3>
+      <p><strong>1. Study reveals data centers’ long-distance damage to air quality</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-11-19 22:00 ｜ 质量：机构来源、深度内容、数据驱动 ｜ AI 类型：产品应用<br>摘要：Researchers find air pollution from data center electricity use can affect communities far from the facilities, with some of the highest impacts in the Midwest.<br>原文：<a href="https://news.mit.edu/2026/study-reveals-data-centers-long-distance-damage-air-quality-1119" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/study-reveals-data-centers-long-distance-damage-air-quality-1119</a></blockquote>
+      <p><strong>2. Q&amp;A: Enabling more human-like interactions and understanding in multimodal foundation models</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-11-21 05:00 ｜ 质量：机构来源、深度内容 ｜ AI 类型：模型能力更新<br>摘要：Senior Research Scientist Jim Glass discusses how his MIT-IBM Computing Research Lab collaboration connects perception and language, and addresses the shortcoming of current models.<br>原文：<a href="https://news.mit.edu/2026/qa-enabling-more-human-interactions-understanding-multimodal-foundation-models-1120" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/qa-enabling-more-human-interactions-understanding-multimodal-foundation-models-1120</a></blockquote>
+      <p><strong>3. AI helps researchers investigate how thousands of medical studies share code</strong></p>
+      <blockquote>来源：MIT News - Artificial Intelligence ｜ 时间：2026-11-20 06:15 ｜ 质量：机构来源、深度内容 ｜ 证据：医学机构 ｜ AI 类型：模型能力更新<br>摘要：An MIT and Dana-Farber Institute-led team used large language models to examine nearly 4,000 studies and hundreds of code repositories, revealing gaps in the information needed to scrutinize and reuse published research.<br>原文：<a href="https://news.mit.edu/2026/ai-helps-researchers-investigate-how-medical-studies-share-code-1119" target="_blank" rel="noopener noreferrer">https://news.mit.edu/2026/ai-helps-researchers-investigate-how-medical-studies-share-code-1119</a></blockquote>
+      <p><strong>4. GPT-6 models demonstrate intrinsic protein-design capabilities</strong></p>
+      <blockquote>来源：OpenAI News ｜ 时间：2026-11-24 21:00 ｜ 质量：一手来源 ｜ AI 类型：官方发布<br>摘要：GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.<br>原文：<a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities" target="_blank" rel="noopener noreferrer">https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities</a></blockquote>
+      <h3>health</h3>
+      <p><strong>1. It’s the Paperwork, Not the Work, Causing Enrollees To Lose Medicaid in Nebraska</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-11-25 18:00 ｜ 质量：深度内容、数据驱动 ｜ 证据：媒体报道 ｜ AI 类型：产品应用<br>摘要：Data from the months after the state’s early rollout of new federal work requirements bolsters concerns that red tape will leave many stuck without coverage.<br>原文：<a href="https://kffhealthnews.org/health-care-costs/medicaid-work-requirements-new-rules-coverage-dropped-nebraska-rollout/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/health-care-costs/medicaid-work-requirements-new-rules-coverage-dropped-nebraska-rollout/</a></blockquote>
+      <p><strong>2. Cutaneous Larva Migrans</strong></p>
+      <blockquote>来源：MedlinePlus - New Links ｜ 时间：2026-11-24 00:15 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Source: Merck &amp; Co., Inc. Related MedlinePlus Pages: Skin Infections<br>原文：<a href="https://www.merckmanuals.com/home/skin-disorders/parasitic-skin-infections/cutaneous-larva-migrans" target="_blank" rel="noopener noreferrer">https://www.merckmanuals.com/home/skin-disorders/parasitic-skin-infections/cutaneous-larva-migrans</a></blockquote>
+      <p><strong>3. ‘Smart’ Implants Are Driving Up Health Costs — Even When Patients Don’t Ask for Them</strong></p>
+      <blockquote>来源：KFF Health News ｜ 时间：2026-11-23 18:00 ｜ 质量：深度内容、数据驱动 ｜ 证据：媒体报道<br>摘要：Two patients are suing after allegedly waking from knee replacement surgery and learning they’d received “smart” joints, capable of transmitting data. Researchers say their usefulness is unproven, yet Medicare and private insurers pay doctors to monitor such devices.<br>原文：<a href="https://kffhealthnews.org/health-industry/smart-joint-implants-knees-health-costs-patients-surprised/" target="_blank" rel="noopener noreferrer">https://kffhealthnews.org/health-industry/smart-joint-implants-knees-health-costs-patients-surprised/</a></blockquote>
+      <p><strong>4. Herbs and supplements pages added to MedlinePlus</strong></p>
+      <blockquote>来源：MedlinePlus - What&#x27;s New ｜ 时间：2026-11-23 13:00 ｜ 质量：机构来源 ｜ 证据：医学机构<br>摘要：Herbs and supplements pages added to MedlinePlus<br>原文：<a href="https://medlineplus.gov/whatsnew/" target="_blank" rel="noopener noreferrer">https://medlineplus.gov/whatsnew/</a></blockquote>
+      <p>---</p>
+      <h2>抓取异常</h2>
+      <ul>
+        <li>deeplearning_ai_batch: 403 Client Error: Forbidden for url: <a href="https://www.deeplearning.ai/the-batch/feed/" target="_blank" rel="noopener noreferrer">https://www.deeplearning.ai/the-batch/feed/</a></li>
+        <li>anthropic_news: 404 Client Error: Not Found for url: <a href="https://www.anthropic.com/news/rss.xml" target="_blank" rel="noopener noreferrer">https://www.anthropic.com/news/rss.xml</a></li>
+        <li>imf_blog: &lt;unknown&gt;:2:0: syntax error</li>
+        <li>world_bank_blogs: &lt;unknown&gt;:34:91: not well-formed (invalid token)</li>
+        <li>harvard_health: 404 Client Error: Not Found for url: <a href="https://news.harvard.edu/gazette/section/health-medicine/feed/" target="_blank" rel="noopener noreferrer">https://news.harvard.edu/gazette/section/health-medicine/feed/</a></li>
+        <li>jiqizhixin_zh: &lt;unknown&gt;:18:14: mismatched tag</li>
+        <li>infoq_cn: HTTPSConnectionPool(host=&#x27;feed.infoq.cn&#x27;, port=443): Max retries exceeded with url: / (Caused by NameResolutionError(&quot;HTTPSConnection(host=&#x27;feed.infoq.cn&#x27;, port=443): Failed to resolve &#x27;feed.infoq.cn&#x27; ([Errno -2] Name or service not known)&quot;))</li>
+        <li>geekpark_zh: HTTPSConnectionPool(host=&#x27;www.geekpark.net&#x27;, port=443): Max retries exceeded with url: /rss (Caused by ConnectTimeoutError(&lt;HTTPSConnection(host=&#x27;www.geekpark.net&#x27;, port=443) at 0x741a181b7050&gt;, &#x27;Connection to www.geekpark.net timed out. (connect timeout=20)&#x27;))</li>
+        <li>huxiu_zh: HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Max retries exceeded with url: /rss/0.xml (Caused by ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#x27;www.huxiu.com&#x27;, port=443): Read timed out. (read timeout=20)&quot;))</li>
+        <li>qbitai_zh: HTTPSConnectionPool(host=&#x27;www.qbitai.com&#x27;, port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(&lt;HTTPSConnection(host=&#x27;www.qbitai.com&#x27;, port=443) at 0x741a1818d1d0&gt;, &#x27;Connection to www.qbitai.com timed out. (connect timeout=20)&#x27;))</li>
+      </ul>
+      <section class="sources">
+        <h2>原文链接</h2>
+        <ol class="source-list">
+        <li>
+          <a href="https://www.caixin.com/2026-11-26/102508891.html" target="_blank" rel="noopener noreferrer">香港接连发生大规模资料外泄 AI时代网络安全风险加剧</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-11-26 13:38</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/newsflashes/4086281365383552?f=rss" target="_blank" rel="noopener noreferrer">AI抛售潮下，欧洲富裕投资者将目光投向股市以外的资产</a>
+          <span class="source-meta">36氪 · 2026-11-26 15:40</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4054916912600195?f=rss" target="_blank" rel="noopener noreferrer">36氪首发丨合肥产投领投量子计算企业超亿元，攻坚中性原子量子多机互联</a>
+          <span class="source-meta">36氪 · 2026-11-26 09:52</span>
+        </li>
+        <li>
+          <a href="https://international.caixin.com/2026-11-26/102508942.html" target="_blank" rel="noopener noreferrer">301过剩产能关税落地后，美国整体关税税率如何？</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-11-26 15:53</span>
+        </li>
+        <li>
+          <a href="https://opinion.caixin.com/2026-11-26/102508851.html" target="_blank" rel="noopener noreferrer">以貌取官？权力的相貌</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-11-26 11:47</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4084622369516167?f=rss" target="_blank" rel="noopener noreferrer">「华源智因」获过亿元天使轮融资，已有基于临床管线的药效预测合作落地｜36氪首发</a>
+          <span class="source-meta">36氪 · 2026-11-26 09:00</span>
+        </li>
+        <li>
+          <a href="https://photos.caixin.com/2026-11-26/102508868.html" target="_blank" rel="noopener noreferrer">图集｜朝中社：金正恩视察朝鲜核物质生产及核武器研究部门</a>
+          <span class="source-meta">财新 - 最新文章 · 2026-11-26 13:24</span>
+        </li>
+        <li>
+          <a href="https://36kr.com/p/4085953425877377?f=rss" target="_blank" rel="noopener noreferrer">36氪首发丨牛津博士团队绕开光刻机用玻璃做高维光计算芯片，获英诺基金独家天使投资</a>
+          <span class="source-meta">36氪 · 2026-11-26 10:07</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/study-reveals-data-centers-long-distance-damage-air-quality-1119" target="_blank" rel="noopener noreferrer">Study reveals data centers’ long-distance damage to air quality</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-11-19 22:00</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/qa-enabling-more-human-interactions-understanding-multimodal-foundation-models-1120" target="_blank" rel="noopener noreferrer">Q&amp;A: Enabling more human-like interactions and understanding in multimodal foundation models</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-11-21 05:00</span>
+        </li>
+        <li>
+          <a href="https://news.mit.edu/2026/ai-helps-researchers-investigate-how-medical-studies-share-code-1119" target="_blank" rel="noopener noreferrer">AI helps researchers investigate how thousands of medical studies share code</a>
+          <span class="source-meta">MIT News - Artificial Intelligence · 2026-11-20 06:15</span>
+        </li>
+        <li>
+          <a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities" target="_blank" rel="noopener noreferrer">GPT-6 models demonstrate intrinsic protein-design capabilities</a>
+          <span class="source-meta">OpenAI News · 2026-11-24 21:00</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/health-care-costs/medicaid-work-requirements-new-rules-coverage-dropped-nebraska-rollout/" target="_blank" rel="noopener noreferrer">It’s the Paperwork, Not the Work, Causing Enrollees To Lose Medicaid in Nebraska</a>
+          <span class="source-meta">KFF Health News · 2026-11-25 18:00</span>
+        </li>
+        <li>
+          <a href="https://www.merckmanuals.com/home/skin-disorders/parasitic-skin-infections/cutaneous-larva-migrans" target="_blank" rel="noopener noreferrer">Cutaneous Larva Migrans</a>
+          <span class="source-meta">MedlinePlus - New Links · 2026-11-24 00:15</span>
+        </li>
+        <li>
+          <a href="https://kffhealthnews.org/health-industry/smart-joint-implants-knees-health-costs-patients-surprised/" target="_blank" rel="noopener noreferrer">‘Smart’ Implants Are Driving Up Health Costs — Even When Patients Don’t Ask for Them</a>
+          <span class="source-meta">KFF Health News · 2026-11-23 18:00</span>
+        </li>
+        <li>
+          <a href="https://medlineplus.gov/whatsnew/" target="_blank" rel="noopener noreferrer">Herbs and supplements pages added to MedlinePlus</a>
+          <span class="source-meta">MedlinePlus - What&#x27;s New · 2026-11-23 13:00</span>
+        </li>
+        </ol>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
